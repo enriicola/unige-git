@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uHGH4ihwmEokkHnisqqTm6nEZELZbefbiRe4orDzpMCNDcKSYl2lsGPUJS8AsjFbPgWIRm0UB32ylcssXsqHCw==",
+  "success": true,
+  "projectFilePath": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/prima lezione lab/soluzione_helloworld/helloworld/helloworld.csproj",
+  "expectedPackageFiles": [
+    "/Users/enrico/.nuget/packages/snippet/1.0.2/snippet.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

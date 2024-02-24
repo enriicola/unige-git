@@ -1,0 +1,28 @@
+
+    // var buffer = new Queue<IPlayingCard>();
+    // using var enumerator = source.GetEnumerator();
+    // while (enumerator.MoveNext())
+    // {
+    //     buffer.Enqueue(enumerator.Current);
+
+    //     if (buffer.Count % 6 == 0)
+    //     {
+    //         var maxFirst = buffer.ElementAt(0);
+    //         var maxSecond = buffer.ElementAt(1);
+
+    //         for (int i = 2; i < 6; i++)
+    //             if (buffer.ElementAt(i) >= maxFirst)
+    //                 maxFirst = buffer.ElementAt(i);
+
+    //         for (int i = 3; i < 6; i++)
+    //             if (buffer.ElementAt(i) >= maxSecond)
+    //                 maxSecond = buffer.ElementAt(i);
+
+    //         for (int i = 0; i < 6; i++)
+    //             buffer.Dequeue();
+
+    //         yield return maxFirst >= maxSecond;
+    //     }
+    // }
+    // if (source.Count() % 6 != 0)
+    //     throw new ArgumentException();

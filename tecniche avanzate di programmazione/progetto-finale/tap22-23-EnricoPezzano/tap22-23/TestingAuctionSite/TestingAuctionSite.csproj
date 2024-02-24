@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0-preview-20221221-03" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.5.0"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.2.0"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="TAP22-23.AlarmClock.Interface" />
+    <None Remove="TAP22-23.AuctionSite.Interface" />
+    <None Remove="TAP22_23.AlarmClock.Interface" />
+    <None Remove="TAP22_23.AuctionSite.Interface" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogicAuctionSite\LogicAuctionSite.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="TAP22-23.AlarmClock.Interface">
+      <HintPath>..\..\TAP22_23.AlarmClock.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="TAP22-23.AuctionSite.Interface">
+      <HintPath>..\..\TAP22_23.AuctionSite.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="TAP22_23.AlarmClock.Interface">
+      <HintPath>..\..\TAP22_23.AlarmClock.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="TAP22_23.AuctionSite.Interface">
+      <HintPath>..\..\TAP22_23.AuctionSite.Interface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

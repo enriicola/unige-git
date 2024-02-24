@@ -1,0 +1,5 @@
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/Program/obj/Release/net6.0/Program.csproj.AssemblyReference.cache
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/Program/obj/Release/net6.0/Program.GeneratedMSBuildEditorConfig.editorconfig
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/Program/obj/Release/net6.0/Program.AssemblyInfoInputs.cache
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/Program/obj/Release/net6.0/Program.AssemblyInfo.cs
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/Program/obj/Release/net6.0/Program.csproj.CoreCompileInputs.cache

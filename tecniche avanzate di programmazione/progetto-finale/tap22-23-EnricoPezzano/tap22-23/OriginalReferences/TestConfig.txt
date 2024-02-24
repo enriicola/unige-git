@@ -1,0 +1,2 @@
+../../../../LogicAuctionSite/bin/Debug/net6.0/LogicAuctionSite.dll
+Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=progetto_finale_tap;Integrated Security=true;

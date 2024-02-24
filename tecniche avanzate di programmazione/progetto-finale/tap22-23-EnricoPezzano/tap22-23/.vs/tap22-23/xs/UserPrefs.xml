@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{2C842449-47D3-44D0-9031-E2D62941DF9B}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TestingAuctionSite PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LogicAuctionSite/HostFactory.cs">
+    <Files>
+      <File FileName="LogicAuctionSite/HostFactory.cs" Line="7" Column="15" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="tap22-23" expanded="True">
+            <Node name="DBAuctionSite" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="AssemblyDependencies" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="LogicAuctionSite" expanded="True" />
+            <Node name="TestingAuctionSite" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

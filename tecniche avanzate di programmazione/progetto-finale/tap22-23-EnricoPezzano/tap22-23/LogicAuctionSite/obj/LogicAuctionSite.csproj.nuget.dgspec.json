@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/LogicAuctionSite/LogicAuctionSite.csproj": {}
+  },
+  "projects": {
+    "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/DBAuctionSite/DBAuctionSite.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/DBAuctionSite/DBAuctionSite.csproj",
+        "projectName": "DBAuctionSite",
+        "projectPath": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/DBAuctionSite/DBAuctionSite.csproj",
+        "packagesPath": "/Users/enrico/.nuget/packages/",
+        "outputPath": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/DBAuctionSite/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/enrico/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/LogicAuctionSite/LogicAuctionSite.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/LogicAuctionSite/LogicAuctionSite.csproj",
+        "projectName": "LogicAuctionSite",
+        "projectPath": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/LogicAuctionSite/LogicAuctionSite.csproj",
+        "packagesPath": "/Users/enrico/.nuget/packages/",
+        "outputPath": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/LogicAuctionSite/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/enrico/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/DBAuctionSite/DBAuctionSite.csproj": {
+                "projectPath": "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/tap/progetto-finale/tap22-23-EnricoPezzano/tap22-23/DBAuctionSite/DBAuctionSite.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

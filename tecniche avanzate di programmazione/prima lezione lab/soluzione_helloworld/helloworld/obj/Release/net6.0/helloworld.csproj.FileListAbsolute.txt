@@ -1,0 +1,5 @@
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/prima lezione lab/soluzione_helloworld/helloworld/obj/Release/net6.0/helloworld.csproj.AssemblyReference.cache
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/prima lezione lab/soluzione_helloworld/helloworld/obj/Release/net6.0/helloworld.GeneratedMSBuildEditorConfig.editorconfig
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/prima lezione lab/soluzione_helloworld/helloworld/obj/Release/net6.0/helloworld.AssemblyInfoInputs.cache
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/prima lezione lab/soluzione_helloworld/helloworld/obj/Release/net6.0/helloworld.AssemblyInfo.cs
+/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/TAP/prima lezione lab/soluzione_helloworld/helloworld/obj/Release/net6.0/helloworld.csproj.CoreCompileInputs.cache

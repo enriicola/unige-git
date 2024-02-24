@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TAP22-23.AlarmClock.Interface" />
+    <None Remove="TAP22-23.AuctionSite.Interface" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="TAP22_23.AuctionSite.Interface" />
+    <None Remove="TAP22_23.AlarmClock.Interface" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="TAP22-23.AlarmClock.Interface">
+      <HintPath>..\..\TAP22_23.AlarmClock.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="TAP22-23.AuctionSite.Interface">
+      <HintPath>..\..\TAP22_23.AuctionSite.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="TAP22_23.AuctionSite.Interface">
+      <HintPath>..\..\TAP22_23.AuctionSite.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="TAP22_23.AlarmClock.Interface">
+      <HintPath>..\..\TAP22_23.AlarmClock.Interface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.12" />
+  </ItemGroup>
+</Project>
