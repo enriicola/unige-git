@@ -1,0 +1,79 @@
+[24 Nov 2022 10:29:39] Building database metadata model
+[24 Nov 2022 10:29:39] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@49dc730d, includeTables=true, username=webratio, outputLogPath=C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\DataCentricApplication_lab3\.Temp~\DB.xml.log, readIndexes=null, driverClass=org.apache.derby.jdbc.ClientDriver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.DerbyMetaDataProvider, outputPath=C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\DataCentricApplication_lab3\.Temp~\DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\.metadata\.plugins\com.webratio.commons.db\derby, url=jdbc:derby://localhost:1527/true;create=true, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=50537}
+[24 Nov 2022 10:29:39] URL: jdbc:derby://localhost:1527/true;create=true
+[24 Nov 2022 10:29:39] Product name: Apache Derby
+[24 Nov 2022 10:29:39] Product version: 10.5.3.0 - (802917)
+[24 Nov 2022 10:29:39] Driver name: Apache Derby Network Client JDBC Driver
+[24 Nov 2022 10:29:39] Driver version: 10.5.3.0 - (802917)
+[24 Nov 2022 10:29:39] Driver major version: 10
+[24 Nov 2022 10:29:39] Driver minor version: 5
+[24 Nov 2022 10:29:39] Identifier quote string: 5
+[24 Nov 2022 10:29:39] Retrieving schemas
+[24 Nov 2022 10:29:39]   Found schema: APP
+[24 Nov 2022 10:29:39]   Found schema: NULLID
+[24 Nov 2022 10:29:39]   Found schema: SQLJ
+[24 Nov 2022 10:29:39]   Found schema: SYS
+[24 Nov 2022 10:29:39]   Found schema: SYSCAT
+[24 Nov 2022 10:29:39]   Found schema: SYSCS_DIAG
+[24 Nov 2022 10:29:39]   Found schema: SYSCS_UTIL
+[24 Nov 2022 10:29:39]   Found schema: SYSFUN
+[24 Nov 2022 10:29:39]   Found schema: SYSIBM
+[24 Nov 2022 10:29:39]   Found schema: SYSPROC
+[24 Nov 2022 10:29:39]   Found schema: SYSSTAT
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'APP'
+[24 Nov 2022 10:29:39]   Found 'APP.CUSTOMER' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found 'APP.GROUP' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found 'APP.GROUP_MODULE' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found 'APP.MODULE' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found 'APP.USER' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found 'APP.USER_GROUP' [type = TABLE]
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'NULLID'
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SQLJ'
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSCAT'
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSCS_DIAG'
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSCS_UTIL'
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSFUN'
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSPROC'
+[24 Nov 2022 10:29:39] Retrieving [TABLE, VIEW, SYNONYM] for schema 'SYSSTAT'
+[24 Nov 2022 10:29:39] Retrieving columns for 'APP.CUSTOMER' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: FIRSTNAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: LASTNAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: EMAIL [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: PASSWORD [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39] Retrieving primary keys for 'APP.CUSTOMER' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found primary key column: OID
+[24 Nov 2022 10:29:39] Retrieving columns for 'APP.GROUP' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: GROUPNAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: MODULE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39] Retrieving primary keys for 'APP.GROUP' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found primary key column: OID
+[24 Nov 2022 10:29:39] Retrieving columns for 'APP.GROUP_MODULE' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found column: GROUP_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: MODULE_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39] Retrieving primary keys for 'APP.GROUP_MODULE' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found primary key column: GROUP_OID
+[24 Nov 2022 10:29:39]   Found primary key column: MODULE_OID
+[24 Nov 2022 10:29:39] Retrieving columns for 'APP.MODULE' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: MODULEID [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: MODULENAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39] Retrieving primary keys for 'APP.MODULE' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found primary key column: OID
+[24 Nov 2022 10:29:39] Retrieving columns for 'APP.USER' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found column: OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: USERNAME [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: PASSWORD [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: EMAIL [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: GROUP_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39] Retrieving primary keys for 'APP.USER' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found primary key column: OID
+[24 Nov 2022 10:29:39] Retrieving columns for 'APP.USER_GROUP' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found column: USER_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39]   Found column: GROUP_OID [type = INTEGER][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[24 Nov 2022 10:29:39] Retrieving primary keys for 'APP.USER_GROUP' [type = TABLE]
+[24 Nov 2022 10:29:39]   Found primary key column: USER_OID
+[24 Nov 2022 10:29:39]   Found primary key column: GROUP_OID
+[24 Nov 2022 10:29:39] Database metadata retrieved (157 ms)
+[24 Nov 2022 10:29:39] Database connection closed

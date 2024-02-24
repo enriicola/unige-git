@@ -1,0 +1,15 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Homepage" homePage="sv1#page1">
+  <OperationUnits>
+    <CreateUnit gr:x="310" gr:y="440" id="sv1#cru1" name="Add customer" entity="ent1" gr:showAllParts="true" skipBlankRecords="true">
+      <OKLink id="sv1#cru1#oln1" name="OKFlow1" to="sv1#page1" automaticCoupling="true"/>
+      <KOLink id="sv1#cru1#kln1" name="KOFlow1" to="sv1#page2" automaticCoupling="true"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="460" gr:y="60" id="sv1#dlu1" name="Delete customer" entity="ent1">
+      <Selector id="sv1#dlu1#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#dlu1#su1#kcond1" name="oid" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#dlu1#oln2" name="OKFlow2" to="sv1#page1" automaticCoupling="true"/>
+      <KOLink id="sv1#dlu1#kln2" name="KOFlow2" to="sv1#page2" automaticCoupling="true"/>
+    </DeleteUnit>
+  </OperationUnits>
+</SiteView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning xpath="id('sv1#page1#enu1#fld4')" rootXPath="id('sv1')" label="password"> 
+    <Message>Security Warning: the password field 'password' does not have any validation to ensure password strength</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.AddMissingValidationRuleResolutionGenerator" validationRuleName="PasswordStrengthValidationRule">Add missing Password Strength validation rule</Resolution> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv1#page1')" rootXPath="id('sv1')" key="" label="Customer management"> 
+    <Message>Security Warning: the page 'Customer management' is public but no captcha field is configured on its form component</Message> 
+  </Warning> 
+</Warnings>

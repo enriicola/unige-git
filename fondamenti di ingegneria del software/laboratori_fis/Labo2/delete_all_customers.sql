@@ -1,0 +1,1 @@
+delete from Customer where 1=1

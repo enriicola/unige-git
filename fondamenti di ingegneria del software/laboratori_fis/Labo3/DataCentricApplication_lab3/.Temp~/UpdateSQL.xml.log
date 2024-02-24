@@ -1,0 +1,44 @@
+[22 Nov 2022 16:06:52] DEBUG Executing SQL script
+[22 Nov 2022 16:06:52] INFO ================================================================================
+[22 Nov 2022 16:06:52] INFO onError= 'stop'
+[22 Nov 2022 16:06:52] INFO autoCommit= 'false'
+[22 Nov 2022 16:06:52] INFO username= 'webratio'
+[22 Nov 2022 16:06:52] INFO outputPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\DataCentricApplication_lab3\.Temp~\UpdateSQL.xml'
+[22 Nov 2022 16:06:52] INFO outputLogPath= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\DataCentricApplication_lab3\.Temp~\UpdateSQL.xml.log'
+[22 Nov 2022 16:06:52] INFO encoding= ''
+[22 Nov 2022 16:06:52] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[22 Nov 2022 16:06:52] INFO sqlScript= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\DataCentricApplication_lab3\.Temp~\UpdateSQL.sql'
+[22 Nov 2022 16:06:52] INFO eventSocketPort= '53370'
+[22 Nov 2022 16:06:52] INFO statementSeparator= ';'
+[22 Nov 2022 16:06:52] INFO derby.system.home= 'C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[22 Nov 2022 16:06:52] INFO password= 'webratio'
+[22 Nov 2022 16:06:52] INFO url= 'jdbc:derby://localhost:1527/true;create=true'
+[22 Nov 2022 16:06:52] INFO ================================================================================
+[22 Nov 2022 16:06:52] INFO Connecting to the Database...
+[22 Nov 2022 16:06:52] INFO Database connection estabilished
+[22 Nov 2022 16:06:52] INFO transaction isolation: 2
+[22 Nov 2022 16:06:52] DEBUG ================================================================================
+[22 Nov 2022 16:06:52] DEBUG Executing SQL script file: C:\WebRatio\WebRatio Platform 7.2.18.x64bit\workspace\DataCentricApplication_lab3\.Temp~\UpdateSQL.sql
+[22 Nov 2022 16:06:52] DEBUG Executing statement:  alter table "APP"."CUSTOMER"  add column  "OID_2"  integer  not null
+[22 Nov 2022 16:06:52] ERROR Could not execute statement:  alter table "APP"."CUSTOMER"  add column  "OID_2"  integer  not null
+java.sql.SQLSyntaxErrorException: In an ALTER TABLE statement, the column 'OID_2' has been specified as NOT NULL and either the DEFAULT clause was not specified or was specified as DEFAULT NULL.
+	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.Statement.execute(Unknown Source)
+	at com.webratio.commons.db.utils.DBUtils.execute(DBUtils.java:523)
+	at com.webratio.commons.db.utils.DBUtils.executeScriptFiles(DBUtils.java:442)
+	at com.webratio.commons.db.utils.DBUtils.main(DBUtils.java:257)
+Caused by: org.apache.derby.client.am.SqlException: In an ALTER TABLE statement, the column 'OID_2' has been specified as NOT NULL and either the DEFAULT clause was not specified or was specified as DEFAULT NULL.
+	at org.apache.derby.client.am.Statement.completeSqlca(Unknown Source)
+	at org.apache.derby.client.am.Statement.completeExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.parseEXCSQLIMMreply(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.StatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatement.readExecuteImmediate_(Unknown Source)
+	at org.apache.derby.client.am.Statement.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.am.Statement.flowExecute(Unknown Source)
+	at org.apache.derby.client.am.Statement.executeX(Unknown Source)
+	... 4 more
+[22 Nov 2022 16:06:52] ERROR SQL SCRIPT EXECUTION FAILED
+[22 Nov 2022 16:06:52] INFO Database connection closed
+[22 Nov 2022 16:06:52] DEBUG Total time: 371 milliseconds

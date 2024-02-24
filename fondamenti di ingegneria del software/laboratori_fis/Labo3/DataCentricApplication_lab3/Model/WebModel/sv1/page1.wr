@@ -1,0 +1,69 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="305" gr:y="205" id="sv1#page1" name="Customer management">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#page1#enu1" name="Add customer" linkOrder="sv1#page1#enu1#ln1" gr:showAllParts="false">
+      <Field id="sv1#page1#enu1#fld1" name="firstname" type="string" modifiable="true"/>
+      <Field id="sv1#page1#enu1#fld2" name="lastname" type="string" modifiable="true"/>
+      <Field id="sv1#page1#enu1#fld3" name="email" type="string" modifiable="true" contentType="text/plain"/>
+      <Field id="sv1#page1#enu1#fld4" name="password" type="password" modifiable="true"/>
+      <Link id="sv1#page1#enu1#ln1" name="Add customer" to="sv1#cru1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu1#ln1#par1" name="email_email" source="sv1#page1#enu1#fld3" target="sv1#cru1.ent1#att4"/>
+        <LinkParameter id="sv1#page1#enu1#ln1#par2" name="firstname_firstname" source="sv1#page1#enu1#fld1" target="sv1#cru1.ent1#att2"/>
+        <LinkParameter id="sv1#page1#enu1#ln1#par3" name="lastname_lastname" source="sv1#page1#enu1#fld2" target="sv1#cru1.ent1#att3"/>
+        <LinkParameter id="sv1#page1#enu1#ln1#par4" name="password_password" source="sv1#page1#enu1#fld4" target="sv1#cru1.ent1#att5"/>
+      </Link>
+      <VRValidationLink linkId="sv1#page1#enu1#ln1" action="validate"/>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="135" gr:y="5" id="sv1#page1#pwu1" name="Customer list" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att3 ent1#att2 ent1#att4" linkOrder="sv1#page1#pwu1#ln2">
+      <SortAttribute attribute="ent1#att3" order="ascending"/>
+      <Link id="sv1#page1#pwu1#ln2" name="Delete" to="sv1#dlu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#pwu1#ln2#par8" name="oid_oid [oid]" source="data[].ent1#att9" target="sv1#dlu1#su1#kcond1.ent1#att9"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu1">
+          <layout:Field field="sv1#page1#enu1#fld1"/>
+          <layout:Field field="sv1#page1#enu1#fld2"/>
+          <layout:Field field="sv1#page1#enu1#fld3"/>
+          <layout:Field field="sv1#page1#enu1#fld4"/>
+          <layout:Link link="sv1#page1#enu1#ln1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#pwu1">
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Link link="sv1#page1#pwu1#ln2"/>
+          <layout:Link link="sv1#page1#pwu1ent1#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
