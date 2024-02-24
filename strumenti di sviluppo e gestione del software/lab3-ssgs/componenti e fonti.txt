@@ -1,0 +1,9 @@
+Pezzano Enrico   4825087
+Parodi Christian 4951409
+Conti Federico   4991779
+
+- slide ssgs a.a. 2022/23
+- https://howtodoinjava.com/maven/maven-parent-child-pom-example/
+- https://stackoverflow.com/questions/13705856/is-it-possible-to-have-packagingjar-packaging-in-a-parent-pom-file
+- https://www.youtube.com/watch?v=ID8UkrbUcUU&list=PLjGYWJ4Dcy-f71M9YyNSk4RpLE5jobe7y&index=5
+- https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Project_Inheritance

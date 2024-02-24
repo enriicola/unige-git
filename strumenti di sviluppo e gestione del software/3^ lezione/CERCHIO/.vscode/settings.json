@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "test"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/enrico/Library/CloudStorage/OneDrive-unige.it/scrivania/SSGS/commons-lang3-3.12.0/commons-lang3-3.12.0.jar"
+    ]
+}
