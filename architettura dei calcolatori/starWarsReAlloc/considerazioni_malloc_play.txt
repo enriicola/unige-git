@@ -1,0 +1,19 @@
+/*---Considerazioni Laboratorio StarWarsRealloc---*/
+
+Mandando in esecuzione "malloc_play" si possono inserire "sz", "min" e "max" grazie al parmetro del main "argv" (un array di string, la sua dimensione è indicata nel parametro "argc"). Senza l'inserimento dei parametri, avremo sz=1, min=-8 e max=60.
+Dopo l'esecuzione del programma (che implementa le funzioni malloc, realloc e free), se la dimensione della memoria da allocare è sconosciuta, la si può allocare dinamicamente nello heap dato che la sua durata necessita di maggiore flessibilità nella gestione del suo ciclo di vita.
+L'allocazione dinamica è maggiormente esplicita e flessibile. Il programma ha accesso a quel blocco di memoria grazie ad un puntatore (che restituisce la malloc).
+La "malloc" alloca size byte di memoria e, in caso di successo, viene fatto il return di un puntatore al blocco di memoria; restituirà un puntatore a null in caso contrario.
+
+È sicuramente utile che un blocco di memoria sia in grado di crescere o contrarsi: ciò è possibile grazie alla funzione "realloc" (restituisce un puntatore ad una zona di memoria specifica, contenente gli stessi dati della vecchia regione indirizzata dal puntatore.
+Se la funzione non è in grado di ridimensionare l'array subito, allora allocherà una nuova area pari alle nuove dimensioni, copierà i dati richiesti ed infine libererà il vecchio puntatore. Nel caso in cui l'allocazione fallisse, realloc manterrà il puntatore originale inalterato e restituirà un puntatore a null. La nuova area di memoria non sarà inizializzata, dato che il suo contenuto non è prevedibile.
+Possiamo anche confrontare gli output prima e dopo l'esecuzione di "realloc".
+Una volta che non sarà più necessaria, la memoria potrà essere deallocata tramite l'apposita funzione "free".
+
+Osservando gli output relativi ai valori in memoria, notiamo che:
+1- n (corrispondente al n° di bit dell'architettura per cui è stato compilato il codice) bit prima della cella di memoria è presente un intero corrispondente alla dimensione in byte della memoria allocata.
+2- la dimensione della memoria allocata è maggiore ai byte richiesti, la memoria aggiuntiva è utilizzata per memorizzare informazioni come la dimensione del blocco allocato, un collegamento a quello successivo in una catena e alcuni dati che semplificano il controllo del sistema per rilevare l'eventuale scrittura oltre la fine del blocco allocato.
+3- il numero minimo di byte allocati è 33, una volta superati i 24 richiesti, il numero di byte allocati aumenta di 16 passando da 33 a 49.
+4- nella posizione successiva all'ultimo elemento allocato notiamo la presenza di un intero che rappresenta il numero di byte contigui a quelli già allocati e disponibili.
+
+Infine quando chiamo realloc() può capitare che l'area di memoria venga liberata e ne venga allocata una più grande in un altro punto e che quindi posso confrontare gli output di p prima e dopo la realloc().
