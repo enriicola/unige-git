@@ -1,0 +1,51 @@
+Abbiamo lavorato insieme su tutto il codice
+
+CREATE SCHEMA Corsi;
+set search_path to Corsi;
+
+CREATE TABLE corsi.professori
+(
+Id numeric(5) NOT NULL Primary KEY,
+Cognome VARCHAR(20) NOT NULL,
+Nome VARCHAR(20) NOT NULL,
+Stipendio NUMERIC(8,2) DEFAULT 15000,
+Incongedo BOOLEAN,
+)
+
+INSERT INTO Corsi.Professori values(12345, 'Pesce', 'Marco', 16000, false);
+INSERT INTO Corsi.Professori values(23456, 'Iannuzzi', 'Federica', 30000.12, false);
+INSERT INTO Corsi.Professori values(34567, 'Lavarello', 'Barbara', 50000, true);
+INSERT INTO Corsi.Professori values(45678, 'Tarantino', 'Quentin', 3.14, false);
+INSERT INTO Corsi.Professori values(56789, 'Kusturica', 'Emir', 900.78, true);
+INSERT INTO Corsi.Professori values(98700, 'Pinco', 'Panco', 1, true);
+INSERT INTO Corsi.Professori values(98765, 'Lampa', 'Dina', 15000, false);
+
+CREATE TABLE Corsi.Corso
+(
+    Id CHAR(10) COLLATE  NOT NULL PRIMARY KEY,
+    CorsoDiLaurea VARCHAR(30),
+    Nome VARCHAR(35) NOT NULL,
+    Professore NUMERIC(5,0),
+    Attivato BOOLEAN DEFAULT false,
+    FOREIGN KEY (Professore) REFERENCES Corsi.Professori (Id)
+)
+
+insert into Corsi.Corso values(1234554321,'Smid','Probabilità',null,false);
+insert into Corsi.Corso values(1234567890,'Informatica','Programmazione1',12345,false);
+insert into Corsi.Corso values(2345678901,'Smid','Probabilità',23456,false);
+insert into Corsi.Corso values(3456789012,'Matematica','Analisi Fourier',34567,false);
+insert into Corsi.Corso values(4567890123,'Informatica','Algebra e Logica',45678,false);
+insert into Corsi.Corso values(5678901234,'Matematica','Calcolo numero',12345,false);
+
+
+CREATE TABLE Corsi.Studenti
+(
+    Matricola INTEGER NOT NULL SERIAL PRIMARY KEY,
+   Cognome VARCHAR(20) C NOT NULL,
+    Nome VARCHAR(20)  NOT NULL,
+    CorsoDiLaurea VARCHAR(30),
+    Iscrizione NUMERIC(8) NOT NULL,
+    Relatore NUMERIC(5),
+    FOREIGN KEY (Relatore) REFERENCES Corsi.Professori (Id)
+)
+
