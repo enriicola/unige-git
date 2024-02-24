@@ -1,0 +1,399 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    height: 500vh;
+    background-color: rgb(23, 13, 70);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+    width: 100%;
+}
+
+
+.one {
+    background-color: rgb(23, 13, 70);
+    height: 25%;
+}
+
+.one img {
+    object-fit: cover;
+}
+
+.one .position {
+    position:relative;
+    width:100%;
+    height:100%;
+    top:0%;
+    left:0%;
+}
+
+.principal-card {
+    background-color: rgb(23, 13, 70);
+    color:white;
+    text-align:left;
+    border-radius:1.5%;
+    width:25%;
+    height:50%;
+    position: absolute;
+    top:40%;
+    left:8%;
+    box-shadow: 0 4px 4px 0 black;
+    font-size: 2.8vh;
+
+}
+
+.principal-card h1 {
+    position:relative;
+    top:10%;
+    margin-left:6%;
+    margin-right:30%;
+}
+
+.principal-card p {
+    margin-left:6%;
+    margin-right:4%;
+    position:relative;
+    top:15%;
+}
+
+.common-card {
+    background-color: rgb(40, 24, 119);
+    color:white;
+    text-align:center;
+    border-radius:3%;
+    width:16%;
+    height:40%;
+    position: absolute;
+    top:45%;
+    left:38%;
+    box-shadow: 0 3px 3px 0 black;
+    font-size: 2.8vh;
+
+}
+
+.common-card img {
+    position:relative;
+    top:5%;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.common-card h3 {
+    position:absolute;
+    top:30%;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+.common-card p {
+    position:absolute;
+    top:50%;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+.two {
+    background-color: rgb(23, 13, 70);
+    height: 25%;
+}
+
+.two .position {
+    position:relative;
+    width:100%;
+    height:100%;
+    top:0%;
+    left:0%;
+}
+.two .left {
+    position: relative;
+    top: 5%;
+    bottom: 10%;
+    left:0;
+    width: 45%;
+    height: 70%;
+}
+
+.bigimg img {
+    position: absolute;
+    left:0;
+    top:10%;
+    object-fit: cover;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 2px 3px 0 black;
+
+}
+
+.two .right {
+    position: absolute;
+    top: 15%;
+    bottom: 10%;
+    right:5%;
+    width: 45%;
+    height: 70%;
+    color: white;
+    font-size: 2.8vh;
+}
+
+.two .iconlist {
+    position: absolute;
+    top:45%;
+    left:0;
+    color:white;
+    height: 10%;
+    width: 100%;
+    font-size: 2.3vh;
+}
+
+.iconlist img {
+    opacity:0.6;
+}
+
+.iconlist img:hover {
+    opacity:1;
+}
+
+.iconlist p {
+    position: absolute;
+    top:50%;
+    left:13%;
+}
+
+.three {
+    background-color: rgb(23, 13, 70);
+    height: 25%;
+}
+
+.three .position {
+    position:relative;
+    width:100%;
+    height:100%;
+    top:0%;
+    left:0%;
+}
+
+.three .right {
+    position: absolute;
+    top: 20%;
+    bottom: 10%;
+    right:0;
+    width: 45%;
+    height: 70%;
+}
+
+.three .right img {
+    object-fit: cover;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    box-shadow: 0 2px 3px 0 black;
+
+}
+
+.three .left {
+    position:absolute;
+    top:25%;
+    bottom:10%;
+    left:5%;
+    width:40%;
+    height:60%;
+}
+
+
+.three .services h1 {
+
+    color: white;
+    font-size: 3.3vh;
+    position: absolute;
+    top: 10%;
+    left:21%;
+    border-bottom: 2px solid white;
+
+}
+
+.three .services p {
+    text-align:center;
+    color: white;
+    font-size: 2.8vh;
+    position: absolute;
+    top: 15%;
+    left:5%;
+
+}
+
+.card {
+    position:absolute;
+    background-color: rgb(40, 24, 119);
+    width: 45%;
+    height: 45%;
+    border: 2px solid black;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+
+.top-right {
+    top:4%;
+    right:4%;
+
+}
+
+.top-left {
+    top:4%;
+    left:4%;
+
+}
+
+.bot-right {
+    bottom:4%;
+    right:4%;
+
+}
+
+.bot-left {
+    bottom:4%;
+    left:4%;
+}
+
+.card .content img {
+    position: absolute;
+    top:15%;
+    left:35%;
+    height: 30%;
+    width: 30%;
+}
+
+.card .content p {
+    position: absolute;
+    color:white;
+    top:60%;
+    left:7%;
+    font-size: 2.2vh;
+}
+
+.card:hover {
+    background-color:white;
+    transform: scale(1.05);
+}
+
+.card:hover p {
+    color:black;
+}
+
+
+.four {
+    background-color: rgb(23, 13, 70);
+    height: 20%;
+}
+
+.four .position {
+    position:relative;
+    width:100%;
+    height:100%;
+    top:20%;
+    left:0%;
+}
+
+.four .experts h1 {
+    position:absolute;
+    top:0;
+    left:46%;
+    color:white;
+    font-size:3.3vh;
+    border-bottom: 2px solid white;
+}
+
+.four .experts p {
+    position:absolute;
+    top:8%;
+    color:white;
+    text-align:center;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size:2.8vh;
+}
+
+.four .grid {
+    position:absolute;
+    width: 90%;
+    height: 70%;
+    top:20%;
+    left:5%;
+}
+
+.profile {
+    width: 45%;
+    height:44%;
+    position:absolute;
+    background-color: white;
+    box-shadow: 2px 4px 4px 2px black;
+    border: 1px solid black;
+    border-radius: 1vh;
+}
+
+.profile .bigimg {
+    position:absolute;
+    top:15%;
+    left:5%;
+    border-radius:100%;
+    object-fit: cover;
+    box-shadow: 0px 1px 2px 1px grey;
+    transition:0.5s all ease-in-out;
+    overflow: hidden;
+}
+
+.profile h1 {
+    position:absolute;
+    top:10%;
+    left:40%;
+    color:black;
+    font-size: 2.8vh;
+}
+
+.profile h2 {
+    position:absolute;
+    top:22%;
+    left:40%;
+    color: black;
+    font-size: 2vh;
+}
+
+.profile p {
+    position:absolute;
+    top:40%;
+    left:40%;
+    color:black;
+    font-size: 2vh;
+    margin-right: 3%;
+}
+
+.profile .icon {
+    position:absolute;
+    top:70%;
+    left:40%;
+    width:6%;
+    height:16%;
+    border-radius: 50%;
+    background-color:rgb(40, 24, 119,0.8);
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.icon:hover {
+    background-color: rgb(40, 24, 119);
+}
+
+.icon img {
+    position:relative;
+    margin-left:27%;
+    margin-top:25%;
+    filter: invert();
+}
+
+.profile .bigimg:hover {
+    transform: scale(1.05);
+}

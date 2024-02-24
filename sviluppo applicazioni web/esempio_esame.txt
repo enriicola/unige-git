@@ -1,0 +1,6 @@
+1. Descrivi alcuni tag HTML5 che hai usato nel progetto, spiegando perché semplificano la vita di uno sviluppatore web.
+2. Cosa sono gli array superglobali di PHP? Fornisci un esempio.
+3. Controllo dei dati in input lato client oppure lato server? Descrivi i due tipi di controlli ed
+eventuali vantaggi e/o svantaggi.
+4. Cosa sono i prepared statement? Perché vengono usati sempre di più nelle applicazioni web?
+5. Cosa sono le espressioni regolari? Fornisci un esempio.

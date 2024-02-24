@@ -1,0 +1,79 @@
+* > let oggi = new Date();
+* < undefined
+* > oggi.getTime();
+* < 1637665096424
+* < 1637665096424
+* < 1637665096424
+* < 1637665096424
+* < 1637665096424
+* > let oggi = new Date();
+* < SyntaxError: Can't create duplicate variable: 'oggi'
+* > let oggi2 = new Date();
+* < undefined
+* > oggi2.getTime();
+* < 1637665138379
+
+
+* > let a=100;
+* < undefined
+* > let b=200;
+* < undefined
+* > c=a+b;
+* < 300
+* > prompt("primo valore", "");
+* < "100"
+* > a = prompt("primo valore", "");
+* < "10"
+* > b = prompt("secondo valore", "");
+* < "20"
+* > c=a+b;
+* < "1020"
+* > a=a*1;
+* < 10
+* > b=b/1;
+* < 20
+* > c=a+b;
+* < 30
+* > clear();
+
+
+* > location.href
+* < "https://2021.aulaweb.unige.it/pluginfile.php/7274/course/section/20485/16_javascript1.pdf"
+* > location.hostname
+* < "2021.aulaweb.unige.it"
+* > location.protocol
+* < "https:"
+* > location.port
+* < ""
+* > screen.orientation
+* < undefined
+* > screen.height
+* < 900
+* > screen.width
+* < 1440
+
+
+* > let c="ciao";
+* < undefined
+* > c+1;
+* < "ciao1"
+
+
+* > 1*c
+* < NaN
+* > navigator.appCodeName
+* < "Mozilla"
+* > navigator.appVersion
+* < "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+
+
+* > var ar = [];
+* < undefined
+* > ar[3]=300;
+* < 300
+* > for (i=0; i<ar.length; i++) alert(ar[i]);
+* < undefined
+* > for (i=0; i<ar.length; i++) {ar[i] = i*100; alert(a[i]);}
+* > for (i=0; i<ar.length; i++) {ar[i] = i*100; alert(ar[i]);}
+* > for (i=0; i<=ar.length; i++) {ar[i] = i*100; alert(ar[i]);} //errore: loop infinito (array dinamici)
+* > for (i=0; i<=ar.length; i++) {ar[i] = i*100; window.open();} //apre infinite finestre, adesso i browser proteggono contro questo dispetto

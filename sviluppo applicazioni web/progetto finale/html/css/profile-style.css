@@ -1,0 +1,147 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(23, 13, 70);
+  background-image: url("../img/profile/thethinker.jpg");
+  background-repeat: no-repeat;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 200%;
+  max-width: 100%;
+}
+
+/* start profile card */
+#user_img{ /* my image-style */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.card h2{ /* my h-style */
+  text-align: center;
+  margin: 2%;
+}
+
+.card {
+    background-color: rgb(23, 13, 70);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 4px;
+    border-radius: 5%;
+    color: white;
+    display: inline-block;  
+    left: 2%;
+    max-width: 300px;
+    margin: 1%;
+    position: absolute;
+    top: 15%;
+    text-align: center;
+    font-family: arial;
+}
+  
+.title {
+  margin-top:1%;
+  font-size: 18px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  color: black;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-bottom-left-radius: 2vh;
+  border-bottom-right-radius: 2vh;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+}
+
+.card button:hover{
+  opacity: 0.7;
+}
+/* end profile card */
+
+#info{
+  background-color: rgb(23, 13, 70, 0.8);
+  border-radius: 5%;
+  color: white;
+  display: inline-block;
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  width: 70%;
+  height: 140%;
+}
+
+#info a {
+  position: relative;
+  background-color: rgb(40, 24, 119);
+  color: white;
+  cursor: pointer;
+  float: left;
+  display: inline;
+  padding: 1% 9.3%;
+  text-align: center;
+  text-decoration: none;
+}
+#info a:hover {
+  background-color: white;
+  color: black;
+}
+.info input[type=submit]{
+	background-color: rgb(40, 24, 119);
+  border: 0;
+  border-radius: 4vh;
+  color: white;
+  cursor: pointer;
+	padding: 1.5% 4%;
+}
+.info input[type=submit]:hover{
+  border: 0;
+  background-color: white;
+  color: black;
+}
+.info input[type=text], input[type=email], input[type=password]{
+  border: 0;
+	border-radius: 3vh;
+  margin-bottom: 2%;
+  padding: 1.5% 4.5%;
+}
+.info input[type=checkbox]{
+  margin-bottom: 2%;
+}
+
+#menu{
+  display: flex;
+  width: 96.5%;
+}
+
+#anteprima{
+  display: block;
+  text-align: center;
+}
+#acquisti{
+  display: none;
+  text-align: center;
+}
+#edit{
+  color: white;
+  display: none;
+  margin-top: 2%;
+  text-align: center;
+}
+#logout{
+  display: none;
+  text-align: center;
+}

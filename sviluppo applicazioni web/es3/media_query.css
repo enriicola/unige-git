@@ -1,0 +1,73 @@
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...}  */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...}  */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...}  */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...}  */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
+
+
+@media screen and (max-width: 992px) {
+    body{
+        background-color: rgb(100,100,100);
+    }
+    /* nav li{
+
+    } */
+}
+
+@media screen and (max-width: 600px){
+    body{
+        background-color: rgb(80,80,80);
+    }
+    ul{
+        list-style-type: none;
+    }
+    nav li{
+        display: block; 
+    }
+    nav li a{
+        color: white;
+        display: block;
+        padding: 16px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    section{
+        display: block;
+        float: left;
+        text-align: center; 
+        width: 50%;
+        /* height: 350px;
+        margin: 350px;
+        padding-right: 350px; */
+    }
+    aside{
+        display: block;
+        width: 50%;
+    }
+
+    /* .flexible-box > nav{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .flexible-box > section{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .flexible-box > aside{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    } */
+}

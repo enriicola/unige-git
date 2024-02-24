@@ -1,0 +1,48 @@
+Appunti saw 26 nov
+* Myform.target -> pagina nella quale vengono scritti i risultati dell’invio di un form, che può essere diversa da quella corrente 
+* Gli elementi del form sentono eventi diversi
+* Campi nascosti (hidden) che si usavano tempo fa per passare str randomiche tra una pagina e l’altra e mantenere lo stato della comunicazione
+* Con js possiamo disabilitare l’evento di submit se non si verificano certe condizioni
+* Slide 29: usando quell’indice possiamo accedere all’array delle opzioni
+* Slide 32: corrisponde al return false che abbiamo visto prima (preventDefault)
+* +vedi proprietà innerHTML
+* 
+Appunti saw 30 nov
+* Presentazione progetto finale StartSaw :P
+* Usa “like” con sql per la ricerca nel sito
+Appunti saw 3 dic
+* Document object model…
+* innerHTML e innerText…
+* Con javascript puoi agire sulle proprietà degli elementi della pagina, anche tramite console 
+* + dai un’occhiata alla registrazione
+* + vedi JSON
+* + vedi Ajax (lo si usa per mandare dati, non pagine)
+* + rivedi registrazione lezione 
+
+Appunti saw 7 dic
+* Programmazione lato client…
+* API fetch: permette di realizzare programmazione asincrona
+* …ritorna una Promise è un oggetto che verrà inizializzato in un futuro non definito (c’è di mezzo la rete che non ci da tempistiche certe)
+* + vedi tutte le risposte della Promise
+* Posso anche mandare dati in post e gestire la Promise in futuro
+* Tutte le volte che viene restituita una Promise deve essere gestita!
+* Web storage…
+* …potrebbe essere utile memorizzare il carrello in web Storage
+* + vedi codice della prof dalla registrazione…
+
+Appunti saw 14 dic
+* Seminario su Drupal…
+Appunti saw 17 dic
+* Attività sull’accessibilità con le immagini
+* Slide su rest e cors
+* Con Representational State Transfer (REST) si intende un tipo di architettura software per i sistemi distribuiti
+* Servizi invocati tramite metodi di http, i cui risultati di solito sono json o xml
+* Si mischiano in un mashup (L'uso di API REST permette di realizzare dei mashup)
+* Cross
+* Access-control-allow-origin
+
+Appunti saw 21 dic
+* Almeno un esempio di Ajax o fetch per il progetto finale
+* Possiamo anche usare librerie esterne (bootstrap, etc.) con cognizione e sapendo cosa fa il codice
+* Nella relazione del progetto mettere 3 slide (disegno homepage, funzionalità aggiuntive implementate, schema con le tabelle del db)
+

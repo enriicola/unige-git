@@ -1,0 +1,39 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    height:100%;
+    background-color: rgb(23, 13, 70);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea {
+    position:relative;
+    margin-left:20%;
+    width:60%;
+    height:100%;
+    margin-top:5%;
+}
+
+button {
+    position:absolute;
+    right: 5%;
+    bottom:10%;
+    width: 10%;
+    height:10%;
+    border-radius: 4vh;
+    border:0;
+    background-color: rgb(204, 60, 35);
+    color:white;
+}
+
+button:hover {
+    background-color: rgb(230, 60, 35);
+    border: 1px black solid;
+}
+
+

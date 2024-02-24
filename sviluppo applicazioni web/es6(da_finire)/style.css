@@ -1,0 +1,39 @@
+#box{
+	width: 20%;
+    height:50%;
+    background:black;
+    color:white;
+	margin: auto;
+	/* opacity: 0.85; */
+	text-align: center;
+}
+input[type=submit]{
+	width:90%;
+	background-color:#4CAF50;
+	color:white;
+	padding:20px 60px;
+	border:none;
+	border-radius:40px;
+	cursor:pointer;
+}
+input[type=text], select{
+	width:90%;
+	padding:20px 60px;
+	border:5px solid #CCC;
+	border-radius:40px;
+	box-sizing:border-box;
+}
+input[type=email], select{
+	width:90%;
+	padding:20px 60px;
+	border:5px solid #CCC;
+	border-radius:40px;
+	box-sizing:border-box;
+}
+input[type=password], select{
+	width:90%;
+	padding:20px 60px;
+	border:5px solid #CCC;
+	border-radius:40px;
+	box-sizing:border-box;
+}

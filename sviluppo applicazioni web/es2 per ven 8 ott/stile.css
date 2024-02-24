@@ -1,0 +1,56 @@
+/* la prossima volta raggruppa gli attributi per "alfabeto" */
+
+header{
+    text-align: center;
+    color:rgb(122, 39, 39);
+}
+
+nav{
+    overflow: hidden;
+    background-color: rgb(122, 39, 39);
+    color: white;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li{
+    float: right;
+}
+li a{
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    color: white;
+}
+li a:hover{
+    background-color: #111111;
+}
+
+section{
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+}
+aside{
+    display: inline-block;
+    clear: right;
+    width: 50%;
+}
+/* ol{
+    float: right;
+} */
+
+footer{
+    text-align: center;
+    background-color: rgb(122, 39, 39);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    /* height: 2.5rem; */
+}
