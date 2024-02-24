@@ -1,0 +1,1536 @@
+UDP Ping trying to connect to server localhost (127.0.0.1) on TCP port 1491
+ ... connected to Pong server: asking for 501 repetitions of 1536 _bytes UDP messages
+ ... Pong server agreed to ping-pong using port 62832 :-)
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.518 milliseconds in repetition 1
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.452 milliseconds in repetition 2
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.220 milliseconds in repetition 3
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.209 milliseconds in repetition 4
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 5
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 6
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 7
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.952 milliseconds in repetition 8
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.279 milliseconds in repetition 9
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.226 milliseconds in repetition 10
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.213 milliseconds in repetition 11
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.210 milliseconds in repetition 12
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.529 milliseconds in repetition 13
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.213 milliseconds in repetition 14
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.032 milliseconds in repetition 15
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.217 milliseconds in repetition 16
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.206 milliseconds in repetition 17
+
+
+vwbvbrvrrevrie-->1536Round trip time was  8.443 milliseconds in repetition 18
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.522 milliseconds in repetition 19
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.264 milliseconds in repetition 20
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.711 milliseconds in repetition 21
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.945 milliseconds in repetition 22
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.568 milliseconds in repetition 23
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.306 milliseconds in repetition 24
+
+
+vwbvbrvrrevrie-->1536Round trip time was  2.977 milliseconds in repetition 25
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.226 milliseconds in repetition 26
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 27
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 28
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.204 milliseconds in repetition 29
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.216 milliseconds in repetition 30
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.204 milliseconds in repetition 31
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 32
+
+
+vwbvbrvrrevrie-->1536Round trip time was  4.119 milliseconds in repetition 33
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.274 milliseconds in repetition 34
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.205 milliseconds in repetition 35
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 36
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 37
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 38
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 39
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.324 milliseconds in repetition 40
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 41
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 42
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.215 milliseconds in repetition 43
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 44
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 45
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 46
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 47
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 48
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 49
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.526 milliseconds in repetition 50
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.213 milliseconds in repetition 51
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.204 milliseconds in repetition 52
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 53
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.204 milliseconds in repetition 54
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.230 milliseconds in repetition 55
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 56
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 57
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 58
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 59
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 60
+
+
+vwbvbrvrrevrie-->1536Round trip time was  5.583 milliseconds in repetition 61
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.304 milliseconds in repetition 62
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 63
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 64
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 65
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 66
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 67
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 68
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 69
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.274 milliseconds in repetition 70
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 71
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 72
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 73
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 74
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 75
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 76
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 77
+
+
+vwbvbrvrrevrie-->1536Round trip time was  8.387 milliseconds in repetition 78
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.406 milliseconds in repetition 79
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.295 milliseconds in repetition 80
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.237 milliseconds in repetition 81
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.221 milliseconds in repetition 82
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.244 milliseconds in repetition 83
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.399 milliseconds in repetition 84
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.224 milliseconds in repetition 85
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.217 milliseconds in repetition 86
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 87
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.128 milliseconds in repetition 88
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.232 milliseconds in repetition 89
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 90
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 91
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 92
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 93
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 94
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 95
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 96
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 97
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 98
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 99
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 100
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 101
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 102
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.244 milliseconds in repetition 103
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 104
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 105
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 106
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 107
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 108
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 109
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.591 milliseconds in repetition 110
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 111
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 112
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 113
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.614 milliseconds in repetition 114
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 115
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.015 milliseconds in repetition 116
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.247 milliseconds in repetition 117
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 118
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 119
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 120
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 121
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 122
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 123
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 124
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 125
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 126
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 127
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.986 milliseconds in repetition 128
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.294 milliseconds in repetition 129
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 130
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 131
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 132
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 133
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 134
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 135
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 136
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 137
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 138
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 139
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 140
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 141
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 142
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 143
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 144
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 145
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.272 milliseconds in repetition 146
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 147
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 148
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 149
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 150
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 151
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 152
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 153
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 154
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 155
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.375 milliseconds in repetition 156
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.242 milliseconds in repetition 157
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.205 milliseconds in repetition 158
+
+
+vwbvbrvrrevrie-->1536Round trip time was  7.602 milliseconds in repetition 159
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.462 milliseconds in repetition 160
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.294 milliseconds in repetition 161
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.365 milliseconds in repetition 162
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.227 milliseconds in repetition 163
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.210 milliseconds in repetition 164
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.205 milliseconds in repetition 165
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.278 milliseconds in repetition 166
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.098 milliseconds in repetition 167
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.368 milliseconds in repetition 168
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 169
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 170
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.223 milliseconds in repetition 171
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 172
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.233 milliseconds in repetition 173
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.323 milliseconds in repetition 174
+
+
+vwbvbrvrrevrie-->1536Round trip time was  4.597 milliseconds in repetition 175
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.436 milliseconds in repetition 176
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.247 milliseconds in repetition 177
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.246 milliseconds in repetition 178
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 179
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.207 milliseconds in repetition 180
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 181
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 182
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 183
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 184
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 185
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.653 milliseconds in repetition 186
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.227 milliseconds in repetition 187
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 188
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 189
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 190
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.217 milliseconds in repetition 191
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.204 milliseconds in repetition 192
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 193
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 194
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 195
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 196
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 197
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 198
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 199
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 200
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 201
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.206 milliseconds in repetition 202
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.452 milliseconds in repetition 203
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.769 milliseconds in repetition 204
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.269 milliseconds in repetition 205
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.221 milliseconds in repetition 206
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 207
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 208
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.328 milliseconds in repetition 209
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 210
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 211
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 212
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 213
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 214
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 215
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 216
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 217
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 218
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.262 milliseconds in repetition 219
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.241 milliseconds in repetition 220
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.214 milliseconds in repetition 221
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.244 milliseconds in repetition 222
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 223
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.295 milliseconds in repetition 224
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 225
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 226
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 227
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 228
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.935 milliseconds in repetition 229
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.214 milliseconds in repetition 230
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 231
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 232
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 233
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.140 milliseconds in repetition 234
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.254 milliseconds in repetition 235
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 236
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 237
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.204 milliseconds in repetition 238
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 239
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.880 milliseconds in repetition 240
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.225 milliseconds in repetition 241
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.212 milliseconds in repetition 242
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 243
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 244
+
+
+vwbvbrvrrevrie-->1536Round trip time was  2.314 milliseconds in repetition 245
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.268 milliseconds in repetition 246
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.268 milliseconds in repetition 247
+
+
+vwbvbrvrrevrie-->1536Round trip time was  2.082 milliseconds in repetition 248
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.224 milliseconds in repetition 249
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 250
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 251
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 252
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.206 milliseconds in repetition 253
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.454 milliseconds in repetition 254
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.437 milliseconds in repetition 255
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.056 milliseconds in repetition 256
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.622 milliseconds in repetition 257
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.210 milliseconds in repetition 258
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 259
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.504 milliseconds in repetition 260
+
+
+vwbvbrvrrevrie-->1536Round trip time was  4.497 milliseconds in repetition 261
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.268 milliseconds in repetition 262
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.523 milliseconds in repetition 263
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.251 milliseconds in repetition 264
+
+
+vwbvbrvrrevrie-->1536Round trip time was  2.273 milliseconds in repetition 265
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.247 milliseconds in repetition 266
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.213 milliseconds in repetition 267
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.206 milliseconds in repetition 268
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 269
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 270
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.356 milliseconds in repetition 271
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 272
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 273
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 274
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 275
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 276
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.198 milliseconds in repetition 277
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 278
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 279
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 280
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 281
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.808 milliseconds in repetition 282
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.237 milliseconds in repetition 283
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.209 milliseconds in repetition 284
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 285
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 286
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.211 milliseconds in repetition 287
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 288
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 289
+
+
+vwbvbrvrrevrie-->-1Round trip time was 10.810 milliseconds in repetition 290
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.350 milliseconds in repetition 291
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.205 milliseconds in repetition 292
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 293
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.644 milliseconds in repetition 294
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.214 milliseconds in repetition 295
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.639 milliseconds in repetition 296
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.205 milliseconds in repetition 297
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 298
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.938 milliseconds in repetition 299
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 300
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 301
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.308 milliseconds in repetition 302
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.633 milliseconds in repetition 303
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.214 milliseconds in repetition 304
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 305
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 306
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 307
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 308
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.260 milliseconds in repetition 309
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 310
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 311
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 312
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 313
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 314
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 315
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 316
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 317
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 318
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.507 milliseconds in repetition 319
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.215 milliseconds in repetition 320
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.196 milliseconds in repetition 321
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 322
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 323
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 324
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 325
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 326
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.238 milliseconds in repetition 327
+
+
+vwbvbrvrrevrie-->-1Round trip time was  7.684 milliseconds in repetition 328
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.236 milliseconds in repetition 329
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.209 milliseconds in repetition 330
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 331
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.212 milliseconds in repetition 332
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.205 milliseconds in repetition 333
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.212 milliseconds in repetition 334
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 335
+
+
+vwbvbrvrrevrie-->1536Round trip time was  2.737 milliseconds in repetition 336
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.230 milliseconds in repetition 337
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 338
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.309 milliseconds in repetition 339
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 340
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 341
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 342
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.213 milliseconds in repetition 343
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.207 milliseconds in repetition 344
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 345
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 346
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 347
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 348
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.530 milliseconds in repetition 349
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.218 milliseconds in repetition 350
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.398 milliseconds in repetition 351
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 352
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 353
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 354
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 355
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 356
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 357
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 358
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 359
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 360
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.807 milliseconds in repetition 361
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.221 milliseconds in repetition 362
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 363
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 364
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.221 milliseconds in repetition 365
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.217 milliseconds in repetition 366
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 367
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 368
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 369
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 370
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 371
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 372
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 373
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 374
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 375
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 376
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.609 milliseconds in repetition 377
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 378
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 379
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 380
+
+
+vwbvbrvrrevrie-->1536Round trip time was  3.193 milliseconds in repetition 381
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.225 milliseconds in repetition 382
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 383
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 384
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 385
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 386
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.217 milliseconds in repetition 387
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.207 milliseconds in repetition 388
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 389
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 390
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 391
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 392
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 393
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 394
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 395
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 396
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 397
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 398
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.239 milliseconds in repetition 399
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 400
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 401
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 402
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 403
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.352 milliseconds in repetition 404
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 405
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 406
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 407
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 408
+
+
+vwbvbrvrrevrie-->1536Round trip time was  4.303 milliseconds in repetition 409
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.244 milliseconds in repetition 410
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 411
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 412
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 413
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.193 milliseconds in repetition 414
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 415
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.288 milliseconds in repetition 416
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 417
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 418
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 419
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 420
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 421
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 422
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 423
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 424
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 425
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 426
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.195 milliseconds in repetition 427
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 428
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 429
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 430
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 431
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 432
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 433
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 434
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.267 milliseconds in repetition 435
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 436
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 437
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 438
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 439
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 440
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 441
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 442
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.185 milliseconds in repetition 443
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.190 milliseconds in repetition 444
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 445
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 446
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 447
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 448
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 449
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 450
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.186 milliseconds in repetition 451
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.918 milliseconds in repetition 452
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.222 milliseconds in repetition 453
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 454
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 455
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.189 milliseconds in repetition 456
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 457
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 458
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 459
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 460
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 461
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 462
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.258 milliseconds in repetition 463
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.185 milliseconds in repetition 464
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.188 milliseconds in repetition 465
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.187 milliseconds in repetition 466
+
+
+vwbvbrvrrevrie-->1536Round trip time was  4.825 milliseconds in repetition 467
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.373 milliseconds in repetition 468
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.197 milliseconds in repetition 469
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.191 milliseconds in repetition 470
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.194 milliseconds in repetition 471
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 472
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.211 milliseconds in repetition 473
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.310 milliseconds in repetition 474
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.419 milliseconds in repetition 475
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.326 milliseconds in repetition 476
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.199 milliseconds in repetition 477
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.192 milliseconds in repetition 478
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.271 milliseconds in repetition 479
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.211 milliseconds in repetition 480
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.725 milliseconds in repetition 481
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.218 milliseconds in repetition 482
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.205 milliseconds in repetition 483
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 484
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 485
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.200 milliseconds in repetition 486
+
+
+vwbvbrvrrevrie-->-1Round trip time was  2.450 milliseconds in repetition 487
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.613 milliseconds in repetition 488
+
+
+vwbvbrvrrevrie-->1536Round trip time was  6.608 milliseconds in repetition 489
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.436 milliseconds in repetition 490
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.215 milliseconds in repetition 491
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.208 milliseconds in repetition 492
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.207 milliseconds in repetition 493
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.210 milliseconds in repetition 494
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.206 milliseconds in repetition 495
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.204 milliseconds in repetition 496
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.202 milliseconds in repetition 497
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.207 milliseconds in repetition 498
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.203 milliseconds in repetition 499
+
+
+vwbvbrvrrevrie-->1536Round trip time was  0.201 milliseconds in repetition 500
+
+
+vwbvbrvrrevrie-->1536Round trip time was  1.422 milliseconds in repetition 501
+
+ ... clock resolution was 1e-06
+UDP Ping:  Statistics over 501 repetitions of 1536 byte messages
+
+RTT : percentile 10: 0.187995, median: 0.198995, percentile 90: 0.638982, average: 0.503459, variance: 1.25826
+
+RTT histogram:
+0.184994 437
+0.716228 21
+1.24746 8
+1.7787 8
+2.30993 4
+2.84117 4
+3.3724 6
+3.90364 2
+4.43487 3
+4.96611 1
+5.49734 1
+6.02858 0
+6.55981 1
+7.09105 0
+7.62228 2
+8.15352 1
+8.68475 1
+9.21599 0
+9.74722 0
+10.2785 0
+10.8097 1
+   median Throughput : 15437.6 KB/s   overall Throughput : 6101.79 KB/s
+

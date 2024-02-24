@@ -1,0 +1,1536 @@
+UDP Ping trying to connect to server localhost (127.0.0.1) on TCP port 1491
+ ... connected to Pong server: asking for 501 repetitions of 256 _bytes UDP messages
+ ... Pong server agreed to ping-pong using port 62832 :-)
+
+
+vwbvbrvrrevrie-->256Round trip time was  5.348 milliseconds in repetition 1
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.362 milliseconds in repetition 2
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.221 milliseconds in repetition 3
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.208 milliseconds in repetition 4
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.206 milliseconds in repetition 5
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 6
+
+
+vwbvbrvrrevrie-->256Round trip time was  1.332 milliseconds in repetition 7
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.269 milliseconds in repetition 8
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.206 milliseconds in repetition 9
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.197 milliseconds in repetition 10
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 11
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 12
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 13
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 14
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 15
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 16
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.735 milliseconds in repetition 17
+
+
+vwbvbrvrrevrie-->256Round trip time was  1.266 milliseconds in repetition 18
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.244 milliseconds in repetition 19
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.703 milliseconds in repetition 20
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.219 milliseconds in repetition 21
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 22
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 23
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.348 milliseconds in repetition 24
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 25
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 26
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 27
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 28
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 29
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 30
+
+
+vwbvbrvrrevrie-->256Round trip time was  4.004 milliseconds in repetition 31
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.264 milliseconds in repetition 32
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.215 milliseconds in repetition 33
+
+
+vwbvbrvrrevrie-->256Round trip time was  1.351 milliseconds in repetition 34
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.210 milliseconds in repetition 35
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 36
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 37
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 38
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 39
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 40
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 41
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 42
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.383 milliseconds in repetition 43
+
+
+vwbvbrvrrevrie-->256Round trip time was  4.142 milliseconds in repetition 44
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.653 milliseconds in repetition 45
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.214 milliseconds in repetition 46
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.223 milliseconds in repetition 47
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.210 milliseconds in repetition 48
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.211 milliseconds in repetition 49
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.608 milliseconds in repetition 50
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.212 milliseconds in repetition 51
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.197 milliseconds in repetition 52
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 53
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 54
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 55
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 56
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 57
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 58
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 59
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 60
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 61
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.330 milliseconds in repetition 62
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.651 milliseconds in repetition 63
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.214 milliseconds in repetition 64
+
+
+vwbvbrvrrevrie-->256Round trip time was  1.009 milliseconds in repetition 65
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.210 milliseconds in repetition 66
+
+
+vwbvbrvrrevrie-->256Round trip time was  1.243 milliseconds in repetition 67
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.325 milliseconds in repetition 68
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.218 milliseconds in repetition 69
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.227 milliseconds in repetition 70
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.453 milliseconds in repetition 71
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.205 milliseconds in repetition 72
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 73
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 74
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 75
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 76
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 77
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 78
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 79
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 80
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 81
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 82
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 83
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.233 milliseconds in repetition 84
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 85
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 86
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 87
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 88
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 89
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 90
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 91
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 92
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 93
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 94
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 95
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 96
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 97
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 98
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 99
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 100
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 101
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.443 milliseconds in repetition 102
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 103
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 104
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 105
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 106
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.208 milliseconds in repetition 107
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 108
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 109
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 110
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 111
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 112
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 113
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 114
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 115
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 116
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 117
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 118
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 119
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 120
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 121
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 122
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.184 milliseconds in repetition 123
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.184 milliseconds in repetition 124
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.183 milliseconds in repetition 125
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.183 milliseconds in repetition 126
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.184 milliseconds in repetition 127
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.284 milliseconds in repetition 128
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 129
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 130
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 131
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 132
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 133
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 134
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 135
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 136
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 137
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 138
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 139
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.397 milliseconds in repetition 140
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 141
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 142
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 143
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 144
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 145
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 146
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 147
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 148
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 149
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.184 milliseconds in repetition 150
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 151
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 152
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.312 milliseconds in repetition 153
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 154
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 155
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 156
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 157
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 158
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 159
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.182 milliseconds in repetition 160
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.182 milliseconds in repetition 161
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.182 milliseconds in repetition 162
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.183 milliseconds in repetition 163
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.182 milliseconds in repetition 164
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.314 milliseconds in repetition 165
+
+
+vwbvbrvrrevrie-->-1Round trip time was  3.980 milliseconds in repetition 166
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.202 milliseconds in repetition 167
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 168
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 169
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 170
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 171
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 172
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 173
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 174
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 175
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 176
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 177
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 178
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 179
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 180
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 181
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 182
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 183
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.232 milliseconds in repetition 184
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 185
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 186
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 187
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.210 milliseconds in repetition 188
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 189
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 190
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 191
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 192
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 193
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 194
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 195
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 196
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 197
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 198
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 199
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 200
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 201
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 202
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.274 milliseconds in repetition 203
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 204
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 205
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 206
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 207
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 208
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 209
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 210
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 211
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 212
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 213
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.231 milliseconds in repetition 214
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.210 milliseconds in repetition 215
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.205 milliseconds in repetition 216
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 217
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 218
+
+
+vwbvbrvrrevrie-->256Round trip time was  3.640 milliseconds in repetition 219
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.264 milliseconds in repetition 220
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 221
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.250 milliseconds in repetition 222
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 223
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 224
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.226 milliseconds in repetition 225
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.203 milliseconds in repetition 226
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 227
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.281 milliseconds in repetition 228
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.219 milliseconds in repetition 229
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 230
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.202 milliseconds in repetition 231
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 232
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.201 milliseconds in repetition 233
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 234
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 235
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 236
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 237
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 238
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 239
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.250 milliseconds in repetition 240
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.197 milliseconds in repetition 241
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.197 milliseconds in repetition 242
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 243
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 244
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 245
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 246
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 247
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 248
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 249
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 250
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 251
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 252
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 253
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 254
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 255
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.201 milliseconds in repetition 256
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 257
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 258
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 259
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 260
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 261
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.205 milliseconds in repetition 262
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 263
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.251 milliseconds in repetition 264
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 265
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 266
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 267
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 268
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 269
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 270
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.202 milliseconds in repetition 271
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 272
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 273
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 274
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.223 milliseconds in repetition 275
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.236 milliseconds in repetition 276
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 277
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 278
+
+
+vwbvbrvrrevrie-->256Round trip time was  5.524 milliseconds in repetition 279
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.333 milliseconds in repetition 280
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.206 milliseconds in repetition 281
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 282
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 283
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 284
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 285
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 286
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 287
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 288
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.258 milliseconds in repetition 289
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 290
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 291
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 292
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 293
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 294
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 295
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 296
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 297
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 298
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 299
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 300
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 301
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 302
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 303
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 304
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 305
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 306
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 307
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 308
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 309
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.183 milliseconds in repetition 310
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.184 milliseconds in repetition 311
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.183 milliseconds in repetition 312
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.268 milliseconds in repetition 313
+
+
+vwbvbrvrrevrie-->-1Round trip time was  7.081 milliseconds in repetition 314
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.218 milliseconds in repetition 315
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 316
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 317
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 318
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 319
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 320
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 321
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.255 milliseconds in repetition 322
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.212 milliseconds in repetition 323
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 324
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.201 milliseconds in repetition 325
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 326
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.204 milliseconds in repetition 327
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.201 milliseconds in repetition 328
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.201 milliseconds in repetition 329
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.320 milliseconds in repetition 330
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.246 milliseconds in repetition 331
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.222 milliseconds in repetition 332
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 333
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 334
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 335
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 336
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.197 milliseconds in repetition 337
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 338
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.234 milliseconds in repetition 339
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 340
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 341
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 342
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 343
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 344
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 345
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.185 milliseconds in repetition 346
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 347
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 348
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 349
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.184 milliseconds in repetition 350
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 351
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.197 milliseconds in repetition 352
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.250 milliseconds in repetition 353
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.498 milliseconds in repetition 354
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.438 milliseconds in repetition 355
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 356
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 357
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.485 milliseconds in repetition 358
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.400 milliseconds in repetition 359
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.248 milliseconds in repetition 360
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.238 milliseconds in repetition 361
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.293 milliseconds in repetition 362
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.218 milliseconds in repetition 363
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.209 milliseconds in repetition 364
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.299 milliseconds in repetition 365
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.327 milliseconds in repetition 366
+
+
+vwbvbrvrrevrie-->256Round trip time was  7.033 milliseconds in repetition 367
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.367 milliseconds in repetition 368
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.371 milliseconds in repetition 369
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.215 milliseconds in repetition 370
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.204 milliseconds in repetition 371
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.202 milliseconds in repetition 372
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 373
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 374
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 375
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 376
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 377
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 378
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 379
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 380
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 381
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 382
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 383
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 384
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 385
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 386
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.230 milliseconds in repetition 387
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.263 milliseconds in repetition 388
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 389
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.198 milliseconds in repetition 390
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 391
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 392
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 393
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.197 milliseconds in repetition 394
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 395
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 396
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 397
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 398
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 399
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.203 milliseconds in repetition 400
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 401
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 402
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 403
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 404
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 405
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.246 milliseconds in repetition 406
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.219 milliseconds in repetition 407
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 408
+
+
+vwbvbrvrrevrie-->256Round trip time was  4.203 milliseconds in repetition 409
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.365 milliseconds in repetition 410
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.216 milliseconds in repetition 411
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.208 milliseconds in repetition 412
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.205 milliseconds in repetition 413
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.200 milliseconds in repetition 414
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 415
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 416
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 417
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.406 milliseconds in repetition 418
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 419
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 420
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 421
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 422
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 423
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 424
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 425
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 426
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 427
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 428
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 429
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 430
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 431
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 432
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 433
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.201 milliseconds in repetition 434
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.255 milliseconds in repetition 435
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.212 milliseconds in repetition 436
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 437
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 438
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 439
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 440
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.211 milliseconds in repetition 441
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.262 milliseconds in repetition 442
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 443
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.192 milliseconds in repetition 444
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.203 milliseconds in repetition 445
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 446
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 447
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 448
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 449
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 450
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 451
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 452
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 453
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 454
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 455
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 456
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 457
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.241 milliseconds in repetition 458
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.246 milliseconds in repetition 459
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.212 milliseconds in repetition 460
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.222 milliseconds in repetition 461
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.208 milliseconds in repetition 462
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.266 milliseconds in repetition 463
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.240 milliseconds in repetition 464
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.216 milliseconds in repetition 465
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.273 milliseconds in repetition 466
+
+
+vwbvbrvrrevrie-->256Round trip time was  4.442 milliseconds in repetition 467
+
+
+vwbvbrvrrevrie-->-1Round trip time was 10.087 milliseconds in repetition 468
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.235 milliseconds in repetition 469
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.196 milliseconds in repetition 470
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 471
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 472
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 473
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 474
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 475
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 476
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 477
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 478
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 479
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 480
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 481
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 482
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 483
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.234 milliseconds in repetition 484
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.191 milliseconds in repetition 485
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 486
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 487
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.189 milliseconds in repetition 488
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.186 milliseconds in repetition 489
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.193 milliseconds in repetition 490
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.188 milliseconds in repetition 491
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.194 milliseconds in repetition 492
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.195 milliseconds in repetition 493
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.199 milliseconds in repetition 494
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.187 milliseconds in repetition 495
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.220 milliseconds in repetition 496
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.514 milliseconds in repetition 497
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.202 milliseconds in repetition 498
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 499
+
+
+vwbvbrvrrevrie-->256Round trip time was  0.190 milliseconds in repetition 500
+
+
+vwbvbrvrrevrie-->256Round trip time was  1.468 milliseconds in repetition 501
+
+ ... clock resolution was 1e-06
+UDP Ping:  Statistics over 501 repetitions of 256 byte messages
+
+RTT : percentile 10: 0.185995, median: 0.192994, percentile 90: 0.268992, average: 0.338523, variance: 0.672733
+
+RTT histogram:
+0.181994 473
+0.677229 11
+1.17247 5
+1.6677 1
+2.16294 0
+2.65817 0
+3.15341 0
+3.64864 1
+4.14388 4
+4.63912 1
+5.13435 1
+5.62959 1
+6.12482 0
+6.62006 0
+7.11529 2
+7.61053 0
+8.10577 0
+8.601 0
+9.09624 0
+9.59147 0
+10.0867 1
+   median Throughput : 2652.93 KB/s   overall Throughput : 1512.45 KB/s
+
