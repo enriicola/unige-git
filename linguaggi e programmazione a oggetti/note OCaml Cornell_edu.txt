@@ -1,0 +1,845 @@
+
+# Higher-order Programming
+
+* * *
+<i>
+Topics:
+
+* higher-order functions
+* the Abstraction Principle
+* map
+* filter
+* fold right
+* fold left
+* folding over types other than lists
+* pipelining
+
+</i>
+* * *
+
+## Higher-order functions
+
+Functions are values just like any other value in OCaml. What does that
+mean exactly? This means that we can pass functions around as arguments
+to other functions, that we can store functions in data structures, that
+we can return functions as a result from other functions.
+
+Let us look at why it is useful to have higher-order functions. The
+first reason is that it allows you to write general, reusable code.
+Consider these functions `double` and `square` on integers:
+
+```
+let double x = 2 * x
+let square x = x * x
+```
+
+Let's use these functions to write other functions that
+quadruple and raise a number to the fourth power:
+```
+let quad x   = double (double x)
+let fourth x = square (square x)
+```
+
+There is an obvious similarity between these two functions: what they do
+is apply a given function twice to a value. By passing in the function
+to another function `twice` as an argument, we can abstract this
+functionality:
+
+```
+let twice f x = f (f x)
+(* twice : ('a -> 'a) -> 'a -> 'a *)
+```
+
+Using `twice`, we can implement `quad` and `fourth` in a uniform way:
+
+```
+let quad   x = twice double x
+let fourth x = twice square x
+```
+
+*Higher-order functions* either take other functions as input or return
+other functions as output (or both).  The function `twice` is higher-order: 
+its input `f` is a function.  And&mdash;recalling that all OCaml functions
+really take only a single argument&mdash;its output is technically 
+`fun x -> f (f x)`, so `twice` returns a function hence is also higher-order
+in that way.  Higher-order functions are also known as *functionals*, and
+programming with them could be called *functional programming*&mdash;indicating
+what the heart of programming in languages like OCaml is all about.
+
+* * * 
+<i>
+
+**Higher Order**
+
+The phrase "higher order" is used throughout logic and computer science,
+though not necessarily with a precise or consistent meaning in all
+cases.  
+
+In logic, *first-order quantification* refers to the kind of universal
+and existential (\\(\forall\\) and \\(\exists\\)) quantifiers that you
+see in CS 2800.  These let you quantify over some *domain* of interest,
+such as the natural numbers.  But for any given quantification, say
+\\(\forall x\\), the variable being quantified represents an individual
+element of that domain, say the natural number 42.
+
+*Second-order quantification* lets you do something strictly more
+powerful, which is to quantify over *properties* of the domain.
+Properties are assertions about individual elements, for example, that a
+natural number is even, or that it is prime.  In some logics we can
+equate properties with sets of individual, for example the set of all
+even naturals.  So second-order quantification is often thought of as
+quantification over *sets*. You can also think of properties as being
+functions that take in an element and return a Boolean indicating
+whether the element satisfies the property; this is called the
+*characteristic function* of the property.
+
+*Third-order* logic would allow quantification over properties of
+properties, and *fourth-order* over properties of properties of
+properties, and so forth. *Higher-order logic* refers to all these
+logics that are more powerful than first-order logic; though one
+interesting result in this area is that all higher-order logics can be
+expressed in second-order logic. 
+
+In programming languages, *first-order functions* similarly refer to
+functions that operate on individual data elements (e.g., strings, ints,
+records, variants, etc.).  Whereas *higher-order function* can operate
+on functions, much like higher-order logics can quantify over over
+properties (which are like functions).
+
+</i>
+* * *
+
+## The Abstraction Principle
+
+Above, we have exploited the structural similarity between `quad` and
+`fourth` to save work. Admittedly, in this toy example it might not seem
+like much work. But imagine that `twice` were actually some much more
+complicated function. Then if someone comes up with a more efficient
+version of it, every function written in terms of it (like `quad` and
+`fourth`) could benefit from that improvement in efficiency, without
+needing to be recoded.
+
+Part of being an excellent programmer is recognizing such similarities
+and *abstracting* them by creating functions (or other units of code)
+that implement them.  This is known as the **Abstraction Principle**,
+which says to avoid requiring something to be stated more than once;
+instead, *factor out* the recurring pattern.
+
+Higher-order functions enable such refactoring, because they allow
+us to factor out functions and parameterize functions on other functions.
+
+## Other basic higher-order functions
+
+Besides `twice`, here are some more relatively simple examples. 
+
+**Apply.** We can write
+a function that applies its first input to its second input:
+```
+let apply f x = f x
+```
+Of course, writing `apply f` is a lot more work than just writing `f`.
+
+**Pipeline.** The pipeline operator, which we've previously seen,
+is a higher-order function:
+```
+let pipeline x f = f x
+let (|>) = pipeline
+let x = 5 |> double  (* 10 *)
+```
+
+**Compose.** We can write a function that composes two other functions:
+```
+let compose f g x = f (g x)
+```
+This function would let us create a new function that can be applied
+many times, such as the following:
+```
+let square_then_double = compose double square
+let x = square_then_double 1  (* 2 *)
+let y = square_then_double 2  (* 8 *)
+```
+
+**Both.** We can write a function that applies two functions
+to the same argument and returns a pair of the result:
+```
+let both f g x = (f x, g x)
+let ds = both double square
+let p = ds 3  (* (6,9) *)
+```
+
+**Cond.** We can write a function that conditionally chooses
+which of two functions to apply based on a predicate:
+```
+let cond p f g x =
+  if p x then f x else g x
+```
+
+Having seen some simpler examples, let's move on to some more
+complicated but really useful examples of higher-order functions.
+
+## Map
+
+Here are two functions we might want to write:
+```
+(* add 1 to each element of list *)
+let rec add1 = function
+  | [] -> []
+  | h::t -> (h+1)::(add1 t)
+  
+(* concatenate "3110" to each element of list *)
+let rec concat3110 = function
+  | [] -> []
+  | h::t -> (h^"3110")::(concat3110 t)
+```
+
+When given input `[a; b; c]` they produce these results:
+```
+add1:       [a+1;      b+1;      c+1]
+concat3110: [a^"3110"; b^"3110"; c^"3110"]
+```
+Let's introduce these definitions:
+```
+let f = fun x -> x+1
+let g = fun x -> x^"3110"
+```
+Then we can rewrite the previous results as:
+```
+add1:       [f a; f b; f c]
+concat3110: [g a; g b; g c]
+```
+
+Once again we notice some common structure that could be factored out.
+The only real difference between these two functions is that they
+apply a different function when transforming the head element.
+
+So let's *abstract* that function from the definitions of `add1` and
+`concat3110`, and make it an argument.  Call the unified version of the two
+`map`, because it *maps* each element of the list through a function:
+```
+(* [map f [x1; x2; ...; xn]] is [f x1; f x2; ...; f xn] *)
+let rec map f = function
+  | [] -> []
+  | h::t -> (f h)::(map f t)
+```
+Now we can implement our original two functions quite simply:
+```
+let add1 lst = map (fun x -> x+1) lst
+let concat3110 lst = map (fun x -> x^"3110") lst
+```
+And we can even remove the `lst` everywhere it appears, relying 
+on the fact that `map f` will return a function that expects an input list:
+```
+let add1 = map (fun x -> x+1) 
+let concat3110 = map (fun x -> x^"3110") 
+```
+It's worthwhile putting both those version of the functions, with and without
+`lst`, into the toplevel so that you can observe that the types do not change.
+
+We have now successfully applied the Abstraction Principle: the common structure
+has been factored out.  What's left clearly expresses the computation, at
+least to the reader who is familiar with `map`, in a way that the original
+versions do not as quickly make apparent.
+
+The idea of map exists in many programming languages.  It's called
+`List.map` in the OCaml standard library.  Python 3.5 also has it:
+```
+>>> print(list(map(lambda x: x+1, [1,2,3])))
+[2, 3, 4]
+```
+Java 8 recently added [map][java8map] too.
+
+[java8map]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#map-java.util.function.Function-
+
+## Filter
+
+Here are two functions we might want to write:
+```
+let rec evens = function
+  | [] -> []
+  | h::t -> if even h then h::(evens t) else evens t
+  
+let rec odds = function  
+  | [] -> []
+  | h::t -> if odd h then h::(odds t) else odds t
+```
+Those two functions rely on a couple simple helper functions:
+```
+let even n = 
+  n mod 2 = 0
+
+let odd n = 
+  n mod 2 <> 0
+```
+
+When applied, `evens` and `odds` return the even or odd integers in a list:
+```
+# evens [1;2;3;4] 
+- : int list = [2;4]
+# odds [1;2;3;4] 
+- : int list = [1;3]
+```
+
+Those functions once again share some common structure:  the only essential
+difference is the test they apply to the head element.  So let's factor out
+that test as a function, and parameterize a unified version of the functions 
+on it:
+
+```
+(* [filter p l] is the list of elements of [l] that satisfy the predicate [p]. 
+ * The order of the elements in the input list is preserved. *)
+let rec filter f = function
+  | [] -> []
+  | h::t -> if f h then h::(filter f t) else filter f t
+```
+
+And now we can reimplement our original two functions:
+```
+let evens = filter even
+let odds  = filter odd
+```
+How simple these are!  How clear!  (At least to the reader who is
+familiar with `filter`.)
+
+Again, the idea of filter exists in many programming languages.  It's
+`List.filter` in OCaml.  It's in Python 3.5:
+```
+>>> print(list(filter(lambda x: x%2 == 0, [1,2,3,4])))
+[2, 4]
+```
+Java 8 recently added [filter][java8filter] too.
+
+[java8filter]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#filter-java.util.function.Predicate-
+
+## Fold right
+
+The map functional gives us a way to individually transform each element
+of a list.  The filter functional gives us a way to individually decide
+whether to keep or throw away each element of a list.  But both of those
+are really just looking at a single element at a time.  What if we wanted
+to somehow combine all the elements of a list?
+
+Once more, let's write two functions:
+```
+let rec sum = function
+  | [] -> 0
+  | h::t -> h + sum t
+  
+let concat = function
+  | [] -> ""
+  | h::t -> h ^ concat t
+```
+
+As before, the functions share a great deal of common structure. 
+The differences are:
+
+* the case for the empty list returns a different initial value, `0` vs `""`
+
+* the case of a non-empty list uses a different operator to combine
+  the head element with the result of the recursive call, `+` vs `^`.
+
+So can we apply the Abstraction Principle again?  Sure!  This time we
+need to factor out two arguments:  one for each of those two differences.
+
+Here's how we could rewrite the functions to factor out just the initial value
+(we won't factor out an operator just yet):
+```
+let rec sum' init = function
+  | [] -> init
+  | h::t -> h + sum' init t
+
+let sum = sum' 0
+
+let rec concat' init = function
+  | [] -> init
+  | h::t -> h + concat' init t
+  
+let concat = concat' ""
+```
+Now the only real difference left between `sum'` and `concat'` is the operator.
+That can also become an argument to a unified function we call `combine`:
+```
+let rec combine op init = function
+  | [] -> init
+  | h::t -> op h (combine op init t)
+  
+let sum    = combine (+) 0
+let concat = combine (^) ""
+```
+Once more, the Abstraction Principle has led us to an amazingly simple and
+succinct expression of the computation.  One way of thinking of the first two
+arguments `op` and `init` to `combine` is that they say what to do for the two possible
+constructors of the implicit third argument:  if the third argument is constructed
+with `[]`, then return `init`.  If it's constructed with `::`, then return `op`
+applied to the values found inside the data that `::` carries.  Of course, one
+of the data items that `::` carries is itself another list, so we have to
+recursively call `combine` on that list to get a value out that's suitable
+to pass to `op`.
+
+The `combine` function is the basis for an OCaml library function named
+`List.fold_right`. Here is its implementation:
+```
+let rec fold_right op lst init = match lst with
+  | [] -> init
+  | h::t -> op h (fold_right op t init)
+  
+let sum    lst = fold_right (+) lst 0
+let concat lst = fold_right (^) lst ""
+``` 
+This is nearly the same function as `combine`, except that it takes its
+list argument as the penultimate rather than ultimate argument. 
+
+The intuition for why this function is called `fold_right` is that the
+way it works is to "fold in" elements of the list from the right to the left,
+combining each new element using the operator.  For example,
+`fold_right (+) [a;b;c] 0` results in evaluation of the expression
+`a+(b+(c+0))`.  The parentheses associate from the right-most subexpression
+to the left.  
+
+One way to think of `fold_right` would be that the `[]` value in the
+list gets replaced by `init`, and each `::` constructor gets replaced by
+`op`.  For example, `[a;b;c]` is just syntactic sugar for
+`a::(b::(c::[]))`. So if we replace `[]` with `0` and `::` with `(+)`,
+we get `a+(b+(c+0))`.
+
+## Fold left
+
+Given that there's a fold function that works from right to left, it
+stands to reason that there's one that works from left to right.  That
+function is called `List.fold_left` in the OCaml library.  Here is its
+implementation:
+```
+let rec fold_left op acc = function
+    | []   -> acc
+    | h::t -> fold_left op (op acc h) t
+```
+The idea is that `fold_left (+) 0 [a;b;c]` results in evaluation of
+`((0+a)+b)+c`.  The parentheses associate from the left-most
+subexpression to the right.  So `fold_left` is "folding in" elements of
+the list from the left to the right, combining each new element using
+the operator.
+
+This function therefore works a little differently than `fold_right`. 
+As a simple difference, notice that the list argument is the ultimate
+argument rather than penultimate.  
+
+More importantly, the name of the initial value argument has changed
+from `init` to `acc`, because it's no longer going to just be the
+initial value. The reason we call it `acc` is that we think of it as an
+*accumulator*, which is the result of combining list elements so far. 
+In `fold_right`, you will notice that the value passed as the `init`
+argument is the same for every recursive invocation of `fold_right`:
+it's passed all the way down to where it's needed, at the right-most
+element of the list, then used there exactly once. But in `fold_left`,
+you will notice that at each recursive invocation, the value passed as
+the argument `acc` can be different. 
+
+For example, if we want to walk across a list of integers and sum them,
+we could store the current sum in the accumulator. We start with the
+accumulator set to 0. As we come across each new element, we add the
+element to the accumulator. When we reach the end, we return the value
+stored in the accumulator.
+```
+let rec sum' acc = function
+  | []   -> acc
+  | h::t -> sum' (acc+x) xs
+
+let sum = sum' 0
+```
+Our `fold_left` function abstracts from the particular operator used
+in the `sum'`.
+
+Using `fold_left`, we can rewrite `sum` and `concat` as follows:
+
+```
+let sum    = List.fold_left (+) 0  
+let concat = List.fold_left (^) "" 
+```
+We have once more succeeded in applying the Abstraction Principle.
+
+Here is the actual [code from the standard library][list-stdlib-src] that implements
+the two fold functions:
+```
+let rec fold_left f accu l =
+  match l with
+    [] -> accu
+  | a::l -> fold_left f (f accu a) l
+
+let rec fold_right f l accu =
+  match l with
+    [] -> accu
+  | a::l -> f a (fold_right f l accu)
+```
+The library calls the operator (or combining function) `f` instead of
+`op`, and the initial value for `fold_right` it calls `accu` by analogy
+to `fold_left`'s accumulator, even though it's not truly an accumulator
+for `fold_right`.
+
+[list-stdlib-src]: https://github.com/ocaml/ocaml/blob/trunk/stdlib/list.ml#L85
+
+## Fold left vs. fold right
+
+Having built both `fold_right` and `fold_left`, it's worthwhile to
+compare and contrast them.  The immediately obvious difference is
+the order in which they combine elements from the list:  right to left
+vs. left to right.  When the operator being used to combine elements
+is *associative*, that order doesn't doesn't change the final value of
+the computation.  But for non-associative operators like `(-)`, it can:
+```
+# List.fold_right (-) [1;2;3] 0;;  (* 1 - (2 - (3 - 0)) *)
+- : int = 2
+# List.fold_left (-) 0 [1;2;3];;   (* ((0 - 1) - 2) - 3 *)
+- : int = -6 
+```
+
+A second difference is that `fold_left` is tail recursive whereas `fold_right` is
+not. So if you need to use `fold_right` on a very lengthy list, you may
+instead want to reverse the list first then use `fold_left`; the operator
+will need to take its arguments in the reverse order, too:
+```
+# List.fold_right (fun x y -> x - y) [1;2;3] 0;;
+- : int = 2
+
+# List.fold_left (fun y x -> x - y) 0 (List.rev [1;2;3]);;
+- : int = 2
+
+# List.fold_left (fun x y -> y - x) 0 (List.rev (0--1_000_000));;
+- : int = 500000  
+
+# List.fold_right (fun y x -> x - y) (0--1_000_000) 0;;
+Stack overflow during evaluation (looping recursion?)
+```
+Of course we could have written `fun x y -> x - y` as `(-)` in the code above,
+but we didn't in this one case just so you could see how the argument order has to change.
+Recall that `(--)` is an operator we defined in the recitation on lists; `x--y` tail-recursively
+computes the list containing all the integers from `x` to `y` inclusive:
+```
+let (--) i j =
+  let rec from i j l =
+    if i>j then l
+    else from i (j-1) (j::l)
+    in from i j []
+```
+
+We could even define a tail-recursive version of `fold_right` by baking in the list
+reversal:
+```
+let fold_right_tr f l accu =
+  List.fold_left (fun acc elt -> f elt acc) accu (List.rev l)
+
+# fold_right_tr (fun x y -> x - y) (0--1_000_000) 0;;
+- : int = 500000 
+```
+
+A third difference is the types of the functions.  It can be hard to remember
+what those types are!  Luckily we can always ask the toplevel:
+```
+# List.fold_left;;
+- : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+
+# List.fold_right;;
+- : ('a -> 'b -> 'b) -> 'a list -> 'b -> 'b = <fun>
+```
+
+To understand those types, look for the list argument in each one of them.  That tells
+you the type of the values in the list.  Then look for the type of the return value; 
+that tells you the type of the accumulator.  From there you can work out everything else.
+
+* In `fold_left`, the list argument is of type `'b list`, so the list
+  contains values of type `'b`.  The return type is `'a`, so the
+  accumulator has type `'a`.  Knowing that, we can figure out that the
+  second argument is the initial value of the accumulator (because it has
+  type `'a`).  And we can figure out that the first argument, the
+  combining operator, takes as its own first argument an accumulator value
+  (because it has type `'a`), as its own second argument a list element
+  (because it has type `'b`), and returns a new accumulator value.
+  
+* In `fold_right`, the list argument is of type `'a list`, so the list
+  contains values of type `'a`.  The return type is `'b`, so the
+  accumulator has type `'b`.  Knowing that, we can figure out that the
+  third argument is the initial value of the accumulator (because it has
+  type `'b`).  And we can figure out that the first argument, the
+  combining operator, takes as its own second argument an accumulator value
+  (because it has type `'b`), as its own first argument a list element
+  (because it has type `'a`), and returns a new accumulator value.
+
+You might wonder why the argument orders are different between the two `fold`
+functions.
+
+If you find it hard to keep track of all these argument orders, the
+[`ListLabels` module][listlabels] in the standard library can help.  It uses labeled
+arguments to give names to the combining operator (which it calls `f`)
+and the initial accumulator value (which it calls `init`).  Internally,
+the implementation is actually identical to the `List` module.
+```
+# ListLabels.fold_left;;
+- : f:('a -> 'b -> 'a) -> init:'a -> 'b list -> 'a = <fun>
+
+# ListLabels.fold_right;;
+- : f:('a -> 'b -> 'b) -> 'a list -> init:'b -> 'b = <fun>
+
+# ListLabels.fold_left ~f:(fun x y -> x - y) ~init:0 [1;2;3];;
+- : int = -6
+
+# ListLabels.fold_right ~f:(fun y x -> x - y) ~init:0 [1;2;3];;
+- : int = -6
+```
+
+Notice how in the two applications of fold above, we are able to write the arguments
+in a uniform order thanks to their labels.  However, we still have to be careful
+about which argument to the combining operator is the list element vs. the accumulator value.
+
+[listlabels]: http://caml.inria.fr/pub/docs/manual-ocaml/libref/ListLabels.html
+
+* * *
+<i>
+**A digression on labeled arguments and fold**
+
+It's possible to write our own version of the fold functions that would
+label the arguments to the combining operator, so we don't even have to remember
+their order:
+```
+let rec fold_left ~op:(f: acc:'a -> elt:'b -> 'a) ~init:accu l =
+  match l with
+    [] -> accu
+  | a::l -> fold_left ~op:f ~init:(f ~acc:accu ~elt:a) l 
+
+let rec fold_right ~op:(f: elt:'a -> acc:'b -> 'b) l ~init:accu =
+  match l with
+    [] -> accu
+  | a::l -> f ~elt:a ~acc:(fold_right ~op:f l ~init:accu)
+```
+But those functions aren't as useful as they might seem:
+```
+# fold_left ~op:(+) ~init:0 [1;2;3];;
+Error: This expression has type int -> int -> int                                      
+but an expression was expected of type acc:'a -> elt:'b -> 'a
+```
+The problem is that the built-in `(+)` operator doesn't have labeled arguments,
+so we can't pass it in as the combining operator to our labeled functions.
+We'd have to define our own labeled version of it:
+```
+# let add ~acc ~elt = acc+elt;;
+val add : acc:int -> elt:int -> int = <fun>
+
+# fold_left ~op:add ~init:0 [1;2;3];;
+- : int = 6 
+``` 
+But now we have to remember that the `~acc` parameter to `add` will become
+the left-hand argument to `(+)`.  That's not really much of an improvement
+over what we had to remember to begin with.
+
+</i>
+* * *
+
+## Folding is powerful
+
+Folding is so powerful that we can write many other
+list functions in terms of `fold_left` or `fold_right`! For
+example,
+
+```
+let length l = List.fold_left (fun a _ -> a+1) 0 l
+let rev l = List.fold_left (fun a x -> x::a) [] l
+let map f l = List.fold_right (fun x a -> (f x)::a) l []
+let filter f l = List.fold_right (fun x a -> if f x then x::a else a) l []
+```
+
+At this point it begins to become debatable whether it's better to
+express the computations above using folding or using the ways we have
+already seen. Even for an experienced functional programmer,
+understanding what a fold does can take longer than reading the naive
+recursive implementation. If you peruse the standard library, you'll see
+that none of the `List` module internally is implemented in terms of
+folding, which is perhaps one comment on the readability of fold. On the
+other hand, using fold ensures that the programmer doesn't accidentally
+program the recursive traversal incorrectly.  And for a data structure
+that's more complicated than lists, that robustness might be a win.
+
+Speaking of recursing other data structures, here's how we could program
+a fold over a binary tree.  Here's our tree data structure:
+```
+type 'a tree = 
+| Leaf 
+| Node of 'a * 'a tree * 'a tree
+```
+
+Let's develop a fold functional for `'a tree` similar to our
+`fold_right` over `'a list`. Recall what we said above: <i>"One way to
+think of `fold_right` would be that the `[]` value in the list gets
+replaced by `init`, and each `::` constructor gets replaced by `op`. For
+example, `[a;b;c]` is just syntactic sugar for `a::(b::(c::[]))`. So if
+we replace `[]` with `0` and `::` with `(+)`, we get `a+(b+(c+0))`."</i>
+Here's a way we could rewrite `fold_right` that will help us think a little
+more clearly:
+```
+type 'a list =
+  | Nil 
+  | Cons of 'a * 'a list
+
+let rec foldlist init op = function
+  | Nil -> init
+  | Cons (h,t) -> op h (foldlist init op t) 
+```
+All we've done is to change the definition of lists to use constructors written
+with alphabetic characters instead of punctuation, and to change the argument order 
+of the fold function.
+
+For trees, we'll want the initial value to replace each `Leaf`
+constructor, just like it replaced `[]` in lists.  And we'll want each
+`Node` constructor to be replaced by the operator.  But now the operator
+will need to be *ternary* instead of *binary*&mdash;that is, it will
+need to take three arguments instead of two&mdash;because a tree node
+has a value, a left child, and a right child, whereas a list cons had
+only a head and a tail.
+
+Inspired by those observations, here is the fold function on trees:
+```
+let rec foldtree init op = function
+  | Leaf -> init
+  | Node (v,l,r) -> op v (foldtree init op l) (foldtree init op r)
+```
+If you compare that function to `foldlist`, you'll note it very nearly identical.
+There's just one more recursive call in the second pattern-matching branch,
+corresponding to the one more occurrence of `'a tree` in the definition of that type.
+
+We can then use `foldtree` to implement some of the tree functions we've previously seen:
+```
+let size t = foldtree 0 (fun _ l r -> 1 + l + r) t
+let depth t = foldtree 0 (fun _ l r -> 1 + max l r) t
+let preorder t = foldtree [] (fun x l r -> [x] @ l @ r) t
+```
+
+The technique we just used to derive `foldtree` works for any OCaml variant type `t`:
+
+* Write a recursive `fold` function that takes in one argument for each constructor of `t`.
+
+* That `fold` function matches against the constructors, calling itself recursively on
+  any value of type `t` that it encounters.
+
+* Use the appropriate argument of `fold` to combine the results of all recursive
+  calls as well as all data not of type `t` at each constructor.
+  
+This technique constructs something called a *catamorphism*, aka a *generalized fold
+operation*.  To learn more about catamorphisms, take a course on category theory,
+such as CS 6117.
+
+## Pipelining
+
+Suppose we wanted to compute the sum of squares of the numbers from 0 up to `n`.
+How might we go about it?  Of course (math being the best form of optimization),
+the most efficient way would be a closed-form formula: 
+
+\\[\frac{n (n+1) (2n+1)}{6}\\]
+
+But let's imagine you've forgotten that formula.
+In an imperative language you might use a for loop:
+```
+# Python
+def sum_sq(n):
+	sum = 0
+	for i in range(0,n):
+		sum += i*i
+	return sum
+```
+The equivalent recursive code in OCaml would be:
+```
+let sum_sq n =
+  let rec loop i sum =
+    if i>n then sum
+    else loop (i+1) (sum + i*i)
+  in loop 0 0
+```
+
+Another, clearer way of producing the same result in OCaml would be to
+use *pipelining* of a list through several functions:
+```
+let square x = x*x
+let sum = List.fold_left (+) 0
+       
+let sum_sq n =
+  0--n                (* [0;1;2;...;n]   *)
+  |> List.map square  (* [0;1;4;...;n*n] *)
+  |> sum              (*  0+1+4+...+n*n  *)
+```
+The function `sum_sq` first constructs a list containing all the numbers `0..n`.
+Then it uses the pipeline operator `|>` to pass that list through `List.map square`,
+which squares every element.  Then the resulting list is pipelined through
+`sum`, which adds all the elements together. 
+
+Pipelining with lists and other data structures is quite idiomatic.  The other
+alternatives that you might consider are somewhat uglier:
+```
+(* worse: a lot of extra let..in syntax *)
+let sum_sq n =
+  let l = 0--n in
+  let sq_l = List.map square l in
+  sum sq_l
+  
+(* maybe worse:  have to read the function applications from right to left
+ * rather than top to bottom *)
+let sum_sq n =
+  sum (List.map square (0--n))
+```
+
+We could improve our code a little further by using `List.rev_map` instead
+of `List.map`.  `List.rev_map` is a tail-recursive version of `map` that
+reverses the order of the list.  Since `(+)` is associative and commutative, we don't
+mind the list being reversed.
+```
+let sum_sq n =
+  0--n                    (* [0;1;2;...;n]   *)
+  |> List.rev_map square  (* [n*n;...;4;1;0] *)
+  |> sum                  (*  n*n+...+4+1+0  *)
+```
+
+## Summary
+
+This lecture is one of the most important in the course.  It didn't cover any
+new language features.  Instead, we learned how to use some of the existing
+features in ways that might be new, surprising, or challenging.  Higher-order
+programming and the Abstraction Principle are two ideas that will help make
+you a better programmer in any language, not just OCaml.  Of course, languages
+do vary in the extent to which they support these ideas, with some providing
+significantly less assistance in writing higher-order code&mdash;which is one reason
+we use OCaml in this course.  
+
+Map, filter, fold and other functionals are becoming widely recognized as excellent
+ways to structure computation.  Part of the reason for that is they factor out
+the *iteration* over a data structure from the *computation* done at each element.
+Languages such as Python, Ruby, and Java 8 now have support for this kind of
+iteration.
+
+## Terms and concepts
+
+* Abstraction Principle
+* accumulator
+* apply
+* associative
+* compose
+* factor
+* filter
+* first-order function
+* fold
+* functional
+* generalized fold operation
+* higher-order function
+* map
+* pipeline
+* pipelining
+
+## Further reading
+
+* *Introduction to Objective Caml*, chapters 3.1.3, 5.3
+* *OCaml from the Very Beginning*, chapter 6
+* *More OCaml: Algorithms, Methods, and Diversions*, chapter 1, by 
+  John Whitington.  This book is a sequel to *OCaml from the Very Beginning*.
+* *Real World OCaml*, chapter 3 (beware that this book's `Core` library
+  has a different `List` module than the standard library's `List` module,
+  with different types for `map` and `fold` than those we saw here)
+* "Higher Order Functions", chapter 6 of *Functional Programming: Practice and Theory*.
+  Bruce J. MacLennan, Addison-Wesley, 1990.  The discussion of higher-order functions
+  above is indebted to this chapter, which might be difficult to find.
+* "[Second-order and Higher-order Logic][solhol]" in *The Stanford Encyclopedia of Philosophy*.
+
+[solhol]:  http://plato.stanford.edu/entries/logic-higher-order/#4
+

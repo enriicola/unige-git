@@ -1,0 +1,402 @@
+let rec find el = function #2021-09-08
+  hd::tl -> (if el=hd then 1 else 0)+find el tl
+| _ -> 0;;
+
+let acc_find el =
+   let rec aux acc = function
+      hd::tl -> aux(if el=hd then acc+1 else acc) tl
+| _ -> acc
+   in aux 0;;
+
+let rec swap = function #2021-07-12
+   (x,y)::tl -> (y,x)::swap tl
+|  _ -> [];;
+
+let map_swap l = List.map (fun(x,y)->y,x) l;;
+
+let rec list_gen f i n = #2018-01-25
+  if(n<=0) 
+  then []
+  else  i::list_gen f (f i) (n-1);;
+
+let acc_list_gen f v len = let rec
+  aux acc i n = 
+                             if(n<=0)
+                             then acc
+                             else aux (i::acc) (f i) (n-1) 
+  in  List.rev (aux [] v len);;
+
+let rec insert_after p e = function #2018-02-12
+    [] -> []
+  | h::t -> let nt = insert_after p e t in 
+        if p h then h::e::nt else h::nt;;
+
+let acc_insert_after p e l =
+  let rec aux a = function
+      [] -> a
+    | h::t -> aux (if p h then e::h::a else h::a) t
+  in List.rev(aux [] l);;
+
+let acc_insert_after2 p e l = 
+  let rec aux a = function
+      [] -> a
+    | h::t -> aux (if p h then h::e::a else h::a) t
+  in aux [] (List.rev l);;
+
+let it_insert_after p e l = List.rev (List.fold_left (fun a h -> if p h then e::h::a else h::a) [] l);;
+
+let it_insert_after2 p e l = List.fold_left (fun a h -> if p h then h::e::a else h::a) [] (List.rev l);;
+
+let rec first = function #2018-06-04
+    [] -> []
+  | (h1,h2)::t -> h1::first t;;
+
+let acc_first l =
+  let rec aux acc = function
+      [] -> acc
+    | (h1,h2)::t -> aux (h1::acc) t
+  in List.rev (aux [] l);;
+
+let map_first l = List.map (fun (h1,h2) -> h1) l;;
+
+let rec sum_wise l1 l2 = #2022-01-20
+  match l1,l2 with
+    hd1::tl1,hd2::tl2 -> hd1+hd2::sum_wise tl1 tl2
+  | [],[] -> []
+  | _ -> raise (Invalid_argument "sum_wise");;
+
+let acc_sum_wise l =
+  let rec aux acc l1 l2 =
+    match l1,l2 with
+      hd1::tl1,hd2::tl2 -> aux (hd1+hd2::acc) tl1 tl2
+    | [],[] -> List.rev acc
+    | _ -> raise (Invalid_argument "sum_wise")
+  in aux [] l;;
+
+let rec fuse f l1 l2 = match l1,l2 with #2021-06-03
+   hd1::tl1,hd2::tl2 -> f hd1 hd2::fuse f tl1 tl2
+|  _ -> [];;
+
+let acc_fuse f = 
+   let rec aux acc l1 l2 =
+      match l1,l2 with
+         hd1::tl1,hd2::tl2 -> aux (f hd1 hd2::acc) tl1 tl2
+      |  _ -> List.rev acc
+   in aux [];;   
+
+let rec cat = function #2021-06-21
+   (s1,s2)::tl -> (s1^s2)::cat tl
+   | _ -> [];;
+
+let map_cat = List.map (fun (s1,s2) -> s1^s2);; 
+
+let l1 = [(1, "one"); (2, "two"); (3, "three")];; #2020-02-2018
+let l2 = [("one", 1); ("two", 2); ("three", 3)];;
+
+let rec unzip = function
+    (hd1,_)::tl -> hd1::unzip tl
+  | _ -> [];;
+
+let acc_unzip l = 
+  let rec aux acc = function
+      (hd1,_)::tl -> aux (hd1::acc) tl
+    | _ -> List.rev acc
+  in aux [] l;;
+
+let map_unzip l = List.map (fun (hd1,_) -> hd1) l;;
+
+let rec zip l1 l2 = match l1,l2 with #2020-01-23
+    h1::t1,h2::t2 -> (h1,h2)::zip t1 t2
+  | _ -> [];;
+
+let acc_zip l = 
+  let rec aux acc l1 l2 = match l1,l2 with
+      h1::t1,h2::t2 -> aux ((h1,h2)::acc) t1 t2
+    | _ -> List.rev acc
+  in aux [] l;;
+
+  let rec count_zeros f = function #2019-09-09
+    [] -> 0
+  | h::t -> (if f h==0 then 1 else 0) + count_zeros f t;;
+
+let acc_count_zeros f = 
+  let rec aux acc = function
+      [] -> acc
+    | h::t -> aux ((if f h==0 then 1 else 0)+acc) t
+  in aux 0;;
+
+let fold_count_zeros f = List.fold_left (fun acc el -> (if f el==0 then 1 else 0)+acc) 0;;
+
+let rec gen_cat f = function #2019-07-10
+    [] -> ""
+  | h::t -> f h ^ gen_cat f t;;
+
+let acc_gen_cat f = 
+  let rec aux acc = function
+      [] -> acc 
+    | h::t -> aux (acc^f h) t 
+  in aux "";;
+
+let fold_gen_cat f = List.fold_left (fun a e -> a^f e) "";;
+
+let rec gen_prod f = function #2019-06-19
+    [] -> 1
+  | h::t -> f h * gen_prod f t;;
+
+let acc_gen_prod f = 
+  let rec aux acc = function
+      [] -> acc 
+    | h::t -> aux (acc*f h) t 
+  in aux 1;;
+
+let fold_gen_prod f = List.fold_left (fun a e -> a*f e) 1;;
+
+let rec gen_sum f = function #2019-06-05
+    [] -> 0
+  | h::t -> f h + gen_sum f t;;
+
+let acc_gen_sum f = 
+  let rec aux acc = function
+      [] -> acc 
+    | h::t -> aux (acc+f h) t 
+  in aux 0;;
+
+let fold_gen_sum f = List.fold_left (fun a e -> a+f e) 0;;
+
+let rec cond_map f g p = function #2019-02-11
+    [] -> []
+  | h::t -> (if p h then f h else g h)::cond_map f g p t;; 
+
+let acc_cond_map f g p =
+  let rec aux acc = function
+      [] -> List.rev acc
+    | h::t -> aux ((if p h then f h else g h)::acc) t in
+    aux [];; 
+
+List.map;;
+
+let map_cond_map f g p = List.map (fun e -> if p e then f e else g e);;
+
+let rec cond_map f p = function #2019-01-24
+    [] -> []
+  | h::t -> (if p h then f h else h)::cond_map f p t;; 
+
+let acc_cond_map f p =
+  let rec aux acc = function
+      [] -> List.rev acc
+    | h::t -> aux ((if p h then f h else h)::acc) t in
+    aux [];; 
+
+let fold_cond_map f p l = List.fold_left (fun acc h -> (if p h then f h else h)::acc) [] (List.rev l);;
+
+let rec filter_map p f = function #2018-09-10
+    [] -> []
+  | h::t -> let t2=filter_map p f t in if p h then f h::t2 else t2;; 
+
+let acc_filter_map p f l =
+  let rec aux acc = function
+      [] -> acc
+    | h::t -> aux (if p h then f h::acc else acc)  t in
+  List.rev(aux [] l);; 
+
+let fold_filter_map p f l = List.rev (List.fold_left (fun acc h -> if p h then f h::acc else acc) [] l);;
+
+let rec merge f = function #2018-07-11
+    [] -> []
+  | (h1,h2)::t -> f(h1,h2)::merge f t;;
+
+let acc_merge f l =
+  let rec aux acc = function
+      [] -> acc
+    | (h1,h2)::t -> aux (f(h1,h2)::acc) t
+  in List.rev (aux [] l);;
+
+let map_merge f l = List.map f l;;
+
+let rec swap = function #2018-06-20
+    [] -> []
+  | (h1,h2)::t -> (h2,h1)::swap t;;
+
+let acc_swap l =
+  let rec aux acc = function
+      [] -> acc
+    | (h1,h2)::t -> aux ((h2,h1)::acc) t
+  in List.rev (aux [] l);;
+
+let map_swap l = List.map (fun (h1,h2) -> h2,h1) l;;
+
+(* soluzioni laboratori *)
+let rec prod = function
+    hd::tl -> hd * prod tl 
+  | _ -> 1;; (* [] is the remaing case *)
+
+let rec member el = function
+    hd::tl -> el=hd || member el tl
+  | _ -> false;; (* [] is the remaing case *)
+
+let rec insert el = function
+    hd::tl-> hd::if el=hd then tl else insert el tl
+  | _ -> [el];; (* [] is the remaing case *)
+
+let rec odd = function 
+    hd::_::tl -> hd::odd tl
+  | l -> l;; (* shorter than [hd] -> [hd] | [] -> [] *)
+
+let rec ord_insert el = function
+    hd::tl as l -> if el < hd then el::l (* l abbreviates hd::tl *)
+                   else if el=hd then l 
+                   else hd::ord_insert el tl
+  | _ -> [el];; (* [] is the remaing case *)
+
+let rec merge = function
+    hd1::tl1 as l1,(hd2::tl2 as l2) -> if hd1<hd2 then hd1::merge (tl1,l2) (* l1 abbreviates hd1::tl1, l2 abbreviates hd2::tl2 *)
+                                       else if hd1=hd2 then hd1::merge (tl1,tl2) 
+                                       else hd2::merge (l1,tl2)
+  | [],l -> l 
+  | l,_ -> l;; (* l,[] is the remaining case *)
+
+let rec curried_merge l1 l2 = match l1,l2 with
+    hd1::tl1 as l1,(hd2::tl2 as l2) -> if hd1<hd2 then hd1::curried_merge tl1 l2 (* l1 abbreviates hd1::tl1, l2 abbreviates hd2::tl2 *)
+                                       else if hd1=hd2 then hd1::curried_merge tl1 tl2 
+                                       else hd2::curried_merge l1 tl2
+  | [],l -> l 
+  | l,_ -> l;; (* l,[] is the remaining case *)
+
+  let cat = 
+    let rec aux acc = function 
+        hd::tl -> aux (acc ^ hd) tl
+      | _ -> acc
+    in aux "";;
+
+  let fold_cat=List.fold_left (^) "";;
+  
+  let filter p =
+    let rec aux acc = function
+      | hd::tl -> aux (if p hd then hd::acc else acc) tl
+      | _ -> List.rev acc
+    in aux [];;
+  
+  let fold_filter p l= List.rev (List.fold_left (fun acc hd -> if p hd then hd::acc else acc) [] l);;
+  
+  let init n f = 
+    let rec aux acc i = 
+      if i > 0 then let j=i-1 in aux (f j::acc) j
+      else if i=0 then acc
+      else raise (Invalid_argument "init")
+    in  aux [] n;;
+  
+  try init (-1) (fun x->x) with Invalid_argument _ -> [];;
+  
+  let combine_no_err l =
+    let rec aux acc l1 l2 = 
+      match l1,l2 with
+          hd1::tl1,hd2::tl2 -> aux ((hd1,hd2)::acc) tl1 tl2
+        | _ -> List.rev acc
+    in aux [] l;;
+  
+  let combine l =
+    let rec aux acc l1 l2 = 
+      match l1,l2 with
+          hd1::tl1,hd2::tl2 -> aux ((hd1,hd2)::acc) tl1 tl2
+        | [],[] -> List.rev acc
+        | _ -> raise (Invalid_argument "combine")
+    in aux [] l;;
+  
+  try combine [1;2;3] ["a";"b"] with Invalid_argument _ -> [];;
+  
+  let max_list l =
+    let rec aux acc = function
+        hd::tl -> aux (max acc (Some hd)) tl
+      | _ -> acc
+    in aux None l;;
+  
+  type direction =  North | East | South | West;;
+  
+  let versor = function
+      North -> (0,1)
+    | East -> (1,0)
+    | South -> (0,-1)
+    | West -> (-1,0);;
+  
+  type action = Turn of direction | Step of int;;
+  
+  let move (dir,pos) = 
+    let scalar i (x,y) = (i*x,i*y) and
+    add (x1,y1) (x2,y2) = (x1+x2,y1+y2) in
+      function
+          Turn new_dir -> (new_dir,pos)
+        | Step i -> (dir,add pos (scalar i (versor dir)));;
+  
+  let rec go (dir,pos) = function
+      hd::tl -> go (move (dir,pos) hd) tl 
+    | _ -> (dir,pos);;
+  
+  type 'a list_exp_ast = Empty | Single of 'a | Concat of 'a list_exp_ast * 'a list_exp_ast;;
+  
+  let rec eval = function
+      Empty -> []
+    | Single e -> [e]
+    | Concat (l1,l2) -> (eval l1) @ eval l2;;  
+
+(* altre funzioni *)
+count_zeros : (’a -> int) -> ’a list -> int
+count_zeros f l
+
+find : ’a -> ’a list -> int
+find e l
+
+swap : (’a * ’b) list -> (’b * ’a) list
+
+cat : (string * string) list -> string list
+
+fuse : (’a -> ’b -> ’c) -> ’a list -> ’b list -> ’c list
+fuse f
+
+unzip : (’a * ’b) list -> ’a list
+
+zip : ’a list -> ’b list -> (’a * ’b) list
+
+gen_cat : (’a -> string) -> ’a list -> string
+gen_cat f
+
+gen_prod : (’a -> int) -> ’a list -> int
+gen_prod f
+
+gen_sum : (’a -> int) -> ’a list -> int
+gen_sum f
+
+cond_map : (’a -> ’b) -> (’a -> ’b) -> (’a -> bool) -> ’a list -> ’b list
+cond_map f g p l
+
+cond_map : (’a -> ’a) -> (’a -> bool) -> ’a list -> ’a list
+cond_map f p l
+
+filter_map : (’a -> bool) -> (’a -> ’b) -> ’a list -> ’b list
+filter_map p f l
+
+merge : (’a * ’b -> ’c) -> (’a * ’b) list -> ’c list
+merge f
+
+swap : (’a * ’b) list -> (’b * ’a) list
+
+first : (’a * ’b) list -> ’a list
+
+insert_after : (’a -> bool) -> ’a -> ’a list -> ’a list
+insert_after p l
+
+list_gen : (’a -> ’a) -> ’a -> int -> ’a list
+list_gen f i n
+
+odd : ’a list -> ’a list
+odd l
+
+update : (’a -> bool) -> (’b -> ’b) -> (’a * ’b) list -> (’a * ’b) list
+update p f l
+
+replace : (’a -> bool) -> ’a -> ’a list -> ’a list
+replace p x l
+
+replace : ’a -> ’a -> ’a list -> ’a list
+replace x y l
+
+values : (’a -> bool) -> (’a * ’b) list -> ’b list

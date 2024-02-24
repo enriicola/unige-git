@@ -1,0 +1,62 @@
+count_zeros : (’a -> int) -> ’a list -> int
+count_zeros f l
+
+find : ’a -> ’a list -> int
+find e l
+
+swap : (’a * ’b) list -> (’b * ’a) list
+
+cat : (string * string) list -> string list
+
+fuse : (’a -> ’b -> ’c) -> ’a list -> ’b list -> ’c list
+fuse f
+
+unzip : (’a * ’b) list -> ’a list
+
+zip : ’a list -> ’b list -> (’a * ’b) list
+
+gen_cat : (’a -> string) -> ’a list -> string
+gen_cat f
+
+gen_prod : (’a -> int) -> ’a list -> int
+gen_prod f
+
+gen_sum : (’a -> int) -> ’a list -> int
+gen_sum f
+
+cond_map : (’a -> ’b) -> (’a -> ’b) -> (’a -> bool) -> ’a list -> ’b list
+cond_map f g p l
+
+cond_map : (’a -> ’a) -> (’a -> bool) -> ’a list -> ’a list
+cond_map f p l
+
+filter_map : (’a -> bool) -> (’a -> ’b) -> ’a list -> ’b list
+filter_map p f l
+
+merge : (’a * ’b -> ’c) -> (’a * ’b) list -> ’c list
+merge f
+
+swap : (’a * ’b) list -> (’b * ’a) list
+
+first : (’a * ’b) list -> ’a list
+
+insert_after : (’a -> bool) -> ’a -> ’a list -> ’a list
+insert_after p l
+
+list_gen : (’a -> ’a) -> ’a -> int -> ’a list
+list_gen f i n
+
+odd : ’a list -> ’a list
+odd l
+
+update : (’a -> bool) -> (’b -> ’b) -> (’a * ’b) list -> (’a * ’b) list
+update p f l
+
+replace : (’a -> bool) -> ’a -> ’a list -> ’a list
+replace p x l
+
+replace : ’a -> ’a -> ’a list -> ’a list
+replace x y l
+
+values : (’a -> bool) -> (’a * ’b) list -> ’b list
+

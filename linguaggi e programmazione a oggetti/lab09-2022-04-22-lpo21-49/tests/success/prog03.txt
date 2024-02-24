@@ -1,0 +1,12 @@
+// SimpleProg(MoreStmt(VarStmt(SimpleVariable(b1),BoolLiteral(true)),MoreStmt(VarStmt(SimpleVariable(b2),BoolLiteral(false)),MoreStmt(IfStmt(And(SimpleVariable(b1),Not(SimpleVariable(b2))),Block(SingleStmt(PrintStmt(IntLiteral(0)))),null),SingleStmt(IfStmt(Not(And(SimpleVariable(b1),SimpleVariable(b2))),Block(MoreStmt(VarStmt(SimpleVariable(x),IntLiteral(0)),SingleStmt(PrintStmt(SimpleVariable(x))))),Block(MoreStmt(VarStmt(SimpleVariable(x),IntLiteral(1)),SingleStmt(PrintStmt(SimpleVariable(x)))))))))))
+
+var b1=true; var b2=false;
+if(b1&&!b2){
+	print 0
+};
+if(!(b1&&b2)){
+	var x=0;print(x)
+}
+else {
+     var x=1;print(x)
+}

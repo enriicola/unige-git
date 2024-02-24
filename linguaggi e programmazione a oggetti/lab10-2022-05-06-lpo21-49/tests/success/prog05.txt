@@ -1,0 +1,8 @@
+var x=10; // inferred type 'int'
+if(x==10){ // block starts a nested scope 
+  // variable declaration in nested scope
+  // hides the declaration at the outer scope
+  var x=x+1,true; // inferred type int*bool
+  print fst x // fst returns the first component of a pair
+};
+print x // refers to the outer declaration

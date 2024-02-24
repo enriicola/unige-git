@@ -1,0 +1,6 @@
+// SimpleProg(MoreStmt(VarStmt(SimpleVariable(x_1),IntLiteral(2)),MoreStmt(VarStmt(SimpleVariable(x_2),IntLiteral(4)),MoreStmt(AssignStmt(SimpleVariable(x_1),Add(SimpleVariable(x_1),IntLiteral(1))),SingleStmt(PrintStmt(Eq(Add(SimpleVariable(x_1),IntLiteral(1)),SimpleVariable(x_2))))))))
+
+var x_1=2;
+var x_2=4;
+x_1=x_1+1;
+print x_1+1==x_2

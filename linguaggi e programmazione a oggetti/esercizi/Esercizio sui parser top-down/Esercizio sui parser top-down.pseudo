@@ -1,0 +1,34 @@
+// grammatica non ambigua
+Prog ::= Exp EOF
+Exp ::= Mul (’+’ Exp)?
+Mul ::= Atom (’*’ Mul)?
+Atom ::= Num | ’(’ Exp ’)’
+Num ::= ’0’ | ’1’
+
+parseProg(){ // main procedure, recognizes string generated from Prog tokenizer.nextToken() // reads the first look-ahead token
+    this.parseExp()
+    this.match(EOF) // checks the last token is the end-of-file
+}
+parseExp(){ // recognizes string generated from Exp
+    this.parseMul() 
+    if(tokenizer.tokenType()==ADD){
+        tokenizer.nextToken()
+        this.parseExp()
+    }
+}
+parseMul(){ // recognizes string generated from Mul
+    this.parseAtom() 
+    if(tokenizer.tokenType()==MUL){
+        tokenizer.nextToken()
+        this.parseMul()
+    }
+}
+parseAtom(){ // recognizes string generated from Atom
+    if(tokenizer.tokenType()==OPEN_PAR){ 
+        tokenizer.nextToken() 
+        this.parseExp()
+        this.consume(CLOSE_PAR)
+    }
+    else
+        this.consume(NUM)
+}
