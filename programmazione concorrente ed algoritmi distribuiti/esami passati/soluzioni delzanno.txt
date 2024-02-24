@@ -1,0 +1,435 @@
+soluzioni del zanno
+
+ESAME_2_Luglio_v2_con_soluzioni. (02/07/2018)
+
+Nei modelli della concorrenza con consistenza sequenziale:
+
+Bisogna considerare sono le computazioni con scheduling dei thread basato 
+su strategie preemptive F
+Tutti i thread vengono eseguiti almeno una volta F
+Viene garantita l’assenza di deadlock e l’assenza di starvation F
+Thread differenti non possono condividere il proprio stack V
+Quando si utilizza un semaforo in un programma concorrente
+
+i thread possono ancora accedere simultaneamente alla propria sezione 
+critica V
+l’accesso a dati condivisi da parte di più thread è sempre serializzato F
+un thread che esegue l’operazione down incrementa il contatore interno al 
+semaforo di uno F
+è opportuno inizializzare il semaforo a 0 se si vuole puoi usare il 
+semaforo come mutex F
+Quando si utilizza un thread pool
+
+i thread eseguono task prelevandoli da uno stack F
+alla fine dell’esecuzione di un task il corrispondente thread rimane 
+attivo V
+non bisogna preoccuparsi della gestione della garbage collection della 
+memoria F
+non bisogna preoccuparsi della creazione dei thread V
+Un Semaforo Generale
+
+è un semaforo il cui contatore interno può assumere un valore maggiore o 
+uguale a zero V
+è implementato come un oggetto immutabile in Java F
+non può essere usato come campo di una concurrent HashMap F
+contiene al suo interno una coda di thread V
+La tecnica di programmazione basata su confinamento per thread
+
+viene usata per ridurre l’uso di lock nei programmi concorrenti V
+viene usata per rendere efficiente la gestione della memoria nei programmi 
+concorrenti F
+viene usata nell’implementazione di server multithreaded V
+viene usata nell’implementazione dei monitor alla Hoare F
+Una barriera di memoria o memory fence
+
+risolve il problema della sezione critica F
+Viene sempre invocata alla fine di blocchi sincronizzati in Java V
+può essere usata per garantire mutua-esclusione in architetture debolmente 
+consistenti V
+ha come effetto quello di disabilitare per più cicli di esecuzione tutte 
+le interruzioni hardware F
+Il problema della sezione critica
+
+si applica a programmi concorrenti qualsiasi F
+richiede di soddisfare almeno le proprietà di mutua esclusione e assenza 
+di starvation V
+non richiede particolari assunzioni sulla struttura della sezione critica 
+F
+è formulato per programmi concorrenti con un numero arbitrario ma finito 
+di thread V
+In un programma concorrente con un input fissato
+
+due diverse computazioni possono eseguire infinite volte la stessa 
+istruzione V
+se una computazione termina allora tutte le possibili computazioni 
+terminano F
+se una computazione non termina allora tutte le possibili computazioni non 
+terminano F
+due computazioni diverse possono dare lo stesso risultato V
+Nell’esecuzione di un programma concorrente
+
+tutti i thread lanciati da un programma partono sempre simultaneamente F
+i thread vengono eseguiti sempre in parallelo F
+non è possibile alternare context-switch di due diversi thread F
+il numero di context-switch non dipende dallo scheduler F
+La libreria SynchronizeCollection di Java
+
+Viene usata per incapsulare strutture dati per renderle threadsafe V
+Viene usata come alternativa agli ExecutorService F
+Ha un metodo “wait” che viene usato per sincronizzare thread F
+Ha un metodo “notify” che viene usato per sbloccare thread in attesa F
+ESAME_15_v2 (15/06/2018)
+
+Nei modelli della concorrenza con consistenza forte (strong consistency):
+
+Vale sempre la single-thread rule F
+È possibile che istruzioni all’interno dello stesso thread vengano 
+eseguite out-of-order F
+Non viene garantita la write-atomicity nelle operazioni di update F
+Thread differenti non possono modificare le stesse aree di memoria F
+L’assenza di race-condition
+
+si ottiene dichiarando thread che non allocano dati sullo heap F
+si ottiene creando thread che allocano memoria solo attraverso variabili 
+locali F
+si ottiene garantendo che i dati siano letti o modificati solo all’interno 
+di singoli thread V
+si ottiene acquisendo lock su dati condivisi tra diversi thread V
+Quando si utilizza un monitor alla Hoare in Java
+
+i thread non condividono memoria ma vengono usati solo per parallelizzare 
+il calcolo F
+i context-switch avvengono solo all’uscita dal monitor F
+se un thread sospende l’esecuzione con “wait” entrerà nel monitor alla 
+prima chiamata di “notify” F
+un thread prima di chiamare “wait” rilascia il lock sul monitor F
+Un ReadWrite lock
+
+è un semaforo binario che viene usato su oggetti con metodi getter e 
+setter F
+viene usato per garantire la mutua esclusione tra thread che aggiornano 
+una variabile condivisa V
+viene usato per garantire la mutua esclusione tra thread che leggono una 
+variabile condivisa F
+garantisce starvation-freedom se usato per controllare una risorsa 
+condivisa V
+Un Array CopyOnWrite in Java
+
+viene usato per ottimizzare le operazioni di update di celle di un array F
+implementa un’istanza del produttore-consumatore F
+fornisce solo operazioni thread-safe per modificare un array concorrente F
+implementa la tecnica dello snapshot per strutture dati concorrenti V
+La tecnica di programmazione chiamata lock-splitting
+
+viene usata per includere in un singolo record diversi semafori binari F
+viene usata per massimizzare la concorrenza mantenendo consistenza dei 
+dati V
+viene usata per minimizzare il numero di lock in un programma concorrente 
+F
+viene usata nell’implementazione di liste concorrenti V
+Le soluzioni al problema della sezione critica viste a lezione
+
+possono essere composte da thread che non usano mai la risorsa condivisa 
+da proteggere F
+si possono implementare senza usare lock o altre istruzioni atomiche 
+specifiche dell’hw V
+sono sempre corrette indipendentemente dall’architettura hw sottostante F
+dipendono dalla velocità nell’esecuzione dei diversi thread F
+In un programma concorrente
+
+un errore su un certo input si può riprodurre ripetendo l’esecuzione una 
+sola volta F
+la funzione calcolata dal programma associa ad un certo input un insieme 
+di output V
+con lo stesso input posso avere un’esecuzione che termina e una che non 
+termina V
+con lo stesso input posso avere un’esecuzione che termina e una che si 
+blocca V
+Nell’esecuzione di un programma concorrente
+
+i thread vengono sempre eseguiti su core diversi F
+i thread vengono sempre eseguiti in parallelo F
+non avvengono mai context-switch sullo stesso core F
+il numero di context-switch dipende dal numero di lock usati nel programma 
+F
+Consideriamo un programma concorrente con due thread T1 e T2
+
+servono almeno due lock per generare un deadlock nell’esecuzione di T1 e 
+T2 F
+con un solo lock è possibile fare in modo che T1 venga eseguito tutto 
+insieme prima o dopo T2 V
+servono almeno due lock per fare in modo che T1 venga sempre eseguito 
+prima di T2 F
+il numero di possibili esecuzioni dipende solo dal numero di istruzioni 
+che operano su dati condivisi F
+Nella libreria RMI
+
+L’accesso ad un oggetto remoto è sempre thread-safe F
+Il registry viene gestito dallo stesso server che gestisce un oggetto 
+remoto F
+Il registry serializza le chiamate dei metodi verso un oggetto remoto F
+L’implementazione di un’interfaccia remota deve essere la stessa su server 
+e client F
+ESAME_15_v3 (15/06/18)
+
+Le domande di questo esame sono identiche a ESAME_15_v2, skip
+
+Scritto 3 febbraio 2020
+
+Un processo nei sistemi operativi:
+
+può condividere codice con altri processi V
+è un’unità di allocazione sia di risorse che di esecuzione V
+ha sempre accesso allo spazio di indirizzamento kernel F
+gestisce al più un program counter F
+Si verifica sempre un context switch quando
+
+un processo ritorna da una chiamata di procedura F
+un processo ritorna da una chiamata di funzione F
+un processo esegue un metodo di un’oggetto condiviso F
+un processo esegue una routine di gestione di un’interrupt V
+Un variabile condition
+
+si può usare solo dopo aver acquisto un lock V
+definisce una condizione che viene controllata in maniera atomica F
+mette in attesa il thread che invoca la corrispondente operazione signal F
+mette in attesa il thread che invoca la corrispondente operazione signal 
+se ci sono altri thread in attesa F
+Il Thread Pool
+
+è una struttura dati sincronizzata F
+è una struttura dati fornita a livello kernel F
+è stato introdotto per creare thread già forniti di lock di 
+sincronizzazione F
+è stato introdotto per distinguere task e thread V
+Nelle librerie per UI come Swing
+
+i singoli thread possono modificare campi delle strutture dati della UI V
+un gestore di UI (EDT) è un server multithreaded F
+ogni widget di una GUI è gestito da un diverso EDT F
+per default viene garantita la mutua esclusione nella modifica della UI F
+Una Barriera di Memoria (Memory Fence)
+
+forza il completamento di operazioni di scrittura in attesa V
+forza la terminazione del thread che la esegue F
+è equivalente ad un lock F
+assicura l’assenza di starvation F
+Soluzioni non ufficiali
+
+01/07/19
+
+Quando si utilizza una struttura dati concorrente
+
+per ogni accesso alla struttura viene garantita l’assenza di race 
+condition V
+per ogni sequenza di accessi alla struttura dati viene garantita l’assenza 
+di race condition V
+per ogni programma viene garantita l’assenza di race condition F
+per ogni operazione su un suo elemento (es un oggetto in una lista) viene 
+garantita l’assenza di race condition F
+Nei modelli della concorrenza con interleaving:
+
+vengono ammesse solo computazioni che rispettano program order V
+vengono ammesse solo computazioni ottenute eseguendo in blocco tutte le 
+istruzioni di ogni singolo programma in un ordine casuale (es programma 2, 
+programma 1, programma 3) F
+viene sempre garantita la mutua esclusione F
+il numero di context switch è limitato superiormente da una costante F
+Una Synchronized Collection in Java
+
+è equivalente ad una barriera di memoria F
+rende sincronizzata una struttura dati non concorrente V
+implementa il pattern singleton in versione thread-safe F
+è un’implementazione della tecnica di confinamento per oggetto V
+Un mutex
+
+è un semaforo con due possibili valori ed uno stack di thread in attesa F
+è un semaforo con tre possibili valori ed una coda di thread in attesa F
+viene usato per evitare riordinamenti di istruzioni in un thread F
+garantisce starvation-freedom se usato per controllare una risorsa 
+condivisa V
+Un’operazione atomica
+
+è sempre implementata tramite lock F
+non è compatibile con il modello di concorrenza basato su consistenza 
+sequenziale F
+elimina possibili interferenze tra diversi thread fino alla fine della sua 
+esecuzione V
+può utilizzare istruzioni hardware per garantire assenza di race condition 
+V
+Una barriera di sincronizzazione
+
+risolve il problema della sezione critica F
+può essere invocata alla fine di blocchi sincronizzati V
+definisce un punto di sincronizzazione all’interno di codice di singoli 
+thread V
+ha come effetto quello di disabilitare le interruzioni hardware F
+Il problema della sezione critica
+
+si applica a programmi che non condividono memoria F
+si risolve scegliendo in maniera casuale un thread (tra quelli in attesa) 
+F
+si risolve applicando Peterson a due thread scelti casualmente (tra quelli 
+in attesa) F
+è formulato per programmi concorrenti con due o più thread di esecuzione V
+Quando usiamo oggetti callable in Java
+
+Le chiamate dei metodi corrispondenti possono restituire valori V
+Le chiamate dei metodi corrispondenti sono effettuate in mutua esclusione 
+F
+Le chiamate dei metodi corrispondenti sono tutte effettuate in maniera 
+sincrona F
+Non possiamo propagare le eccezioni al di fuori dei metodi corrispondenti 
+F
+14/06/19
+
+Nei modelli della concorrenza con consistenza sequenziale:
+
+vengono ammesse solo computazioni terminanti F
+vengono ammesse esecuzioni concorrenti che non rispettano program order F
+viene sempre garantita l’assenza di deadlock F
+vengono ammesse esecuzioni concorrenti con interleaving di eventi di 
+diversi thread V
+La proprietà di write atomicity
+
+garantisce l’assenza di race condition F
+garantisce che le operazioni di scrittura su una struttura dati siano 
+eseguite in maniera atomica V
+assicura che tutte le operazioni di scritture siano viste nello stesso 
+ordine da tutti i thread V
+è sempre garantita in architetture debolmente consistenti V
+Quando si utilizza una struttura dati concorrente
+
+per ogni accesso alla struttura viene garantita la mutua esclusione V
+per ogni sequenza di accessi alla struttura dati viene garantita la mutua 
+esclusione V
+non bisogna preoccuparsi della de-allocazione della struttura dati F
+l’implementazione delle operazioni utilizza sempre un lock globale F
+Una ConcurrentHashMap in Java
+
+non può essere usata in blocchi sincronizzati F
+fornisce metodi thread-safe per inserimento e ricerca V
+se usata in un programma concorrente garantisce l’assenza di race 
+condition sui propri dati F
+è un’implementazione della tecnica di confinamento per thread F
+Un reentrant lock
+
+è un semaforo usato per oggetti con metodi che restituiscono valori F
+viene usato per garantire la mutua esclusione tra thread con variabili 
+condivise V
+viene usato per evitare deadlock in una chiamata ricorsiva V
+garantisce starvation-freedom se usato per controllare una risorsa 
+condivisa V
+Una barriera di memoria o memory fence
+
+risolve il problema della sezione critica F
+può essere invocata alla fine di blocchi sincronizzati V
+può essere usata per garantire mutua-esclusione in architetture debolmente 
+consistenti V
+ha come effetto quello di disabilitare le interruzioni hardware F
+Il problema della sezione critica
+
+si può applicare a programmi dove la sezione critica può contenere un 
+programma qualsiasi F
+richiede di soddisfare solo le proprietà di mutua esclusione e assenza di 
+starvation F
+è formulato per thread eseguiti tutti con la stessa velocità F
+è formulato per programmi concorrenti con al più due thread di esecuzione 
+F
+Quando usiamo oggetti runnable in Java
+
+Le chiamate dei metodi corrispondenti possono restituire valori F
+Le chiamate dei metodi corrispondenti sono effettuate in mutua esclusione 
+F
+Le chiamate dei metodi corrispondenti sono tutte effettuate in maniera 
+asincrona F
+Non possiamo propagare le eccezioni al di fuori dei metodi corrispondenti 
+V
+11/09/19
+
+Un thread
+
+è una unità di allocazione e di esecuzione F
+non può condividere la memoria con altri thread F
+non può essere usato per eseguire una parte di un calcolo parallelo F
+permette l’esecuzione asincrona di funzioni e procedure V
+Un context switch si può verificare
+
+quando un processo ritorna da una chiamata di procedura V
+quando un processo crea un nuovo thread V
+quando un processo termina un’altro processo V
+quando un processo esegue codice user V
+Una Condition Variable
+
+va usata solo all’interno di operazioni del monitor in cui è definita F
+è una condizione che viene valutata in maniera asincrona rispetto al 
+programma chiamante F
+gestisce code interne ad un monitor V
+garantisce write atomicity F
+Una Barriera di Memoria (Memory Fence)
+
+forza la terminazione di tutti i thread in esecuzione tranne il main F
+forza la terminazione del main ma non di altri thread in esecuzione F
+controlla eventuali ottimizzazioni nella gestione della memoria V
+assicura l’assenza di starvation F
+Il Thread Pool
+
+è una struttura dati sincronizzata F
+è stato introdotto nella programmazione concorrente per rendere più 
+efficiente un programma V
+è stato introdotto nella programmazione concorrente per evitare possibili 
+deadlock F
+è stato introdotto nella programmazione concorrente per eseguire blocchi 
+di codice sincrono F
+Un Reentrant Lock
+
+è stato introdotto nella programmazione concorrente come semaforo per 
+oggetti di classe F
+viene usato per garantire la mutua esclusione tra thread con variabili 
+condivise V
+viene usato per evitare deadlock in una chiamata ricorsiva di un metodo 
+thread-safe V
+garantisce sempre starvation-freedom se usato per controllare una risorsa 
+condivisa F
+18/07/19
+
+Un processo nei sistemi operativi:
+
+è un’unità di allocazione sia di risorse che di esecuzione V
+può condividere lo stack con altri processi F
+può essere usato per eseguire una parte di un calcolo parallelo V
+può essere eseguito in modalità user e modalità kernel V
+Un context switch si può verificare
+
+quando un processo ritorna da una chiamata di sistema V
+quando un processo ritorna da una chiamata di funzione V
+quando un processo si sospende su un’operazione di I/O V
+Quando un processo esegue una routine di gestione di interrupt V
+Un variabile condition
+
+si può usare in qualsiasi parte del codice F
+ha un’operazione di signal che è equivalente alla up dei semafori F
+è un flag di tipo Bool dichiarato volatile F
+garantisce write atomicity nei programmi dove viene usata F
+Un Executor
+
+è un’implementazione di un monitor fornita da Java F
+viene usato per garantire la mutua esclusione tra thread con variabili 
+condivise F
+viene usato per evitare deadlock F
+viene usato come costruttore di thread pool V
+Una BlockingQueue in Java
+
+ha metodi thread safe V
+è una struttura dati sincronizzata V
+può essere usata per implementare un thread pool V
+non può essere usata come campo di una struttura dati sincronizzata F
+Lo schema di codice in C
+
+if (fork() != 0) { … } else { execve(command, parameters, NULL); }
+viene usato per creare un thread Unix/Linux F
+si può usare per assegnare un task ad un thread in Unix/Linux F
+si può usare per eseguire in parallelo due parti di codice V
+si può usare come blocco base per usare in maniera efficiente 
+un’architetture multicore V
+

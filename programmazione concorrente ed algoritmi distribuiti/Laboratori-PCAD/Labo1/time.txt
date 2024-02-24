@@ -1,0 +1,75 @@
+Numero thread utilizzati: 3
+Tempo di calcolo C*(A*B): 0.000492
+
+Numero thread utilizzati: 5
+Tempo di calcolo C*(A*B): 0.000698
+
+Numero thread utilizzati: 10
+Tempo di calcolo C*(A*B): 0.006836
+
+Numero thread utilizzati: 5
+Tempo di calcolo C*(A*B): 0.000853
+
+Numero thread utilizzati: 10
+Tempo di calcolo C*(A*B): 10.110006
+
+Numero thread utilizzati: 10
+Tempo di calcolo C*(A*B): 10.160153
+
+Numero thread utilizzati: 5
+Tempo di calcolo C*(A*B): 8.341282
+
+Numero thread utilizzati: 10
+Tempo di calcolo C*(A*B): 10.122770
+
+Numero thread utilizzati: 2
+Tempo di calcolo C*(A*B): 7.126735
+
+Numero thread utilizzati: 3
+Tempo di calcolo C*(A*B): 0.001468
+
+Numero thread utilizzati: 10
+Tempo di calcolo C*(A*B): 0.001370
+
+Numero thread utilizzati: 10
+Tempo di calcolo C*(A*B): 0.015855
+
+Numero thread utilizzati: 5
+Tempo di calcolo C*(A*B): 0.014937
+
+Numero thread utilizzati: 2
+Tempo di calcolo C*(A*B): 0.014948
+
+Numero thread utilizzati: 5
+Tempo di calcolo C*(A*B): 0.003020
+
+Numero thread utilizzati: 10
+Tempo di calcolo C*(A*B): 0.002403
+
+Numero thread utilizzati: 2
+Tempo di calcolo C*(A*B): 0.000633
+
+Numero thread utilizzati: 2
+Tempo di calcolo C*(A*B): 0.000662
+
+Numero thread utilizzati: 5
+Tempo di calcolo C*(A*B): 0.000822
+
+Numero thread utilizzati: 1
+Tempo di calcolo C*(A*B): 0.000210
+
+Numero thread utilizzati: 2
+Tempo di calcolo C*(A*B): 0.000348
+
+Numero thread utilizzati: 1
+Tempo di calcolo C*(A*B): 0.000228
+
+Numero thread utilizzati: 5
+Tempo di calcolo C*(A*B): 0.000691
+
+Numero thread utilizzati: 4
+Tempo di calcolo C*(A*B): 0.017161
+
+Numero thread utilizzati: 1
+Tempo di calcolo C*(A*B): 0.014914
+
