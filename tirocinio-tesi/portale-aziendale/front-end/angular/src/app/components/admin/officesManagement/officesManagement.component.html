@@ -1,0 +1,210 @@
+<!--    ADD_OFFICE FORM   -->
+<div class="card">
+    <div class="flex">
+        <span style="font-size: 25px;">Gestione uffici (Admin)</span>
+    </div>
+
+    <div class="container mt-5">
+        <h4 class="mb-4">{{ showAddForm ? 'Aggiungi' : 'Modifica' }} ufficio</h4>
+        <form (ngSubmit)="showAddForm ? addOffice(officeForm) : updateOfficesData(officeForm)" #officeForm="ngForm">
+        <!--<h4 class="mb-4">Aggiungi ufficio</h4>
+        <form (ngSubmit)="addOffice(officeForm)" #officeForm="ngForm">-->
+            <div class="p-grid">
+
+                <div class="p-col-12 p-md-6">
+                    <div class="p-inputgroup">
+                        <span class="p-float-label">
+                            <input *ngIf="showAddForm" pInputText id="name" name="name" [(ngModel)]="office.officesName" required>
+                            <input *ngIf="!showAddForm" pInputText id="name" name="name" [(ngModel)]="editedOffice.officesName" required>
+                            <label for="name">Nome ufficio</label>
+                        </span>
+                    </div>
+                    <ng-container *ngIf="officeForm.controls['name']">
+                        <ng-container *ngIf="officeForm.controls['name'].invalid && (officeForm.controls['name'].dirty || officeForm.controls['name'].touched)">
+                            <div class="error-message" *ngIf="officeForm.controls['name'].errors.required">
+                                Nome ufficio obbligatorio
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <br>
+        
+                <div class="p-col-12 p-md-6">
+                    <div class="p-inputgroup">
+                        <span class="p-float-label">
+                            <p-inputNumber *ngIf="showAddForm" pInputText id="capacity" name="capacity" [(ngModel)]="office.officesCapacity" required></p-inputNumber>
+                            <p-inputNumber *ngIf="!showAddForm" pInputText id="capacity" name="capacity" [(ngModel)]="editedOffice.officesCapacity" required></p-inputNumber>
+                            <label htmlFor="capacity">Numero postazioni</label>
+                        </span>
+                    </div>
+                    <ng-container *ngIf="officeForm.controls['capacity']">
+                        <ng-container *ngIf="officeForm.controls['capacity'].invalid && (officeForm.controls['capacity'].dirty || officeForm.controls['capacity'].touched)">
+                            <div class="error-message" *ngIf="officeForm.controls['capacity'].errors.required">
+                                Numero postazioni obbligatorio
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </div>
+            <br>
+        
+            <div class="p-col-12">
+                <div class="p-inputgroup">
+                    <span class="p-float-label ">
+                        <p-dropdown *ngIf="showAddForm" [options]="types" [(ngModel)]="selectedType" placeholder="Seleziona tiopologia ufficio"  optionLabel="types" id="types" name="types" [style]="{ 'width': '100%' }" required></p-dropdown>
+                        <p-dropdown *ngIf="!showAddForm" [options]="types" [(ngModel)]="selectedType" placeholder="Seleziona tiopologia ufficio"  optionLabel="types" id="types" name="types" [style]="{ 'width': '100%' }" required></p-dropdown>
+                        <label htmlFor="capacity">Seleziona tiopologia ufficio</label>
+                    </span>
+                </div>
+                <ng-container *ngIf="officeForm.controls['officesType']">
+                    <ng-container *ngIf="officeForm.controls['officesType'].invalid && (officeForm.controls['officesType'].dirty || officeForm.controls['officesType'].touched)">
+                        <div class="error-message" *ngIf="officeForm.controls['officesType'].errors.required">
+                            Tipologia ufficio obbligatoria
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <br>
+
+            <!-- blocking -->
+            <div class="p-col-12" *ngIf="selectedType?.types === 'Ufficio amministrativo' || selectedType?.types === 'Ufficio dirigenti'">
+                <div class="p-inputgroup">
+                    <span class="p-float-label">
+                        <p-multiSelect *ngIf="showAddForm" [options]="usersId" [(ngModel)]="selectedUsers" optionLabel="usersId" id="usersId" name="usersId" [style]="{ 'width': '100%' }" required></p-multiSelect>
+                        <p-multiSelect *ngIf="!showAddForm" [options]="usersId" [(ngModel)]="selectedUsers" optionLabel="usersId" id="usersId" name="usersId" [style]="{ 'width': '100%' }" required></p-multiSelect>
+                        <label for="usersId">Seleziona utenti bloccati per questo ufficio</label>
+                    </span>
+                </div>
+                <ng-container *ngIf="officeForm.controls['usersId']">
+                    <ng-container *ngIf="officeForm.controls['usersId'].invalid && (officeForm.controls['usersId'].dirty || officeForm.controls['usersId'].touched)">
+                        <div class="error-message">
+                            Devi inserire almeno un utente
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+
+            
+            <br><br>
+
+            <!--  add  -->
+            <div *ngIf="showAddForm">
+                <button pButton type="submit" label="Aggiungi ufficio" class="p-button-rounded p-button-success" [disabled]="officeForm.invalid || selectedUsers.length > office.officesCapacity"></button> 
+                <div *ngIf="successAdd" class="success-message">
+                    Ufficio aggiunto correttamente!
+                </div>
+                <div class="error-message" *ngIf="selectedUsers.length > office.officesCapacity">
+                    Il numero di utenti inseriti supera la disponibilità dell'ufficio
+                </div>
+            </div>
+
+            <!--  update -->
+            <div >
+                <span *ngIf="!showAddForm">
+                    <button pButton type="submit" label="Modifica ufficio" class="p-button-rounded p-button-success" [disabled]="officeForm.invalid || selectedUsers.length > office.officesCapacity"></button> 
+                    <button pButton type="button" label="Annulla" class="p-button-rounded p-button-secondary" (click)="showAddForm = true;"></button> 
+                </span>
+                
+                <div *ngIf="successUpdate" class="success-message">
+                    Ufficio modificato correttamente!
+                </div>
+                <div class="error-message" *ngIf="selectedUsers.length > office.officesCapacity">
+                    Il numero di utenti inseriti supera la disponibilità dell'ufficio
+                </div>
+            </div>
+            
+
+        </form>
+    </div>
+</div>
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--    OFFICES TABLE   -->
+<br><br>
+<p-table #dt styleClass="p-datatable-offices-data" [value]="officesData$ | async" dataKey="chargePointId"
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+[rows]="5" [rowHover]="true" [paginator]="true" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,15]"
+[loading]="isLoading$ | async" [totalRecords]="totalRecords$ | async" [filterDelay]="300"
+[globalFilterFields]="globalFiltersFields" [(selection)]="selectedOfficesData" [lazy]="true" [customSort]="true"
+(onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Elenco uffici creati</span>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText [value]="lastSearch$ | async" type="text" (input)="filter($event.target.value)"
+                    placeholder="Office Search" />
+            </span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            
+            <th pSortableColumn="officesName">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Nome ufficio
+                    <p-sortIcon field="officesName"></p-sortIcon>
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Num. postazioni
+                </div>
+            </th>
+            <th pSortableColumn="officesType">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Tipologia
+                    <p-sortIcon field="officesType"></p-sortIcon>
+                </div>
+            </th>
+            
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Modifica
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Elimina
+                </div>
+            </th>
+               
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-officesData>
+        <tr class="p-selectable-row" [pRowToggler]="officesData.noticeId">
+            <td>
+                <span class="p-column-title">Nome ufficio</span>
+                {{officesData.officesName}}
+            </td>
+            <td>
+                <span class="p-column-title">Num. postazioni</span>
+                {{officesData.officesCapacity}}
+            </td>
+            <td>
+                <span class="p-column-title">Tipologia</span>
+                {{officesData.officesType}}
+            </td>
+            
+            <td>
+                <span class="p-column-title">Modifica</span>
+                <p-button icon="pi pi-replay" (click)="editOfficesData(officesData); showAddForm = false;"></p-button>
+            </td>
+            <td>
+                <span class="p-column-title">Elimina</span>
+                <p-button icon="pi pi-trash" (click)='deleteOfficesData(officesData)'></p-button>
+            </td>
+        </tr>
+        
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Notices Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+

@@ -1,0 +1,20 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="">
+        <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
+        <span>SAKAI</span>
+    </a>
+
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+
+        <p-splitButton icon="pi pi-user" [model]="items" styleClass="p-button-raised p-button-danger mr-2 mb-2"></p-splitButton>
+
+    </div>
+</div>

@@ -1,0 +1,48 @@
+import { TemplateRef, ElementRef, AfterViewInit, DoCheck, AfterContentChecked, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Calendar, CalendarOptions } from '@fullcalendar/core';
+import { CustomRendering } from '@fullcalendar/core/internal';
+import { CalendarOption, CalendarTemplateRef } from './private-types';
+import * as i0 from "@angular/core";
+export declare class FullCalendarComponent implements AfterViewInit, DoCheck, AfterContentChecked, OnDestroy {
+    private element;
+    options?: CalendarOptions;
+    deepChangeDetection?: boolean;
+    events?: CalendarOption<'events'> | null | undefined;
+    eventSources?: CalendarOption<'eventSources'> | null | undefined;
+    resources?: CalendarOption<'resources'> | null | undefined;
+    dayHeaderContent?: CalendarTemplateRef<'dayHeaderContent'>;
+    dayCellContent?: CalendarTemplateRef<'dayCellContent'>;
+    weekNumberContent?: CalendarTemplateRef<'weekNumberContent'>;
+    nowIndicatorContent?: CalendarTemplateRef<'nowIndicatorContent'>;
+    eventContent?: CalendarTemplateRef<'eventContent'>;
+    slotLaneContent?: CalendarTemplateRef<'slotLaneContent'>;
+    slotLabelContent?: CalendarTemplateRef<'slotLabelContent'>;
+    allDayContent?: CalendarTemplateRef<'allDayContent'>;
+    moreLinkContent?: CalendarTemplateRef<'moreLinkContent'>;
+    noEventsContent?: CalendarTemplateRef<'noEventsContent'>;
+    resourceAreaHeaderContent?: CalendarTemplateRef<'resourceAreaHeaderContent'>;
+    resourceGroupLabelContent?: CalendarTemplateRef<'resourceGroupLabelContent'>;
+    resourceLabelContent?: CalendarTemplateRef<'resourceLabelContent'>;
+    resourceLaneContent?: CalendarTemplateRef<'resourceLaneContent'>;
+    resourceGroupLaneContent?: CalendarTemplateRef<'resourceGroupLaneContent'>;
+    private calendar;
+    private optionSnapshot;
+    private handleCustomRendering;
+    private customRenderingMap;
+    private customRenderingArray?;
+    templateMap: {
+        [templateName: string]: TemplateRef<any>;
+    };
+    constructor(element: ElementRef, changeDetector: ChangeDetectorRef);
+    ngAfterViewInit(): void;
+    ngDoCheck(): void;
+    ngAfterContentChecked(): void;
+    ngOnDestroy(): void;
+    get customRenderings(): CustomRendering<any>[];
+    getApi(): Calendar;
+    private buildInputOptions;
+    private buildExtraOptions;
+    trackCustomRendering(index: number, customRendering: CustomRendering<any>): any;
+    static ɵfac: i0.ɵɵFactoryDeclaration<FullCalendarComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FullCalendarComponent, "full-calendar", never, { "options": "options"; "deepChangeDetection": "deepChangeDetection"; "events": "events"; "eventSources": "eventSources"; "resources": "resources"; }, {}, ["dayHeaderContent", "dayCellContent", "weekNumberContent", "nowIndicatorContent", "eventContent", "slotLaneContent", "slotLabelContent", "allDayContent", "moreLinkContent", "noEventsContent", "resourceAreaHeaderContent", "resourceGroupLabelContent", "resourceLabelContent", "resourceLaneContent", "resourceGroupLaneContent"], never>;
+}

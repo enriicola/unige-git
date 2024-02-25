@@ -1,0 +1,5 @@
+<p-blockUI [blocked]="isLoading$ | async"></p-blockUI>
+<div class="awaiter-progress-bar">
+    <p-progressBar *ngIf="isLoading$ | async" mode="indeterminate" [style]="{'height': '3px', 'z-index': 10000}"></p-progressBar>
+</div>
+

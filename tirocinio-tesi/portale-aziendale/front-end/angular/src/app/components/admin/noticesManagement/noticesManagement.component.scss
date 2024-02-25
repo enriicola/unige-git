@@ -1,0 +1,48 @@
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  
+    .form-group {
+      margin-bottom: 15px;
+    }
+  
+    textarea {
+      resize: vertical;
+    }
+  }
+  
+  /* Regole specifiche per PrimeNG */
+  .p-grid {
+    width: 100%;
+  }
+  
+  .p-col-12 {
+    @media (min-width: 576px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .p-col {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+  }
+  
+  .p-col input,
+  .p-col textarea {
+    flex: 1;
+  }
+
+  input::first-letter {
+    text-transform: uppercase;
+  }
+
+
+  //success message
+  .success-message {
+    color: green;
+    margin-top: 10px;
+    font-size: 16px;
+    margin-left: 5px;
+  }

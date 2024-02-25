@@ -1,0 +1,851 @@
+2020-06-18 15:43:20.8139 Info Message Template Auto Format enabled
+2020-06-18 15:43:20.8506 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-18 15:43:20.8506 Info Loading assembly: NLog.Targets.Seq
+2020-06-18 15:43:20.9350 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-18 15:43:20.9769 Info Found 25 configuration items
+2020-06-18 15:43:21.0085 Info Configuration initialized.
+2020-06-18 15:43:21.0085 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-20 00:08:43.2798 Info Message Template Auto Format enabled
+2020-06-20 00:08:43.3118 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-20 00:08:43.3236 Info Loading assembly: NLog.Targets.Seq
+2020-06-20 00:08:43.4123 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-20 00:08:43.4690 Info Found 25 configuration items
+2020-06-20 00:08:43.5116 Info Configuration initialized.
+2020-06-20 00:08:43.5191 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-20 00:10:21.9033 Info Message Template Auto Format enabled
+2020-06-20 00:10:21.9351 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-20 00:10:21.9483 Info Loading assembly: NLog.Targets.Seq
+2020-06-20 00:10:22.0352 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-20 00:10:22.0834 Info Found 25 configuration items
+2020-06-20 00:10:22.1206 Info Configuration initialized.
+2020-06-20 00:10:22.1269 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-20 00:10:23.7996 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.zip
+2020-06-20 00:10:24.3664 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.log'.
+2020-06-20 00:13:10.5601 Info Message Template Auto Format enabled
+2020-06-20 00:13:10.6232 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-20 00:13:10.6399 Info Loading assembly: NLog.Targets.Seq
+2020-06-20 00:13:10.8122 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-20 00:13:10.8955 Info Found 25 configuration items
+2020-06-20 00:13:10.9628 Info Configuration initialized.
+2020-06-20 00:13:10.9767 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-20 00:13:12.9924 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.0.zip
+2020-06-20 00:13:14.2299 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.log'.
+2020-06-25 11:42:28.1491 Info Message Template Auto Format enabled
+2020-06-25 11:42:28.1771 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 11:42:28.1900 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 11:42:28.2726 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 11:42:28.3222 Info Found 25 configuration items
+2020-06-25 11:42:28.3578 Info Configuration initialized.
+2020-06-25 11:42:28.3659 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:20:35.6273 Info Message Template Auto Format enabled
+2020-06-25 12:20:35.6495 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:20:35.6495 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:20:35.7028 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:20:35.7294 Info Found 25 configuration items
+2020-06-25 12:20:35.7490 Info Configuration initialized.
+2020-06-25 12:20:35.7537 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:20:36.8676 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.zip
+2020-06-25 12:20:37.3935 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 12:24:33.8413 Info Message Template Auto Format enabled
+2020-06-25 12:24:33.8867 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:24:33.8949 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:24:33.9494 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:24:33.9866 Info Found 25 configuration items
+2020-06-25 12:24:34.0303 Info Configuration initialized.
+2020-06-25 12:24:34.0496 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:24:35.6768 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.0.zip
+2020-06-25 12:24:35.9181 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 12:29:55.6268 Info Message Template Auto Format enabled
+2020-06-25 12:29:55.6729 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:29:55.6850 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:29:55.7670 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:29:55.8169 Info Found 25 configuration items
+2020-06-25 12:29:55.8504 Info Configuration initialized.
+2020-06-25 12:29:55.8504 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:29:57.4093 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.1.zip
+2020-06-25 12:29:57.6437 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 12:31:11.9254 Info Message Template Auto Format enabled
+2020-06-25 12:31:11.9532 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:31:11.9649 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:31:12.0299 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:31:12.0952 Info Found 25 configuration items
+2020-06-25 12:31:12.1800 Info Configuration initialized.
+2020-06-25 12:31:12.1956 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:31:14.0099 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.2.zip
+2020-06-25 12:31:14.2787 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 12:43:05.1151 Info Message Template Auto Format enabled
+2020-06-25 12:43:05.1499 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:43:05.1601 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:43:05.2294 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:43:05.2691 Info Found 25 configuration items
+2020-06-25 12:43:05.2956 Info Configuration initialized.
+2020-06-25 12:43:05.3025 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:43:06.8319 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.3.zip
+2020-06-25 12:43:07.0685 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 12:46:47.2192 Info Message Template Auto Format enabled
+2020-06-25 12:46:47.3048 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:46:47.3159 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:46:47.4201 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:46:47.5238 Info Found 25 configuration items
+2020-06-25 12:46:47.5914 Info Configuration initialized.
+2020-06-25 12:46:47.6120 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:46:49.7697 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.zip'.
+2020-06-25 12:46:50.1284 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.4.zip
+2020-06-25 12:46:50.2122 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 12:54:27.5071 Info Message Template Auto Format enabled
+2020-06-25 12:54:27.5509 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:54:27.5662 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:54:27.6727 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:54:27.7347 Info Found 25 configuration items
+2020-06-25 12:54:27.7758 Info Configuration initialized.
+2020-06-25 12:54:27.7870 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:54:29.9229 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-20.0.zip'.
+2020-06-25 12:54:30.1550 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.5.zip
+2020-06-25 12:54:30.2545 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 12:56:19.3827 Info Message Template Auto Format enabled
+2020-06-25 12:56:19.4870 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 12:56:19.6508 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 12:56:19.8052 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 12:56:19.8989 Info Found 25 configuration items
+2020-06-25 12:56:19.9404 Info Configuration initialized.
+2020-06-25 12:56:19.9404 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 12:56:21.9528 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.zip'.
+2020-06-25 12:56:22.1493 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.6.zip
+2020-06-25 12:56:22.2252 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 13:34:53.8295 Info Message Template Auto Format enabled
+2020-06-25 13:34:53.8617 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 13:34:53.8617 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 13:34:53.9434 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 13:34:53.9910 Info Found 25 configuration items
+2020-06-25 13:34:54.0221 Info Configuration initialized.
+2020-06-25 13:34:54.0221 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 13:34:55.6454 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.0.zip'.
+2020-06-25 13:34:55.8528 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.7.zip
+2020-06-25 13:34:55.9167 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 13:38:11.4210 Info Message Template Auto Format enabled
+2020-06-25 13:38:11.4670 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 13:38:11.4753 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 13:38:11.5388 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 13:38:11.5811 Info Found 25 configuration items
+2020-06-25 13:38:11.6113 Info Configuration initialized.
+2020-06-25 13:38:11.6196 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 13:38:13.4722 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.1.zip'.
+2020-06-25 13:38:13.6952 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.8.zip
+2020-06-25 13:38:14.0535 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 15:52:48.8956 Info Message Template Auto Format enabled
+2020-06-25 15:52:48.9385 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 15:52:48.9577 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 15:52:49.0671 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 15:52:49.1356 Info Found 25 configuration items
+2020-06-25 15:52:49.1911 Info Configuration initialized.
+2020-06-25 15:52:49.1911 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 15:52:51.5224 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.2.zip'.
+2020-06-25 15:52:52.0972 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.9.zip
+2020-06-25 15:52:52.2761 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-25 22:56:06.8139 Info Message Template Auto Format enabled
+2020-06-25 22:56:06.8508 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-25 22:56:06.8641 Info Loading assembly: NLog.Targets.Seq
+2020-06-25 22:56:06.9506 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-25 22:56:07.0003 Info Found 25 configuration items
+2020-06-25 22:56:07.0360 Info Configuration initialized.
+2020-06-25 22:56:07.0360 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-25 22:56:09.9163 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.3.zip'.
+2020-06-25 22:56:10.3175 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.10.zip
+2020-06-25 22:56:10.5685 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.log'.
+2020-06-26 09:58:48.5255 Info Message Template Auto Format enabled
+2020-06-26 09:58:48.5638 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-26 09:58:48.5774 Info Loading assembly: NLog.Targets.Seq
+2020-06-26 09:58:48.6615 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-26 09:58:48.7177 Info Found 25 configuration items
+2020-06-26 09:58:48.7536 Info Configuration initialized.
+2020-06-26 09:58:48.7536 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-26 10:03:27.6160 Info Message Template Auto Format enabled
+2020-06-26 10:03:27.6533 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-26 10:03:27.6728 Info Loading assembly: NLog.Targets.Seq
+2020-06-26 10:03:27.7705 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-26 10:03:27.8232 Info Found 25 configuration items
+2020-06-26 10:03:27.8694 Info Configuration initialized.
+2020-06-26 10:03:27.8827 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-26 10:03:29.1179 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.4.zip'.
+2020-06-26 10:03:29.4227 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.zip
+2020-06-26 10:03:29.5024 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log'.
+2020-06-26 10:10:19.6832 Info Message Template Auto Format enabled
+2020-06-26 10:10:19.7325 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-26 10:10:19.7504 Info Loading assembly: NLog.Targets.Seq
+2020-06-26 10:10:19.8609 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-26 10:10:19.9239 Info Found 25 configuration items
+2020-06-26 10:10:19.9672 Info Configuration initialized.
+2020-06-26 10:10:19.9774 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-26 10:10:21.2025 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.5.zip'.
+2020-06-26 10:10:21.4424 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.0.zip
+2020-06-26 10:10:21.5170 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log'.
+2020-06-26 14:50:49.4295 Info Message Template Auto Format enabled
+2020-06-26 14:50:49.4709 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-26 14:50:49.4940 Info Loading assembly: NLog.Targets.Seq
+2020-06-26 14:50:49.5765 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-26 14:50:49.6381 Info Found 25 configuration items
+2020-06-26 14:50:49.6816 Info Configuration initialized.
+2020-06-26 14:50:49.6973 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-26 14:50:51.9479 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.6.zip'.
+2020-06-26 14:50:52.6733 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.1.zip
+2020-06-26 14:50:53.2574 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log'.
+2020-06-26 15:44:50.4747 Info Message Template Auto Format enabled
+2020-06-26 15:44:50.5250 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-26 15:44:50.5586 Info Loading assembly: NLog.Targets.Seq
+2020-06-26 15:44:50.7096 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-26 15:44:50.7912 Info Found 25 configuration items
+2020-06-26 15:44:50.8490 Info Configuration initialized.
+2020-06-26 15:44:50.8706 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-26 15:44:52.4331 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.7.zip'.
+2020-06-26 15:44:52.9689 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.2.zip
+2020-06-26 15:44:53.5181 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log'.
+2020-06-26 16:18:55.1242 Info Message Template Auto Format enabled
+2020-06-26 16:18:55.2068 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-26 16:18:55.2068 Info Loading assembly: NLog.Targets.Seq
+2020-06-26 16:18:55.3942 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-26 16:18:55.5083 Info Found 25 configuration items
+2020-06-26 16:18:55.5680 Info Configuration initialized.
+2020-06-26 16:18:55.5866 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-26 16:20:40.6825 Info Message Template Auto Format enabled
+2020-06-26 16:20:40.7490 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-26 16:20:40.7653 Info Loading assembly: NLog.Targets.Seq
+2020-06-26 16:20:40.9358 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-26 16:20:41.0305 Info Found 25 configuration items
+2020-06-26 16:20:41.1043 Info Configuration initialized.
+2020-06-26 16:20:41.1247 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-26 16:20:43.6770 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.8.zip'.
+2020-06-26 16:20:43.9136 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.3.zip
+2020-06-26 16:20:44.0392 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.log'.
+2020-06-29 08:40:34.7218 Info Message Template Auto Format enabled
+2020-06-29 08:40:34.7588 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 08:40:34.7883 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 08:40:34.8901 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 08:40:34.9693 Info Found 25 configuration items
+2020-06-29 08:40:35.0149 Info Configuration initialized.
+2020-06-29 08:40:35.0259 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 11:51:01.1762 Info Message Template Auto Format enabled
+2020-06-29 11:51:01.2064 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 11:51:01.2341 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 11:51:01.3429 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 11:51:01.4138 Info Found 25 configuration items
+2020-06-29 11:51:01.4606 Info Configuration initialized.
+2020-06-29 11:51:01.4713 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 11:51:02.4655 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.9.zip'.
+2020-06-29 11:51:02.7973 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.zip
+2020-06-29 11:51:02.9479 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 12:10:13.8311 Info Message Template Auto Format enabled
+2020-06-29 12:10:13.9425 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 12:10:13.9677 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 12:10:14.1770 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 12:10:14.3348 Info Found 25 configuration items
+2020-06-29 12:10:14.4000 Info Configuration initialized.
+2020-06-29 12:10:14.4156 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 12:10:16.7040 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-25.10.zip'.
+2020-06-29 12:10:16.9278 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.0.zip
+2020-06-29 12:10:17.0519 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 12:14:27.2984 Info Message Template Auto Format enabled
+2020-06-29 12:14:27.3531 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 12:14:27.3971 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 12:14:27.5834 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 12:14:27.6670 Info Found 25 configuration items
+2020-06-29 12:14:27.7381 Info Configuration initialized.
+2020-06-29 12:14:27.7536 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 12:14:29.4527 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.zip'.
+2020-06-29 12:14:30.3696 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.1.zip
+2020-06-29 12:14:31.0343 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 14:36:19.2970 Info Message Template Auto Format enabled
+2020-06-29 14:36:19.3246 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 14:36:19.3518 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 14:36:19.4549 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 14:36:19.5143 Info Found 25 configuration items
+2020-06-29 14:36:19.5578 Info Configuration initialized.
+2020-06-29 14:36:19.5687 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 14:36:22.1124 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.0.zip'.
+2020-06-29 14:36:22.4382 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.2.zip
+2020-06-29 14:36:22.5242 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 15:15:08.8675 Info Message Template Auto Format enabled
+2020-06-29 15:15:08.9009 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 15:15:08.9256 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 15:15:09.0279 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 15:15:09.0896 Info Found 25 configuration items
+2020-06-29 15:15:09.1325 Info Configuration initialized.
+2020-06-29 15:15:09.1325 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 15:15:11.3298 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.1.zip'.
+2020-06-29 15:15:11.6767 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.3.zip
+2020-06-29 15:15:11.8471 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 22:25:13.9617 Info Message Template Auto Format enabled
+2020-06-29 22:25:14.0017 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 22:25:14.0282 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 22:25:14.1547 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 22:25:14.2408 Info Found 25 configuration items
+2020-06-29 22:25:14.2899 Info Configuration initialized.
+2020-06-29 22:25:14.2997 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 22:25:16.9335 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.2.zip'.
+2020-06-29 22:25:17.2704 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.4.zip
+2020-06-29 22:25:17.9964 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 22:26:31.5987 Info Message Template Auto Format enabled
+2020-06-29 22:26:31.6442 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 22:26:31.6795 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 22:26:31.7913 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 22:26:31.8544 Info Found 25 configuration items
+2020-06-29 22:26:31.9017 Info Configuration initialized.
+2020-06-29 22:26:31.9220 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 22:26:34.3365 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-26.3.zip'.
+2020-06-29 22:26:34.5366 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.5.zip
+2020-06-29 22:26:34.6824 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 22:29:28.1306 Info Message Template Auto Format enabled
+2020-06-29 22:29:28.1687 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 22:29:28.2021 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 22:29:28.3126 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 22:29:28.3777 Info Found 25 configuration items
+2020-06-29 22:29:28.4258 Info Configuration initialized.
+2020-06-29 22:29:28.4258 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 22:29:29.8885 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.zip'.
+2020-06-29 22:29:30.0958 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.6.zip
+2020-06-29 22:29:30.1847 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-29 22:33:29.1518 Info Message Template Auto Format enabled
+2020-06-29 22:33:29.1949 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-29 22:33:29.2487 Info Loading assembly: NLog.Targets.Seq
+2020-06-29 22:33:29.3955 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-29 22:33:29.4702 Info Found 25 configuration items
+2020-06-29 22:33:29.5278 Info Configuration initialized.
+2020-06-29 22:33:29.5390 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-29 22:33:30.8134 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.0.zip'.
+2020-06-29 22:33:31.3526 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.7.zip
+2020-06-29 22:33:31.4454 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.log'.
+2020-06-30 11:29:38.0219 Info Message Template Auto Format enabled
+2020-06-30 11:29:38.1148 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-30 11:29:38.1513 Info Loading assembly: NLog.Targets.Seq
+2020-06-30 11:29:38.2624 Info Adding target FileTarget(Name=ownFile-web)
+2020-06-30 11:29:38.4233 Info Found 25 configuration items
+2020-06-30 11:29:38.4736 Info Configuration initialized.
+2020-06-30 11:29:38.4876 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-06-30 11:29:41.1419 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.1.zip'.
+2020-06-30 11:29:41.4941 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-30.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-30.zip
+2020-06-30 11:29:42.0000 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-30.log'.
+2020-07-01 09:23:31.1044 Info Message Template Auto Format enabled
+2020-07-01 09:23:31.3052 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-01 09:23:31.3359 Info Loading assembly: NLog.Targets.Seq
+2020-07-01 09:23:31.5075 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-01 09:23:31.8460 Info Found 25 configuration items
+2020-07-01 09:23:31.9291 Info Configuration initialized.
+2020-07-01 09:23:31.9842 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-01 10:36:44.5869 Info Message Template Auto Format enabled
+2020-07-01 10:36:44.6877 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-01 10:36:44.7207 Info Loading assembly: NLog.Targets.Seq
+2020-07-01 10:36:44.9159 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-01 10:36:45.0412 Info Found 25 configuration items
+2020-07-01 10:36:45.1193 Info Configuration initialized.
+2020-07-01 10:36:45.1414 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-01 10:36:50.0129 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.2.zip'.
+2020-07-01 10:36:50.3899 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.zip
+2020-07-01 10:36:50.7613 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.log'.
+2020-07-01 16:22:07.1285 Info Message Template Auto Format enabled
+2020-07-01 16:22:07.1598 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-01 16:22:07.1847 Info Loading assembly: NLog.Targets.Seq
+2020-07-01 16:22:07.2724 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-01 16:22:07.3381 Info Found 25 configuration items
+2020-07-01 16:22:07.3842 Info Configuration initialized.
+2020-07-01 16:22:07.3959 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-01 16:22:08.3750 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.3.zip'.
+2020-07-01 16:22:08.6518 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.0.zip
+2020-07-01 16:22:08.7211 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.log'.
+2020-07-01 16:23:46.6996 Info Message Template Auto Format enabled
+2020-07-01 16:23:46.7368 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-01 16:23:46.7653 Info Loading assembly: NLog.Targets.Seq
+2020-07-01 16:23:46.8808 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-01 16:23:46.9691 Info Found 25 configuration items
+2020-07-01 16:23:47.0222 Info Configuration initialized.
+2020-07-01 16:23:47.0362 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-01 16:23:48.6041 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.4.zip'.
+2020-07-01 16:23:48.8161 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.1.zip
+2020-07-01 16:23:48.9201 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.log'.
+2020-07-03 10:45:51.1841 Info Message Template Auto Format enabled
+2020-07-03 10:45:51.2263 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-03 10:45:51.2602 Info Loading assembly: NLog.Targets.Seq
+2020-07-03 10:45:51.3746 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-03 10:45:51.4577 Info Found 25 configuration items
+2020-07-03 10:45:51.5093 Info Configuration initialized.
+2020-07-03 10:45:51.5320 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-03 10:53:10.9254 Info Message Template Auto Format enabled
+2020-07-03 10:53:10.9584 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-03 10:53:10.9766 Info Loading assembly: NLog.Targets.Seq
+2020-07-03 10:53:11.0644 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-03 10:53:11.1143 Info Found 25 configuration items
+2020-07-03 10:53:11.1534 Info Configuration initialized.
+2020-07-03 10:53:11.1706 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-03 10:53:12.1770 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.5.zip'.
+2020-07-03 10:53:12.6941 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.zip
+2020-07-03 10:53:12.8163 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.log'.
+2020-07-03 15:06:34.4272 Info Message Template Auto Format enabled
+2020-07-03 15:06:34.4652 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-03 15:06:34.5036 Info Loading assembly: NLog.Targets.Seq
+2020-07-03 15:06:34.6059 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-03 15:06:34.8124 Info Found 25 configuration items
+2020-07-03 15:06:34.8826 Info Configuration initialized.
+2020-07-03 15:06:34.9035 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-03 15:06:36.5392 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.6.zip'.
+2020-07-03 15:06:37.2996 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.0.zip
+2020-07-03 15:06:37.4557 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.log'.
+2020-07-06 10:17:30.9481 Info Message Template Auto Format enabled
+2020-07-06 10:17:30.9863 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-06 10:17:31.0018 Info Loading assembly: NLog.Targets.Seq
+2020-07-06 10:17:31.0835 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-06 10:17:31.1514 Info Found 25 configuration items
+2020-07-06 10:17:31.1886 Info Configuration initialized.
+2020-07-06 10:17:31.1886 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-06 10:32:40.0039 Info Message Template Auto Format enabled
+2020-07-06 10:32:40.0582 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-06 10:32:40.0821 Info Loading assembly: NLog.Targets.Seq
+2020-07-06 10:32:40.1996 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-06 10:32:40.2812 Info Found 25 configuration items
+2020-07-06 10:32:40.3384 Info Configuration initialized.
+2020-07-06 10:32:40.3556 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-06 10:32:44.3216 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-29.7.zip'.
+2020-07-06 10:32:44.6764 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.zip
+2020-07-06 10:32:44.9559 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.log'.
+2020-07-06 10:35:54.8077 Info Message Template Auto Format enabled
+2020-07-06 10:35:54.8683 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-06 10:35:54.8927 Info Loading assembly: NLog.Targets.Seq
+2020-07-06 10:35:55.0380 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-06 10:35:55.1266 Info Found 25 configuration items
+2020-07-06 10:35:55.1978 Info Configuration initialized.
+2020-07-06 10:35:55.2161 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-06 10:35:57.2846 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-06-30.zip'.
+2020-07-06 10:35:57.6135 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.0.zip
+2020-07-06 10:35:57.6949 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.log'.
+2020-07-14 09:13:35.6367 Info Message Template Auto Format enabled
+2020-07-14 09:13:35.7253 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-14 09:13:35.7483 Info Loading assembly: NLog.Targets.Seq
+2020-07-14 09:13:35.8628 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-14 09:13:36.0037 Info Found 25 configuration items
+2020-07-14 09:13:36.0626 Info Configuration initialized.
+2020-07-14 09:13:36.0804 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+<<<<<<< HEAD
+>>>>>>> 8c9866108a6f19572b79df2ea12c2828b5172c62
+2020-07-17 09:21:01.9822 Info Message Template Auto Format enabled
+2020-07-17 09:21:02.0383 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-17 09:21:02.0516 Info Loading assembly: NLog.Targets.Seq
+2020-07-17 09:21:02.1300 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-17 09:21:02.2232 Info Found 25 configuration items
+2020-07-17 09:21:02.2618 Info Configuration initialized.
+2020-07-17 09:21:02.2740 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-17 15:31:44.5225 Info Message Template Auto Format enabled
+2020-07-17 15:31:44.5903 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-17 15:31:44.6051 Info Loading assembly: NLog.Targets.Seq
+2020-07-17 15:31:44.6875 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-17 15:31:44.7759 Info Found 25 configuration items
+2020-07-17 15:31:44.8171 Info Configuration initialized.
+2020-07-17 15:31:44.8312 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-17 15:31:47.6008 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-16.0.zip'.
+2020-07-17 15:31:48.1910 Info FileTarget(Name=ownFile-web): Archiving C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-17.log to compressed C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-17.zip
+2020-07-17 15:31:48.3277 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-17.log'.
+2020-07-20 09:40:57.4751 Info Message Template Auto Format enabled
+2020-07-20 09:40:57.5588 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-20 09:40:57.5789 Info Loading assembly: NLog.Targets.Seq
+2020-07-20 09:40:57.7077 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-20 09:40:57.8408 Info Found 25 configuration items
+2020-07-20 09:40:57.8971 Info Configuration initialized.
+2020-07-20 09:40:57.9140 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-20 16:13:50.4872 Info Message Template Auto Format enabled
+2020-07-20 16:13:50.6181 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-20 16:13:50.6438 Info Loading assembly: NLog.Targets.Seq
+2020-07-20 16:13:50.8594 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-20 16:13:51.1541 Info Found 25 configuration items
+2020-07-20 16:13:51.2883 Info Configuration initialized.
+2020-07-20 16:13:51.3216 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-20 16:13:57.5838 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-16.1.zip'.
+2020-07-20 16:13:57.8496 Info FileTarget(Name=ownFile-web): Archiving C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-20.log to compressed C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-20.zip
+2020-07-20 16:13:58.3649 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-20.log'.
+=======
+2020-07-17 09:14:50.0603 Info Message Template Auto Format enabled
+2020-07-17 09:14:50.1578 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-17 09:14:50.1798 Info Loading assembly: NLog.Targets.Seq
+2020-07-17 09:14:50.2789 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-17 09:14:50.3925 Info Found 25 configuration items
+2020-07-17 09:14:50.4539 Info Configuration initialized.
+2020-07-17 09:14:50.4741 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-17 09:52:45.9601 Info Message Template Auto Format enabled
+2020-07-17 09:52:46.0175 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-17 09:52:46.0402 Info Loading assembly: NLog.Targets.Seq
+2020-07-17 09:52:46.1338 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-17 09:52:46.3178 Info Found 25 configuration items
+2020-07-17 09:52:46.3699 Info Configuration initialized.
+2020-07-17 09:52:46.3912 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-17 09:52:49.1307 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.zip'.
+2020-07-17 09:52:49.4397 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-17.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-17.zip
+2020-07-17 09:52:49.8120 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-17.log'.
+<<<<<<< HEAD
+>>>>>>> 60cc8d895e24a461fa00eb55ea79525246b82690
+<<<<<<< HEAD
+2020-07-22 10:38:56.5947 Info Message Template Auto Format enabled
+2020-07-22 10:38:56.6198 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-22 10:38:56.6284 Info Loading assembly: NLog.Targets.Seq
+2020-07-22 10:38:56.7042 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-22 10:38:56.7564 Info Found 25 configuration items
+2020-07-22 10:38:56.7854 Info Configuration initialized.
+2020-07-22 10:38:56.7854 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-22 14:15:23.4158 Info Message Template Auto Format enabled
+2020-07-22 14:15:23.4462 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-22 14:15:23.4462 Info Loading assembly: NLog.Targets.Seq
+2020-07-22 14:15:23.5184 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-22 14:15:23.5755 Info Found 25 configuration items
+2020-07-22 14:15:23.6091 Info Configuration initialized.
+2020-07-22 14:15:23.6160 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-22 14:15:25.2529 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-16.2.zip'.
+2020-07-22 14:15:25.5170 Info FileTarget(Name=ownFile-web): Archiving C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-22.log to compressed C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-22.zip
+2020-07-22 14:15:25.6246 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\andrea.giovane\Progetti\ABB\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-22.log'.
+=======
+=======
+2020-07-20 15:30:55.1717 Info Message Template Auto Format enabled
+2020-07-20 15:30:55.2272 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-20 15:30:55.2417 Info Loading assembly: NLog.Targets.Seq
+2020-07-20 15:30:55.3778 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-20 15:30:55.4745 Info Found 25 configuration items
+2020-07-20 15:30:55.5382 Info Configuration initialized.
+2020-07-20 15:30:55.5510 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+>>>>>>> little fix
+>>>>>>> dadaf47d47c455e003babb24df16fb5ec1059e4b
+2020-07-28 08:25:36.6007 Info Message Template Auto Format enabled
+2020-07-28 08:25:36.6509 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-28 08:25:36.6729 Info Loading assembly: NLog.Targets.Seq
+2020-07-28 08:25:36.7962 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-28 08:25:36.8776 Info Found 25 configuration items
+2020-07-28 08:25:36.9303 Info Configuration initialized.
+2020-07-28 08:25:36.9449 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-07-31 09:26:57.6380 Info Message Template Auto Format enabled
+2020-07-31 09:26:57.6667 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-31 09:26:57.6779 Info Loading assembly: NLog.Targets.Seq
+2020-07-31 09:26:57.7598 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-31 09:26:57.8110 Info Found 25 configuration items
+2020-07-31 09:26:57.8482 Info Configuration initialized.
+2020-07-31 09:26:57.8482 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-03 10:08:13.3637 Info Message Template Auto Format enabled
+2020-08-03 10:08:13.3970 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-03 10:08:13.4067 Info Loading assembly: NLog.Targets.Seq
+2020-08-03 10:08:13.5080 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-03 10:08:13.5746 Info Found 25 configuration items
+2020-08-03 10:08:13.6200 Info Configuration initialized.
+2020-08-03 10:08:13.6303 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-03 12:00:41.5360 Info Message Template Auto Format enabled
+2020-08-03 12:00:41.5842 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-03 12:00:41.6081 Info Loading assembly: NLog.Targets.Seq
+2020-08-03 12:00:41.7329 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-03 12:00:41.8342 Info Found 25 configuration items
+2020-08-03 12:00:41.8895 Info Configuration initialized.
+2020-08-03 12:00:41.9291 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-03 12:00:44.3077 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.0.zip'.
+2020-08-03 12:00:44.6852 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.zip
+2020-08-03 12:00:44.9071 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.log'.
+2020-08-03 15:45:21.5051 Info Message Template Auto Format enabled
+2020-08-03 15:45:21.5394 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-03 15:45:21.5521 Info Loading assembly: NLog.Targets.Seq
+2020-08-03 15:45:21.6434 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-03 15:45:21.7120 Info Found 25 configuration items
+2020-08-03 15:45:21.7582 Info Configuration initialized.
+2020-08-03 15:45:21.7707 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-03 15:45:23.0024 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-01.1.zip'.
+2020-08-03 15:45:23.6109 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.0.zip
+2020-08-03 15:45:23.7638 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.log'.
+2020-08-03 17:16:51.5546 Info Message Template Auto Format enabled
+2020-08-03 17:16:51.6123 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-03 17:16:51.6315 Info Loading assembly: NLog.Targets.Seq
+2020-08-03 17:16:51.7732 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-03 17:16:51.8683 Info Found 25 configuration items
+2020-08-03 17:16:51.9282 Info Configuration initialized.
+2020-08-03 17:16:51.9522 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-03 17:16:53.9023 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.zip'.
+2020-08-03 17:16:54.2965 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.1.zip
+2020-08-03 17:16:54.9022 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.log'.
+2020-08-04 10:54:45.2487 Info Message Template Auto Format enabled
+2020-08-04 10:54:45.2755 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 10:54:45.2850 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 10:54:45.3545 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 10:54:45.4069 Info Found 25 configuration items
+2020-08-04 10:54:45.4416 Info Configuration initialized.
+2020-08-04 10:54:45.4416 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 15:23:49.9783 Info Message Template Auto Format enabled
+2020-08-04 15:23:50.0157 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 15:23:50.0157 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 15:23:50.1305 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 15:23:50.1977 Info Found 25 configuration items
+2020-08-04 15:23:50.2431 Info Configuration initialized.
+2020-08-04 15:23:50.2543 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 15:23:51.5522 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-03.0.zip'.
+2020-08-04 15:23:52.0222 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.zip
+2020-08-04 15:23:52.1040 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log'.
+2020-08-04 15:30:35.9292 Info Message Template Auto Format enabled
+2020-08-04 15:30:35.9743 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 15:30:35.9862 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 15:30:36.0921 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 15:30:36.1794 Info Found 25 configuration items
+2020-08-04 15:30:36.2273 Info Configuration initialized.
+2020-08-04 15:30:36.2400 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 15:30:37.9255 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.zip'.
+2020-08-04 15:30:38.3668 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.0.zip
+2020-08-04 15:30:38.5562 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log'.
+2020-08-04 15:36:53.2975 Info Message Template Auto Format enabled
+2020-08-04 15:36:53.4037 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 15:36:53.4245 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 15:36:53.5687 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 15:36:53.6576 Info Found 25 configuration items
+2020-08-04 15:36:53.7486 Info Configuration initialized.
+2020-08-04 15:36:53.7679 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 15:36:55.4801 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-06.0.zip'.
+2020-08-04 15:36:55.9204 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.1.zip
+2020-08-04 15:36:56.0941 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log'.
+2020-08-04 15:46:32.8058 Info Message Template Auto Format enabled
+2020-08-04 15:46:32.8440 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 15:46:32.8440 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 15:46:32.9500 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 15:46:33.0240 Info Found 25 configuration items
+2020-08-04 15:46:33.0721 Info Configuration initialized.
+2020-08-04 15:46:33.0840 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 15:46:34.1045 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-07-17.zip'.
+2020-08-04 15:46:34.4874 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.2.zip
+2020-08-04 15:46:34.5957 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log'.
+2020-08-04 15:49:31.4466 Info Message Template Auto Format enabled
+2020-08-04 15:49:31.4753 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 15:49:31.4858 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 15:49:31.5722 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 15:49:31.6301 Info Found 25 configuration items
+2020-08-04 15:49:31.6713 Info Configuration initialized.
+2020-08-04 15:49:31.6713 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 15:49:32.9626 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.zip'.
+2020-08-04 15:49:33.1898 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.3.zip
+2020-08-04 15:49:33.5967 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log'.
+2020-08-04 15:57:54.0404 Info Message Template Auto Format enabled
+2020-08-04 15:57:54.0678 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 15:57:54.0678 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 15:57:54.1650 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 15:57:54.2226 Info Found 25 configuration items
+2020-08-04 15:57:54.2627 Info Configuration initialized.
+2020-08-04 15:57:54.2744 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 15:57:55.1546 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.0.zip'.
+2020-08-04 15:57:55.4465 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.4.zip
+2020-08-04 15:57:55.5378 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log'.
+2020-08-04 17:10:05.6046 Info Message Template Auto Format enabled
+2020-08-04 17:10:05.6579 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-04 17:10:05.6712 Info Loading assembly: NLog.Targets.Seq
+2020-08-04 17:10:05.7857 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-04 17:10:05.8696 Info Found 25 configuration items
+2020-08-04 17:10:05.9202 Info Configuration initialized.
+2020-08-04 17:10:05.9377 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-04 17:10:07.1921 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-03.1.zip'.
+2020-08-04 17:10:07.4861 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.5.zip
+2020-08-04 17:10:08.0801 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.log'.
+2020-08-05 12:39:32.7688 Info Message Template Auto Format enabled
+2020-08-05 12:39:32.8064 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-05 12:39:32.8216 Info Loading assembly: NLog.Targets.Seq
+2020-08-05 12:39:32.9176 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-05 12:39:32.9909 Info Found 25 configuration items
+2020-08-05 12:39:33.0458 Info Configuration initialized.
+2020-08-05 12:39:33.0622 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-05 12:39:34.5247 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.zip'.
+2020-08-05 12:39:34.8407 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.zip
+2020-08-05 12:39:35.3770 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log'.
+2020-08-05 14:44:54.2859 Info Message Template Auto Format enabled
+2020-08-05 14:44:54.3177 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-05 14:44:54.3346 Info Loading assembly: NLog.Targets.Seq
+2020-08-05 14:44:54.4277 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-05 14:44:54.4927 Info Found 25 configuration items
+2020-08-05 14:44:54.5356 Info Configuration initialized.
+2020-08-05 14:44:54.5484 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-05 14:44:55.6207 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.0.zip'.
+2020-08-05 14:44:55.8842 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.0.zip
+2020-08-05 14:44:56.2115 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log'.
+2020-08-05 15:07:09.3046 Info Message Template Auto Format enabled
+2020-08-05 15:07:09.3435 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-05 15:07:09.3897 Info Loading assembly: NLog.Targets.Seq
+2020-08-05 15:07:09.5035 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-05 15:07:09.5809 Info Found 25 configuration items
+2020-08-05 15:07:09.6475 Info Configuration initialized.
+2020-08-05 15:07:09.6651 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-05 15:07:10.6881 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.1.zip'.
+2020-08-05 15:07:11.0264 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.1.zip
+2020-08-05 15:07:11.1165 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log'.
+2020-08-05 16:01:58.3037 Info Message Template Auto Format enabled
+2020-08-05 16:01:58.3593 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-05 16:01:58.3840 Info Loading assembly: NLog.Targets.Seq
+2020-08-05 16:01:58.5252 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-05 16:01:58.6507 Info Found 25 configuration items
+2020-08-05 16:01:58.7193 Info Configuration initialized.
+2020-08-05 16:01:58.7408 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-05 16:02:01.8575 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.2.zip'.
+2020-08-05 16:02:02.2174 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.2.zip
+2020-08-05 16:02:02.4600 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log'.
+2020-08-05 16:06:27.1529 Info Message Template Auto Format enabled
+2020-08-05 16:06:27.2005 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-05 16:06:27.2139 Info Loading assembly: NLog.Targets.Seq
+2020-08-05 16:06:27.3168 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-05 16:06:27.3879 Info Found 25 configuration items
+2020-08-05 16:06:27.4371 Info Configuration initialized.
+2020-08-05 16:06:27.4371 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-05 16:06:28.7230 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.3.zip'.
+2020-08-05 16:06:28.9087 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.3.zip
+2020-08-05 16:06:29.0256 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.log'.
+2020-08-06 11:00:13.1854 Info Message Template Auto Format enabled
+2020-08-06 11:00:13.2566 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-06 11:00:13.3003 Info Loading assembly: NLog.Targets.Seq
+2020-08-06 11:00:13.4539 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-06 11:00:13.5370 Info Found 25 configuration items
+2020-08-06 11:00:13.5978 Info Configuration initialized.
+2020-08-06 11:00:13.6144 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-06 11:07:18.6736 Info Message Template Auto Format enabled
+2020-08-06 11:07:18.7238 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-06 11:07:18.7382 Info Loading assembly: NLog.Targets.Seq
+2020-08-06 11:07:18.8904 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-06 11:07:18.9777 Info Found 25 configuration items
+2020-08-06 11:07:19.0438 Info Configuration initialized.
+2020-08-06 11:07:19.0622 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-06 11:07:21.0295 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.4.zip'.
+2020-08-06 11:07:21.3009 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-06.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-06.zip
+2020-08-06 11:07:21.4640 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-06.log'.
+2020-08-07 14:57:06.9820 Info Message Template Auto Format enabled
+2020-08-07 14:57:07.0251 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-07 14:57:07.0418 Info Loading assembly: NLog.Targets.Seq
+2020-08-07 14:57:07.1581 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-07 14:57:07.2323 Info Found 25 configuration items
+2020-08-07 14:57:07.3336 Info Configuration initialized.
+2020-08-07 14:57:07.3529 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-07 15:05:14.2235 Info Message Template Auto Format enabled
+2020-08-07 15:05:14.2540 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-07 15:05:14.2674 Info Loading assembly: NLog.Targets.Seq
+2020-08-07 15:05:14.3583 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-07 15:05:14.4304 Info Found 25 configuration items
+2020-08-07 15:05:14.4764 Info Configuration initialized.
+2020-08-07 15:05:14.4890 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-07 15:05:15.5371 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-04.5.zip'.
+2020-08-07 15:05:15.7968 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-07.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-07.zip
+2020-08-07 15:05:16.5049 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-07.log'.
+2020-08-31 10:14:08.6490 Info Message Template Auto Format enabled
+2020-08-31 10:14:08.6808 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-31 10:14:08.6937 Info Loading assembly: NLog.Targets.Seq
+2020-08-31 10:14:08.7826 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-31 10:14:08.8495 Info Found 25 configuration items
+2020-08-31 10:14:08.8992 Info Configuration initialized.
+2020-08-31 10:14:08.9411 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-31 10:41:50.4376 Info Message Template Auto Format enabled
+2020-08-31 10:41:50.4879 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-31 10:41:50.5027 Info Loading assembly: NLog.Targets.Seq
+2020-08-31 10:41:50.6179 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-31 10:41:50.6865 Info Found 25 configuration items
+2020-08-31 10:41:50.7456 Info Configuration initialized.
+2020-08-31 10:41:50.7621 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-31 10:41:52.2640 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.zip'.
+2020-08-31 10:41:52.5513 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.zip
+2020-08-31 10:41:52.8555 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log'.
+2020-08-31 12:40:48.6110 Info Message Template Auto Format enabled
+2020-08-31 12:40:48.6462 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-31 12:40:48.6629 Info Loading assembly: NLog.Targets.Seq
+2020-08-31 12:40:48.7609 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-31 12:40:48.8306 Info Found 25 configuration items
+2020-08-31 12:40:48.8716 Info Configuration initialized.
+2020-08-31 12:40:48.8846 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-31 12:40:50.0758 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.0.zip'.
+2020-08-31 12:40:50.3672 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.0.zip
+2020-08-31 12:40:50.6467 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log'.
+2020-08-31 15:42:35.1178 Info Message Template Auto Format enabled
+2020-08-31 15:42:35.1633 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-31 15:42:35.1879 Info Loading assembly: NLog.Targets.Seq
+2020-08-31 15:42:35.3022 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-31 15:42:35.3637 Info Found 25 configuration items
+2020-08-31 15:42:35.4116 Info Configuration initialized.
+2020-08-31 15:42:35.4283 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-31 15:42:36.8463 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.1.zip'.
+2020-08-31 15:42:37.1115 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.1.zip
+2020-08-31 15:42:37.6815 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log'.
+2020-08-31 16:26:04.9345 Info Message Template Auto Format enabled
+2020-08-31 16:26:04.9667 Info Loading assembly: NLog.Web.AspNetCore
+2020-08-31 16:26:04.9785 Info Loading assembly: NLog.Targets.Seq
+2020-08-31 16:26:05.0410 Info Adding target FileTarget(Name=ownFile-web)
+2020-08-31 16:26:07.1304 Info Found 25 configuration items
+2020-08-31 16:26:07.1554 Info Configuration initialized.
+2020-08-31 16:26:07.1633 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-08-31 16:26:08.0034 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.2.zip'.
+2020-08-31 16:26:08.3074 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.2.zip
+2020-08-31 16:26:08.4151 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.log'.
+2020-09-01 09:09:03.7637 Info Message Template Auto Format enabled
+2020-09-01 09:09:03.7992 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 09:09:03.7992 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 09:09:03.8970 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 09:09:03.9454 Info Found 25 configuration items
+2020-09-01 09:09:03.9791 Info Configuration initialized.
+2020-09-01 09:09:03.9893 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 09:36:39.5411 Info Message Template Auto Format enabled
+2020-09-01 09:36:39.5708 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 09:36:39.5807 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 09:36:39.6533 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 09:36:39.7103 Info Found 25 configuration items
+2020-09-01 09:36:43.6046 Info Configuration initialized.
+2020-09-01 09:36:43.6167 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 09:36:44.5305 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-05.3.zip'.
+2020-09-01 09:36:44.7989 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.zip
+2020-09-01 09:36:45.1305 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log'.
+2020-09-01 12:06:08.5110 Info Message Template Auto Format enabled
+2020-09-01 12:06:08.5552 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 12:06:08.5735 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 12:06:08.6792 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 12:06:08.7457 Info Found 25 configuration items
+2020-09-01 12:06:08.7993 Info Configuration initialized.
+2020-09-01 12:06:08.8153 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 12:06:10.3287 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-06.zip'.
+2020-09-01 12:06:10.6229 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.0.zip
+2020-09-01 12:06:10.7994 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log'.
+2020-09-01 12:12:18.1432 Info Message Template Auto Format enabled
+2020-09-01 12:12:18.1700 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 12:12:18.1783 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 12:12:18.2392 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 12:12:18.2932 Info Found 25 configuration items
+2020-09-01 12:12:18.3275 Info Configuration initialized.
+2020-09-01 12:12:18.3395 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 12:12:18.9775 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-07.zip'.
+2020-09-01 12:12:19.1130 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.1.zip
+2020-09-01 12:12:19.1644 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log'.
+2020-09-01 12:59:20.7685 Info Message Template Auto Format enabled
+2020-09-01 12:59:20.8014 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 12:59:20.8175 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 12:59:20.8938 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 12:59:20.9540 Info Found 25 configuration items
+2020-09-01 12:59:20.9970 Info Configuration initialized.
+2020-09-01 12:59:21.0075 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 12:59:22.0394 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.zip'.
+2020-09-01 12:59:22.1720 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.2.zip
+2020-09-01 12:59:22.2438 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log'.
+2020-09-01 13:09:43.2934 Info Message Template Auto Format enabled
+2020-09-01 13:09:43.3402 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 13:09:43.3545 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 13:09:43.4626 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 13:09:43.5529 Info Found 25 configuration items
+2020-09-01 13:09:43.6028 Info Configuration initialized.
+2020-09-01 13:09:43.6188 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 13:09:44.6368 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.0.zip'.
+2020-09-01 13:09:44.7898 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.3.zip
+2020-09-01 13:09:44.8550 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log'.
+2020-09-01 14:38:52.3320 Info Message Template Auto Format enabled
+2020-09-01 14:38:52.3774 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 14:38:52.3950 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 14:38:52.4927 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 14:38:52.5771 Info Found 25 configuration items
+2020-09-01 14:38:52.6257 Info Configuration initialized.
+2020-09-01 14:38:52.6257 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 14:38:54.1253 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.1.zip'.
+2020-09-01 14:38:54.6087 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.4.zip
+2020-09-01 14:38:54.7488 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log'.
+2020-09-01 15:22:45.1096 Info Message Template Auto Format enabled
+2020-09-01 15:22:45.1599 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-01 15:22:45.1791 Info Loading assembly: NLog.Targets.Seq
+2020-09-01 15:22:45.2835 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-01 15:22:45.3581 Info Found 25 configuration items
+2020-09-01 15:22:45.4072 Info Configuration initialized.
+2020-09-01 15:22:45.4211 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.
+2020-09-01 15:22:46.7673 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-08-31.2.zip'.
+2020-09-01 15:22:46.9151 Info FileTarget(Name=ownFile-web): Archiving C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log to compressed C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.5.zip
+2020-09-01 15:22:47.0802 Info FileTarget(Name=ownFile-web): Deleting old archive file: 'C:\Users\filippo.oliva\Documents\work\grupposigla\projects\abb\OI\sources\p-and-c\back-end\It.gs.back-end\bin\Debug\netcoreapp3.1\win-x64\logs\nlog-2020-09-01.log'.
+2020-09-02 10:04:49.7145 Info Message Template Auto Format enabled
+2020-09-02 10:04:49.7632 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-02 10:04:49.7913 Info Loading assembly: NLog.Targets.Seq
+2020-09-02 10:04:49.8964 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-02 10:04:49.9685 Info Found 25 configuration items
+2020-09-02 10:04:50.0249 Info Configuration initialized.
+2020-09-02 10:04:50.0477 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.0.11381. Product version: 4.7.0+4d138800820311d0b60b6437f1dd2ed1d571d47d.

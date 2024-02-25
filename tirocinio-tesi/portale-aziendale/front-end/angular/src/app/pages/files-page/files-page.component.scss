@@ -1,0 +1,18 @@
+:host ::ng-deep {
+    .p-card {
+        height: 100%;
+        border-radius: 1rem;
+        box-shadow: none;
+
+        .p-card-body {
+            padding: 0.5rem 1rem;
+        }
+        .p-card-content {
+            padding: 0;
+        }
+    }
+
+    .ui-fileupload-files {
+        display: contents;
+    }
+}

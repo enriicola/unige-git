@@ -1,0 +1,112 @@
+<p-table>
+    <!-- <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;"></span>
+        </div>
+
+
+    </ng-template> -->
+
+</p-table>
+
+<p-table styleClass="p-datatable-courses-data" [value]="coursesData$ | async" dataKey="chargePointId"
+         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+         [rows]="100" [rowHover]="true" [paginator]="true" [showCurrentPageReport]="true"
+         [loading]="isLoading$ | async" [totalRecords]="totalRecords$ | async" [filterDelay]="300"
+         [globalFilterFields]="globalFiltersFields" [(selection)]="selectedCoursesData" [lazy]="true"
+         [tableStyle]="{'min-width': '25rem'}" [customSort]="true">
+<!-- (onLazyLoad)="sort($event)" -->
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Corsi disponibili ad oggi {{ today | date: 'dd/MM/yyyy' }}</span>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText [value]="lastSearch$ | async" type="text" (input)="filter($event.target.value)" placeholder="Cerca un corso..." />
+            </span>
+        </div>
+        <!-- <p> Posti rimanenti: ('num posti rimanenti')</p> -->  <!-- TODO -->
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 5rem"></th>
+
+            <th pSortableColumn="coursesName">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Nome corso
+                    <p-sortIcon field="coursesName"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="coursesType">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Tipologia
+                    <p-sortIcon field="coursesType"></p-sortIcon>
+                </div>
+            </th>
+
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Data inizio
+                </div>
+            </th>
+
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Prenotabile
+                </div>
+            </th>
+
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-coursesData>
+        <tr class="p-selectable-row" [pRowToggler]="coursesData.coursesId">
+            <td>
+                <button type="button" pButton pRipple
+                    class="p-button-text p-button-rounded p-button-plain"
+                    [icon]="isRowExpanded(coursesData.coursesId) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+                    (click)="toggleRow(coursesData.coursesId)">
+                </button>
+            </td>
+            <td>
+                <span class="p-column-title">Nome corso</span>
+                {{coursesData.coursesName}}
+            </td>
+            <td>
+                <span class="p-column-title">Tipologia</span>
+                {{coursesData.coursesType}}
+            </td>
+            <td>
+                <span class="p-column-title">Data inizio</span>
+                {{coursesData.coursesDate}}
+            </td>
+            <td>
+                <span class="p-column-title">Prenota</span>
+                <p-button icon="pi pi-check" (click)="addEnrollment(coursesData);"></p-button>
+            </td>
+
+        </tr>
+
+        <tr>
+        </tr>
+
+        <tr *ngIf="isRowExpanded(coursesData.coursesId)">
+            <td [attr.colspan]="globalFiltersFields.length + 1">
+                <div class="expanded-content">
+                    <p>immagine corso scelta con switch</p>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Courses Data found.</td>
+        </tr>
+    </ng-template>
+
+</p-table>
+
+<br><br>
+<full-calendar [options]="calendarOptions"></full-calendar>

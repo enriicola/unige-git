@@ -1,0 +1,217 @@
+<!--    ADD_NOTICES FORM   -->
+<div class="card">
+    <div class="flex">
+        <span style="font-size: 25px;">Gestione notifiche (Admin)</span>
+    </div>
+
+    <div class="container mt-5">
+        <h4 class="mb-4">{{ showAddForm ? 'Aggiungi' : 'Modifica' }} notifica</h4>
+        <form (ngSubmit)="showAddForm ? addNoticeData(notificationForm) : updateNoticeData(notificationForm)" #notificationForm="ngForm">
+            <div class="p-grid">
+
+                <div class="p-col-12 p-md-6">
+                    <div class="p-inputgroup">
+                        <span class="p-float-label">
+                            <input *ngIf="showAddForm" pInputText id="title" name="title" [(ngModel)]="notification.noticeTitle" required>
+                            <input *ngIf="!showAddForm" pInputText id="title" name="title" [(ngModel)]="editedNotice.noticeTitle" required>
+
+                            <label for="title">Titolo</label>
+                        </span>
+                    </div>
+                    <ng-container *ngIf="notificationForm.controls['title']">
+                        <ng-container *ngIf="notificationForm.controls['title'].invalid && (notificationForm.controls['title'].dirty || notificationForm.controls['title'].touched)">
+                            <div class="error-message" *ngIf="notificationForm.controls['title'].errors.required">
+                                Titolo obbligatorio
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <br>
+        
+                <div class="p-col-12 p-md-6">
+                    <div class="p-inputgroup">
+                        <span class="p-float-label">
+                            <input *ngIf="showAddForm" pInputText id="object" name="object" [(ngModel)]="notification.noticeObject" required>
+                            <input *ngIf="!showAddForm" pInputText id="object" name="object" [(ngModel)]="editedNotice.noticeObject" required>
+                            <label for="object">Oggetto</label>
+                        </span>
+                    </div>
+                    <ng-container *ngIf="notificationForm.controls['object']">
+                        <ng-container *ngIf="notificationForm.controls['object'].invalid && (notificationForm.controls['object'].dirty || notificationForm.controls['object'].touched)">
+                            <div class="error-message" *ngIf="notificationForm.controls['object'].errors.required">
+                                Oggetto obbligatorio
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </div>
+            <br>
+        
+            <div class="form-group">
+                <div class="p-inputgroup">
+                    <span class="p-float-label">
+                        <textarea *ngIf="showAddForm" pInputTextarea id="description" name="description" rows="5" [(ngModel)]="notification.noticeDesc" required autoResize="true"></textarea>
+                        <textarea *ngIf="!showAddForm" pInputTextarea id="description" name="description" rows="5" [(ngModel)]="editedNotice.noticeDesc" required autoResize="true"></textarea>
+                        <label for="description">Descrizione</label>
+                    </span>
+                </div>
+                <ng-container *ngIf="notificationForm.controls['description']">
+                    <ng-container *ngIf="notificationForm.controls['description'].invalid && (notificationForm.controls['description'].dirty || notificationForm.controls['description'].touched)">
+                        <div class="error-message" *ngIf="notificationForm.controls['description'].errors.required">
+                            Descrizione obbligatoria
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <br>
+
+            <div class="p-col-12">
+                <div class="p-inputgroup">
+                    <span class="p-float-label ">
+                        <p-multiSelect [options]="usersId" [(ngModel)]="selectedUsers" optionLabel="usersId" id="usersId" name="usersId" [style]="{ 'width': '100%' }"></p-multiSelect>
+                        <label for="usersId">Seleziona destinatari (tutti inclusi di default)</label>
+                    </span>
+                </div>
+            </div>
+            <br><br>
+            <!--  add  -->
+            <div *ngIf="showAddForm">
+                <button pButton type="submit" label="Aggiungi notifica" class="p-button-rounded p-button-success" [disabled]="notificationForm.invalid"></button> 
+                <div *ngIf="successAdd" class="success-message">
+                    Notifica aggiunta correttamente!
+                </div>
+            </div>
+
+            <!--  update -->
+            <div >
+                <span *ngIf="!showAddForm">
+                    <button pButton type="submit" label="Modifica notifica" class="p-button-rounded p-button-success" [disabled]="notificationForm.invalid"></button> 
+                    <button pButton type="button" label="Annulla" class="p-button-rounded p-button-secondary" (click)="showAddForm = true;"></button> 
+                </span>
+                
+                <div *ngIf="successUpdate" class="success-message">
+                    Notifica modificata correttamente!
+                </div>
+            </div>
+            
+
+        </form>
+    </div>
+</div>
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--    NOTICES TABLE   -->
+<br><br>
+<p-table #dt styleClass="p-datatable-notice-data" [value]="noticeData$ | async" dataKey="chargePointId"
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+[rows]="5" [rowHover]="true" [paginator]="true" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,15]"
+[loading]="isLoading$ | async" [totalRecords]="totalRecords$ | async" [filterDelay]="300"
+[globalFilterFields]="globalFiltersFields" [(selection)]="selectedNoticeData" [lazy]="true" [customSort]="true"
+(onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Elenco notifiche create</span>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText [value]="lastSearch$ | async" type="text" (input)="filter($event.target.value)"
+                    placeholder="Notices Search" />
+            </span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 5rem"></th>
+            
+            <th pSortableColumn="noticeDateTime">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Data
+                    <p-sortIcon field="noticeDateTime"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="noticeTitle">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Titolo
+                    <p-sortIcon field="noticeTitle"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="noticeObject">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Oggetto
+                    <p-sortIcon field="noticeObject"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="noticeState">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Visibilità
+                </div>
+            </th>
+            
+             <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Modifica
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Elimina
+                </div>
+            </th>
+               
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-noticeData>
+        <tr class="p-selectable-row" [pRowToggler]="noticeData.noticeId">
+            <td>
+                <button type="button" pButton pRipple
+                    class="p-button-text p-button-rounded p-button-plain"
+                    [icon]="isRowExpanded(noticeData.noticeId) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+                    (click)="toggleRow(noticeData.noticeId)">
+                </button>
+            </td>
+            <td>
+                <span class="p-column-title">Data</span>
+                {{noticeData.noticeDateTime}}
+            </td>
+            <td>
+                <span class="p-column-title">Titolo</span>
+                {{noticeData.noticeTitle}}
+            </td>
+            <td>
+                <span class="p-column-title">Oggetto</span>
+                {{noticeData.noticeObject}}
+            </td>
+            <td>
+                <span class="p-column-title">Visibilità</span>
+                {{noticeData.noticeState}}
+            </td>
+            <td>
+                <span class="p-column-title">Modifica</span>
+                <p-button icon="pi pi-replay" (click)="editNoticeData(noticeData); showAddForm = false;"></p-button>
+            </td>
+            <td>
+                <span class="p-column-title">Elimina</span>
+                <p-button icon="pi pi-trash" (click)='deleteNoticeData(noticeData)'></p-button>
+            </td>
+        </tr>  
+
+        <tr *ngIf="isRowExpanded(noticeData.noticeId)">
+            <td [attr.colspan]="globalFiltersFields.length + 1">
+                <div class="expanded-content">
+                    <p>{{ noticeData.noticeDesc }}</p>
+                </div>
+            </td>
+        </tr>
+        
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Notices Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+

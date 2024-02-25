@@ -1,0 +1,34 @@
+<div class="wrapper" [ngClass]="{'sidebar-inactive-l':menuInactiveDesktop, 'sidebar-active-m':menuActiveMobile,
+                                'p-ripple-disabled': !ripple, 'p-input-filled': inputStyle === 'filled'}">
+    <div class="topbar clearfix">
+        <a id="starter-menu-button" href="#" (click)="toggleMenu($event)">
+            <span class="pi pi-bars" style="margin: 0.13em;"></span>
+        </a>
+        <span class="topbar-title"></span>
+    </div>
+    <div class="sidebar" (click)="onMenuClick()">
+        <div class="sidebar-scroll-content">
+            <div class="logo" routerLink="/" style="outline: none; cursor: pointer;">
+                <img src="assets/layout/images/logo.png" alt="logo" width="120px">
+            </div>
+            <div class="profile" style="margin-top: 50px;">
+                <a id="profile-button" href="#" (click)="toggleProfile($event)">
+                    <span class="username">{{username}}</span>
+                    <i class="pi pi-fw pi-cog"></i>
+                </a>
+                <ul [@submenu]="profileActive ? 'visible' : 'hidden'">
+                    <li (click)="logout()"><a><i class="pi pi-fw pi-sign-out"></i><span>Logout</span></a></li>
+                </ul>
+            </div>
+            <app-menu></app-menu>
+        </div>
+    </div>
+    <div class="main">
+        <router-outlet></router-outlet>
+        <app-custom-message></app-custom-message>
+    </div>
+
+    <div class="footer">
+        <span class="footer-text">{{footer}}</span>
+    </div>
+</div>

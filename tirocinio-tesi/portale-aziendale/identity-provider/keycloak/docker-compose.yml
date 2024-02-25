@@ -1,0 +1,58 @@
+version: '3.2'
+
+secrets:
+  pgsql_db_user:
+    external: true
+  pgsql_db_pwd:
+    external: true
+  kc_user:
+    external: true
+  kc_pwd:
+    external: true
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+
+  postgres:
+    image: postgres:14.3
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    secrets:
+      - pgsql_db_user
+      - pgsql_db_pwd
+    environment:
+      POSTGRES_DB: keycloak # database name NON iniettabile attraverso secret nel container keycloak
+      POSTGRES_USER_FILE: /run/secrets/pgsql_db_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/pgsql_db_pwd
+    ports:
+      - target: 5432
+        published: 5432
+        mode: host
+
+  keycloak:
+    image: jboss/keycloak:16.1.1 
+    secrets:
+      - pgsql_db_user
+      - pgsql_db_pwd
+      - kc_user
+      - kc_pwd
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_SCHEMA: public
+      DB_DATABASE: keycloak # database name NON iniettabile attraverso secret 
+      DB_USER_FILE: /run/secrets/pgsql_db_user
+      DB_PASSWORD_FILE: /run/secrets/pgsql_db_pwd 
+      KEYCLOAK_USER_FILE: /run/secrets/kc_user
+      KEYCLOAK_PASSWORD_FILE: /run/secrets/kc_pwd
+    volumes:
+      - ./cert:/etc/x509/https
+    ports:
+      - target: 8443
+        published: 8443
+        mode: host
+    depends_on:
+      - postgres

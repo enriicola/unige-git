@@ -1,0 +1,172 @@
+<!--TODO-->
+<p-table>
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Prenota un ufficio per il {{formattedDate}}</span>
+        </div>
+        
+          
+    </ng-template>
+
+</p-table>
+<!-- UFFICI PRENOTATI -->
+<p-table #dt styleClass="p-datatable-offices-data" [value]="officesReserved$ | async" dataKey="chargePointId"
+responsiveLayout="scroll" [loading]="isLoading$ | async" [(selection)]="selectReservation" [lazy]="true"
+(onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Uffici prenotati</span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>            
+
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Nome ufficio
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Tipologia
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Dettagli
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Cancella Prenotazione
+                </div>
+            </th>
+            
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-officesReserved>
+        <tr class="p-selectable-row" [pRowToggler]="officesReserved.officesId">
+            <td>
+                <span class="p-column-title">Nome ufficio</span>
+                {{officesReserved.officesName}}
+            </td>
+            
+            <td>
+                <span class="p-column-title">Tipologia</span>
+                {{officesReserved.officesType}}
+            </td>  
+            <td>
+                <span class="p-column-title">Dettagli</span>
+                colonna personalizzata
+            </td>            
+            <td>
+                <span class="p-column-title">Cancella Prenotazione</span>
+                <p-button icon="pi pi-trash" (click)="deleteReservation(officesReserved);"></p-button>
+            </td>
+            
+        </tr>    
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Notices Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<br><br>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!-- UFFICI DISPONIBILI -->
+<p-table #dt styleClass="p-datatable-offices-data" [value]="officesData$ | async" dataKey="chargePointId"
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+[rows]="100" [rowHover]="true" [paginator]="true" [showCurrentPageReport]="true"
+[loading]="isLoading$ | async" [totalRecords]="totalRecords$ | async" [filterDelay]="300"
+[globalFilterFields]="globalFiltersFields" [(selection)]="selectedOfficesData" [lazy]="true" [customSort]="true"
+(onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Uffici disponibili</span>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText [value]="lastSearch$ | async" type="text" (input)="filter($event.target.value)"
+                    placeholder="Office Search" />
+            </span> 
+        </div>
+        <p>Posti rimanenti: ('num posti rimanenti')</p>  <!--TODO--> 
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>            
+            <th style="width: 5rem"></th>
+
+            <th pSortableColumn="officesName">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Nome ufficio
+                    <p-sortIcon field="officesName"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="officesType">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Tipologia
+                    <p-sortIcon field="officesType"></p-sortIcon>
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Prenota
+                </div>
+            </th>
+            
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-officesData>
+        <tr class="p-selectable-row" [pRowToggler]="officesData.officesId">
+            <td>
+                <button type="button" pButton pRipple
+                    class="p-button-text p-button-rounded p-button-plain"
+                    [icon]="isRowExpanded(officesData.officesId) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+                    (click)="toggleRow(officesData.officesId)">
+                </button>
+            </td>
+            <td>
+                <span class="p-column-title">Nome ufficio</span>
+                {{officesData.officesName}}
+            </td>
+            <td>
+                <span class="p-column-title">Tipologia</span>
+                {{officesData.officesType}}
+            </td>          
+            <td>
+                <span class="p-column-title">Prenota</span>
+                <p-button icon="pi pi-check" (click)="addReservation(officesData);"></p-button>
+            </td>
+
+        </tr>      
+
+        <tr>
+            <!-- FARE UN FORM DIFFERENTE PER OGNI TIPOLOGIA D'UFFICIO (prima di fare l'addReservation) -->
+        </tr>
+
+        <tr *ngIf="isRowExpanded(officesData.officesId)">
+            <td [attr.colspan]="globalFiltersFields.length + 1">
+                <div class="expanded-content">
+                    <p>immagine ufficio scelta con switch</p>
+                </div>
+            </td>
+        </tr> 
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Notices Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+

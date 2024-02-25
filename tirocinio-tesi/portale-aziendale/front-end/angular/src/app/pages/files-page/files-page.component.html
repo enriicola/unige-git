@@ -1,0 +1,58 @@
+<p-card>
+    <div>
+        <p-accordion multiple="false">
+            <p-accordionTab header="REMARKS ON ACTIVITIES">
+                <div class="p-col-12 p-md-12">
+                    <div class="p-grid ui-fluid">
+                        <div class="p-col-12 p-md-4 p-sm-6" *ngFor="let remark of remarksList">
+                            <lib-remark-details [remark]="remark" [makeReadonly]="false">
+                            </lib-remark-details>
+                        </div>
+                        <div class="p-col-12 p-md-9 p-sm-6" *ngIf="remarksList.length === 0">
+                            NO_REMARKS
+                        </div>
+                    </div>
+                </div>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+    <div>
+        <p-accordion multiple="false">
+            <p-accordionTab header="DOC PROJ" [selected]="false">
+                <p-panel header="UPLOAD.COMPONENT" [toggleable]="true" toggler="header">
+                    <app-file-upload [showPrjDoc]="true" [showRefDoc]="false"></app-file-upload>
+                </p-panel>
+                <p-panel header="UPLOAD.DOC_LOADED" [toggleable]="true" toggler="header">
+                    <!-- <app-uploaded-list cmpId="PROJ_DOC_F1" [category]="DocCategoryEnum.Project"></app-uploaded-list> -->
+                </p-panel>
+                <!-- <p-panel header="UPLOAD.DOC_LOADED_PHASE2" [toggleable]="true" toggler="header" [collapsed]="true">
+                    <app-uploaded-list cmpId="PROJ_DOC_F2"
+                        [category]="DocCategoryEnum.Project"></app-uploaded-list>
+                </p-panel>
+                <p-panel header="UPLOAD.COMPONENT_PHASE2" [toggleable]="true" toggler="header" [collapsed]="true">
+                    <app-file-upload [showPrjDoc]="true" [showRefDoc]="false"></app-file-upload>
+                </p-panel> -->
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+    <!-- <div>
+        <p-accordion multiple="false">
+            <p-accordionTab header="DOC TECH" [selected]="false">
+                <p-panel header="UPLOAD.COMPONENT" [toggleable]="true" toggler="header">
+                    <app-file-upload [showPrjDoc]="false" [showRefDoc]="true"></app-file-upload>
+                </p-panel>
+                <p-panel header="UPLOAD.DOC_LOADED" [toggleable]="true" toggler="header">
+                    <app-uploaded-list cmpId="TECH_DOC_F1"
+                        [category]="DocCategoryEnum.Reference"></app-uploaded-list>
+                </p-panel>
+                <p-panel header="UPLOAD.DOC_LOADED_PHASE2" [toggleable]="true" toggler="header" [collapsed]="true">
+                    <app-uploaded-list cmpId="TECH_DOC_F2"
+                        [category]="DocCategoryEnum.Reference"></app-uploaded-list>
+                </p-panel>
+                <p-panel header="UPLOAD.COMPONENT_PHASE2" [toggleable]="true" toggler="header" [collapsed]="true">
+                    <app-file-upload [showPrjDoc]="false" [showRefDoc]="true"></app-file-upload>
+                </p-panel>
+            </p-accordionTab>
+        </p-accordion>
+    </div> -->
+</p-card>

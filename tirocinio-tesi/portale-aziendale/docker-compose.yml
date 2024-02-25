@@ -1,0 +1,42 @@
+version: '3.2'
+
+services:
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pass@word" -Q "CREATE DATABASE StarterDb; SELECT 1" || exit 1
+      retries: 3
+      timeout: 30s
+    ports:
+      - "1433:1433"
+
+  starter-back-end:
+    image: gs-templates/starter-back-end:latest
+    environment:
+      - Database__RepositoryConnectionString=Server=localhost;Database=StarterDb;User Id=sa;Password=Pass@word;TrustServerCertificate=True;
+      - Database__RepositoryProvider=sqlserver
+      - Database__UseMigrations=true
+    extra_hosts:
+      - "localhost:host-gateway"
+    build: 
+      context: ./back-end/net/
+      dockerfile: Dockerfile
+    depends_on:
+      - sqldata
+    ports:
+    - target: 5007
+      published: 5007
+      mode: host
+
+  starter-front-end:
+    image: gs-templates/starter-front-end:latest
+    build: 
+      context: ./front-end/angular/
+      dockerfile: Dockerfile
+    ports:
+    - target: 80
+      published: 80
+      mode: host

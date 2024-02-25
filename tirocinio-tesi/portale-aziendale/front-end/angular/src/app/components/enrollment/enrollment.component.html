@@ -1,0 +1,174 @@
+<!--TODO-->
+<p-table>
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Prenota un corso per oggi {{ today | date: 'dd/MM/yyyy' }} o oltre</span>
+        </div>
+
+
+    </ng-template>
+
+</p-table>
+<!-- UFFICI PRENOTATI -->
+<p-table #dt styleClass="p-datatable-courses-data" [value]="coursesReserved$ | async" dataKey="chargePointId"
+         responsiveLayout="scroll" [loading]="isLoading$ | async" [(selection)]="selectEnrollment" [lazy]="true"
+         (onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Corsi prenotati</span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Nome corso
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Tipologia
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Dettagli
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Cancella Prenotazione
+                </div>
+            </th>
+
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-coursesReserved>
+        <tr class="p-selectable-row" [pRowToggler]="coursesReserved.coursesId">
+            <td>
+                <span class="p-column-title">Nome corso</span>
+                {{coursesReserved.coursesName}}
+            </td>
+
+            <td>
+                <span class="p-column-title">Tipologia</span>
+                {{coursesReserved.coursesType}}
+            </td>
+            <td>
+                <span class="p-column-title">Dettagli</span>
+                colonna personalizzata
+            </td>
+            <td>
+                <span class="p-column-title">Cancella Prenotazione</span>
+                <p-button icon="pi pi-trash" (click)="deleteEnrollment(coursesReserved);"></p-button>
+            </td>
+
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Courses Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<br><br>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!-- CORSI DISPONIBILI -->
+<p-table #dt styleClass="p-datatable-courses-data" [value]="coursesData$ | async" dataKey="chargePointId"
+         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+         [rows]="100" [rowHover]="true" [paginator]="true" [showCurrentPageReport]="true"
+         [loading]="isLoading$ | async" [totalRecords]="totalRecords$ | async" [filterDelay]="300"
+         [globalFilterFields]="globalFiltersFields" [(selection)]="selectedCoursesData" [lazy]="true" [customSort]="true"
+         (onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Corsi disponibili</span>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText [value]="lastSearch$ | async" type="text" (input)="filter($event.target.value)"
+                       placeholder="Course Search" />
+            </span>
+        </div>
+        <!-- <p>Posti rimanenti: ('num posti rimanenti')</p> -->  <!--TODO-->
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 5rem"></th>
+
+            <th pSortableColumn="coursesName">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Nome corso
+                    <p-sortIcon field="coursesName"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="coursesType">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Tipologia
+                    <p-sortIcon field="coursesType"></p-sortIcon>
+                </div>
+            </th>
+            <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Prenota
+                </div>
+            </th>
+
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-coursesData>
+        <tr class="p-selectable-row" [pRowToggler]="coursesData.coursesId">
+            <td>
+                <button type="button" pButton pRipple
+                        class="p-button-text p-button-rounded p-button-plain"
+                        [icon]="isRowExpanded(coursesData.coursesId) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+                        (click)="toggleRow(coursesData.coursesId)">
+                </button>
+            </td>
+            <td>
+                <span class="p-column-title">Nome corso</span>
+                {{coursesData.coursesName}}
+            </td>
+            <td>
+                <span class="p-column-title">Tipologia</span>
+                {{coursesData.coursesType}}
+            </td>
+            <td>
+                <span class="p-column-title">Prenota</span>
+                <p-button icon="pi pi-check" (click)="addEnrollment(coursesData);"></p-button>
+            </td>
+
+        </tr>
+
+        <tr>
+            <!-- FARE UN FORM DIFFERENTE PER OGNI TIPOLOGIA D'UFFICIO (prima di fare l'addEnrollment) -->
+        </tr>
+
+        <tr *ngIf="isRowExpanded(coursesData.coursesId)">
+            <td [attr.colspan]="globalFiltersFields.length + 1">
+                <div class="expanded-content">
+                    <p>immagine corso scelta con switch</p>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Courses Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<br><br>
+<full-calendar [options]="calendarOptions"></full-calendar>

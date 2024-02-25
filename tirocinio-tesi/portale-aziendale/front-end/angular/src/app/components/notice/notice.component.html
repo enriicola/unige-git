@@ -1,0 +1,195 @@
+<p-table>
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Disponibilità per il {{formattedDate}}</span>
+        </div>
+        
+        <p>Posti rimanenti: ('num posti rimanenti') <a href="#/reservation" class="button">Prenota un posto ora</a></p>
+    </ng-template>
+
+</p-table>
+
+<p-table #dtGeneral styleClass="p-datatable-notice-data" [value]="generalNotices$ | async" dataKey="chargePointId"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+    [rows]="5" [rowHover]="true" [paginator]="true" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,15]"
+    [loading]="isLoading$ | async" [totalRecords]="generalTotalRecords$ | async" [filterDelay]="300"
+    [globalFilterFields]="globalFiltersFields" [(selection)]="selectedNoticeData" [lazy]="true" [customSort]="true"
+    (onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Notifiche Generali</span>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText [value]="lastSearch$ | async" type="text" (input)="filter($event.target.value)"
+                    placeholder="Global Search" />
+            </span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 5rem"></th>
+            
+            <th pSortableColumn="noticeDateTime">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Data
+                    <p-sortIcon field="noticeDateTime"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="noticeState">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Stato
+                </div>
+            </th>
+            <th pSortableColumn="noticeTitle">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Titolo
+                    <p-sortIcon field="noticeTitle"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="noticeObject">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Oggetto
+                    <p-sortIcon field="noticeObject"></p-sortIcon>
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-noticeData>
+        <tr class="p-selectable-row" [pRowToggler]="noticeData.noticeId">
+            <td>
+              <button type="button" pButton pRipple
+                  class="p-button-text p-button-rounded p-button-plain"
+                  [icon]="isRowExpanded(noticeData.noticeId) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+                  (click)="toggleRow(noticeData.noticeId)">
+              </button>
+            </td>
+            <td>
+                <span class="p-column-title">Data</span>
+                {{noticeData.noticeDateTime}}
+            </td>
+            <td>
+                <span class="p-column-title">Stato</span>
+                {{noticeData.noticeState}}
+            </td>
+            <td>
+                <span class="p-column-title">Titolo</span>
+                {{noticeData.noticeTitle}}
+            </td>
+            <td>
+                <span class="p-column-title">Oggetto</span>
+                {{noticeData.noticeObject}}
+            </td>
+        </tr>
+        
+        <tr *ngIf="isRowExpanded(noticeData.noticeId)">
+            <td [attr.colspan]="globalFiltersFields.length + 1">
+                <div class="expanded-content">
+                    <p>{{ noticeData.noticeDesc }}</p>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Notices Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<p-table #dtPersonal styleClass="p-datatable-notice-data" [value]="personalNotices$ | async" dataKey="chargePointId"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+    [rows]="5" [rowHover]="true" [paginator]="true" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,15]"
+    [loading]="isLoading$ | async" [totalRecords]="personalTotalRecords$ | async" [filterDelay]="300"
+    [globalFilterFields]="globalFiltersFields" [(selection)]="selectedNoticeData" [lazy]="true" [customSort]="true"
+    (onLazyLoad)="sort($event)" [tableStyle]="{'min-width': '25rem'}">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span style="font-size: 25px;">Notifiche Personali</span>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText [value]="lastSearch$ | async" type="text" (input)="filter($event.target.value)"
+                    placeholder="Global Search" />
+            </span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 5rem"></th>
+            
+            <th pSortableColumn="noticeDateTime">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Data
+                    <p-sortIcon field="noticeDateTime"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="noticeState">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Stato
+                </div>
+            </th>
+            <th pSortableColumn="noticeTitle">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Titolo
+                    <p-sortIcon field="noticeTitle"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="noticeObject">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Oggetto
+                    <p-sortIcon field="noticeObject"></p-sortIcon>
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-noticeData>
+        <tr class="p-selectable-row" [pRowToggler]="noticeData.noticeId">
+          <td>
+            <button type="button" pButton pRipple
+                class="p-button-text p-button-rounded p-button-plain"
+                [icon]="isRowExpanded(noticeData.noticeId) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+                (click)="toggleRow(noticeData.noticeId)">
+            </button>
+            </td>
+            <td>
+                <span class="p-column-title">Data</span>
+                {{noticeData.noticeDateTime}}
+            </td>
+            <td>
+                <span class="p-column-title">Stato</span>
+                {{noticeData.noticeState}}
+            </td>
+            <td>
+                <span class="p-column-title">Titolo</span>
+                {{noticeData.noticeTitle}}
+            </td>
+            <td>
+                <span class="p-column-title">Oggetto</span>
+                {{noticeData.noticeObject}}
+            </td>
+        </tr>  
+
+        <tr *ngIf="isRowExpanded(noticeData.noticeId)">
+            <td [attr.colspan]="globalFiltersFields.length + 1">
+                <div class="expanded-content">
+                    <p>{{ noticeData.noticeDesc }}</p>
+                </div>
+            </td>
+        </tr>
+         
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="9">No Notices Data found.</td>
+        </tr>
+    </ng-template>
+</p-table>

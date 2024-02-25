@@ -1,0 +1,6 @@
+/*
+ * Public API Surface of lib
+ */
+export * from './full-calendar.component';
+export * from './full-calendar.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2xpYi9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsMkJBQTJCLENBQUM7QUFDMUMsY0FBYyx3QkFBd0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgbGliXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9mdWxsLWNhbGVuZGFyLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2Z1bGwtY2FsZW5kYXIubW9kdWxlJztcbiJdfQ==
