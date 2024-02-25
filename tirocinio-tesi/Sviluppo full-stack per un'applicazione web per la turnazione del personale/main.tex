@@ -1,0 +1,67 @@
+\documentclass[oneside]{book}
+\headheight 15pt
+
+\input{header.tex}
+
+\topskip0pt
+\vspace*{\fill}
+\title{Sviluppo full-stack per un'applicazione web per la turnazione del personale}
+\vspace*{\fill}
+
+\makeatletter\let\Title\@title\makeatother
+\author{Enrico Pezzano}
+
+\begin{document}
+\hbadness=10000
+
+\input{coverpage.tex}
+
+%\maketitle
+\newpage
+
+% -----------------------------------------------------------------------------
+% PAGE NUMBERING FOR INDEXING MATTER in ROMAN
+\setcounter{page}{1} \pagenumbering{roman}
+\baselineskip18pt % line spacing: -12pt for single spacing
+                   %               -18pt for 1 1/2 spacing
+                   %               -24pt for double spacing
+% -----------------------------------------------------------------------------
+
+\include{Contents/abstract.tex}
+
+\tableofcontents
+\newpage
+\cleardoublepage%
+
+% \phantomsection
+\addcontentsline{toc}{chapter}{Acronimi} % TODO...e Glossario ??? 
+\printglossary[type=\acronymtype]
+\newpage
+
+% -----------------------------------------------------------------------------
+% PAGE NUMBERING FOR DOCUMENT MATTER in ARABIC
+% Pages number is starting with arabic style. Until here were on roman mode
+\setcounter{page}{1} \pagenumbering{arabic}
+\baselineskip18pt
+% -----------------------------------------------------------------------------
+
+\include{Contents/Introduzione.tex}
+
+\include{Contents/Tecnologie.tex}
+
+\include{Contents/Prototipo.tex}
+
+\include{Contents/Conclusioni.tex}
+
+\cleardoublepage%
+% \phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\cleardoublepage%
+% \phantomsection
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliographystyle{ieeetr}
+\bibliography{References/sample}
+
+\end{document}

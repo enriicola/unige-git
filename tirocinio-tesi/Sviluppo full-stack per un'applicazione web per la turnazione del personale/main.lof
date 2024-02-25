@@ -1,0 +1,60 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schema di un'applicazione a tre livelli.\relax }}{3}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Schema teorico dell'architettura \acrshort {mvc}.\relax }}{8}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Schema pratico dell'architettura \acrshort {mvc}.\relax }}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Schema dei \gls {framework} utilizzati.\relax }}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Angular e PrimeNG, due \gls {framework}.\relax }}{11}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Schematica di Angular.\relax }}{14}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Schema dell'instrademento di Angular.\relax }}{15}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Diamond, uno dei template di PrimeNG.\relax }}{17}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Apollo, uno dei template di PrimeNG.\relax }}{18}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Omega, uno dei template di PrimeNG.\relax }}{18}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Il logo di TypeScript.\relax }}{19}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Inizializzazione del classico `Ciao Mondo'.\relax }}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Il logo di \gls {.net} Framework.\relax }}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Il logo di \gls {.net} Core.\relax }}{23}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Il logo di \gls {.net} 8.\relax }}{24}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces La pila tecnologica dei componenti di \gls {.net} (2005/2012).\relax }}{25}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Esempio di una semplice applicazione web \acrshort {asp.net}.\relax }}{27}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Le principali tecnologie Microsoft \gls {.net}.\relax }}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Logo di C\#.\relax }}{29}{figure.caption.21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Il logo di DBeaver.\relax }}{32}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Il codice in C\# del file \texttt {CoursesData.cs}.\relax }}{34}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Il codice in C\# del file \texttt {4\_CoursesMigration.cs}.\relax }}{35}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Il codice in C\# del file \texttt {CoursesController.cs}.\relax }}{37}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Il codice in C\# della classe di \texttt {CoursesDataExecuteExecutor.cs}, successivamente diviso in blocchi di codice per motivi di spazio.\relax }}{38}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Il codice di \texttt {CoursesDataExecuteExecutor.cs}, relativo alla scelta del metodo e all'aggiunta delle tuple.\relax }}{39}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Il codice di \texttt {CoursesDataExecuteExecutor.cs}, relativo alla cancellazione delle tuple.\relax }}{39}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Il codice di \texttt {CoursesDataExecuteExecutor.cs}, relativo all'aggiornamento delle tuple.\relax }}{39}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Il codice di \texttt {CoursesDataGetListExecutor.cs}, classe contenente il metodo \texttt {GetList ()}.\relax }}{40}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Il logo di Swagger.\relax }}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces L'interfaccia grafica di Swagger, relativa al progetto di tirocinio.\relax }}{42}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Esempio di esecuzione di una \acrshort {api} per \texttt {searchCoursesData}, il corpo della richiesta è in formato \acrshort {json}.\relax }}{42}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Alcuuni esempi di risultati di esecuzione di \acrshort {api} tramite Swagger, in ordine \texttt {200, Successo}, \texttt {400, `Cattiva richiesta'}, \texttt {401, `Non autorizzato'}, \texttt {403, `Vietato'} e \texttt {500, `Errore interno del server'}.\relax }}{43}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces La struttura della cartella \texttt {education}, creata tramite la \acrshort {cli} di Angular.\relax }}{45}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Tutti i componenti e i servizi importati nel file \texttt {app.module.ts}, anche quelli che verranno descritti successivamente.\relax }}{45}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces L'array \texttt {declarations} del modulo \texttt {NgModule} del file \texttt {app.module.ts}, con l'aggiunta dei componenti sviluppati per il progetto di prova finale.\relax }}{46}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Il codice del file \texttt {app-routing.module.ts}, il quale si occupa di instradare l'applicazione, a seconda dell'utente e della `guardia' attivata.\relax }}{46}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Il codice \acrshort {html} del file \texttt {education.component.html}, in particolare il form per l'aggiunta e la modifica dei corsi di formazione.\relax }}{48}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Il codice \acrshort {html} del file \texttt {education.component.html}, in particolare la tabella per la visualizzazione dei corsi di formazione, coi relativi pulsanti per la modifica e la cancellazione.\relax }}{50}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Il codice TypeScript del file \texttt {education.component.ts}.\relax }}{52}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces I metodi \texttt {filter} e \texttt {sort} del file \texttt {education.component.ts}, i quali si occupano di filtrare e ordinare i corsi di formazione, listati qui per motivi di spazio rispetto alla figura precedente.\relax }}{53}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Il codice \acrshort {css} del file \texttt {styles.css}, il quale si occupa di gestire il \acrshort {css} di tutti i componenti, importando temi e stili da \acrshort {primeng}.\relax }}{54}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Il codice TypeScript del file \texttt {courses.actions.ts}.\relax }}{55}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Il codice TypeScript del file \texttt {courses.effects.ts}.\relax }}{56}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Il codice TypeScript del file \texttt {courses.reducer.ts}.\relax }}{57}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Il codice TypeScript del file \texttt {courses.state.ts}.\relax }}{57}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Il codice TypeScript del file \texttt {courses.selectors.ts}.\relax }}{58}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Il calendario visibile a larghezza intera, il quale visualizza i corsi di formazione esistenti.\relax }}{58}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Il codice \acrshort {ts} del file \texttt {app.module.ts}, necessario per il funzionamento del calendario.\relax }}{58}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Il codice \acrshort {html} del file \texttt {fullcalendar.component.html}.\relax }}{58}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Il codice TypeScript del file \texttt {education.component.ts}, necessario per il funzionamento della logica di business del calendario.\relax }}{59}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Il codice \acrshort {html} del file \texttt {education.component.html}, in particolare la tabella di \acrshort {primeng}.\relax }}{60}{figure.caption.53}%
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Il codice \acrshort {ts} del file \texttt {course.resolver.ts}, contenente l'implementazione di un servizio \gls {angular}.\relax }}{60}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.34}{\ignorespaces Il codice \acrshort {ts} del file \texttt {admin-user-guard.ts}, contenente l'implementazione di un servizio \gls {angular}.\relax }}{61}{figure.caption.55}%
+\addvspace {10\p@ }

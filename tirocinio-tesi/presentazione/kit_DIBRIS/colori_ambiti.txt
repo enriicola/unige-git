@@ -1,0 +1,164 @@
+GIURISPRUDENZA (BLU)
+------
+Pantone 2384 C
+
+CMYK
+99 48 1 14
+
+R G B
+0 97 160
+
+HEX
+#0061A0
+
+
+
+SCIENZE MAT.FIS.NAT (VERDE)
+------
+Pantone 2419 C
+
+CMYK
+97 13 78 16
+
+R G B
+0 124 88
+
+HEX
+#007C58
+
+
+
+SCIENZE POLITICHE (CIANO)
+------
+Pantone 7710 C
+
+CMYK
+81 0 23 0
+
+R G B
+0 167 181
+
+HEX
+#00A7B5
+
+
+
+LINGUE E CULTURE MODERNE (GRIGIO CHIARO)
+------
+Pantone 7542 C
+
+CMYK
+24 4 8 13
+
+R G B
+164 188 194
+
+HEX
+#A4BCC2
+
+
+
+INGEGNERIA (PRUGNA)
+------
+Pantone 3574 C
+
+CMYK
+70 76 13 19
+
+R G B
+87 70 118
+
+HEX
+#574676
+
+
+
+SCIENZE DELLA FORMAZIONE (VIOLA)
+------
+Pantone 7434 C
+
+CMYK
+11 94 25 34
+
+R G B
+155 50 89
+
+HEX
+#9B3259
+
+
+
+FARMACIA (ROSA)
+------
+Pantone 3519 C
+
+CMYK
+0 38 23 0
+
+R G B
+224 164 161
+
+HEX
+#E0A4A1
+
+
+
+MEDICINA (ROSSO)
+------
+Pantone RED 032 C
+
+CMYK
+0 86 63 0
+
+R G B
+239 51 64
+
+HEX
+#EF3340
+
+
+
+ARCHITETTURA E DESIGN (ARANCIONE)
+------
+Pantone 2026 C
+
+CMYK
+0 68 76 0
+
+R G B
+244 99 58
+
+HEX
+#F4633A
+
+
+
+ECONOMIA (GIALLO)
+------
+Pantone 7406 C
+
+CMYK
+0 20 100 2
+
+R G B
+241 196 0
+
+HEX
+#F1C400
+
+
+
+LETTERE E FILOSOFIA (BEIGE)
+------
+Pantone 2312 C
+
+CMYK
+25 37 50 4
+
+R G B
+183 154 129
+
+HEX
+#B79A81
+
+

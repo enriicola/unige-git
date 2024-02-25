@@ -1,0 +1,28 @@
+\glsdefs@newdocentry{dotnet}%
+{%
+name={\acronymfont {\glsentryshort {dotnet}}},%
+sort={.NET},%
+type={acronym},%
+first={.NET},%
+firstplural={.NETs},%
+text={.NET},%
+plural={.NETs},%
+description={Microsoft .NET Framework},%
+descriptionplural={Microsoft .NET Framework},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Microsoft .NET Framework},%
+longplural={Microsoft .NET Frameworks},%
+short={.NET},%
+shortplural={.NETs},%
+counter={page},%
+parent={},%
+%
+}%
+

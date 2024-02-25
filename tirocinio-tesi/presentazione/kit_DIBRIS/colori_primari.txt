@@ -1,0 +1,76 @@
+GIALLO
+------
+CMYK
+Pantone 7404 CP
+0 8 86 0
+
+Solid
+Pantone 7404 C
+244 218 64
+F4DA40
+
+
+ROSSO
+-----
+CMYK
+Pantone 186 CP
+2 100 85 6
+
+Solid
+Pantone 186 C
+200 16 46
+C8102E
+
+
+BLU
+---
+CMYK
+Pantone 2147 CP
+99 86 0 7
+
+Solid
+Pantone 2147 C
+0 38 119
+002677
+
+
+CYANO
+---
+CMYK
+Pantone 2192 CP
+88 18 0 0
+
+Solid
+Pantone 2192 C
+25 155 252
+199BFC
+
+
+GRIGIO SCURO
+---
+CMYK
+Pantone 426 CP
+94 77 53 94
+
+Solid
+Pantone 426 C
+37 40 42
+25282A
+
+
+GRIGIO CHIARO
+---
+CMYK
+Pantone COOL GRAY 1 CP
+4 2 4 8
+
+Solid
+Pantone COOL GRAY 1 C
+217 217 214
+D9D9D6
+
+
+
+
+
+
