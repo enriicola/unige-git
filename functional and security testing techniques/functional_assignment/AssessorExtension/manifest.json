@@ -1,0 +1,58 @@
+{
+  "manifest_version":2,
+  "name": "Assessor+",
+  "version": "1.0.0",
+  "icons": {
+    "70": "icons/icon_70.png",
+    "128": "icons/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon_menu16.png",
+      "32": "icons/icon_menu32.png",
+      "64": "icons/icon_menu64.png"
+    },
+    "default_title": "Assessor+"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webRequest",
+    "contextMenus",
+    "downloads",
+    "webNavigation",
+    "notifications",
+    "storage",
+    "debugger",
+    "<all_urls>"
+  ],
+  "commands": {
+    "open-modal": {
+      "suggested_key": { "default": "F8" },
+      "description": "Stat the interaction with the assessor tool"
+    },
+	"close-action": {
+      "suggested_key": { "default": "F4" },
+      "description": "Stop the interaction with the po-method"
+    },
+  "close-action-father": {
+      "suggested_key": { "default": "F2" },
+      "description": "Stop the interaction with the po-method (innerMode)"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background-script/background-webpage.js",
+      "background-script/background-assessor.js",
+      "background-script/background.js"],
+	"persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>"],
+      "js": ["content-script/content.js"],
+      "match_about_blank": true,
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+  * {
+      font-family: sans-serif;
+    }
+
+
+.seleniumExtension-form-control{
+  display: block;
+  width: -moz-available;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+/* The Modal (background) */
+.seleniumExtension-modal {
+  /*display: none;*/ /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content/Box */
+.seleniumExtension-modal-content {
+  background-color: #fefefe;
+  /*margin: 15% auto;*/ /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  /*width: 80%;*/ /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.seleniumExtension-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.seleniumExtension-close:hover,
+.seleniumExtension-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
+
+.seleniumExtension-btn{
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+.seleniumExtension-btn-success{
+  background-color: #65ab53;
+  border-color: #65ab53;
+  color: #ffffff;
+}
+
+.seleniumExtension-btn-danger{
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.seleniumExtension-col-12{
+  padding-right:15px;
+}
+
+/* File UpLoad */
+.seleniumExtension-btn-file{
+  background-color: #FFA500;
+  color: #fff;
+  border-color: #FFA500;
+  margin-left: 1em;
+ 
+}
+
+.seleniumExtension-btn-file:hover,
+.seleniumExtension-btn-success:hover,
+.seleniumExtension-btn-danger:hover {
+      background-color:#002ead;
+      transition: 0.7s;
+}
+
+/**** AUTO-COMPLETE*/
+.seleniumExtension-autocomplete {
+	position: relative;
+  width: 100%;
+}
+
+.seleniumExtension-autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  max-height: 110px;
+}
+
+.seleniumExtension-autocomplete-items input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.seleniumExtension-autocomplete-items input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+.seleniumExtension-autocomplete-items input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.seleniumExtension-autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.seleniumExtension-autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.seleniumExtension-autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}

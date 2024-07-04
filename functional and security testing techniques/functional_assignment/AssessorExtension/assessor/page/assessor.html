@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/assessor.css" />
+</head>
+
+<body>
+    <div id="assessor_modal" class="seleniumExtension-modal">
+        <div class="seleniumExtension-modal-content">
+            <!-- <span class="seleniumExtension-close" id="assessor_close">&times;</span> -->
+            <h3>ASSESSOR+ Browser Extension</h3>
+
+            <div class='seleniumExtension-col-12'>
+                <label for='assessor_readfilename'>Selected file:</label>
+                <label style='display: inline; font-style: italic;' id='assessor_readfilename'></label>
+				<br><br><br>
+            </div>
+
+            <div class='seleniumExtension-col-12'>
+                <label for='assessor_pageobject'>Page Object name</label>
+                <br>
+                <div class='seleniumExtension-autocomplete'>
+                    <input type='text' class='seleniumExtension-form-control' id='assessor_pageobject'>
+                </div>
+            </div>
+            <br>
+            <div class='seleniumExtension-col-12'>
+                <label for='assessor_method'>Method name</label>
+                <br>
+                <div class='seleniumExtension-autocomplete'>
+                    <input type='text' id='assessor_method' class='seleniumExtension-form-control'>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class='text-center'>
+                <input type='button' class='seleniumExtension-btn seleniumExtension-btn-success' id='assessor_confirm' value='Confirm'>
+                &nbsp;
+                <input type='button' class='seleniumExtension-btn seleniumExtension-btn-danger' id='assessor_cancel' value='Cancel'>
+                &nbsp;
+                <input type='button' class='seleniumExtension-btn seleniumExtension-btn-file'  id='assessor_readfile' value='Choose a .side file'>
+                &nbsp;
+                <input type='button' class='seleniumExtension-btn seleniumExtension-btn-file'  id='assessor_clearSession' value='Clear local Session'>
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <script src="../js/assessor-communication.js"></script>
+    <script src="../js/extensionSeleniumController.js"></script>
+    <script src="../js/extensionSeleniumView.js"></script>
+    <script src="../js/assessor.js"></script>
+</body>
+
+</html>
