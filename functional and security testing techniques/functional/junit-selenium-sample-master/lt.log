@@ -1,0 +1,166 @@
+{"level":"debug","time":"2024-05-23T12:31:29.820+0200","caller":"ulimit/ulimit.go:35","msg":"File descriptor limit 10240"}
+{"level":"info","time":"2024-05-23T12:31:29.930+0200","caller":"cmd/lt.go:205","msg":"LambdaTest Tunnel version: 3.1.31"}
+{"level":"debug","time":"2024-05-23T12:31:29.930+0200","caller":"core/lifecycle.go:41","msg":"Starting pipeline....."}
+{"level":"debug","time":"2024-05-23T12:31:29.930+0200","caller":"core/lifecycle.go:42","msg":"OS: darwin, Arch: arm64"}
+{"level":"debug","time":"2024-05-23T12:31:29.931+0200","caller":"core/lifecycle.go:43","msg":"Fetching config"}
+{"level":"warn","time":"2024-05-23T12:31:29.931+0200","caller":"configmanager/setup.go:79","msg":"Tunnel Name was not specified, using: b32c0f70-5d54-4d02-9342-4e100373b49c"}
+{"level":"debug","time":"2024-05-23T12:31:29.931+0200","caller":"core/lifecycle.go:65","msg":"Starting tunnel With flags: -user lambdatest@example.com -k***** YOUR_LAMBDATEST_ACCESS_KEY"}
+{"level":"debug","time":"2024-05-23T12:31:30.248+0200","caller":"core/lifecycle.go:83","msg":"Remote config fetched"}
+{"level":"debug","time":"2024-05-23T12:31:30.511+0200","caller":"custom/setup.go:861","msg":"Starting sink proxy"}
+{"level":"debug","time":"2024-05-23T12:31:30.511+0200","caller":"networkscanner/setup.go:191","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:31:30.511+0200","caller":"networkscanner/setup.go:69","msg":"Trying on port 22"}
+{"level":"debug","time":"2024-05-23T12:31:30.511+0200","caller":"networkscanner/setup.go:137","msg":"Trying over ssh over ws"}
+{"level":"debug","time":"2024-05-23T12:31:30.511+0200","caller":"networkscanner/setup.go:103","msg":"Trying on port 443"}
+{"level":"info","time":"2024-05-23T12:31:30.511+0200","caller":"custom/setup.go:804","msg":"Tunnel binary started on port :9090"}
+{"level":"debug","time":"2024-05-23T12:31:30.532+0200","caller":"networkscanner/setup.go:207","msg":"TCP connection was successful"}
+{"level":"debug","time":"2024-05-23T12:31:30.604+0200","caller":"networkscanner/setup.go:154","msg":"WSS connection was successful"}
+{"level":"debug","time":"2024-05-23T12:31:31.389+0200","caller":"networkscanner/setup.go:124","msg":"SSH connection over port 443 successful"}
+{"level":"debug","time":"2024-05-23T12:31:31.432+0200","caller":"networkscanner/setup.go:90","msg":"SSH connection over port 22 successful"}
+{"level":"debug","time":"2024-05-23T12:31:31.469+0200","caller":"networkscanner/setup.go:179","msg":"SSH connection over ws successful"}
+{"level":"info","time":"2024-05-23T12:31:31.470+0200","caller":"core/lifecycle.go:120","msg":"Using ssh(over_22) :: connection mode"}
+{"level":"info","time":"2024-05-23T12:31:31.470+0200","caller":"core/lifecycle.go:255","msg":"Launching tunnel"}
+{"level":"debug","time":"2024-05-23T12:31:31.470+0200","caller":"ws/control.go:34","msg":"Starting control ws connection at wss://ts.lambdatest.com/monitor"}
+{"level":"error","time":"2024-05-23T12:31:32.608+0200","caller":"core/lifecycle.go:258","msg":"There was an error while starting tunnel: ERR::LUNCH::TUNN : Launch tunnel failed Request failed(401): {\"message\":\"Unable to authenticate user, please try again\"} "}
+{"level":"error","time":"2024-05-23T12:31:32.608+0200","caller":"core/lifecycle.go:260","msg":"Invalid Credentials, Please try again!"}
+{"level":"debug","time":"2024-05-23T12:36:32.677+0200","caller":"ulimit/ulimit.go:35","msg":"File descriptor limit 10240"}
+{"level":"info","time":"2024-05-23T12:36:32.752+0200","caller":"cmd/lt.go:205","msg":"LambdaTest Tunnel version: 3.1.31"}
+{"level":"debug","time":"2024-05-23T12:36:32.752+0200","caller":"core/lifecycle.go:41","msg":"Starting pipeline....."}
+{"level":"debug","time":"2024-05-23T12:36:32.752+0200","caller":"core/lifecycle.go:42","msg":"OS: darwin, Arch: arm64"}
+{"level":"debug","time":"2024-05-23T12:36:32.752+0200","caller":"core/lifecycle.go:43","msg":"Fetching config"}
+{"level":"warn","time":"2024-05-23T12:36:32.752+0200","caller":"configmanager/setup.go:79","msg":"Tunnel Name was not specified, using: 60c41f25-9df4-44e1-a4b4-be3e91b8bee5"}
+{"level":"debug","time":"2024-05-23T12:36:32.753+0200","caller":"core/lifecycle.go:65","msg":"Starting tunnel With flags: -user lambdatest@example.com -k***** YOUR_LAMBDATEST_ACCESS_KEY./LT -user lambdatest@example.com -k***** YOUR_LAMBDATEST_ACCESS_KEY./LT -user lambdatest@example.com -k***** YOUR_LAMBDATEST_ACCESS_KEY./LT -user lambdatest@example.com -k***** YOUR_LAMBDATEST_ACCESS_KEY"}
+{"level":"debug","time":"2024-05-23T12:36:33.049+0200","caller":"core/lifecycle.go:83","msg":"Remote config fetched"}
+{"level":"debug","time":"2024-05-23T12:36:33.352+0200","caller":"custom/setup.go:861","msg":"Starting sink proxy"}
+{"level":"info","time":"2024-05-23T12:36:33.352+0200","caller":"custom/setup.go:804","msg":"Tunnel binary started on port :9090"}
+{"level":"debug","time":"2024-05-23T12:36:33.352+0200","caller":"networkscanner/setup.go:103","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:36:33.352+0200","caller":"networkscanner/setup.go:69","msg":"Trying on port 22"}
+{"level":"debug","time":"2024-05-23T12:36:33.352+0200","caller":"networkscanner/setup.go:191","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:36:33.352+0200","caller":"networkscanner/setup.go:137","msg":"Trying over ssh over ws"}
+{"level":"debug","time":"2024-05-23T12:36:33.437+0200","caller":"networkscanner/setup.go:207","msg":"TCP connection was successful"}
+{"level":"debug","time":"2024-05-23T12:36:34.353+0200","caller":"cmd/lt.go:269","msg":"main: received interrupt signal - attempting graceful shutdown ...."}
+{"level":"debug","time":"2024-05-23T12:36:34.353+0200","caller":"cmd/lt.go:271","msg":"main: telling goroutines to stop"}
+{"level":"info","time":"2024-05-23T12:36:34.353+0200","caller":"core/lifecycle.go:120","msg":"Using () :: connection mode"}
+{"level":"debug","time":"2024-05-23T12:36:34.353+0200","caller":"custom/setup.go:849","msg":"Exiting the sink proxy"}
+{"level":"info","time":"2024-05-23T12:36:34.353+0200","caller":"core/lifecycle.go:255","msg":"Launching tunnel"}
+{"level":"debug","time":"2024-05-23T12:36:34.354+0200","caller":"ws/control.go:34","msg":"Starting control ws connection at wss://ts.lambdatest.com/monitor"}
+{"level":"error","time":"2024-05-23T12:36:34.354+0200","caller":"core/lifecycle.go:258","msg":"There was an error while starting tunnel: ERR::LUNCH::TUNN : Launch tunnel failed Post \"https://ts.lambdatest.com/v1.0/setup-tunnel\": context canceled "}
+{"level":"debug","time":"2024-05-23T12:36:58.470+0200","caller":"ulimit/ulimit.go:35","msg":"File descriptor limit 10240"}
+{"level":"info","time":"2024-05-23T12:36:58.514+0200","caller":"cmd/lt.go:205","msg":"LambdaTest Tunnel version: 3.1.31"}
+{"level":"debug","time":"2024-05-23T12:36:58.514+0200","caller":"core/lifecycle.go:41","msg":"Starting pipeline....."}
+{"level":"debug","time":"2024-05-23T12:36:58.515+0200","caller":"core/lifecycle.go:42","msg":"OS: darwin, Arch: arm64"}
+{"level":"debug","time":"2024-05-23T12:36:58.515+0200","caller":"core/lifecycle.go:43","msg":"Fetching config"}
+{"level":"warn","time":"2024-05-23T12:36:58.515+0200","caller":"configmanager/setup.go:79","msg":"Tunnel Name was not specified, using: 97ffffe1-642c-418f-8074-5fea01e72241"}
+{"level":"debug","time":"2024-05-23T12:36:58.515+0200","caller":"core/lifecycle.go:65","msg":"Starting tunnel With flags: -user enrico.pezzano@outlook.it -k***** mNAb9LVujiwhbxbWoezwNqifkoLx3yt39VPWDKvTBvLXHCHOfX"}
+{"level":"debug","time":"2024-05-23T12:36:58.790+0200","caller":"core/lifecycle.go:83","msg":"Remote config fetched"}
+{"level":"debug","time":"2024-05-23T12:36:59.011+0200","caller":"custom/setup.go:861","msg":"Starting sink proxy"}
+{"level":"debug","time":"2024-05-23T12:36:59.011+0200","caller":"networkscanner/setup.go:69","msg":"Trying on port 22"}
+{"level":"debug","time":"2024-05-23T12:36:59.011+0200","caller":"networkscanner/setup.go:103","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:36:59.011+0200","caller":"networkscanner/setup.go:191","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:36:59.011+0200","caller":"networkscanner/setup.go:137","msg":"Trying over ssh over ws"}
+{"level":"info","time":"2024-05-23T12:36:59.012+0200","caller":"custom/setup.go:804","msg":"Tunnel binary started on port :9090"}
+{"level":"debug","time":"2024-05-23T12:36:59.037+0200","caller":"networkscanner/setup.go:207","msg":"TCP connection was successful"}
+{"level":"debug","time":"2024-05-23T12:36:59.091+0200","caller":"networkscanner/setup.go:154","msg":"WSS connection was successful"}
+{"level":"debug","time":"2024-05-23T12:36:59.966+0200","caller":"networkscanner/setup.go:124","msg":"SSH connection over port 443 successful"}
+{"level":"debug","time":"2024-05-23T12:36:59.967+0200","caller":"networkscanner/setup.go:179","msg":"SSH connection over ws successful"}
+{"level":"debug","time":"2024-05-23T12:36:59.989+0200","caller":"networkscanner/setup.go:90","msg":"SSH connection over port 22 successful"}
+{"level":"info","time":"2024-05-23T12:36:59.989+0200","caller":"core/lifecycle.go:120","msg":"Using ssh(over_22) :: connection mode"}
+{"level":"info","time":"2024-05-23T12:36:59.989+0200","caller":"core/lifecycle.go:255","msg":"Launching tunnel"}
+{"level":"debug","time":"2024-05-23T12:36:59.989+0200","caller":"ws/control.go:34","msg":"Starting control ws connection at wss://ts.lambdatest.com/monitor"}
+{"level":"error","time":"2024-05-23T12:37:00.566+0200","caller":"core/lifecycle.go:258","msg":"There was an error while starting tunnel: ERR::LUNCH::TUNN : Launch tunnel failed Request failed(401): {\"message\":\"Unable to authenticate user, please try again\"} "}
+{"level":"error","time":"2024-05-23T12:37:00.566+0200","caller":"core/lifecycle.go:260","msg":"Invalid Credentials, Please try again!"}
+{"level":"debug","time":"2024-05-23T12:37:51.090+0200","caller":"ulimit/ulimit.go:35","msg":"File descriptor limit 10240"}
+{"level":"info","time":"2024-05-23T12:37:51.155+0200","caller":"cmd/lt.go:205","msg":"LambdaTest Tunnel version: 3.1.31"}
+{"level":"debug","time":"2024-05-23T12:37:51.155+0200","caller":"core/lifecycle.go:41","msg":"Starting pipeline....."}
+{"level":"debug","time":"2024-05-23T12:37:51.155+0200","caller":"core/lifecycle.go:42","msg":"OS: darwin, Arch: arm64"}
+{"level":"debug","time":"2024-05-23T12:37:51.155+0200","caller":"core/lifecycle.go:43","msg":"Fetching config"}
+{"level":"warn","time":"2024-05-23T12:37:51.155+0200","caller":"configmanager/setup.go:79","msg":"Tunnel Name was not specified, using: ccd03fdb-5479-4c4a-9561-c3dfeadbd3b4"}
+{"level":"debug","time":"2024-05-23T12:37:51.156+0200","caller":"core/lifecycle.go:65","msg":"Starting tunnel With flags: -user enrico.pezzano@outlook.it -k***** mNAb9LVujiwhbxbWoezwNqifkoLx3yt39VPWDKvTBvLXHCHOfX"}
+{"level":"debug","time":"2024-05-23T12:37:51.452+0200","caller":"core/lifecycle.go:83","msg":"Remote config fetched"}
+{"level":"debug","time":"2024-05-23T12:37:51.526+0200","caller":"custom/setup.go:861","msg":"Starting sink proxy"}
+{"level":"info","time":"2024-05-23T12:37:51.526+0200","caller":"custom/setup.go:804","msg":"Tunnel binary started on port :9090"}
+{"level":"debug","time":"2024-05-23T12:37:51.526+0200","caller":"networkscanner/setup.go:103","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:37:51.526+0200","caller":"networkscanner/setup.go:69","msg":"Trying on port 22"}
+{"level":"debug","time":"2024-05-23T12:37:51.526+0200","caller":"networkscanner/setup.go:137","msg":"Trying over ssh over ws"}
+{"level":"debug","time":"2024-05-23T12:37:51.526+0200","caller":"networkscanner/setup.go:191","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:37:51.551+0200","caller":"networkscanner/setup.go:207","msg":"TCP connection was successful"}
+{"level":"debug","time":"2024-05-23T12:37:51.601+0200","caller":"networkscanner/setup.go:154","msg":"WSS connection was successful"}
+{"level":"debug","time":"2024-05-23T12:37:52.429+0200","caller":"networkscanner/setup.go:90","msg":"SSH connection over port 22 successful"}
+{"level":"debug","time":"2024-05-23T12:37:52.430+0200","caller":"networkscanner/setup.go:179","msg":"SSH connection over ws successful"}
+{"level":"debug","time":"2024-05-23T12:37:52.435+0200","caller":"networkscanner/setup.go:124","msg":"SSH connection over port 443 successful"}
+{"level":"info","time":"2024-05-23T12:37:52.436+0200","caller":"core/lifecycle.go:120","msg":"Using ssh(over_22) :: connection mode"}
+{"level":"info","time":"2024-05-23T12:37:52.436+0200","caller":"core/lifecycle.go:255","msg":"Launching tunnel"}
+{"level":"debug","time":"2024-05-23T12:37:52.436+0200","caller":"ws/control.go:34","msg":"Starting control ws connection at wss://ts.lambdatest.com/monitor"}
+{"level":"error","time":"2024-05-23T12:37:52.894+0200","caller":"core/lifecycle.go:258","msg":"There was an error while starting tunnel: ERR::LUNCH::TUNN : Launch tunnel failed Request failed(401): {\"message\":\"Unable to authenticate user, please try again\"} "}
+{"level":"error","time":"2024-05-23T12:37:52.894+0200","caller":"core/lifecycle.go:260","msg":"Invalid Credentials, Please try again!"}
+{"level":"debug","time":"2024-05-23T12:42:01.631+0200","caller":"ulimit/ulimit.go:35","msg":"File descriptor limit 10240"}
+{"level":"info","time":"2024-05-23T12:42:01.744+0200","caller":"cmd/lt.go:205","msg":"LambdaTest Tunnel version: 3.1.31"}
+{"level":"debug","time":"2024-05-23T12:42:01.745+0200","caller":"core/lifecycle.go:41","msg":"Starting pipeline....."}
+{"level":"debug","time":"2024-05-23T12:42:01.745+0200","caller":"core/lifecycle.go:42","msg":"OS: darwin, Arch: arm64"}
+{"level":"debug","time":"2024-05-23T12:42:01.745+0200","caller":"core/lifecycle.go:43","msg":"Fetching config"}
+{"level":"warn","time":"2024-05-23T12:42:01.745+0200","caller":"configmanager/setup.go:79","msg":"Tunnel Name was not specified, using: 76f28bed-8711-4085-abc5-e7ab819d0571"}
+{"level":"debug","time":"2024-05-23T12:42:01.746+0200","caller":"core/lifecycle.go:65","msg":"Starting tunnel With flags: -user enrico.pezzano@outlook.it -k***** mNAb9LVujiwhbxbWoezwNqifkoLx3yt39VPWDKvTBvLXHCHOfX"}
+{"level":"debug","time":"2024-05-23T12:42:09.287+0200","caller":"core/lifecycle.go:83","msg":"Remote config fetched"}
+{"level":"debug","time":"2024-05-23T12:42:09.471+0200","caller":"custom/setup.go:861","msg":"Starting sink proxy"}
+{"level":"info","time":"2024-05-23T12:42:09.472+0200","caller":"custom/setup.go:804","msg":"Tunnel binary started on port :9090"}
+{"level":"debug","time":"2024-05-23T12:42:09.472+0200","caller":"networkscanner/setup.go:69","msg":"Trying on port 22"}
+{"level":"debug","time":"2024-05-23T12:42:09.472+0200","caller":"networkscanner/setup.go:103","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:42:09.472+0200","caller":"networkscanner/setup.go:137","msg":"Trying over ssh over ws"}
+{"level":"debug","time":"2024-05-23T12:42:09.472+0200","caller":"networkscanner/setup.go:191","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:42:09.509+0200","caller":"networkscanner/setup.go:207","msg":"TCP connection was successful"}
+{"level":"debug","time":"2024-05-23T12:42:09.579+0200","caller":"networkscanner/setup.go:154","msg":"WSS connection was successful"}
+{"level":"debug","time":"2024-05-23T12:42:10.418+0200","caller":"networkscanner/setup.go:90","msg":"SSH connection over port 22 successful"}
+{"level":"debug","time":"2024-05-23T12:42:10.450+0200","caller":"networkscanner/setup.go:179","msg":"SSH connection over ws successful"}
+{"level":"debug","time":"2024-05-23T12:42:10.577+0200","caller":"networkscanner/setup.go:124","msg":"SSH connection over port 443 successful"}
+{"level":"info","time":"2024-05-23T12:42:10.578+0200","caller":"core/lifecycle.go:120","msg":"Using ssh(over_22) :: connection mode"}
+{"level":"info","time":"2024-05-23T12:42:10.578+0200","caller":"core/lifecycle.go:255","msg":"Launching tunnel"}
+{"level":"debug","time":"2024-05-23T12:42:10.578+0200","caller":"ws/control.go:34","msg":"Starting control ws connection at wss://ts.lambdatest.com/monitor"}
+{"level":"error","time":"2024-05-23T12:42:11.050+0200","caller":"core/lifecycle.go:258","msg":"There was an error while starting tunnel: ERR::LUNCH::TUNN : Launch tunnel failed Request failed(401): {\"message\":\"Unable to authenticate user, please try again\"} "}
+{"level":"error","time":"2024-05-23T12:42:11.051+0200","caller":"core/lifecycle.go:260","msg":"Invalid Credentials, Please try again!"}
+{"level":"debug","time":"2024-05-23T12:43:50.369+0200","caller":"ulimit/ulimit.go:35","msg":"File descriptor limit 10240"}
+{"level":"info","time":"2024-05-23T12:43:50.403+0200","caller":"cmd/lt.go:205","msg":"LambdaTest Tunnel version: 3.1.31"}
+{"level":"debug","time":"2024-05-23T12:43:50.404+0200","caller":"core/lifecycle.go:41","msg":"Starting pipeline....."}
+{"level":"debug","time":"2024-05-23T12:43:50.405+0200","caller":"core/lifecycle.go:42","msg":"OS: darwin, Arch: arm64"}
+{"level":"debug","time":"2024-05-23T12:43:50.405+0200","caller":"core/lifecycle.go:43","msg":"Fetching config"}
+{"level":"warn","time":"2024-05-23T12:43:50.405+0200","caller":"configmanager/setup.go:79","msg":"Tunnel Name was not specified, using: 53a66bdb-98e9-43a4-b5d6-9005abc6273e"}
+{"level":"debug","time":"2024-05-23T12:43:50.405+0200","caller":"core/lifecycle.go:65","msg":"Starting tunnel With flags: -user enrico.pezzano@outlook.it -k***** mNAb9LVujiwhbxbWoezwNqifkoLx3yt39VPWDKvTBvLXHCHOfX"}
+{"level":"debug","time":"2024-05-23T12:43:51.725+0200","caller":"core/lifecycle.go:83","msg":"Remote config fetched"}
+{"level":"debug","time":"2024-05-23T12:43:51.830+0200","caller":"custom/setup.go:861","msg":"Starting sink proxy"}
+{"level":"debug","time":"2024-05-23T12:43:51.830+0200","caller":"networkscanner/setup.go:103","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:43:51.830+0200","caller":"networkscanner/setup.go:69","msg":"Trying on port 22"}
+{"level":"debug","time":"2024-05-23T12:43:51.830+0200","caller":"networkscanner/setup.go:191","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:43:51.830+0200","caller":"networkscanner/setup.go:137","msg":"Trying over ssh over ws"}
+{"level":"info","time":"2024-05-23T12:43:51.831+0200","caller":"custom/setup.go:804","msg":"Tunnel binary started on port :9090"}
+{"level":"debug","time":"2024-05-23T12:43:51.855+0200","caller":"networkscanner/setup.go:207","msg":"TCP connection was successful"}
+{"level":"debug","time":"2024-05-23T12:43:51.892+0200","caller":"networkscanner/setup.go:154","msg":"WSS connection was successful"}
+{"level":"debug","time":"2024-05-23T12:43:52.739+0200","caller":"networkscanner/setup.go:124","msg":"SSH connection over port 443 successful"}
+{"level":"debug","time":"2024-05-23T12:43:52.765+0200","caller":"networkscanner/setup.go:90","msg":"SSH connection over port 22 successful"}
+{"level":"debug","time":"2024-05-23T12:43:52.787+0200","caller":"networkscanner/setup.go:179","msg":"SSH connection over ws successful"}
+{"level":"info","time":"2024-05-23T12:43:52.787+0200","caller":"core/lifecycle.go:120","msg":"Using ssh(over_22) :: connection mode"}
+{"level":"info","time":"2024-05-23T12:43:52.787+0200","caller":"core/lifecycle.go:255","msg":"Launching tunnel"}
+{"level":"debug","time":"2024-05-23T12:43:52.787+0200","caller":"ws/control.go:34","msg":"Starting control ws connection at wss://ts.lambdatest.com/monitor"}
+{"level":"error","time":"2024-05-23T12:43:53.345+0200","caller":"core/lifecycle.go:258","msg":"There was an error while starting tunnel: ERR::LUNCH::TUNN : Launch tunnel failed Request failed(401): {\"message\":\"Unable to authenticate user, please try again\"} "}
+{"level":"error","time":"2024-05-23T12:43:53.346+0200","caller":"core/lifecycle.go:260","msg":"Invalid Credentials, Please try again!"}
+{"level":"debug","time":"2024-05-23T12:44:37.954+0200","caller":"ulimit/ulimit.go:35","msg":"File descriptor limit 10240"}
+{"level":"info","time":"2024-05-23T12:44:38.181+0200","caller":"cmd/lt.go:205","msg":"LambdaTest Tunnel version: 3.1.31"}
+{"level":"debug","time":"2024-05-23T12:44:38.183+0200","caller":"core/lifecycle.go:41","msg":"Starting pipeline....."}
+{"level":"debug","time":"2024-05-23T12:44:38.183+0200","caller":"core/lifecycle.go:42","msg":"OS: darwin, Arch: arm64"}
+{"level":"debug","time":"2024-05-23T12:44:38.183+0200","caller":"core/lifecycle.go:43","msg":"Fetching config"}
+{"level":"warn","time":"2024-05-23T12:44:38.183+0200","caller":"configmanager/setup.go:79","msg":"Tunnel Name was not specified, using: d383d021-92f3-45ca-97e1-5abe28fe1df0"}
+{"level":"debug","time":"2024-05-23T12:44:38.184+0200","caller":"core/lifecycle.go:65","msg":"Starting tunnel With flags: -user enrico.pezzano@outlook.it -k***** mNAb9LVujiwhbxbWoezwNqifkoLx3yt39VPWDKvTBvLXHCHOfX"}
+{"level":"debug","time":"2024-05-23T12:44:38.447+0200","caller":"core/lifecycle.go:83","msg":"Remote config fetched"}
+{"level":"debug","time":"2024-05-23T12:44:38.593+0200","caller":"custom/setup.go:861","msg":"Starting sink proxy"}
+{"level":"debug","time":"2024-05-23T12:44:38.593+0200","caller":"networkscanner/setup.go:69","msg":"Trying on port 22"}
+{"level":"debug","time":"2024-05-23T12:44:38.593+0200","caller":"networkscanner/setup.go:191","msg":"Trying on port 443"}
+{"level":"debug","time":"2024-05-23T12:44:38.593+0200","caller":"networkscanner/setup.go:137","msg":"Trying over ssh over ws"}
+{"level":"debug","time":"2024-05-23T12:44:38.594+0200","caller":"networkscanner/setup.go:103","msg":"Trying on port 443"}
+{"level":"info","time":"2024-05-23T12:44:38.594+0200","caller":"custom/setup.go:804","msg":"Tunnel binary started on port :9090"}
+{"level":"debug","time":"2024-05-23T12:44:38.620+0200","caller":"networkscanner/setup.go:207","msg":"TCP connection was successful"}
+{"level":"debug","time":"2024-05-23T12:44:38.669+0200","caller":"networkscanner/setup.go:154","msg":"WSS connection was successful"}
+{"level":"debug","time":"2024-05-23T12:44:39.534+0200","caller":"networkscanner/setup.go:179","msg":"SSH connection over ws successful"}
+{"level":"debug","time":"2024-05-23T12:44:39.565+0200","caller":"networkscanner/setup.go:90","msg":"SSH connection over port 22 successful"}
+{"level":"debug","time":"2024-05-23T12:44:39.568+0200","caller":"networkscanner/setup.go:124","msg":"SSH connection over port 443 successful"}
+{"level":"info","time":"2024-05-23T12:44:39.568+0200","caller":"core/lifecycle.go:120","msg":"Using ssh(over_22) :: connection mode"}
+{"level":"info","time":"2024-05-23T12:44:39.568+0200","caller":"core/lifecycle.go:255","msg":"Launching tunnel"}
+{"level":"debug","time":"2024-05-23T12:44:39.568+0200","caller":"ws/control.go:34","msg":"Starting control ws connection at wss://ts.lambdatest.com/monitor"}
+{"level":"error","time":"2024-05-23T12:44:40.034+0200","caller":"core/lifecycle.go:258","msg":"There was an error while starting tunnel: ERR::LUNCH::TUNN : Launch tunnel failed Request failed(401): {\"message\":\"Unable to authenticate user, please try again\"} "}
+{"level":"error","time":"2024-05-23T12:44:40.034+0200","caller":"core/lifecycle.go:260","msg":"Invalid Credentials, Please try again!"}
