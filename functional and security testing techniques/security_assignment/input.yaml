@@ -1,0 +1,26 @@
+- ip: 172.16.1.10
+
+- service_type: php
+  port: 8000
+  base_url: http://localhost
+
+- service_type: FTP
+  port: 21
+  base_url: ftp.scene.org
+
+- service_type: Apache
+  port: 443
+  base_url: https://httpd.apache.org/test/
+
+- service_type: WordPress
+  port: 8000
+  base_url: http://localhost
+
+- service_type: MySQL
+  port: 3306
+  base_url: ensembldb.ensembl.org
+
+
+# - container_name: test1
+#   ip: 192.168.1.10
+#   port: 31337
