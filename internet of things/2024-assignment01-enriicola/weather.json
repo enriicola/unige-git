@@ -1,0 +1,6 @@
+[
+    {"air  quality":"yellow","temperature":20,"sea conditions":3,"city":"Genova"},
+    {"CITY":"Milano","AIR QUALITY":"red","TEMPERATURE":10},
+    {" city ":"Torino","  air quality ":"red"," temperature ":8},
+    {"City":"Imperia","Air Quality":"green","Temperature":23,"Sea Conditions":2}
+]

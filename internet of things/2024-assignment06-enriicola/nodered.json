@@ -1,0 +1,426 @@
+[
+    {
+        "id": "3e5c36e97fbbfb19",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d15e936ea4c7796c",
+        "type": "inject",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Start Flow",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "a2b537e4175c7ee0"
+            ]
+        ]
+    },
+    {
+        "id": "a2b537e4175c7ee0",
+        "type": "file in",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Read Data file",
+        "filename": "/home/skalla/GitHub/iot/data.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "01a8fa04dda4775d"
+            ]
+        ]
+    },
+    {
+        "id": "01a8fa04dda4775d",
+        "type": "json",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "cfe9573eb37c4130"
+            ]
+        ]
+    },
+    {
+        "id": "cfe9573eb37c4130",
+        "type": "split",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Split Users",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 610,
+        "y": 120,
+        "wires": [
+            [
+                "83582154277798e1"
+            ]
+        ]
+    },
+    {
+        "id": "83582154277798e1",
+        "type": "switch",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Switch User",
+        "property": "payload.userid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "fd3e41e09d6c41a9"
+            ]
+        ]
+    },
+    {
+        "id": "fd3e41e09d6c41a9",
+        "type": "function",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Extract value",
+        "func": "msg.payload = msg.payload.value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 120,
+        "wires": [
+            [
+                "046d8113177d41fc"
+            ]
+        ]
+    },
+    {
+        "id": "fdda6c102b39c9ae",
+        "type": "delay",
+        "z": "3e5c36e97fbbfb19",
+        "name": "1s Delay",
+        "pauseType": "rate",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1080,
+        "y": 280,
+        "wires": [
+            [
+                "3e0b5455ecb2c46d"
+            ]
+        ]
+    },
+    {
+        "id": "3e0b5455ecb2c46d",
+        "type": "mqtt out",
+        "z": "3e5c36e97fbbfb19",
+        "name": "MQTT OUT",
+        "topic": "/dibris/useridK",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "93b2eeaeb22ea01c",
+        "x": 1270,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a3b382516dc21050",
+        "type": "mqtt in",
+        "z": "3e5c36e97fbbfb19",
+        "name": "MQTT IN",
+        "topic": "/dibris/useridK",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "93b2eeaeb22ea01c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 560,
+        "wires": [
+            [
+                "ddd90ed644930175",
+                "2f7bbab61618722a"
+            ]
+        ]
+    },
+    {
+        "id": "046d8113177d41fc",
+        "type": "split",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Split ,",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 850,
+        "y": 280,
+        "wires": [
+            [
+                "ef6151d70bad9b5a"
+            ]
+        ]
+    },
+    {
+        "id": "ef6151d70bad9b5a",
+        "type": "function",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Add GPS coordinates",
+        "func": "msg.payload = {\n    value: msg.payload,\n    lat: 44.4056,\n    lon: 8.9463\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 120,
+        "wires": [
+            [
+                "fdda6c102b39c9ae"
+            ]
+        ]
+    },
+    {
+        "id": "ddd90ed644930175",
+        "type": "function",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Exctract values",
+        "func": "const message = msg.payload;\nconst value = parseFloat(message.value);\nlet d = new Date();\nlet timestamp = d.getTime();\n\n// Recupera i dati esistenti dal contesto\nlet contextData = context.get('dataSeries') || [];\n\n// Aggiungi il nuovo valore alla serie di dati\ncontextData.push({ x: timestamp, y: value });\n\n// Limita la serie di dati a un certo numero di punti (ad esempio, 100)\nif (contextData.length > 100) {\n    contextData.shift();\n}\n\n// Salva la serie di dati aggiornata nel contesto\ncontext.set('dataSeries', contextData);\n\n// Imposta il payload per il chart di Node-RED\nmsg.payload = [{\n    series: [\"Acceleration\"],\n    data: [contextData],\n    labels: []\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 480,
+        "wires": [
+            [
+                "d65375bea9e27f83"
+            ]
+        ]
+    },
+    {
+        "id": "2f7bbab61618722a",
+        "type": "function",
+        "z": "3e5c36e97fbbfb19",
+        "name": "Extract GPS",
+        "func": "const message = msg.payload;\n\nconst latitude = parseFloat(message.lat);\nconst longitude = parseFloat(message.lon);\nconst value = parseFloat(message.value); // Assumendo che il valore sia comunque utile\nlet d = new Date();\nlet timestamp = d.getTime();\n\n// Recupera i dati esistenti dal contesto\nlet contextData = context.get('gpsSeries') || [];\n\n// Aggiungi le nuove coordinate e il timestamp alla serie di dati\ncontextData.push({ lat: latitude, lon: longitude, timestamp: timestamp, value: value });\n\n// Limita la serie di dati a un certo numero di punti (ad esempio, 100)\nif (contextData.length > 100) {\n    contextData.shift();\n}\n\n// Salva la serie di dati aggiornata nel contesto\ncontext.set('gpsSeries', contextData);\n\n// Imposta il payload per il componente World Map di Node-RED\nmsg.payload = contextData.map((point, index) => ({\n    name: `Point ${index + 1}`,\n    lat: point.lat,\n    lon: point.lon,\n    layer: \"track\",\n    icon: \"fa-circle\",\n    iconColor: \"red\",\n    timestamp: point.timestamp,\n    value: point.value\n}));\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 640,
+        "wires": [
+            [
+                "9eceb7f661093974",
+                "7a771764f62fe976"
+            ]
+        ]
+    },
+    {
+        "id": "d65375bea9e27f83",
+        "type": "ui_chart",
+        "z": "3e5c36e97fbbfb19",
+        "name": "",
+        "group": "74c5bb2a042bdbb5",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9eceb7f661093974",
+        "type": "ui_worldmap",
+        "z": "3e5c36e97fbbfb19",
+        "group": "74c5bb2a042bdbb5",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 700,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7a771764f62fe976",
+        "type": "debug",
+        "z": "3e5c36e97fbbfb19",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "93b2eeaeb22ea01c",
+        "type": "mqtt-broker",
+        "name": "EclipseMQTT",
+        "broker": "mqtt://mqtt.eclipseprojects.io/",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "3",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "74c5bb2a042bdbb5",
+        "type": "ui_group",
+        "name": "Home",
+        "tab": "c51a1d005da8c5eb",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c51a1d005da8c5eb",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

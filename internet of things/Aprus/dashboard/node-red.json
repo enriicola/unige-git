@@ -1,0 +1,2187 @@
+[
+    {
+        "id": "e86ebc04195698cf",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bf6af09b8f857530",
+        "type": "mqtt in",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "topic": "Aprus",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "93b2eeaeb22ea01c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "e21644e555ddf723"
+            ]
+        ]
+    },
+    {
+        "id": "dff6c71ce63ca423",
+        "type": "sqlite",
+        "z": "e86ebc04195698cf",
+        "mydb": "06a6106d492f6497",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Database",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a293a186b1db5583",
+        "type": "inject",
+        "z": "e86ebc04195698cf",
+        "name": "InitiDB",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "CREATE TABLE mqtt_data (     id INTEGER,     lux REAL,     humidity REAL,     temperature REAL,     moisture INTEGER,     tankDistance REAL,     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,     PRIMARY KEY (timestamp, id) );",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "dff6c71ce63ca423"
+            ]
+        ]
+    },
+    {
+        "id": "e21644e555ddf723",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "SendDataToDB",
+        "func": "var data = msg.payload;\nvar id = data.id;\nvar lux = data.lux;\nvar humidity = data.humidity;\nvar temperature = data.temperature;\nvar moisture = data.moisture;\nvar tankDistance = data.tankDistance;\n\nvar query = `INSERT INTO mqtt_data (id, lux, humidity, temperature, moisture, tankDistance) \n             VALUES (${id}, ${lux}, ${humidity}, ${temperature}, ${moisture}, ${tankDistance})`;\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "dff6c71ce63ca423"
+            ]
+        ]
+    },
+    {
+        "id": "9a22b6c3e44dab20",
+        "type": "sqlite",
+        "z": "e86ebc04195698cf",
+        "mydb": "06a6106d492f6497",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Database",
+        "x": 1040,
+        "y": 400,
+        "wires": [
+            [
+                "115f1a7b41a5425f",
+                "b39e2a8423f85e4a",
+                "f53c405bc88bd8f6",
+                "4e37fd832fafbf49",
+                "a4c86fcf5c19d34f",
+                "bee2b2409df5523a"
+            ]
+        ]
+    },
+    {
+        "id": "115f1a7b41a5425f",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Lux",
+        "func": "var data = msg.payload;\n\nvar labels = [];\nvar lux = [];\n\ndata.forEach(function(row) {\n    labels.push(row.timestamp);\n    lux.push(row.lux);\n});\n\nlux = lux.reverse();\nlabels = labels.reverse();\n\nmsg.payload = [{\n    \"series\": [\"Lux\"],\n    \"data\": [lux],\n    \"labels\": labels\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 40,
+        "wires": [
+            [
+                "bca9a0847aa6f062"
+            ]
+        ]
+    },
+    {
+        "id": "bca9a0847aa6f062",
+        "type": "ui_chart",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "group": "74c5bb2a042bdbb5",
+        "order": 26,
+        "width": 9,
+        "height": 8,
+        "label": "Lux",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1490,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b39e2a8423f85e4a",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Hum",
+        "func": "var data = msg.payload;\nvar labels = [];\nvar humidity = [];\n\ndata.forEach(function(row) {\n    labels.push(row.timestamp);\n    humidity.push(row.humidity);\n});\n\nhumidity = humidity.reverse()\nlabels = labels.reverse();\n\nmsg.payload = [{\n    \"series\": [\"Humidity\"],\n    \"data\": [humidity],\n    \"labels\": labels\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 100,
+        "wires": [
+            [
+                "ae9a31bfd22caeb6"
+            ]
+        ]
+    },
+    {
+        "id": "f53c405bc88bd8f6",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Temp",
+        "func": "var data = msg.payload;\nvar labels = [];\nvar temperature = [];\n\ndata.forEach(function(row) {\n    labels.push(row.timestamp);\n    temperature.push(row.temperature);\n});\n\ntemperature = temperature.reverse()\nlabels = labels.reverse();\n\nmsg.payload = [{\n    \"series\": [\"Temperature\"],\n    \"data\": [temperature],\n    \"labels\": labels\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 160,
+        "wires": [
+            [
+                "efd7fcc33e6dab05"
+            ]
+        ]
+    },
+    {
+        "id": "4e37fd832fafbf49",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Mois",
+        "func": "var data = msg.payload;\nvar labels = [];\nvar moisture = [];\n\ndata.forEach(function(row) {\n    labels.push(row.timestamp);\n    moisture.push(row.moisture);\n});\n\n\nmoisture = moisture.reverse()\nlabels = labels.reverse();\n\nmsg.payload = [{\n    \"series\": [\"Moisture\"],\n    \"data\": [moisture],\n    \"labels\": labels\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 220,
+        "wires": [
+            [
+                "23230fa0345f0791"
+            ]
+        ]
+    },
+    {
+        "id": "a4c86fcf5c19d34f",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Tank",
+        "func": "var data = msg.payload;\nvar labels = [];\nvar tankDistance = [];\n\ndata.forEach(function(row) {\n    labels.push(row.timestamp);\n    tankDistance.push(row.tankDistance);\n});\n\ntankDistance = tankDistance.reverse()\nlabels = labels.reverse();\n\nmsg.payload = [{\n    \"series\": [\"Tank Distance\"],\n    \"data\": [tankDistance],\n    \"labels\": labels\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 280,
+        "wires": [
+            [
+                "72a0aa2025744047"
+            ]
+        ]
+    },
+    {
+        "id": "ae9a31bfd22caeb6",
+        "type": "ui_chart",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "group": "74c5bb2a042bdbb5",
+        "order": 6,
+        "width": 9,
+        "height": 8,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1500,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23230fa0345f0791",
+        "type": "ui_chart",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "group": "74c5bb2a042bdbb5",
+        "order": 24,
+        "width": 9,
+        "height": 8,
+        "label": "Moisture",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1500,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "efd7fcc33e6dab05",
+        "type": "ui_chart",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "group": "74c5bb2a042bdbb5",
+        "order": 8,
+        "width": 9,
+        "height": 8,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1510,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72a0aa2025744047",
+        "type": "ui_chart",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "group": "74c5bb2a042bdbb5",
+        "order": 4,
+        "width": 9,
+        "height": 8,
+        "label": "Tank",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1490,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bee2b2409df5523a",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Table",
+        "func": "var data = msg.payload;\nvar rows = [];\n\ndata.forEach(function (row) {\n    rows.push({\n        Timestamp: row.timestamp,\n        Lux: row.lux.toFixed(2),\n        Humidity: row.humidity.toFixed(2),\n        Temperature: row.temperature.toFixed(2),\n        Moisture: row.moisture.toFixed(2),\n        Tank: row.tankDistance.toFixed(2)\n    });\n});\n\nrows = rows.reverse()\n\nmsg.payload = rows;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 500,
+        "wires": [
+            [
+                "a04abfd45475ca25"
+            ]
+        ]
+    },
+    {
+        "id": "a04abfd45475ca25",
+        "type": "ui_template",
+        "z": "e86ebc04195698cf",
+        "group": "74ac322ea7a587ec",
+        "name": "Table",
+        "order": 4,
+        "width": 30,
+        "height": 19,
+        "format": "<table style=\"width:100%; text-align:center; border-collapse: collapse;\">\n    <thead>\n        <tr>\n            <th style=\"border: 1px solid black;\">Timestamp</th>\n            <th style=\"border: 1px solid black;\">Lux</th>\n            <th style=\"border: 1px solid black;\">Humidity</th>\n            <th style=\"border: 1px solid black;\">Temperature</th>\n            <th style=\"border: 1px solid black;\">Moisture</th>\n            <th style=\"border: 1px solid black;\">Tank Distance</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr ng-repeat=\"row in msg.payload\">\n            <td style=\"border: 1px solid black;\">{{row.Timestamp}}</td>\n            <td style=\"border: 1px solid black;\">{{row.Lux}}</td>\n            <td style=\"border: 1px solid black;\">{{row.Humidity}}</td>\n            <td style=\"border: 1px solid black;\">{{row.Temperature}}</td>\n            <td style=\"border: 1px solid black;\">{{row.Moisture}}</td>\n            <td style=\"border: 1px solid black;\">{{row.Tank}}</td>\n        </tr>\n    </tbody>\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1510,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "70141f6b0f3480ca",
+        "type": "ui_dropdown",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "74c5bb2a042bdbb5",
+        "order": 2,
+        "width": 11,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "payload",
+        "topicType": "msg",
+        "className": "",
+        "x": 180,
+        "y": 920,
+        "wires": [
+            [
+                "94f5e8ba986323b0"
+            ]
+        ]
+    },
+    {
+        "id": "735e0f4bd4a1c0d5",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "TakeIds",
+        "func": "var options = [];\nmsg.payload.forEach(function (row) {\n    options.push(row.id);\n});\nmsg.options = options;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 840,
+        "wires": [
+            [
+                "70141f6b0f3480ca",
+                "7211b621c70fb6fa",
+                "6376ec8ff01a7d77",
+                "cc1139ac42b72e78"
+            ]
+        ]
+    },
+    {
+        "id": "57568aa9562bfa0b",
+        "type": "inject",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "SELECT DISTINCT id FROM mqtt_data;",
+        "x": 170,
+        "y": 700,
+        "wires": [
+            [
+                "311ab57c3e0c5d3f"
+            ]
+        ]
+    },
+    {
+        "id": "311ab57c3e0c5d3f",
+        "type": "sqlite",
+        "z": "e86ebc04195698cf",
+        "mydb": "06a6106d492f6497",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "DatabaseRead",
+        "x": 180,
+        "y": 760,
+        "wires": [
+            [
+                "735e0f4bd4a1c0d5"
+            ]
+        ]
+    },
+    {
+        "id": "e2a6f154630ddb5e",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Select Data by id",
+        "func": "// Leggi il valore selezionato dal dropdown\nvar selectedId = flow.get('dropdownValue');\n\n// Se il valore è undefined, impostalo su un valore predefinito\nif (selectedId == undefined) {\n    node.warn(\"selectedId è undefined, impostato su 1\");\n    selectedId = 1;\n}\n\n// Costruisci la query\nvar query = `SELECT timestamp, lux, humidity, temperature, moisture, tankDistance FROM mqtt_data WHERE id = ${selectedId} ORDER BY timestamp DESC LIMIT 50`;\nmsg.topic = query;\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 540,
+        "wires": [
+            [
+                "9a22b6c3e44dab20"
+            ]
+        ]
+    },
+    {
+        "id": "7211b621c70fb6fa",
+        "type": "ui_dropdown",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "74ac322ea7a587ec",
+        "order": 2,
+        "width": 18,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "payload",
+        "topicType": "msg",
+        "className": "",
+        "x": 180,
+        "y": 980,
+        "wires": [
+            [
+                "94f5e8ba986323b0"
+            ]
+        ]
+    },
+    {
+        "id": "6376ec8ff01a7d77",
+        "type": "ui_dropdown",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "f4059bd43bd8074b",
+        "order": 2,
+        "width": 26,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "payload",
+        "topicType": "msg",
+        "className": "",
+        "x": 180,
+        "y": 1040,
+        "wires": [
+            [
+                "94f5e8ba986323b0"
+            ]
+        ]
+    },
+    {
+        "id": "e548b31217f6699f",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Insert leaf lenght",
+        "func": "// Prendi i valori dal msg.payload del form\nvar leaf = msg.payload.leaf;\n\n// Recupera l'id dal contesto di flusso\nvar id = flow.get('dropdownValue');\n\n// Crea un timestamp corrente\nvar timestamp = new Date().toISOString();\n\n// Costruisci la query SQL per inserire i dati nella tabella plant_data\nmsg.topic = `\n    INSERT INTO plant_data (id, leaf, timestamp)\n    VALUES (${id}, ${leaf}, '${timestamp}')\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "42170e9ae4e91528"
+            ]
+        ]
+    },
+    {
+        "id": "1e7ff1ce0f784c0f",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Insert roots lenght",
+        "func": "// Prendi i valori dal msg.payload del form\nvar root = msg.payload.root;\n\n// Recupera l'id dal contesto di flusso\nvar id = flow.get('dropdownValue');\n\n// Crea un timestamp corrente\nvar timestamp = new Date().toISOString();\n\n// Costruisci la query SQL per inserire i dati nella tabella plant_data\nmsg.topic = `\n    INSERT INTO plant_data (id, root, timestamp)\n    VALUES (${id}, ${root}, '${timestamp}')\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 480,
+        "wires": [
+            [
+                "42170e9ae4e91528"
+            ]
+        ]
+    },
+    {
+        "id": "42170e9ae4e91528",
+        "type": "sqlite",
+        "z": "e86ebc04195698cf",
+        "mydb": "06a6106d492f6497",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Database",
+        "x": 600,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48b8f4687715d637",
+        "type": "ui_chart",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "group": "f4059bd43bd8074b",
+        "order": 13,
+        "width": 9,
+        "height": 7,
+        "label": "Leaf",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1490,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46ca98640eacab99",
+        "type": "ui_chart",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "group": "f4059bd43bd8074b",
+        "order": 15,
+        "width": 9,
+        "height": 7,
+        "label": "Root",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1490,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f29b53a633817ec",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Insert roots lenght",
+        "func": "// Leggi il valore selezionato dal dropdown\nvar selectedId = flow.get('dropdownValue');\n\n// Se il valore è undefined, impostalo su un valore predefinito\nif (selectedId == undefined) {\n    node.warn(\"selectedId è undefined, impostato su 1\");\n    selectedId = 1;\n}\n\n// Costruisci la query\nvar query = `SELECT timestamp,root, leaf FROM plant_data WHERE id = ${selectedId} ORDER BY timestamp DESC LIMIT 100`;\nmsg.topic = query;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 680,
+        "wires": [
+            [
+                "94aa5d297b0ad99c"
+            ]
+        ]
+    },
+    {
+        "id": "94aa5d297b0ad99c",
+        "type": "sqlite",
+        "z": "e86ebc04195698cf",
+        "mydb": "06a6106d492f6497",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Database",
+        "x": 1040,
+        "y": 680,
+        "wires": [
+            [
+                "8804d4638e26d350",
+                "4d6f33d047d6ba0e"
+            ]
+        ]
+    },
+    {
+        "id": "4d6f33d047d6ba0e",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Leaf",
+        "func": "var data = msg.payload;\nvar labels = [];\nvar leafValues = [];\n\n// Filtra e formatta i dati\ndata.forEach(function(row) {\n    if (row.leaf !== null) {\n        labels.push(row.timestamp);\n        leafValues.push(row.leaf);\n    }\n});\n\nmsg.payload = [{\n    \"series\": [\"Leaf\"],\n    \"data\": [leafValues],\n    \"labels\": labels\n}];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 640,
+        "wires": [
+            [
+                "48b8f4687715d637"
+            ]
+        ]
+    },
+    {
+        "id": "8804d4638e26d350",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "FormatData_Root",
+        "func": "var data = msg.payload;\nvar labels = [];\nvar rootValues = [];\n\n// Filtra e formatta i dati\ndata.forEach(function (row) {\n    if (row.root !== null) {\n        labels.push(row.timestamp);\n        rootValues.push(row.root);\n    }\n});\n\nmsg.payload = [{\n    \"series\": [\"Root\"],\n    \"data\": [rootValues],\n    \"labels\": labels\n}];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 720,
+        "wires": [
+            [
+                "46ca98640eacab99"
+            ]
+        ]
+    },
+    {
+        "id": "0862d778ceacec62",
+        "type": "ui_form",
+        "z": "e86ebc04195698cf",
+        "name": "Leaf",
+        "label": "",
+        "group": "f4059bd43bd8074b",
+        "order": 6,
+        "width": 9,
+        "height": 1,
+        "options": [
+            {
+                "label": "Leaf",
+                "value": "leaf",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "leaf": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "payload",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "e548b31217f6699f"
+            ]
+        ]
+    },
+    {
+        "id": "1ca109735411111b",
+        "type": "ui_form",
+        "z": "e86ebc04195698cf",
+        "name": "Root",
+        "label": "",
+        "group": "f4059bd43bd8074b",
+        "order": 8,
+        "width": 9,
+        "height": 1,
+        "options": [
+            {
+                "label": "Roots",
+                "value": "root",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "root": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "1e7ff1ce0f784c0f"
+            ]
+        ]
+    },
+    {
+        "id": "94f5e8ba986323b0",
+        "type": "change",
+        "z": "e86ebc04195698cf",
+        "name": "Set dropdown",
+        "rules": [
+            {
+                "t": "set",
+                "p": "dropdownValue",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9990b24ff4255db2",
+        "type": "inject",
+        "z": "e86ebc04195698cf",
+        "name": "InitiDB",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "CREATE TABLE plant_data (     id INTEGER,     leaf INTEGER,     root INTEGER,     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,     PRIMARY KEY (timestamp, id) );",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "dff6c71ce63ca423"
+            ]
+        ]
+    },
+    {
+        "id": "2439afe0307a075e",
+        "type": "inject",
+        "z": "e86ebc04195698cf",
+        "name": "1s interval",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "x": 610,
+        "y": 680,
+        "wires": [
+            [
+                "e2a6f154630ddb5e",
+                "9f29b53a633817ec"
+            ]
+        ]
+    },
+    {
+        "id": "cc1139ac42b72e78",
+        "type": "ui_dropdown",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "8aba1e57f64933b1",
+        "order": 2,
+        "width": 22,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "payload",
+        "topicType": "msg",
+        "className": "",
+        "x": 180,
+        "y": 1100,
+        "wires": [
+            [
+                "94f5e8ba986323b0"
+            ]
+        ]
+    },
+    {
+        "id": "1fd0f4921dced992",
+        "type": "ui_form",
+        "z": "e86ebc04195698cf",
+        "name": "Lux Roof",
+        "label": "",
+        "group": "8aba1e57f64933b1",
+        "order": 10,
+        "width": 10,
+        "height": 1,
+        "options": [
+            {
+                "label": "Lux Roof",
+                "value": "lux",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "lux": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 640,
+        "y": 860,
+        "wires": [
+            [
+                "609e299e115ce6a5"
+            ]
+        ]
+    },
+    {
+        "id": "2f3f13658d5ad243",
+        "type": "ui_form",
+        "z": "e86ebc04195698cf",
+        "name": "Humidity Threshold",
+        "label": "",
+        "group": "8aba1e57f64933b1",
+        "order": 14,
+        "width": 10,
+        "height": 1,
+        "options": [
+            {
+                "label": "Humidity",
+                "value": "hum",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "hum": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 670,
+        "y": 940,
+        "wires": [
+            [
+                "0a637c5adc9f74ab"
+            ]
+        ]
+    },
+    {
+        "id": "995d3781528c126d",
+        "type": "ui_form",
+        "z": "e86ebc04195698cf",
+        "name": "Tank Threshold",
+        "label": "",
+        "group": "8aba1e57f64933b1",
+        "order": 18,
+        "width": 10,
+        "height": 1,
+        "options": [
+            {
+                "label": "Tank",
+                "value": "tank",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "tank": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 660,
+        "y": 1020,
+        "wires": [
+            [
+                "1e0f2e7d72dd17b8"
+            ]
+        ]
+    },
+    {
+        "id": "609e299e115ce6a5",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Format lux for mqtt",
+        "func": "// Simuliamo dei dati di esempio\nlet id = flow.get('dropdownValue');\nlet lux = msg.payload.lux;\n\nif (id == undefined) {\n    id = 1;\n}\n\n// Crea un oggetto JSON con i dati\nlet dati = {\n    id: id,\n    roof: lux\n};\n\n// Imposta il payload del messaggio nel formato JSON\nmsg.payload = JSON.stringify(dati);\n\n// Imposta il topic del messaggio (modifica in base alle tue necessità)\nmsg.topic = \"AprusSettings\";\n\n// Restituisci il messaggio formattato\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 860,
+        "wires": [
+            [
+                "611f9843ed756340"
+            ]
+        ]
+    },
+    {
+        "id": "611f9843ed756340",
+        "type": "mqtt out",
+        "z": "e86ebc04195698cf",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "93b2eeaeb22ea01c",
+        "x": 1190,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "0a637c5adc9f74ab",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Format hum for mqtt",
+        "func": "// Simuliamo dei dati di esempio\nlet id = flow.get('dropdownValue');\nlet hum = msg.payload.hum;\n\nif (id == undefined) {\n    id = 1;\n}\n\n// Crea un oggetto JSON con i dati\nlet dati = {\n    id: id,\n    hum: hum\n};\n\n// Imposta il payload del messaggio nel formato JSON\nmsg.payload = JSON.stringify(dati);\n\n// Imposta il topic del messaggio (modifica in base alle tue necessità)\nmsg.topic = \"AprusSettings\";\n\n// Restituisci il messaggio formattato\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 940,
+        "wires": [
+            [
+                "611f9843ed756340"
+            ]
+        ]
+    },
+    {
+        "id": "1e0f2e7d72dd17b8",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Format tank for mqtt",
+        "func": "// Simuliamo dei dati di esempio\nlet id = flow.get('dropdownValue');\nlet tank = msg.payload.tank;\n\nif (id == undefined) {\n    id = 1;\n}\n\n// Crea un oggetto JSON con i dati\nlet dati = {\n    id: id,\n    tank: tank\n};\n\n// Imposta il payload del messaggio nel formato JSON\nmsg.payload = JSON.stringify(dati);\n\n// Imposta il topic del messaggio (modifica in base alle tue necessità)\nmsg.topic = \"AprusSettings\";\n\n// Restituisci il messaggio formattato\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1020,
+        "wires": [
+            [
+                "611f9843ed756340"
+            ]
+        ]
+    },
+    {
+        "id": "4822d982c24b0b60",
+        "type": "ui_form",
+        "z": "e86ebc04195698cf",
+        "name": "Lux Light",
+        "label": "",
+        "group": "8aba1e57f64933b1",
+        "order": 6,
+        "width": 10,
+        "height": 1,
+        "options": [
+            {
+                "label": "Lux Light",
+                "value": "lux",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "lux": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 640,
+        "y": 1100,
+        "wires": [
+            [
+                "390a82f2a3a0c6bd"
+            ]
+        ]
+    },
+    {
+        "id": "390a82f2a3a0c6bd",
+        "type": "function",
+        "z": "e86ebc04195698cf",
+        "name": "Format lux for mqtt",
+        "func": "// Simuliamo dei dati di esempio\nlet id = flow.get('dropdownValue');\nlet lux = msg.payload.lux;\n\nif (id == undefined) {\n    id = 1;\n}\n\n// Crea un oggetto JSON con i dati\nlet dati = {\n    id: id,\n    light: lux\n};\n\n// Imposta il payload del messaggio nel formato JSON\nmsg.payload = JSON.stringify(dati);\n\n// Imposta il topic del messaggio (modifica in base alle tue necessità)\nmsg.topic = \"AprusSettings\";\n\n// Restituisci il messaggio formattato\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1100,
+        "wires": [
+            [
+                "611f9843ed756340"
+            ]
+        ]
+    },
+    {
+        "id": "71180638cf909990",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 1,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "b029261101b13ee7",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 3,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "d6eb4b89c209edab",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8beee45c71e78996",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "611de0bb22078757",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6e5ef25ce9663b10",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e33f88ad5587de61",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f5c27d82162e3cb8",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a64b291abe903d1e",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1652ee6e9fd95c72",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4b247d98bef14095",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b4bcfd30e6224ec5",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 16,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f22e72b82bda846a",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "61ef6ba332c9ba92",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9c6d47555c116256",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "031a6faf83fae596",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 20,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "65339fa47b3e0590",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 21,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "39436af18f692007",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ee139467845702aa",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 23,
+        "width": 29,
+        "height": 1
+    },
+    {
+        "id": "4be1240e89212de0",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ba4af84bf18a976a",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 27,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "99d52f42e108ef1d",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 28,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9a5e41c642a66e8d",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 29,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "c05bbb530a8170b7",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 30,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ee0bc85255815f98",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 31,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "70f67f90b62119a5",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 32,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ef25ba068712c0f4",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 33,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "3ddf7af9cbffebb9",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 34,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cb0198bfa51a25f1",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 35,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "f189f4d2b22bab57",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 36,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0fb4126ff5938cf5",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 37,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "32024149927a7c84",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 38,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6f1e6d3296fcaffa",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 39,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "bfef5090dbd2d642",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 40,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cdd5279c34f6d4b2",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74c5bb2a042bdbb5",
+        "order": 41,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "b91277c0d7fd1fa9",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74ac322ea7a587ec",
+        "order": 1,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "1aac02ef1437271a",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "74ac322ea7a587ec",
+        "order": 3,
+        "width": 7,
+        "height": 1
+    },
+    {
+        "id": "2de6b9a407e1623a",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3dac42680c55f30a",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "91ab99f8ce3c9a48",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 4,
+        "width": 28,
+        "height": 1
+    },
+    {
+        "id": "0956dbedb176c763",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "3d4a8bb85dc70468",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 7,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "e14bdcdc274e63d4",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 9,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "fe12ca124a34c653",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 10,
+        "width": 28,
+        "height": 1
+    },
+    {
+        "id": "73eeae1fd6184ee8",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 11,
+        "width": 28,
+        "height": 1
+    },
+    {
+        "id": "df0a6f202061b4b9",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 12,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "27aab5dd379c2a14",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 14,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "66205a669e80310e",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 16,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "f2637e873824e2d2",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 17,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "9951467b7f452d4d",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 18,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "325ff6944fc035fa",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 19,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "5e05016f77d74a0d",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 20,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "35ff1a6834c08121",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 21,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "141f2d6eb2602441",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 22,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "87767627e54e00c7",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 23,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "0d8e6a406bb2cdfb",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 24,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "5739159cedfd6377",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 25,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "fb31a7cb41097008",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 26,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "5b9d749ed06c853f",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 27,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "768703218dcb550b",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 28,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "7f572eeafd4dc552",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 29,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "5657618c0bed0fe4",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 30,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "80fad020fb329ea2",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 31,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "435da2e3cfffe52c",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 32,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a2b3f9c1f13b5d7c",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 33,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "ec8dac2acfdb788d",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "f4059bd43bd8074b",
+        "order": 34,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "2c81fcf4fa77c0bd",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 1,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "f63518dd11e32d1a",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 3,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "c7795e410c00d5fd",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 4,
+        "width": 30,
+        "height": 1
+    },
+    {
+        "id": "58086c4668c203b1",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 5,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "1058136f0d66833d",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 7,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "7a84dca544928aa7",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 8,
+        "width": 30,
+        "height": 1
+    },
+    {
+        "id": "e224c42be8d05829",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 9,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "7854a9af9892e769",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 11,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "56c154eb8925dcfc",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 12,
+        "width": 30,
+        "height": 1
+    },
+    {
+        "id": "fb5db6411b4bd501",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 13,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "eea44752eda38f5f",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 15,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "e33f4c38b38e5a9b",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 16,
+        "width": 30,
+        "height": 1
+    },
+    {
+        "id": "55c2b8fd39cf6eb8",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 17,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "0eb8544d104b623e",
+        "type": "ui_spacer",
+        "z": "e86ebc04195698cf",
+        "name": "spacer",
+        "group": "8aba1e57f64933b1",
+        "order": 19,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "93b2eeaeb22ea01c",
+        "type": "mqtt-broker",
+        "name": "EclipseMQTT",
+        "broker": "mqtt://mqtt.eclipseprojects.io/",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "3",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "06a6106d492f6497",
+        "type": "sqlitedb",
+        "db": "/home/skalla/GitHub/Aprus/dashboard/data.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "74c5bb2a042bdbb5",
+        "type": "ui_group",
+        "name": "Graphs",
+        "tab": "c51a1d005da8c5eb",
+        "order": 1,
+        "disp": true,
+        "width": "29",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "74ac322ea7a587ec",
+        "type": "ui_group",
+        "name": "Table",
+        "tab": "75945688ffe5ab41",
+        "order": 1,
+        "disp": true,
+        "width": 30,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f4059bd43bd8074b",
+        "type": "ui_group",
+        "name": "Monitor",
+        "tab": "839f3c1732480203",
+        "order": 1,
+        "disp": true,
+        "width": 28,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8aba1e57f64933b1",
+        "type": "ui_group",
+        "name": "Thresholds",
+        "tab": "76afe1f198cf9cf8",
+        "order": 1,
+        "disp": true,
+        "width": 30,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c51a1d005da8c5eb",
+        "type": "ui_tab",
+        "name": "Graph",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "75945688ffe5ab41",
+        "type": "ui_tab",
+        "name": "Table",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "839f3c1732480203",
+        "type": "ui_tab",
+        "name": "Monitor",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "76afe1f198cf9cf8",
+        "type": "ui_tab",
+        "name": "Threshold",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
