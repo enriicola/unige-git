@@ -1,0 +1,233 @@
+user30 7kqnm4dp
+
+
+
+
+
+
+###ex3###
+1. Retrieve all information about the movie titled 'Dracula'.
+select * from movie where title = 'Dracula';
+-->
+ title   | director     | eval | genre                          | recommended_by                                                                                                                                                                                                                                                                                                                                                                                                                               | year
+---------+--------------+------+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------
+ Dracula |  John Badham |  6.5 | {'Drama', 'Horror', 'Romance'} |                                                                                                                                   {'132655243240996138445024613109172273154', '224512233041623310917815176685059571714', '270151607342867406019499033986277834754', '281969452463975496728331038540856819714', '58215249781632243804170634185078996994', '59603378687187789270628959998533435394', '96255619669898704635391918061236518914'} | 1979
+ Dracula | Tod Browning |  7.5 | {'Drama', 'Fantasy', 'Horror'} | {'101403828432839219587981734988413140994', '159900600892454926754939452019919552514', '18385317733982962960772056007904591874', '185598905867170806763617075307233411074', '217127180320107321777807089020683681794', '235674779970644904845357816423441498114', '235853236653018534409927018558936317954', '287977678969600225352281895371733204994', '338900056075796853894676969664592740354', '76886999170548053946087069022573821954'} | 1931
+
+(2 rows)
+
+
+
+2. Retrieve all information about the movies titled 'Dracula' or 'Gang'.
+select * from movie where title in ('Dracula', 'Gang');
+-->
+ title   | director      | eval | genre                          | recommended_by                                                                                                                                                                                                                                                                                                                                                                                                                               | year
+---------+---------------+------+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------
+ Dracula |   John Badham |  6.5 | {'Drama', 'Horror', 'Romance'} |                                                                                                                                   {'132655243240996138445024613109172273154', '224512233041623310917815176685059571714', '270151607342867406019499033986277834754', '281969452463975496728331038540856819714', '58215249781632243804170634185078996994', '59603378687187789270628959998533435394', '96255619669898704635391918061236518914'} | 1979
+ Dracula |  Tod Browning |  7.5 | {'Drama', 'Fantasy', 'Horror'} | {'101403828432839219587981734988413140994', '159900600892454926754939452019919552514', '18385317733982962960772056007904591874', '185598905867170806763617075307233411074', '217127180320107321777807089020683681794', '235674779970644904845357816423441498114', '235853236653018534409927018558936317954', '287977678969600225352281895371733204994', '338900056075796853894676969664592740354', '76886999170548053946087069022573821954'} | 1931
+    Gang |   Mazhar Khan |  6.3 |   {'Action', 'Crime', 'Drama'} |                                                                                                                                                                             {'148889849576839287299722410942304878594', '268189718067130826091675185041853120514', '308967670538977039719416832065563000834', '333550214808384036773485087125569011714', '49136188026133763156339945900988956674', '62939474578849049152632232210109038594'} | 2000
+    Gang | Robert Altman |    7 |  {'Crime', 'Drama', 'Romance'} |                                                                                                                                                                                                                           {'139235545409152989287646789323284283394', '30446014920306885985359508353282998274', '32799656243779263516614805646628093954', '46171800566287676125877296357688737794', '8541055331570839630238777478118899714'} | 1974
+
+(4 rows)
+
+
+
+3. Retrieve all the titles of the movies directed by Robert Altman.
+select title from movie where director = 'Robert Altman' ALLOW FILTERING;
+-->Not Admitted: ALLOW FILTERING required.
+
+ title
+------------------------------
+                       HealtH
+    Non giocate con il cactus
+                         Aria
+          Conto alla rovescia
+                  The Company
+                 Secret Honor
+                 Gosford Park
+   Buffalo Bill e gli indiani
+               Vincent & Theo
+                      Quintet
+       Jimmy Dean, Jimmy Dean
+                  Kansas City
+         La fortuna di Cookie
+ Quel freddo giorno nel parco
+   Anche gli uccelli uccidono
+       Il dottor T & le donne
+                       Images
+                    Streamers
+       Conflitto di interessi
+                      3 donne
+              The Delinquents
+               Il lungo addio
+                Un matrimonio
+                Radio America
+                     M.A.S.H.
+             California poker
+                 America oggi
+                    Nashville
+            Terapia di gruppo
+                Prêt-à-Porter
+               Follia d'amore
+          Una coppia perfetta
+                    I compari
+                         Gang
+               I protagonisti
+    Popeye - Braccio di ferro
+
+(36 rows)
+
+
+
+4. Retrieve the genres of the Robert Altman's movie ‘Gang'.
+SELECT genre FROM movie WHERE title = 'Gang' AND director = 'Robert Altman';
+-->
+ genre
+-------------------------------
+ {'Crime', 'Drama', 'Romance'}
+
+(1 rows)
+
+
+
+5. Retrieve the production year of the Robert Altman's movies 'Gang' or 'Aria'.
+select title, year from movie where director = 'Robert Altman' and title in ('Gang','Aria');
+-->Admitted.
+
+ title | year
+-------+------
+  Aria | 1987
+  Gang | 1974
+
+(2 rows)
+
+
+
+6. Retrieve all the Robert Altman's movies produced after 1990.
+select * from movie where director = 'Robert Altman' and year > 1990;
+-->Non admitted: ALLOW FILTERING to be added or index to be created
+select * from movie where director = 'Robert Altman' and year > 1990 ALLOW FILTERING;
+
+ title                  | director      | eval | genre                            | recommended_by                                                                                                                                                                                                                                                                                                                                          | year
+------------------------+---------------+------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------
+            The Company | Robert Altman |  6.3 |    {'Drama', 'Music', 'Romance'} |  {'113118213774841917194444175178796367874', '121132668488158849657232766887112998914', '274017829644940501598471006862354153474', '275607335464917287142597936144046620674', '277226586072400710123877055559752220674', '284358936132801561286147244185244925954', '36137415134571697807064166345721249794', '90086823031869566763726977577093169154'} | 2003
+           Gosford Park | Robert Altman |  7.2 |   {'Comedy', 'Drama', 'Mystery'} |                                                                                        {'125676577118027815657121842300133834754', '139895263265058390716564087024381591554', '246546708492184675470886825726716936194', '328467168039985003667992456355785736194', '63674860083645323879811619996414246914', '68941575955229800000643732158184947714'} | 2001
+            Kansas City | Robert Altman |  6.4 |      {'Crime', 'Drama', 'Music'} | {'105769734357705762757956019272774582274', '139745354074201900878116590645071839234', '145346467459028707345986397822586191874', '197887378474751863760282334961751293954', '252567026007690705975397833299854098434', '275952079383902355269481972064264650754', '329750792622339359045234769892428480514', '54086537129700905208083901779233472514'} | 1996
+   La fortuna di Cookie | Robert Altman |  6.8 |              {'Comedy', 'Drama'} |  {'10397808518737131799199028597097234434', '128387617474883664757904992288884129794', '236396298962437933028171582147558899714', '285291457626933594697893298960865165314', '294204870249442735594203746492382707714', '319017844558918860635425603515953446914', '333815332839479018955800859504820355074', '66922813059946214400955322692362043394'} | 1999
+ Il dottor T & le donne | Robert Altman |  4.6 |   {'Comedy', 'Drama', 'Romance'} |                                                                                          {'162854683145202783423011309301599567874', '23404236435361325368773096368846405634', '270800343858534471428348901492508065794', '291602417318370202783719215032293916674', '65963302175339837859731062166709338114', '9047637825842170376881769690248773634'} | 2000
+ Conflitto di interessi | Robert Altman |  5.7 | {'Crime', 'Mystery', 'Thriller'} |                                                                                                                                  {'119451886595908114580571408429907443714', '122246312216965351468741635620067868674', '141660036516953747702795113294217347074', '147146218360110861751978221875616284674', '54533280177388462385829242116553572354'} | 1998
+          Radio America | Robert Altman |  6.7 |     {'Comedy', 'Drama', 'Music'} |                                                                                          {'104290467712246808738677087982369636354', '169106202699994689832201044959728238594', '32949954444913698392959886326733996034', '44419206267534011853621149663898632194', '77219579982023932211863744075536269314', '83436575865000247935947092957306028034'} | 2006
+           America oggi | Robert Altman |  7.7 |              {'Comedy', 'Drama'} |    {'188145465389520542528982524313328156674', '188994952124843360184590630355149258754', '229353851791800752020575880652181471234', '2655614255365842448760267255154737154', '283770235232647445838875295539470794754', '299323656525038094359507859934812045314', '36449434653311874191948564872692498434', '57715991930985356795538165111157686274'} | 1993
+          Prêt-à-Porter | Robert Altman |  5.1 |              {'Comedy', 'Drama'} |                                               {'147197559793983355328025590226313019394', '189488724217517759530488122445949304834', '281278663699576876254139680708756242434', '285757420951479346244172422128447782914', '29086209290568564876947498566634176514', '57352844102129850205674524866716106754', '9986821140792262117009654644563771394'} | 1994
+         I protagonisti | Robert Altman |  7.5 |     {'Comedy', 'Crime', 'Drama'} |                                                                                                                                                                                                                       {'158991044948877044163854672825832701954', '159321878779369482900987410234690240514', '244968458934170150444078776237399212034'} | 1992
+
+(10 rows)
+
+
+
+7. Retrieve the title and genres of the movies directed by Ken Loach, where one of the genres is
+‘Comedy'.
+select title, genre from movie where director = 'Ken Loach' and 'comedy' in genre;
+-->can't be executed, invalid query
+
+
+
+8. Retrieve the title and the production year of the first four Ken Loach's movies, ordered by title.
+select title, year from movie where director = 'Ken Loach' order by director, title asc;
+--> can't be executed, invalid query
+
+
+
+9. Retrieve, for each director, the number of directed movies.
+select count(title) from movie group by (title, director);
+-->can't be executed, invalid query ("InvalidRequest: Error from server: code=2200 [Invalid query] message="Group by currently only support groups of columns following their declared order in the PRIMARY KEY"") ... Cassandra doesn't natively support GROUP BY for arbitrary columns like relational databases do
+if q9 was the opposite (Retrieve, for each movie, the number of directors) then it would be executed without problems.
+
+
+
+10. Retrieve all clients born after 2000-01-01.
+select * from client where bithdate > '2000-01-01';
+-->can't be executed, invalid query
+
+
+
+11. Determine if the client with id '332548029258602602032102816021946826754' recommended the film
+'Spirits' with director 'Todd Sheets'.
+Specify two queries, one over table client and one over table movie, and compare the obtained results.
+SELECT id
+FROM movieclient_ks.client
+WHERE id = '332548029258602602032102816021946826754' AND recommends CONTAINS { 'title': 'Spirits', 'director': 'Todd Sheets' };
+--> use ALLOW FILTERING" because of FROZEN SET!
+
+SELECT title
+FROM movieclient_ks.movie
+WHERE title = 'Spirits'
+  AND director = 'Todd Sheets'
+  AND '332548029258602602032102816021946826754' IN recommended_by;
+-->no viable alternative at input '332548029258602602032102816021946826754' ... the correct way is to create an index on recommended_by
+
+
+
+12. Determine if the client with id '332548029258602602032102816021946826754' recommended at least one
+film with director 'Todd Sheets'.
+Specify two queries, one over table client and one over table movie, and compare the obtained results.
+Is the behaviour different from that of the previous query? Why?
+SELECT id
+FROM movieclient_ks.client
+WHERE id = '332548029258602602032102816021946826754'
+  AND recommends CONTAINS { 'director': 'Todd Sheets' };
+-->no viable alternative :(
+
+SELECT title
+FROM movieclient_ks.movie
+WHERE director = 'Todd Sheets'
+  AND '332548029258602602032102816021946826754' IN recommended_by;
+-->use allow filtering :/
+
+
+
+
+
+
+
+13. Retrieve ID, name, surname, birthdate of clients which have recommended the Robert Altman's movie ‘Gang'.
+--->it's impossible, this query would need a JOIN, but in Cassandra it's not possible to do JOINs
+
+
+
+
+
+
+###ex4###
+q11:
+SELECT title
+FROM movieclient_ks.movie
+WHERE title = 'Spirits'
+  AND director = 'Todd Sheets'
+  AND '332548029258602602032102816021946826754' IN recommended_by;
+
+
+
+USE ks_user30;
+
+CREATE TABLE movie_recommendations (
+    title TEXT,
+    director TEXT,
+    client_id TEXT,
+    PRIMARY KEY ((title, director), client_id)
+);
+
+INSERT INTO movie_recommendations (title, director, client_id)
+VALUES ('Spirits', 'Todd Sheets', '332548029258602602032102816021946826754');
+
+
+
+5.
+SELECT * FROM movie WHERE director = 'Robert Altman' AND year > 1990;
+CREATE INDEX year_idx ON movie (year);
+SELECT * FROM movie WHERE director = 'Robert Altman' AND year > 1990;
+
+
+
+
+

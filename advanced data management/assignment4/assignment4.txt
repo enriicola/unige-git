@@ -1,0 +1,129 @@
+Lorenzo Foschi 4989646
+Enrico Pezzano 4825087
+
+
+##### Exercise 1 #####
+1.
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie)
+RETURN DISTINCT p.name AS actorName
+
+2.
+MATCH (director:Person {name: "Lana Wachowski"})-[:DIRECTED]->(movie:Movie)<-[:ACTED_IN]-(actor:Person)
+WHERE movie.released < 2005
+RETURN movie.title AS movie, actor.name AS actorName
+
+3.
+MATCH (actor:Person)-[role:ACTED_IN]->(movie:Movie)
+WITH role.roles AS roles, COUNT(movie) AS movieCount
+WHERE movieCount > 1
+RETURN roles, movieCount
+
+4.
+MATCH (actor:Person)-[:ACTED_IN]->(movie:Movie)
+RETURN actor.name AS actor, COUNT(movie) AS movieCount
+ORDER BY movieCount DESC
+
+5.
+MATCH(p:Person)-[relName]->(m:Movie {title : "The Matrix"})
+RETURN p, TYPE(relName)
+
+6.
+MATCH (m1:Movie {title: "The Matrix"})-[*..6]-(m2:Movie)
+RETURN DISTINCT m1.title AS movieTitle
+LIMIT 50
+
+7.
+MATCH (a:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m:Movie)
+WHERE NOT (a)-[:DIRECTED]->(m)
+RETURN m
+
+8.
+MATCH p:shortestPath((p1:Person {name: "Madonna"})-[*]-(p2:Person {name: "Keanu Reeves"}))
+WHERE ANY(rel IN relationships(p) WHERE TYPE(rel) : "ACTED_IN")
+RETURN length(p) AS spLength
+
+9.
+MATCH (actor:Person)-[role:ACTED_IN]->(movie:Movie {title : "Cloud Atlas"})
+UNWIND role.roles AS role
+RETURN actor, role
+
+10. * ok
+MATCH (director:Person {name: "Lana Wachowski"})-[:DIRECTED]->(movie:Movie)<-[r:ACTED_IN]-(actor:Person)
+UNWIND r.roles AS role
+RETURN role, COLLECT (movie), COLLECT (actor)
+
+11. *
+MATCH p:shortestPath((movie1:Movie {title: "The Green Mile"})-[*]-(movie2:Movie {title: "The Matrix"}))
+WHERE ANY(n IN nodes(p) WHERE n:Person)
+WITH [n IN nodes(p) WHERE n:Person AND exists(n.born) | 2024 - n.born] AS Ages
+RETURN REDUCE(sum : 0, age IN Ages | sum + age) * 1.0 / size(Ages) AS AverageAge
+-- You can't use smth like [1..*] in the rel to specify "at least" one Person in the hops because that syntax is for checking #hops in relationships only. We found that you can specify this with ANY clause but still this was a difficult query and we actually needed help looking online
+
+
+##### Exercise 2 #####
+EXPLAIN
+MATCH (person:Person)
+WHERE person.born : 2001
+RETURN person.name AS name
+
+
+CREATE INDEX index_name FOR (p:Person) ON
+(p.born)
+
+EXPLAIN
+MATCH (person:Person)
+WHERE person.born : 2001
+RETURN person.name AS name
+
+
+--Final Output:
+
+Cypher 5
+
+Planner COST
+
+Runtime SLOTTED
+
+Runtime version 5.25
+
++-----------------+----+---------------------------------------------------------+----------------+
+| Operator        | Id | Details                                                 | Estimated Rows |
++-----------------+----+---------------------------------------------------------+----------------+
+| +ProduceResults |  0 | name                                                    |              3 |
+| |               +----+---------------------------------------------------------+----------------+
+| +Projection     |  1 | person.name AS name                                     |              3 |
+| |               +----+---------------------------------------------------------+----------------+
+| +NodeIndexSeek  |  2 | RANGE INDEX person:Person(born) WHERE born : $autoint_0 |              3 |
++-----------------+----+---------------------------------------------------------+----------------+
+
+Total database accesses: ?
+--Using the index the results where different, in particular the first neo4j search was significantly less "bloated": 3 estimated rows instead of 133
+
+
+
+##### Exercise 3 #####
+1.
+MERGE (newMovie:Movie {title: "Winnie the Pooh", released: 2011, tagline: "Oh bother."})
+MERGE (jim:Person {name: "Jim Cummings"}) ON CREATE SET jim.born : 1952
+MERGE (craig:Person {name: "Craig Ferguson"}) ON CREATE SET craig.born : 1962
+MERGE (john:Person {name: "John Cleese"}) ON CREATE SET john.born : 1939
+MERGE (jim)-[:ACTED_IN {roles: ["Winnie the Pooh", "Tigger"]}]->(newMovie)
+MERGE (craig)-[:ACTED_IN {roles: ["Owl"]}]->(newMovie)
+MERGE (john)-[:ACTED_IN {roles: ["Narrator"]}]->(newMovie);
+
+2.
+MATCH (movie:Movie {title: "Winnie the Pooh"})
+SET movie.rating : 7.2
+RETURN movie;
+
+3.
+MATCH (matrix:Movie {title: "The Matrix"}), (reloaded:Movie {title: "The Matrix Reloaded"})
+MERGE (reloaded)-[:SEQUEL_TO]->(matrix);
+
+4. 
+MATCH (movie:Movie)
+WHERE movie.title CONTAINS "Winnie the Pooh"
+FOREACH (_ IN [1] | SET movie.franchise : "Winnie the Pooh")
+RETURN movie.title, movie.franchise;
+
+-- e.g. will take "Winnie the Pooh - Nuove avventure nel Bosco dei 100 Acri" and "Winnie the Pooh e gli efelanti" and it will add and set the property movie franchise to "Winnie the Pooh" for each of them

@@ -1,0 +1,1173 @@
+db.printShardingStatus()
+--- Sharding Status --- 
+  sharding version: {
+  	"_id" : 1,
+  	"minCompatibleVersion" : 5,
+  	"currentVersion" : 6,
+  	"clusterId" : ObjectId("5fa92e552cf1ff7edc40cadf")
+  }
+  shards:
+        {  "_id" : "rs0",  "host" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",  "state" : 1 }
+        {  "_id" : "rs1",  "host" : "rs1/it.unige.dibris.lsccluster.node6:27017,it.unige.dibris.lsccluster.node7:27017",  "state" : 1 }
+        {  "_id" : "rs2",  "host" : "rs2/it.unige.dibris.lsccluster.node8:27017,it.unige.dibris.lsccluster.node9:27017",  "state" : 1 }
+  active mongoses:
+        "4.4.1" : 1
+  autosplit:
+        Currently enabled: yes
+  balancer:
+        Currently enabled:  yes
+        Currently running:  no
+        Failed balancer rounds in last 5 attempts:  5
+        Last reported error:  Could not find host matching read preference { mode: "primary" } for set rs2
+        Time of Reported error:  Mon Nov 06 2023 13:50:36 GMT+0100 (CET)
+        Migration Results for the last 24 hours: 
+                No recent migrations
+  databases:
+        {  "_id" : "config",  "primary" : "config",  "partitioned" : true }
+                config.system.sessions
+                        shard key: { "_id" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	342
+                                rs1	341
+                                rs2	341
+                        too many chunks to print, use verbose if you want to force print
+        {  "_id" : "exampleDB",  "primary" : "rs2",  "partitioned" : true,  "version" : {  "uuid" : UUID("cd72ec86-1a49-4061-93fa-6c73bd15ff18"),  "lastMod" : 1 } }
+                exampleDB.exampleCollection
+                        shard key: { "_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	2
+                                rs2	2
+                        { "_id" : { "$minKey" : 1 } } -->> { "_id" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "_id" : NumberLong("-6148914691236517204") } -->> { "_id" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "_id" : NumberLong("-3074457345618258602") } -->> { "_id" : NumberLong(0) } on : rs1 Timestamp(1, 2) 
+                        { "_id" : NumberLong(0) } -->> { "_id" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "_id" : NumberLong("3074457345618258602") } -->> { "_id" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "_id" : NumberLong("6148914691236517204") } -->> { "_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+        {  "_id" : "movieclients",  "primary" : "rs1",  "partitioned" : true,  "version" : {  "uuid" : UUID("d7f82c1b-5a79-4f51-96b4-cb41bd89896b"),  "lastMod" : 1 } }
+                movieclients.movie
+                        shard key: { "_id" : 1 }
+                        unique: true
+                        balancing: false
+                        chunks:
+                                rs0	1
+                                rs1	1
+                        { "_id" : { "$minKey" : 1 } } -->> { "_id" : ObjectId("6192373e7ac90092e1b55e79") } on : rs0 Timestamp(2, 0) 
+                        { "_id" : ObjectId("6192373e7ac90092e1b55e79") } -->> { "_id" : { "$maxKey" : 1 } } on : rs1 Timestamp(2, 1) 
+        {  "_id" : "movies",  "primary" : "rs2",  "partitioned" : true,  "version" : {  "uuid" : UUID("a0ab077f-3db6-4bb3-8a6d-4ba0db149bd5"),  "lastMod" : 1 } }
+                movies.movie
+                        shard key: { "imdb_title_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                                rs1	1
+                                rs2	1
+                        { "imdb_title_id" : { "$minKey" : 1 } } -->> { "imdb_title_id" : NumberLong("-2318058966732915146") } on : rs1 Timestamp(2, 0) 
+                        { "imdb_title_id" : NumberLong("-2318058966732915146") } -->> { "imdb_title_id" : NumberLong("4561922461084053322") } on : rs0 Timestamp(3, 0) 
+                        { "imdb_title_id" : NumberLong("4561922461084053322") } -->> { "imdb_title_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(3, 1) 
+        {  "_id" : "projectUser2",  "primary" : "rs0",  "partitioned" : true,  "version" : {  "uuid" : UUID("90fcc92e-5398-4427-8c7c-450a78a8c601"),  "lastMod" : 1 } }
+                projectUser2.listings
+                        shard key: { "location.neighbourhood_area" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	2
+                                rs2	2
+                        { "location.neighbourhood_area" : { "$minKey" : 1 } } -->> { "location.neighbourhood_area" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "location.neighbourhood_area" : NumberLong("-6148914691236517204") } -->> { "location.neighbourhood_area" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "location.neighbourhood_area" : NumberLong("-3074457345618258602") } -->> { "location.neighbourhood_area" : NumberLong(0) } on : rs1 Timestamp(1, 2) 
+                        { "location.neighbourhood_area" : NumberLong(0) } -->> { "location.neighbourhood_area" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "location.neighbourhood_area" : NumberLong("3074457345618258602") } -->> { "location.neighbourhood_area" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "location.neighbourhood_area" : NumberLong("6148914691236517204") } -->> { "location.neighbourhood_area" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+                projectUser2.listings_1
+                        shard key: { "_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	2
+                                rs2	2
+                        { "_id" : { "$minKey" : 1 } } -->> { "_id" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "_id" : NumberLong("-6148914691236517204") } -->> { "_id" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "_id" : NumberLong("-3074457345618258602") } -->> { "_id" : NumberLong(0) } on : rs1 Timestamp(1, 2) 
+                        { "_id" : NumberLong(0) } -->> { "_id" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "_id" : NumberLong("3074457345618258602") } -->> { "_id" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "_id" : NumberLong("6148914691236517204") } -->> { "_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+                projectUser2.reviews
+                        shard key: { "neighbourhood_area" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	3
+                                rs2	3
+                        { "neighbourhood_area" : { "$minKey" : 1 } } -->> { "neighbourhood_area" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "neighbourhood_area" : NumberLong("-6148914691236517204") } -->> { "neighbourhood_area" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "neighbourhood_area" : NumberLong("-3074457345618258602") } -->> { "neighbourhood_area" : NumberLong("-2639121203008567539") } on : rs2 Timestamp(2, 0) 
+                        { "neighbourhood_area" : NumberLong("-2639121203008567539") } -->> { "neighbourhood_area" : NumberLong("-675104043981543004") } on : rs1 Timestamp(2, 1) 
+                        { "neighbourhood_area" : NumberLong("-675104043981543004") } -->> { "neighbourhood_area" : NumberLong(0) } on : rs1 Timestamp(1, 7) 
+                        { "neighbourhood_area" : NumberLong(0) } -->> { "neighbourhood_area" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "neighbourhood_area" : NumberLong("3074457345618258602") } -->> { "neighbourhood_area" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "neighbourhood_area" : NumberLong("6148914691236517204") } -->> { "neighbourhood_area" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+                projectUser2.reviews_1
+                        shard key: { "listing_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	4
+                                rs1	4
+                                rs2	4
+                        { "listing_id" : { "$minKey" : 1 } } -->> { "listing_id" : NumberLong("-6899078346795286355") } on : rs0 Timestamp(5, 0) 
+                        { "listing_id" : NumberLong("-6899078346795286355") } -->> { "listing_id" : NumberLong("-6885479499486907136") } on : rs2 Timestamp(5, 1) 
+                        { "listing_id" : NumberLong("-6885479499486907136") } -->> { "listing_id" : NumberLong("-6148914691236517204") } on : rs1 Timestamp(4, 1) 
+                        { "listing_id" : NumberLong("-6148914691236517204") } -->> { "listing_id" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(3, 1) 
+                        { "listing_id" : NumberLong("-3074457345618258602") } -->> { "listing_id" : NumberLong("-709757705275169002") } on : rs1 Timestamp(3, 2) 
+                        { "listing_id" : NumberLong("-709757705275169002") } -->> { "listing_id" : NumberLong(0) } on : rs1 Timestamp(3, 3) 
+                        { "listing_id" : NumberLong(0) } -->> { "listing_id" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "listing_id" : NumberLong("3074457345618258602") } -->> { "listing_id" : NumberLong("5297824781134468156") } on : rs0 Timestamp(2, 2) 
+                        { "listing_id" : NumberLong("5297824781134468156") } -->> { "listing_id" : NumberLong("5563457680323733213") } on : rs0 Timestamp(2, 3) 
+                        { "listing_id" : NumberLong("5563457680323733213") } -->> { "listing_id" : NumberLong("6148914691236517204") } on : rs2 Timestamp(2, 1) 
+                        { "listing_id" : NumberLong("6148914691236517204") } -->> { "listing_id" : NumberLong("8525147003896731680") } on : rs2 Timestamp(1, 8) 
+                        { "listing_id" : NumberLong("8525147003896731680") } -->> { "listing_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 9) 
+                projectUser2.users_bookings
+                        shard key: { "_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	2
+                                rs2	2
+                        { "_id" : { "$minKey" : 1 } } -->> { "_id" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "_id" : NumberLong("-6148914691236517204") } -->> { "_id" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "_id" : NumberLong("-3074457345618258602") } -->> { "_id" : NumberLong(0) } on : rs1 Timestamp(1, 2) 
+                        { "_id" : NumberLong(0) } -->> { "_id" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "_id" : NumberLong("3074457345618258602") } -->> { "_id" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "_id" : NumberLong("6148914691236517204") } -->> { "_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+        {  "_id" : "prova1",  "primary" : "rs2",  "partitioned" : true,  "version" : {  "uuid" : UUID("4e05927b-08aa-4d96-be8b-a30332b3cc06"),  "lastMod" : 1 } }
+                prova1.prova2
+                        shard key: { "_id" : 1 }
+                        unique: true
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "_id" : { "$minKey" : 1 } } -->> { "_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+        {  "_id" : "test1",  "primary" : "rs0",  "partitioned" : false,  "version" : {  "uuid" : UUID("909753a9-35cf-4eb7-8eef-b0a8ee6bc8f9"),  "lastMod" : 1 } }
+        {  "_id" : "user10_db",  "primary" : "rs1",  "partitioned" : false,  "version" : {  "uuid" : UUID("06847085-ff23-45cc-987e-5737f86047b8"),  "lastMod" : 1 } }
+        {  "_id" : "user11_db",  "primary" : "rs1",  "partitioned" : false,  "version" : {  "uuid" : UUID("995532d6-9b52-4b48-8ba7-49650950688f"),  "lastMod" : 1 } }
+        {  "_id" : "user12_db",  "primary" : "rs1",  "partitioned" : true,  "version" : {  "uuid" : UUID("0ed25311-1fa8-439a-b9ca-4c8c5c76365d"),  "lastMod" : 1 } }
+                user12_db.circuits
+                        shard key: { "circuitId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs1	1
+                        { "circuitId" : { "$minKey" : 1 } } -->> { "circuitId" : { "$maxKey" : 1 } } on : rs1 Timestamp(1, 0) 
+                user12_db.constructors
+                        shard key: { "constructorId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs1	1
+                        { "constructorId" : { "$minKey" : 1 } } -->> { "constructorId" : { "$maxKey" : 1 } } on : rs1 Timestamp(1, 0) 
+                user12_db.drivers
+                        shard key: { "driverId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs1	1
+                        { "driverId" : { "$minKey" : 1 } } -->> { "driverId" : { "$maxKey" : 1 } } on : rs1 Timestamp(1, 0) 
+                user12_db.races
+                        shard key: { "raceId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs1	1
+                        { "raceId" : { "$minKey" : 1 } } -->> { "raceId" : { "$maxKey" : 1 } } on : rs1 Timestamp(1, 0) 
+                user12_db.results
+                        shard key: { "positionOrder" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs1	1
+                        { "positionOrder" : { "$minKey" : 1 } } -->> { "positionOrder" : { "$maxKey" : 1 } } on : rs1 Timestamp(1, 0) 
+        {  "_id" : "user13_db",  "primary" : "rs0",  "partitioned" : false,  "version" : {  "uuid" : UUID("74048467-2924-45b8-9115-6a48e503fc06"),  "lastMod" : 1 } }
+        {  "_id" : "user14_db",  "primary" : "rs1",  "partitioned" : true,  "version" : {  "uuid" : UUID("8a0e65d8-61af-44d2-b8f7-378d2ad42109"),  "lastMod" : 1 } }
+                user14_db.Cloth
+                        shard key: { "clothing_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs1	1
+                        { "clothing_id" : { "$minKey" : 1 } } -->> { "clothing_id" : { "$maxKey" : 1 } } on : rs1 Timestamp(1, 0) 
+        {  "_id" : "user15_db",  "primary" : "rs0",  "partitioned" : false,  "version" : {  "uuid" : UUID("a9c05d1d-e7be-415e-81cc-f9a284f04307"),  "lastMod" : 1 } }
+        {  "_id" : "user16_db",  "primary" : "rs0",  "partitioned" : true,  "version" : {  "uuid" : UUID("37c17c63-ab0b-4ea5-a3e5-2bc633c1b89f"),  "lastMod" : 1 } }
+                user16_db.athletes
+                        shard key: { "athlete_id" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "athlete_id" : { "$minKey" : 1 } } -->> { "athlete_id" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+                user16_db.countries
+                        shard key: { "country_noc" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "country_noc" : { "$minKey" : 1 } } -->> { "country_noc" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+                user16_db.editions
+                        shard key: { "edition_id" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "edition_id" : { "$minKey" : 1 } } -->> { "edition_id" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+                user16_db.events
+                        shard key: { "event_id" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "event_id" : { "$minKey" : 1 } } -->> { "event_id" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+        {  "_id" : "user18_db",  "primary" : "rs1",  "partitioned" : true,  "version" : {  "uuid" : UUID("4d6d72f5-d94a-4ea3-8c11-c883aed64fe3"),  "lastMod" : 1 } }
+        {  "_id" : "user19_db",  "primary" : "rs2",  "partitioned" : false,  "version" : {  "uuid" : UUID("12b64c65-f86e-4e36-9768-7e2aac17b443"),  "lastMod" : 1 } }
+        {  "_id" : "user1_db",  "primary" : "rs1",  "partitioned" : false,  "version" : {  "uuid" : UUID("dbef6d12-8acd-45c1-9e36-1c47542a60b2"),  "lastMod" : 1 } }
+        {  "_id" : "user21_db",  "primary" : "rs0",  "partitioned" : false,  "version" : {  "uuid" : UUID("f7fa7b17-e7ba-48f8-b784-711230dc1970"),  "lastMod" : 1 } }
+        {  "_id" : "user24_db",  "primary" : "rs2",  "partitioned" : true,  "version" : {  "uuid" : UUID("089a1a3a-4022-4be9-a151-f10e47085e95"),  "lastMod" : 1 } }
+                user24_db.order
+                        shard key: { "orderid" : 1, "userid" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "orderid" : { "$minKey" : 1 }, "userid" : { "$minKey" : 1 } } -->> { "orderid" : { "$maxKey" : 1 }, "userid" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+                user24_db.order2
+                        shard key: { "orderid" : 1, "productid" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "orderid" : { "$minKey" : 1 }, "productid" : { "$minKey" : 1 } } -->> { "orderid" : { "$maxKey" : 1 }, "productid" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+                user24_db.product
+                        shard key: { "productid" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "productid" : { "$minKey" : 1 } } -->> { "productid" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+                user24_db.review
+                        shard key: { "productid" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "productid" : { "$minKey" : 1 } } -->> { "productid" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+                user24_db.user
+                        shard key: { "userid" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "userid" : { "$minKey" : 1 } } -->> { "userid" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+                user24_db.userorder
+                        shard key: { "userid" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "userid" : { "$minKey" : 1 } } -->> { "userid" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+        {  "_id" : "user2_db",  "primary" : "rs1",  "partitioned" : false,  "version" : {  "uuid" : UUID("9fd5655f-e0b3-460e-98dd-a2f1877d9f35"),  "lastMod" : 1 } }
+        {  "_id" : "user3_db",  "primary" : "rs2",  "partitioned" : true,  "version" : {  "uuid" : UUID("674c7dff-756c-4ab3-99cf-462f146332b7"),  "lastMod" : 1 } }
+                user3_db.customer
+                        shard key: { "customer_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	2
+                                rs2	2
+                        { "customer_id" : { "$minKey" : 1 } } -->> { "customer_id" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "customer_id" : NumberLong("-6148914691236517204") } -->> { "customer_id" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "customer_id" : NumberLong("-3074457345618258602") } -->> { "customer_id" : NumberLong(0) } on : rs1 Timestamp(1, 2) 
+                        { "customer_id" : NumberLong(0) } -->> { "customer_id" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "customer_id" : NumberLong("3074457345618258602") } -->> { "customer_id" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "customer_id" : NumberLong("6148914691236517204") } -->> { "customer_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+                user3_db.order
+                        shard key: { "order_id" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	2
+                                rs2	2
+                        { "order_id" : { "$minKey" : 1 } } -->> { "order_id" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "order_id" : NumberLong("-6148914691236517204") } -->> { "order_id" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "order_id" : NumberLong("-3074457345618258602") } -->> { "order_id" : NumberLong(0) } on : rs1 Timestamp(1, 2) 
+                        { "order_id" : NumberLong(0) } -->> { "order_id" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "order_id" : NumberLong("3074457345618258602") } -->> { "order_id" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "order_id" : NumberLong("6148914691236517204") } -->> { "order_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+                user3_db.product
+                        shard key: { "product_ID" : "hashed" }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	2
+                                rs1	2
+                                rs2	2
+                        { "product_ID" : { "$minKey" : 1 } } -->> { "product_ID" : NumberLong("-6148914691236517204") } on : rs0 Timestamp(1, 0) 
+                        { "product_ID" : NumberLong("-6148914691236517204") } -->> { "product_ID" : NumberLong("-3074457345618258602") } on : rs0 Timestamp(1, 1) 
+                        { "product_ID" : NumberLong("-3074457345618258602") } -->> { "product_ID" : NumberLong(0) } on : rs1 Timestamp(1, 2) 
+                        { "product_ID" : NumberLong(0) } -->> { "product_ID" : NumberLong("3074457345618258602") } on : rs1 Timestamp(1, 3) 
+                        { "product_ID" : NumberLong("3074457345618258602") } -->> { "product_ID" : NumberLong("6148914691236517204") } on : rs2 Timestamp(1, 4) 
+                        { "product_ID" : NumberLong("6148914691236517204") } -->> { "product_ID" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 5) 
+                user3_db.sale
+                        shard key: { "price_per_unit" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "price_per_unit" : { "$minKey" : 1 } } -->> { "price_per_unit" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+        {  "_id" : "user40_db",  "primary" : "rs0",  "partitioned" : true,  "version" : {  "uuid" : UUID("6aac1d84-c740-44f0-87fb-235001ed558f"),  "lastMod" : 1 } }
+        {  "_id" : "user4_db",  "primary" : "rs2",  "partitioned" : false,  "version" : {  "uuid" : UUID("92d50c09-7f23-4c74-a5fc-f52c34eeb38a"),  "lastMod" : 1 } }
+        {  "_id" : "user5_db",  "primary" : "rs2",  "partitioned" : true,  "version" : {  "uuid" : UUID("c23e1e0e-9145-4a44-a95e-417336d91845"),  "lastMod" : 1 } }
+                user5_db.videogames
+                        shard key: { "_id" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs2	1
+                        { "_id" : { "$minKey" : 1 } } -->> { "_id" : { "$maxKey" : 1 } } on : rs2 Timestamp(1, 0) 
+        {  "_id" : "user6_db",  "primary" : "rs0",  "partitioned" : false,  "version" : {  "uuid" : UUID("6d382151-3fda-48f4-91c9-723adbfc4fc1"),  "lastMod" : 1 } }
+        {  "_id" : "user7_db",  "primary" : "rs2",  "partitioned" : false,  "version" : {  "uuid" : UUID("2d979abb-6ef9-431a-8155-e17e66161bb5"),  "lastMod" : 1 } }
+        {  "_id" : "user8_db",  "primary" : "rs1",  "partitioned" : false,  "version" : {  "uuid" : UUID("73571ea2-b93b-42aa-876b-fff26e755790"),  "lastMod" : 1 } }
+        {  "_id" : "user9_db",  "primary" : "rs0",  "partitioned" : true,  "version" : {  "uuid" : UUID("9bf9cd5c-dfa3-480c-a130-7e9fba10a462"),  "lastMod" : 1 } }
+                user9_db.account
+                        shard key: { "accountId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "accountId" : { "$minKey" : 1 } } -->> { "accountId" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+                user9_db.actor
+                        shard key: { "actorId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "actorId" : { "$minKey" : 1 } } -->> { "actorId" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+                user9_db.director
+                        shard key: { "directorId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "directorId" : { "$minKey" : 1 } } -->> { "directorId" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+                user9_db.videoContent
+                        shard key: { "videoContentId" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                rs0	1
+                        { "videoContentId" : { "$minKey" : 1 } } -->> { "videoContentId" : { "$maxKey" : 1 } } on : rs0 Timestamp(1, 0) 
+
+
+
+--------------------------------------------
+ db.movie.getShardDistribution()
+
+Shard rs1 at rs1/it.unige.dibris.lsccluster.node6:27017,it.unige.dibris.lsccluster.node7:27017
+ data : 17.7MiB docs : 42926 chunks : 1
+ estimated data per chunk : 17.7MiB
+ estimated docs per chunk : 42926
+
+Shard rs0 at rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017
+ data : 17.87MiB docs : 42926 chunks : 1
+ estimated data per chunk : 17.87MiB
+ estimated docs per chunk : 42926
+
+Totals
+ data : 35.58MiB docs : 85852 chunks : 2
+ Shard rs1 contains 49.76% data, 50% docs in cluster, avg obj size on shard : 432B
+ Shard rs0 contains 50.23% data, 50% docs in cluster, avg obj size on shard : 436B
+
+-------------------------------------------
+ db.client.stats()
+{
+	"sharded" : false,
+	"primary" : "rs1",
+	"capped" : false,
+	"wiredTiger" : {
+		"metadata" : {
+			"formatVersion" : 1
+		},
+		"creationString" : "access_pattern_hint=none,allocation_size=4KB,app_metadata=(formatVersion=1),assert=(commit_timestamp=none,durable_timestamp=none,read_timestamp=none),block_allocation=best,block_compressor=snappy,cache_resident=false,checksum=on,colgroups=,collator=,columns=,dictionary=0,encryption=(keyid=,name=),exclusive=false,extractor=,format=btree,huffman_key=,huffman_value=,ignore_in_memory_cache_size=false,immutable=false,internal_item_max=0,internal_key_max=0,internal_key_truncate=true,internal_page_max=4KB,key_format=q,key_gap=10,leaf_item_max=0,leaf_key_max=0,leaf_page_max=32KB,leaf_value_max=64MB,log=(enabled=false),lsm=(auto_throttle=true,bloom=true,bloom_bit_count=16,bloom_config=,bloom_hash_count=8,bloom_oldest=false,chunk_count_limit=0,chunk_max=5GB,chunk_size=10MB,merge_custom=(prefix=,start_generation=0,suffix=),merge_max=15,merge_min=0),memory_page_image_max=0,memory_page_max=10m,os_cache_dirty_max=0,os_cache_max=0,prefix_compression=false,prefix_compression_min=4,source=,split_deepen_min_child=0,split_deepen_per_child=0,split_pct=90,type=file,value_format=u",
+		"type" : "file",
+		"uri" : "statistics:table:collection-160-1600053474830157915",
+		"LSM" : {
+			"bloom filter false positives" : 0,
+			"bloom filter hits" : 0,
+			"bloom filter misses" : 0,
+			"bloom filter pages evicted from cache" : 0,
+			"bloom filter pages read into cache" : 0,
+			"bloom filters in the LSM tree" : 0,
+			"chunks in the LSM tree" : 0,
+			"highest merge generation in the LSM tree" : 0,
+			"queries that could have benefited from a Bloom filter that did not exist" : 0,
+			"sleep for LSM checkpoint throttle" : 0,
+			"sleep for LSM merge throttle" : 0,
+			"total size of bloom filters" : 0
+		},
+		"block-manager" : {
+			"allocations requiring file extension" : 0,
+			"blocks allocated" : 3,
+			"blocks freed" : 0,
+			"checkpoint size" : 62459904,
+			"file allocation unit size" : 4096,
+			"file bytes available for reuse" : 2060288,
+			"file magic number" : 120897,
+			"file major version number" : 1,
+			"file size in bytes" : 64536576,
+			"minor version number" : 0
+		},
+		"btree" : {
+			"btree checkpoint generation" : 4438,
+			"btree clean tree checkpoint expiration time" : NumberLong("9223372036854775807"),
+			"column-store fixed-size leaf pages" : 0,
+			"column-store internal pages" : 0,
+			"column-store variable-size RLE encoded values" : 0,
+			"column-store variable-size deleted values" : 0,
+			"column-store variable-size leaf pages" : 0,
+			"fixed-record size" : 0,
+			"maximum internal page key size" : 368,
+			"maximum internal page size" : 4096,
+			"maximum leaf page key size" : 2867,
+			"maximum leaf page size" : 32768,
+			"maximum leaf page value size" : 67108864,
+			"maximum tree depth" : 4,
+			"number of key/value pairs" : 0,
+			"overflow pages" : 0,
+			"pages rewritten by compaction" : 0,
+			"row-store empty values" : 0,
+			"row-store internal pages" : 0,
+			"row-store leaf pages" : 0
+		},
+		"cache" : {
+			"bytes currently in the cache" : 104959065,
+			"bytes dirty in the cache cumulative" : 1431,
+			"bytes read into cache" : 95438304,
+			"bytes written from cache" : 285,
+			"checkpoint blocked page eviction" : 0,
+			"data source pages selected for eviction unable to be evicted" : 0,
+			"eviction walk passes of a file" : 0,
+			"eviction walk target pages histogram - 0-9" : 0,
+			"eviction walk target pages histogram - 10-31" : 0,
+			"eviction walk target pages histogram - 128 and higher" : 0,
+			"eviction walk target pages histogram - 32-63" : 0,
+			"eviction walk target pages histogram - 64-128" : 0,
+			"eviction walks abandoned" : 0,
+			"eviction walks gave up because they restarted their walk twice" : 0,
+			"eviction walks gave up because they saw too many pages and found no candidates" : 0,
+			"eviction walks gave up because they saw too many pages and found too few candidates" : 0,
+			"eviction walks reached end of tree" : 0,
+			"eviction walks started from root of tree" : 0,
+			"eviction walks started from saved location in tree" : 0,
+			"hazard pointer blocked page eviction" : 0,
+			"history store table reads" : 0,
+			"in-memory page passed criteria to be split" : 0,
+			"in-memory page splits" : 0,
+			"internal pages evicted" : 0,
+			"internal pages split during eviction" : 0,
+			"leaf pages split during eviction" : 0,
+			"modified pages evicted" : 0,
+			"overflow pages read into cache" : 0,
+			"page split during eviction deepened the tree" : 0,
+			"page written requiring history store records" : 0,
+			"pages read into cache" : 2247,
+			"pages read into cache after truncate" : 0,
+			"pages read into cache after truncate in prepare state" : 0,
+			"pages requested from the cache" : 26088,
+			"pages seen by eviction walk" : 0,
+			"pages written from cache" : 1,
+			"pages written requiring in-memory restoration" : 0,
+			"tracked dirty bytes in the cache" : 0,
+			"unmodified pages evicted" : 0
+		},
+		"cache_walk" : {
+			"Average difference between current eviction generation when the page was last considered" : 0,
+			"Average on-disk page image size seen" : 0,
+			"Average time in cache for pages that have been visited by the eviction server" : 0,
+			"Average time in cache for pages that have not been visited by the eviction server" : 0,
+			"Clean pages currently in cache" : 0,
+			"Current eviction generation" : 0,
+			"Dirty pages currently in cache" : 0,
+			"Entries in the root page" : 0,
+			"Internal pages currently in cache" : 0,
+			"Leaf pages currently in cache" : 0,
+			"Maximum difference between current eviction generation when the page was last considered" : 0,
+			"Maximum page size seen" : 0,
+			"Minimum on-disk page image size seen" : 0,
+			"Number of pages never visited by eviction server" : 0,
+			"On-disk page image sizes smaller than a single allocation unit" : 0,
+			"Pages created in memory and never written" : 0,
+			"Pages currently queued for eviction" : 0,
+			"Pages that could not be queued for eviction" : 0,
+			"Refs skipped during cache traversal" : 0,
+			"Size of the root page" : 0,
+			"Total number of pages currently in cache" : 0
+		},
+		"checkpoint-cleanup" : {
+			"pages added for eviction" : 0,
+			"pages removed" : 0,
+			"pages skipped during tree walk" : 0,
+			"pages visited" : 0
+		},
+		"compression" : {
+			"compressed page maximum internal page size prior to compression" : 4096,
+			"compressed page maximum leaf page size prior to compression " : 131072,
+			"compressed pages read" : 2234,
+			"compressed pages written" : 0,
+			"page written failed to compress" : 0,
+			"page written was too small to compress" : 1
+		},
+		"cursor" : {
+			"Total number of entries skipped by cursor next calls" : 0,
+			"Total number of entries skipped by cursor prev calls" : 0,
+			"Total number of entries skipped to position the history store cursor" : 0,
+			"bulk loaded cursor insert calls" : 0,
+			"cache cursors reuse count" : 18,
+			"close calls that result in cache" : 0,
+			"create calls" : 5,
+			"cursor next calls that skip greater than or equal to 100 entries" : 0,
+			"cursor next calls that skip less than 100 entries" : 1801660,
+			"cursor prev calls that skip greater than or equal to 100 entries" : 0,
+			"cursor prev calls that skip less than 100 entries" : 0,
+			"insert calls" : 0,
+			"insert key and value bytes" : 0,
+			"modify" : 0,
+			"modify key and value bytes affected" : 0,
+			"modify value bytes modified" : 0,
+			"next calls" : 1801660,
+			"open cursor count" : 0,
+			"operation restarted" : 0,
+			"prev calls" : 0,
+			"remove calls" : 0,
+			"remove key bytes removed" : 0,
+			"reserve calls" : 0,
+			"reset calls" : 1855,
+			"search calls" : 0,
+			"search history store calls" : 0,
+			"search near calls" : 1800,
+			"truncate calls" : 0,
+			"update calls" : 0,
+			"update key and value bytes" : 0,
+			"update value size change" : 0
+		},
+		"reconciliation" : {
+			"approximate byte size of timestamps in pages written" : 0,
+			"approximate byte size of transaction IDs in pages written" : 0,
+			"dictionary matches" : 0,
+			"fast-path pages deleted" : 0,
+			"internal page key bytes discarded using suffix compression" : 0,
+			"internal page multi-block writes" : 0,
+			"internal-page overflow keys" : 0,
+			"leaf page key bytes discarded using prefix compression" : 0,
+			"leaf page multi-block writes" : 0,
+			"leaf-page overflow keys" : 0,
+			"maximum blocks required for a page" : 1,
+			"overflow values written" : 0,
+			"page checksum matches" : 0,
+			"page reconciliation calls" : 1,
+			"page reconciliation calls for eviction" : 0,
+			"pages deleted" : 0,
+			"pages written including an aggregated newest start durable timestamp " : 0,
+			"pages written including an aggregated newest stop durable timestamp " : 0,
+			"pages written including an aggregated newest stop timestamp " : 0,
+			"pages written including an aggregated newest stop transaction ID" : 0,
+			"pages written including an aggregated oldest start timestamp " : 0,
+			"pages written including an aggregated oldest start transaction ID " : 0,
+			"pages written including an aggregated prepare" : 0,
+			"pages written including at least one prepare" : 0,
+			"pages written including at least one start durable timestamp" : 0,
+			"pages written including at least one start timestamp" : 0,
+			"pages written including at least one start transaction ID" : 0,
+			"pages written including at least one stop durable timestamp" : 0,
+			"pages written including at least one stop timestamp" : 0,
+			"pages written including at least one stop transaction ID" : 0,
+			"records written including a prepare" : 0,
+			"records written including a start durable timestamp" : 0,
+			"records written including a start timestamp" : 0,
+			"records written including a start transaction ID" : 0,
+			"records written including a stop durable timestamp" : 0,
+			"records written including a stop timestamp" : 0,
+			"records written including a stop transaction ID" : 0
+		},
+		"session" : {
+			"object compaction" : 0
+		},
+		"transaction" : {
+			"race to read prepared update retry" : 0,
+			"update conflicts" : 0
+		}
+	},
+	"ns" : "movieclients.client",
+	"count" : 180000,
+	"size" : 93460282,
+	"storageSize" : 64536576,
+	"totalIndexSize" : 2453504,
+	"totalSize" : 66990080,
+	"indexSizes" : {
+		"_id_" : 2453504
+	},
+	"avgObjSize" : 519,
+	"maxSize" : NumberLong(0),
+	"nindexes" : 1,
+	"nchunks" : 1,
+	"shards" : {
+		"rs1" : {
+			"ns" : "movieclients.client",
+			"size" : 93460282,
+			"count" : 180000,
+			"avgObjSize" : 519,
+			"storageSize" : 64536576,
+			"freeStorageSize" : 2060288,
+			"capped" : false,
+			"wiredTiger" : {
+				"metadata" : {
+					"formatVersion" : 1
+				},
+				"creationString" : "access_pattern_hint=none,allocation_size=4KB,app_metadata=(formatVersion=1),assert=(commit_timestamp=none,durable_timestamp=none,read_timestamp=none),block_allocation=best,block_compressor=snappy,cache_resident=false,checksum=on,colgroups=,collator=,columns=,dictionary=0,encryption=(keyid=,name=),exclusive=false,extractor=,format=btree,huffman_key=,huffman_value=,ignore_in_memory_cache_size=false,immutable=false,internal_item_max=0,internal_key_max=0,internal_key_truncate=true,internal_page_max=4KB,key_format=q,key_gap=10,leaf_item_max=0,leaf_key_max=0,leaf_page_max=32KB,leaf_value_max=64MB,log=(enabled=false),lsm=(auto_throttle=true,bloom=true,bloom_bit_count=16,bloom_config=,bloom_hash_count=8,bloom_oldest=false,chunk_count_limit=0,chunk_max=5GB,chunk_size=10MB,merge_custom=(prefix=,start_generation=0,suffix=),merge_max=15,merge_min=0),memory_page_image_max=0,memory_page_max=10m,os_cache_dirty_max=0,os_cache_max=0,prefix_compression=false,prefix_compression_min=4,source=,split_deepen_min_child=0,split_deepen_per_child=0,split_pct=90,type=file,value_format=u",
+				"type" : "file",
+				"uri" : "statistics:table:collection-160-1600053474830157915",
+				"LSM" : {
+					"bloom filter false positives" : 0,
+					"bloom filter hits" : 0,
+					"bloom filter misses" : 0,
+					"bloom filter pages evicted from cache" : 0,
+					"bloom filter pages read into cache" : 0,
+					"bloom filters in the LSM tree" : 0,
+					"chunks in the LSM tree" : 0,
+					"highest merge generation in the LSM tree" : 0,
+					"queries that could have benefited from a Bloom filter that did not exist" : 0,
+					"sleep for LSM checkpoint throttle" : 0,
+					"sleep for LSM merge throttle" : 0,
+					"total size of bloom filters" : 0
+				},
+				"block-manager" : {
+					"allocations requiring file extension" : 0,
+					"blocks allocated" : 3,
+					"blocks freed" : 0,
+					"checkpoint size" : 62459904,
+					"file allocation unit size" : 4096,
+					"file bytes available for reuse" : 2060288,
+					"file magic number" : 120897,
+					"file major version number" : 1,
+					"file size in bytes" : 64536576,
+					"minor version number" : 0
+				},
+				"btree" : {
+					"btree checkpoint generation" : 4438,
+					"btree clean tree checkpoint expiration time" : NumberLong("9223372036854775807"),
+					"column-store fixed-size leaf pages" : 0,
+					"column-store internal pages" : 0,
+					"column-store variable-size RLE encoded values" : 0,
+					"column-store variable-size deleted values" : 0,
+					"column-store variable-size leaf pages" : 0,
+					"fixed-record size" : 0,
+					"maximum internal page key size" : 368,
+					"maximum internal page size" : 4096,
+					"maximum leaf page key size" : 2867,
+					"maximum leaf page size" : 32768,
+					"maximum leaf page value size" : 67108864,
+					"maximum tree depth" : 4,
+					"number of key/value pairs" : 0,
+					"overflow pages" : 0,
+					"pages rewritten by compaction" : 0,
+					"row-store empty values" : 0,
+					"row-store internal pages" : 0,
+					"row-store leaf pages" : 0
+				},
+				"cache" : {
+					"bytes currently in the cache" : 104959065,
+					"bytes dirty in the cache cumulative" : 1431,
+					"bytes read into cache" : 95438304,
+					"bytes written from cache" : 285,
+					"checkpoint blocked page eviction" : 0,
+					"data source pages selected for eviction unable to be evicted" : 0,
+					"eviction walk passes of a file" : 0,
+					"eviction walk target pages histogram - 0-9" : 0,
+					"eviction walk target pages histogram - 10-31" : 0,
+					"eviction walk target pages histogram - 128 and higher" : 0,
+					"eviction walk target pages histogram - 32-63" : 0,
+					"eviction walk target pages histogram - 64-128" : 0,
+					"eviction walks abandoned" : 0,
+					"eviction walks gave up because they restarted their walk twice" : 0,
+					"eviction walks gave up because they saw too many pages and found no candidates" : 0,
+					"eviction walks gave up because they saw too many pages and found too few candidates" : 0,
+					"eviction walks reached end of tree" : 0,
+					"eviction walks started from root of tree" : 0,
+					"eviction walks started from saved location in tree" : 0,
+					"hazard pointer blocked page eviction" : 0,
+					"history store table reads" : 0,
+					"in-memory page passed criteria to be split" : 0,
+					"in-memory page splits" : 0,
+					"internal pages evicted" : 0,
+					"internal pages split during eviction" : 0,
+					"leaf pages split during eviction" : 0,
+					"modified pages evicted" : 0,
+					"overflow pages read into cache" : 0,
+					"page split during eviction deepened the tree" : 0,
+					"page written requiring history store records" : 0,
+					"pages read into cache" : 2247,
+					"pages read into cache after truncate" : 0,
+					"pages read into cache after truncate in prepare state" : 0,
+					"pages requested from the cache" : 26088,
+					"pages seen by eviction walk" : 0,
+					"pages written from cache" : 1,
+					"pages written requiring in-memory restoration" : 0,
+					"tracked dirty bytes in the cache" : 0,
+					"unmodified pages evicted" : 0
+				},
+				"cache_walk" : {
+					"Average difference between current eviction generation when the page was last considered" : 0,
+					"Average on-disk page image size seen" : 0,
+					"Average time in cache for pages that have been visited by the eviction server" : 0,
+					"Average time in cache for pages that have not been visited by the eviction server" : 0,
+					"Clean pages currently in cache" : 0,
+					"Current eviction generation" : 0,
+					"Dirty pages currently in cache" : 0,
+					"Entries in the root page" : 0,
+					"Internal pages currently in cache" : 0,
+					"Leaf pages currently in cache" : 0,
+					"Maximum difference between current eviction generation when the page was last considered" : 0,
+					"Maximum page size seen" : 0,
+					"Minimum on-disk page image size seen" : 0,
+					"Number of pages never visited by eviction server" : 0,
+					"On-disk page image sizes smaller than a single allocation unit" : 0,
+					"Pages created in memory and never written" : 0,
+					"Pages currently queued for eviction" : 0,
+					"Pages that could not be queued for eviction" : 0,
+					"Refs skipped during cache traversal" : 0,
+					"Size of the root page" : 0,
+					"Total number of pages currently in cache" : 0
+				},
+				"checkpoint-cleanup" : {
+					"pages added for eviction" : 0,
+					"pages removed" : 0,
+					"pages skipped during tree walk" : 0,
+					"pages visited" : 0
+				},
+				"compression" : {
+					"compressed page maximum internal page size prior to compression" : 4096,
+					"compressed page maximum leaf page size prior to compression " : 131072,
+					"compressed pages read" : 2234,
+					"compressed pages written" : 0,
+					"page written failed to compress" : 0,
+					"page written was too small to compress" : 1
+				},
+				"cursor" : {
+					"Total number of entries skipped by cursor next calls" : 0,
+					"Total number of entries skipped by cursor prev calls" : 0,
+					"Total number of entries skipped to position the history store cursor" : 0,
+					"bulk loaded cursor insert calls" : 0,
+					"cache cursors reuse count" : 18,
+					"close calls that result in cache" : 0,
+					"create calls" : 5,
+					"cursor next calls that skip greater than or equal to 100 entries" : 0,
+					"cursor next calls that skip less than 100 entries" : 1801660,
+					"cursor prev calls that skip greater than or equal to 100 entries" : 0,
+					"cursor prev calls that skip less than 100 entries" : 0,
+					"insert calls" : 0,
+					"insert key and value bytes" : 0,
+					"modify" : 0,
+					"modify key and value bytes affected" : 0,
+					"modify value bytes modified" : 0,
+					"next calls" : 1801660,
+					"open cursor count" : 0,
+					"operation restarted" : 0,
+					"prev calls" : 0,
+					"remove calls" : 0,
+					"remove key bytes removed" : 0,
+					"reserve calls" : 0,
+					"reset calls" : 1855,
+					"search calls" : 0,
+					"search history store calls" : 0,
+					"search near calls" : 1800,
+					"truncate calls" : 0,
+					"update calls" : 0,
+					"update key and value bytes" : 0,
+					"update value size change" : 0
+				},
+				"reconciliation" : {
+					"approximate byte size of timestamps in pages written" : 0,
+					"approximate byte size of transaction IDs in pages written" : 0,
+					"dictionary matches" : 0,
+					"fast-path pages deleted" : 0,
+					"internal page key bytes discarded using suffix compression" : 0,
+					"internal page multi-block writes" : 0,
+					"internal-page overflow keys" : 0,
+					"leaf page key bytes discarded using prefix compression" : 0,
+					"leaf page multi-block writes" : 0,
+					"leaf-page overflow keys" : 0,
+					"maximum blocks required for a page" : 1,
+					"overflow values written" : 0,
+					"page checksum matches" : 0,
+					"page reconciliation calls" : 1,
+					"page reconciliation calls for eviction" : 0,
+					"pages deleted" : 0,
+					"pages written including an aggregated newest start durable timestamp " : 0,
+					"pages written including an aggregated newest stop durable timestamp " : 0,
+					"pages written including an aggregated newest stop timestamp " : 0,
+					"pages written including an aggregated newest stop transaction ID" : 0,
+					"pages written including an aggregated oldest start timestamp " : 0,
+					"pages written including an aggregated oldest start transaction ID " : 0,
+					"pages written including an aggregated prepare" : 0,
+					"pages written including at least one prepare" : 0,
+					"pages written including at least one start durable timestamp" : 0,
+					"pages written including at least one start timestamp" : 0,
+					"pages written including at least one start transaction ID" : 0,
+					"pages written including at least one stop durable timestamp" : 0,
+					"pages written including at least one stop timestamp" : 0,
+					"pages written including at least one stop transaction ID" : 0,
+					"records written including a prepare" : 0,
+					"records written including a start durable timestamp" : 0,
+					"records written including a start timestamp" : 0,
+					"records written including a start transaction ID" : 0,
+					"records written including a stop durable timestamp" : 0,
+					"records written including a stop timestamp" : 0,
+					"records written including a stop transaction ID" : 0
+				},
+				"session" : {
+					"object compaction" : 0
+				},
+				"transaction" : {
+					"race to read prepared update retry" : 0,
+					"update conflicts" : 0
+				}
+			},
+			"nindexes" : 1,
+			"indexDetails" : {
+				"_id_" : {
+					"metadata" : {
+						"formatVersion" : 8
+					},
+					"creationString" : "access_pattern_hint=none,allocation_size=4KB,app_metadata=(formatVersion=8),assert=(commit_timestamp=none,durable_timestamp=none,read_timestamp=none),block_allocation=best,block_compressor=,cache_resident=false,checksum=on,colgroups=,collator=,columns=,dictionary=0,encryption=(keyid=,name=),exclusive=false,extractor=,format=btree,huffman_key=,huffman_value=,ignore_in_memory_cache_size=false,immutable=false,internal_item_max=0,internal_key_max=0,internal_key_truncate=true,internal_page_max=16k,key_format=u,key_gap=10,leaf_item_max=0,leaf_key_max=0,leaf_page_max=16k,leaf_value_max=0,log=(enabled=false),lsm=(auto_throttle=true,bloom=true,bloom_bit_count=16,bloom_config=,bloom_hash_count=8,bloom_oldest=false,chunk_count_limit=0,chunk_max=5GB,chunk_size=10MB,merge_custom=(prefix=,start_generation=0,suffix=),merge_max=15,merge_min=0),memory_page_image_max=0,memory_page_max=5MB,os_cache_dirty_max=0,os_cache_max=0,prefix_compression=true,prefix_compression_min=4,source=,split_deepen_min_child=0,split_deepen_per_child=0,split_pct=90,type=file,value_format=u",
+					"type" : "file",
+					"uri" : "statistics:table:index-161-1600053474830157915",
+					"LSM" : {
+						"bloom filter false positives" : 0,
+						"bloom filter hits" : 0,
+						"bloom filter misses" : 0,
+						"bloom filter pages evicted from cache" : 0,
+						"bloom filter pages read into cache" : 0,
+						"bloom filters in the LSM tree" : 0,
+						"chunks in the LSM tree" : 0,
+						"highest merge generation in the LSM tree" : 0,
+						"queries that could have benefited from a Bloom filter that did not exist" : 0,
+						"sleep for LSM checkpoint throttle" : 0,
+						"sleep for LSM merge throttle" : 0,
+						"total size of bloom filters" : 0
+					},
+					"block-manager" : {
+						"allocations requiring file extension" : 0,
+						"blocks allocated" : 0,
+						"blocks freed" : 0,
+						"checkpoint size" : 2043904,
+						"file allocation unit size" : 4096,
+						"file bytes available for reuse" : 389120,
+						"file magic number" : 120897,
+						"file major version number" : 1,
+						"file size in bytes" : 2453504,
+						"minor version number" : 0
+					},
+					"btree" : {
+						"btree checkpoint generation" : 4438,
+						"btree clean tree checkpoint expiration time" : NumberLong("9223372036854775807"),
+						"column-store fixed-size leaf pages" : 0,
+						"column-store internal pages" : 0,
+						"column-store variable-size RLE encoded values" : 0,
+						"column-store variable-size deleted values" : 0,
+						"column-store variable-size leaf pages" : 0,
+						"fixed-record size" : 0,
+						"maximum internal page key size" : 1474,
+						"maximum internal page size" : 16384,
+						"maximum leaf page key size" : 1474,
+						"maximum leaf page size" : 16384,
+						"maximum leaf page value size" : 7372,
+						"maximum tree depth" : 0,
+						"number of key/value pairs" : 0,
+						"overflow pages" : 0,
+						"pages rewritten by compaction" : 0,
+						"row-store empty values" : 0,
+						"row-store internal pages" : 0,
+						"row-store leaf pages" : 0
+					},
+					"cache" : {
+						"bytes currently in the cache" : 15074,
+						"bytes dirty in the cache cumulative" : 0,
+						"bytes read into cache" : 4846,
+						"bytes written from cache" : 0,
+						"checkpoint blocked page eviction" : 0,
+						"data source pages selected for eviction unable to be evicted" : 0,
+						"eviction walk passes of a file" : 0,
+						"eviction walk target pages histogram - 0-9" : 0,
+						"eviction walk target pages histogram - 10-31" : 0,
+						"eviction walk target pages histogram - 128 and higher" : 0,
+						"eviction walk target pages histogram - 32-63" : 0,
+						"eviction walk target pages histogram - 64-128" : 0,
+						"eviction walks abandoned" : 0,
+						"eviction walks gave up because they restarted their walk twice" : 0,
+						"eviction walks gave up because they saw too many pages and found no candidates" : 0,
+						"eviction walks gave up because they saw too many pages and found too few candidates" : 0,
+						"eviction walks reached end of tree" : 0,
+						"eviction walks started from root of tree" : 0,
+						"eviction walks started from saved location in tree" : 0,
+						"hazard pointer blocked page eviction" : 0,
+						"history store table reads" : 0,
+						"in-memory page passed criteria to be split" : 0,
+						"in-memory page splits" : 0,
+						"internal pages evicted" : 0,
+						"internal pages split during eviction" : 0,
+						"leaf pages split during eviction" : 0,
+						"modified pages evicted" : 0,
+						"overflow pages read into cache" : 0,
+						"page split during eviction deepened the tree" : 0,
+						"page written requiring history store records" : 0,
+						"pages read into cache" : 1,
+						"pages read into cache after truncate" : 0,
+						"pages read into cache after truncate in prepare state" : 0,
+						"pages requested from the cache" : 0,
+						"pages seen by eviction walk" : 0,
+						"pages written from cache" : 0,
+						"pages written requiring in-memory restoration" : 0,
+						"tracked dirty bytes in the cache" : 0,
+						"unmodified pages evicted" : 0
+					},
+					"cache_walk" : {
+						"Average difference between current eviction generation when the page was last considered" : 0,
+						"Average on-disk page image size seen" : 0,
+						"Average time in cache for pages that have been visited by the eviction server" : 0,
+						"Average time in cache for pages that have not been visited by the eviction server" : 0,
+						"Clean pages currently in cache" : 0,
+						"Current eviction generation" : 0,
+						"Dirty pages currently in cache" : 0,
+						"Entries in the root page" : 0,
+						"Internal pages currently in cache" : 0,
+						"Leaf pages currently in cache" : 0,
+						"Maximum difference between current eviction generation when the page was last considered" : 0,
+						"Maximum page size seen" : 0,
+						"Minimum on-disk page image size seen" : 0,
+						"Number of pages never visited by eviction server" : 0,
+						"On-disk page image sizes smaller than a single allocation unit" : 0,
+						"Pages created in memory and never written" : 0,
+						"Pages currently queued for eviction" : 0,
+						"Pages that could not be queued for eviction" : 0,
+						"Refs skipped during cache traversal" : 0,
+						"Size of the root page" : 0,
+						"Total number of pages currently in cache" : 0
+					},
+					"checkpoint-cleanup" : {
+						"pages added for eviction" : 0,
+						"pages removed" : 0,
+						"pages skipped during tree walk" : 0,
+						"pages visited" : 0
+					},
+					"compression" : {
+						"compressed page maximum internal page size prior to compression" : 16384,
+						"compressed page maximum leaf page size prior to compression " : 16384,
+						"compressed pages read" : 0,
+						"compressed pages written" : 0,
+						"page written failed to compress" : 0,
+						"page written was too small to compress" : 0
+					},
+					"cursor" : {
+						"Total number of entries skipped by cursor next calls" : 0,
+						"Total number of entries skipped by cursor prev calls" : 0,
+						"Total number of entries skipped to position the history store cursor" : 0,
+						"bulk loaded cursor insert calls" : 0,
+						"cache cursors reuse count" : 0,
+						"close calls that result in cache" : 0,
+						"create calls" : 0,
+						"cursor next calls that skip greater than or equal to 100 entries" : 0,
+						"cursor next calls that skip less than 100 entries" : 0,
+						"cursor prev calls that skip greater than or equal to 100 entries" : 0,
+						"cursor prev calls that skip less than 100 entries" : 0,
+						"insert calls" : 0,
+						"insert key and value bytes" : 0,
+						"modify" : 0,
+						"modify key and value bytes affected" : 0,
+						"modify value bytes modified" : 0,
+						"next calls" : 0,
+						"open cursor count" : 0,
+						"operation restarted" : 0,
+						"prev calls" : 0,
+						"remove calls" : 0,
+						"remove key bytes removed" : 0,
+						"reserve calls" : 0,
+						"reset calls" : 0,
+						"search calls" : 0,
+						"search history store calls" : 0,
+						"search near calls" : 0,
+						"truncate calls" : 0,
+						"update calls" : 0,
+						"update key and value bytes" : 0,
+						"update value size change" : 0
+					},
+					"reconciliation" : {
+						"approximate byte size of timestamps in pages written" : 0,
+						"approximate byte size of transaction IDs in pages written" : 0,
+						"dictionary matches" : 0,
+						"fast-path pages deleted" : 0,
+						"internal page key bytes discarded using suffix compression" : 0,
+						"internal page multi-block writes" : 0,
+						"internal-page overflow keys" : 0,
+						"leaf page key bytes discarded using prefix compression" : 0,
+						"leaf page multi-block writes" : 0,
+						"leaf-page overflow keys" : 0,
+						"maximum blocks required for a page" : 0,
+						"overflow values written" : 0,
+						"page checksum matches" : 0,
+						"page reconciliation calls" : 0,
+						"page reconciliation calls for eviction" : 0,
+						"pages deleted" : 0,
+						"pages written including an aggregated newest start durable timestamp " : 0,
+						"pages written including an aggregated newest stop durable timestamp " : 0,
+						"pages written including an aggregated newest stop timestamp " : 0,
+						"pages written including an aggregated newest stop transaction ID" : 0,
+						"pages written including an aggregated oldest start timestamp " : 0,
+						"pages written including an aggregated oldest start transaction ID " : 0,
+						"pages written including an aggregated prepare" : 0,
+						"pages written including at least one prepare" : 0,
+						"pages written including at least one start durable timestamp" : 0,
+						"pages written including at least one start timestamp" : 0,
+						"pages written including at least one start transaction ID" : 0,
+						"pages written including at least one stop durable timestamp" : 0,
+						"pages written including at least one stop timestamp" : 0,
+						"pages written including at least one stop transaction ID" : 0,
+						"records written including a prepare" : 0,
+						"records written including a start durable timestamp" : 0,
+						"records written including a start timestamp" : 0,
+						"records written including a start transaction ID" : 0,
+						"records written including a stop durable timestamp" : 0,
+						"records written including a stop timestamp" : 0,
+						"records written including a stop transaction ID" : 0
+					},
+					"session" : {
+						"object compaction" : 0
+					},
+					"transaction" : {
+						"race to read prepared update retry" : 0,
+						"update conflicts" : 0
+					}
+				}
+			},
+			"indexBuilds" : [ ],
+			"totalIndexSize" : 2453504,
+			"totalSize" : 66990080,
+			"indexSizes" : {
+				"_id_" : 2453504
+			},
+			"scaleFactor" : 1,
+			"ok" : 1,
+			"$gleStats" : {
+				"lastOpTime" : {
+					"ts" : Timestamp(1699541995, 10),
+					"t" : NumberLong(31)
+				},
+				"electionId" : ObjectId("7fffffff000000000000001f")
+			},
+			"lastCommittedOpTime" : Timestamp(1699542035, 12),
+			"$configServerState" : {
+				"opTime" : {
+					"ts" : Timestamp(1699542042, 12),
+					"t" : NumberLong(61)
+				}
+			},
+			"$clusterTime" : {
+				"clusterTime" : Timestamp(1699542042, 12),
+				"signature" : {
+					"hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+					"keyId" : NumberLong(0)
+				}
+			},
+			"operationTime" : Timestamp(1699542035, 12)
+		}
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1699542035, 12),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1699542042, 12),
+		"signature" : {
+			"hash" : BinData(0,"2eBBlE4CKY88hh3glWOThbkgU+4="),
+			"keyId" : NumberLong("7298276817574559745")
+		}
+	}
+}
+
+------------------
+
+db.movie.explain().find({_id": "61911fa092b76d1c8ef99383"})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:28
+mongos> db.movie.explain().find({"_id": "61911fa092b76d1c8ef99383"})
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node4",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "movieclients.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"_id" : {
+							"$eq" : "61911fa092b76d1c8ef99383"
+						}
+					},
+					"queryHash" : "A300CFDE",
+					"planCacheKey" : "A2B33459",
+					"winningPlan" : {
+						"stage" : "SHARDING_FILTER",
+						"inputStage" : {
+							"stage" : "IDHACK"
+						}
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1699542175, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1699542175, 1),
+		"signature" : {
+			"hash" : BinData(0,"biV8WSrhOCcI6l+6ALpkNFzxRPk="),
+			"keyId" : NumberLong("7298276817574559745")
+		}
+	}
+}
+
+
+
+

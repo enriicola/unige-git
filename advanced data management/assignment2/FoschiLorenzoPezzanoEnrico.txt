@@ -1,0 +1,1517 @@
+Exercise 1) use movieclients
+   show collections
+
+Exercise 2) aulaweb :) 
+db.printShardingStatus()
+---sì aulaweb ---
+
+Exercise 3) 
+1. 
+db.movie.find({ director: "Robert Altman" }, { title: 1, _id: 0 })
+{ "title" : "The Delinquents" }
+{ "title" : "Conto alla rovescia" }
+{ "title" : "Quel freddo giorno nel parco" }
+{ "title" : "Anche gli uccelli uccidono" }
+{ "title" : "M.A.S.H." }
+{ "title" : "I compari" }
+{ "title" : "Images" }
+{ "title" : "Il lungo addio" }
+{ "title" : "California poker" }
+{ "title" : "Gang" }
+{ "title" : "Nashville" }
+{ "title" : "Buffalo Bill e gli indiani" }
+{ "title" : "3 donne" }
+{ "title" : "Un matrimonio" }
+{ "title" : "HealtH" }
+{ "title" : "Una coppia perfetta" }
+{ "title" : "Quintet" }
+{ "title" : "Popeye - Braccio di ferro" }
+{ "title" : "Jimmy Dean, Jimmy Dean" }
+{ "title" : "Streamers" }
+
+
+2.
+db.movie.find({ director: "Robert Altman" }, { title: 1, _id: 0 }).count()
+36
+-- count is deprecated, so we'll use countDocuments():
+db.movie.countDocuments({ director: "Robert Altman" })
+36
+
+
+3.
+db.movie.find({ director: { $in: ["Robert Altman", "Ken Loach"] } }, { title: 1, _id: 0 })
+{ "title" : "Un bacio appassionato" }
+{ "title" : "Radio America" }
+{ "title" : "Il vento che accarezza l'erba" }
+{ "title" : "In questo mondo libero..." }
+{ "title" : "Il mio amico Eric" }
+{ "title" : "L'altra verità" }
+{ "title" : "La 'parte' degli angeli" }
+{ "title" : "Jimmy's Hall - Una storia d'amore e libertà" }
+{ "title" : "Io, Daniel Blake" }
+{ "title" : "Sorry We Missed You" }
+{ "title" : "The Delinquents" }
+{ "title" : "Poor Cow" }
+{ "title" : "Conto alla rovescia" }
+{ "title" : "Kes" }
+{ "title" : "Quel freddo giorno nel parco" }
+{ "title" : "Anche gli uccelli uccidono" }
+{ "title" : "M.A.S.H." }
+{ "title" : "I compari" }
+{ "title" : "Family Life" }
+{ "title" : "Images" }
+
+
+
+4.
+db.movie.find({ $or: [{ director: "Robert Altman" }, { director: "Ken Loach" }] }, { title: 1, _id: 0 })
+{ "title" : "Un bacio appassionato" }
+{ "title" : "Radio America" }
+{ "title" : "Il vento che accarezza l'erba" }
+{ "title" : "In questo mondo libero..." }
+{ "title" : "Il mio amico Eric" }
+{ "title" : "L'altra verità" }
+{ "title" : "La 'parte' degli angeli" }
+{ "title" : "Jimmy's Hall - Una storia d'amore e libertà" }
+{ "title" : "Io, Daniel Blake" }
+{ "title" : "Sorry We Missed You" }
+{ "title" : "The Delinquents" }
+{ "title" : "Poor Cow" }
+{ "title" : "Conto alla rovescia" }
+{ "title" : "Kes" }
+{ "title" : "Quel freddo giorno nel parco" }
+{ "title" : "Anche gli uccelli uccidono" }
+{ "title" : "M.A.S.H." }
+{ "title" : "I compari" }
+{ "title" : "Family Life" }
+{ "title" : "Images" }
+
+
+
+
+5.
+db.movie.countDocuments({ director: { $in: ["Robert Altman", "Ken Loach"] } })
+62
+
+6.
+db.movie.find({ title: "Dracula" })
+{ "_id" : ObjectId("6192373a7ac90092e1b4baf6"), "title" : "Dracula", "director" : "Tod Browning", "year" : 1931, "genre" : [ "Drama", "Fantasy", "Horror" ], "eval" : 7.5, "recommeded_by" : [ "18385317733982962960772056007904591874", "76886999170548053946087069022573821954", "235674779970644904845357816423441498114", "185598905867170806763617075307233411074", "338900056075796853894676969664592740354", "101403828432839219587981734988413140994", "217127180320107321777807089020683681794", "159900600892454926754939452019919552514", "287977678969600225352281895371733204994", "235853236653018534409927018558936317954" ] }
+{ "_id" : ObjectId("6192373b7ac90092e1b5008d"), "title" : "Dracula", "director" : "John Badham", "year" : 1979, "genre" : [ "Drama", "Horror", "Romance" ], "eval" : 6.5, "recommeded_by" : [ "59603378687187789270628959998533435394", "224512233041623310917815176685059571714", "132655243240996138445024613109172273154", "96255619669898704635391918061236518914", "270151607342867406019499033986277834754", "281969452463975496728331038540856819714", "58215249781632243804170634185078996994" ] }
+
+
+
+
+
+7.
+db.movie.countDocuments({ title: "Dracula" })
+2
+
+
+
+8.
+db.movie.find({ title: "Atlantis" }, { actors: 1, _id: 0 })
+-- we noticed that: the query returned a Null value because "actors" is missing.
+
+
+9.
+db.movie.find({ director: "Robert Altman", title: { $in: ["Gang", "Aria"] } }, { year: 1, _id: 0 })
+{ "year" : 1974 }
+{ "year" : 1987 }
+
+
+
+10.
+db.movie.find({ director: "Robert Altman", year: { $gt: 1990 } })
+{ "_id" : ObjectId("6192373e7ac90092e1b56a65"), "title" : "Radio America", "director" : "Robert Altman", "year" : 2006, "genre" : [ "Comedy", "Drama", "Music" ], "eval" : 6.7, "recommeded_by" : [ "44419206267534011853621149663898632194", "83436575865000247935947092957306028034", "77219579982023932211863744075536269314", "104290467712246808738677087982369636354", "32949954444913698392959886326733996034", "169106202699994689832201044959728238594" ] }
+{ "_id" : ObjectId("6192373c7ac90092e1b51f94"), "title" : "I protagonisti", "director" : "Robert Altman", "year" : 1992, "genre" : [ "Comedy", "Crime", "Drama" ], "eval" : 7.5, "recommeded_by" : [ "244968458934170150444078776237399212034", "159321878779369482900987410234690240514", "158991044948877044163854672825832701954" ] }
+{ "_id" : ObjectId("6192373c7ac90092e1b522c8"), "title" : "America oggi", "director" : "Robert Altman", "year" : 1993, "genre" : [ "Comedy", "Drama" ], "eval" : 7.7, "recommeded_by" : [ "188994952124843360184590630355149258754", "188145465389520542528982524313328156674", "2655614255365842448760267255154737154", "36449434653311874191948564872692498434", "299323656525038094359507859934812045314", "57715991930985356795538165111157686274", "283770235232647445838875295539470794754", "229353851791800752020575880652181471234" ] }
+{ "_id" : ObjectId("6192373c7ac90092e1b525a2"), "title" : "Prêt-à-Porter", "director" : "Robert Altman", "year" : 1994, "genre" : [ "Comedy", "Drama" ], "eval" : 5.1, "recommeded_by" : [ "9986821140792262117009654644563771394", "57352844102129850205674524866716106754", "285757420951479346244172422128447782914", "281278663699576876254139680708756242434", "147197559793983355328025590226313019394", "189488724217517759530488122445949304834", "29086209290568564876947498566634176514" ] }
+{ "_id" : ObjectId("6192373d7ac90092e1b52b7b"), "title" : "Kansas City", "director" : "Robert Altman", "year" : 1996, "genre" : [ "Crime", "Drama", "Music" ], "eval" : 6.4, "recommeded_by" : [ "105769734357705762757956019272774582274", "54086537129700905208083901779233472514", "139745354074201900878116590645071839234", "329750792622339359045234769892428480514", "275952079383902355269481972064264650754", "252567026007690705975397833299854098434", "197887378474751863760282334961751293954", "145346467459028707345986397822586191874" ] }
+{ "_id" : ObjectId("6192373d7ac90092e1b52e5b"), "title" : "Conflitto di interessi", "director" : "Robert Altman", "year" : 1998, "genre" : [ "Crime", "Mystery", "Thriller" ], "eval" : 5.7, "recommeded_by" : [ "54533280177388462385829242116553572354", "122246312216965351468741635620067868674", "147146218360110861751978221875616284674", "119451886595908114580571408429907443714", "141660036516953747702795113294217347074" ] }
+{ "_id" : ObjectId("6192373d7ac90092e1b53304"), "title" : "La fortuna di Cookie", "director" : "Robert Altman", "year" : 1999, "genre" : [ "Comedy", "Drama" ], "eval" : 6.8, "recommeded_by" : [ "66922813059946214400955322692362043394", "10397808518737131799199028597097234434", "333815332839479018955800859504820355074", "319017844558918860635425603515953446914", "285291457626933594697893298960865165314", "128387617474883664757904992288884129794", "294204870249442735594203746492382707714", "236396298962437933028171582147558899714" ] }
+{ "_id" : ObjectId("6192373d7ac90092e1b54488"), "title" : "Il dottor T & le donne", "director" : "Robert Altman", "year" : 2000, "genre" : [ "Comedy", "Drama", "Romance" ], "eval" : 4.6, "recommeded_by" : [ "23404236435361325368773096368846405634", "270800343858534471428348901492508065794", "9047637825842170376881769690248773634", "65963302175339837859731062166709338114", "162854683145202783423011309301599567874", "291602417318370202783719215032293916674" ] }
+{ "_id" : ObjectId("6192373e7ac90092e1b552b8"), "title" : "Gosford Park", "director" : "Robert Altman", "year" : 2001, "genre" : [ "Comedy", "Drama", "Mystery" ], "eval" : 7.2, "recommeded_by" : [ "328467168039985003667992456355785736194", "125676577118027815657121842300133834754", "68941575955229800000643732158184947714", "63674860083645323879811619996414246914", "246546708492184675470886825726716936194", "139895263265058390716564087024381591554" ] }
+{ "_id" : ObjectId("6192373e7ac90092e1b55cb4"), "title" : "The Company", "director" : "Robert Altman", "year" : 2003, "genre" : [ "Drama", "Music", "Romance" ], "eval" : 6.3, "recommeded_by" : [ "90086823031869566763726977577093169154", "275607335464917287142597936144046620674", "113118213774841917194444175178796367874", "274017829644940501598471006862354153474", "121132668488158849657232766887112998914", "277226586072400710123877055559752220674", "36137415134571697807064166345721249794", "284358936132801561286147244185244925954" ] }
+
+
+
+11.
+db.movie.find({ year: { $gte: 1990, $lte: 1999 } }, { director: 1, _id: 0 })
+{ "director" : "Martin Gates" }
+{ "director" : "Martin Gates" }
+{ "director" : "Michael Mfume" }
+{ "director" : "Sergey Kuchkov" }
+{ "director" : "Nikolay Lebedev" }
+{ "director" : "Víctor González" }
+{ "director" : "Robert Morin" }
+{ "director" : "Kamal" }
+{ "director" : "T. Rajeevnath" }
+{ "director" : "Rajasenan" }
+{ "director" : "Rajasenan" }
+{ "director" : "Lal" }
+{ "director" : "Phyllis Stuart" }
+{ "director" : "P. Vasu" }
+{ "director" : "Thulasidas" }
+{ "director" : "Thulasidas" }
+{ "director" : "Ashokan" }
+{ "director" : "Jayaraaj" }
+{ "director" : "Vladimir Potapov" }
+{ "director" : "Sathyan Anthikad" }
+-- we noticed that there are duplicates
+
+
+12.
+db.movie.find({ director: "Ken Loach", genre: "Comedy" }, { title: 1, _id: 0 })
+{ "title" : "Black Jack" }
+{ "title" : "Riff-Raff - Meglio perderli che trovarli" }
+{ "title" : "Piovono pietre" }
+{ "title" : "Paul, Mick e gli altri" }
+{ "title" : "Il mio amico Eric" }
+{ "title" : "La 'parte' degli angeli" }
+-- putting genre as an array condition like that is right! That's because is a single condition so elemMatch is not required!
+
+
+
+13.
+db.client.find({ birthdate: { $gt: "2000-01-01" } }, { name: 1, surname: 1, birthdate: 1, _id: 0 })
+{ "name" : "Andrew", "surname" : "Cruz", "birthdate" : "2003-07-20" }
+{ "name" : "Frances", "surname" : "Puertas", "birthdate" : "2000-03-22" }
+{ "name" : "Patrick", "surname" : "Freyermuth", "birthdate" : "2000-11-30" }
+{ "name" : "Andres", "surname" : "Leininger", "birthdate" : "2002-07-16" }
+{ "name" : "Irene", "surname" : "Thibadeau", "birthdate" : "2008-01-19" }
+{ "name" : "Clay", "surname" : "Carstarphen", "birthdate" : "2005-11-07" }
+{ "name" : "Elizabeth", "surname" : "Musial", "birthdate" : "2001-12-25" }
+{ "name" : "Anna", "surname" : "Beaudry", "birthdate" : "2006-07-11" }
+{ "name" : "Erik", "surname" : "Cartwright", "birthdate" : "2006-04-05" }
+{ "name" : "Richard", "surname" : "Phillip", "birthdate" : "2006-02-23" }
+{ "name" : "Corey", "surname" : "Walla", "birthdate" : "2004-10-19" }
+{ "name" : "Natasha", "surname" : "Moore", "birthdate" : "2008-01-08" }
+{ "name" : "Joseph", "surname" : "Arbogast", "birthdate" : "2006-03-16" }
+{ "name" : "James", "surname" : "Sumbry", "birthdate" : "2003-09-01" }
+{ "name" : "Merideth", "surname" : "Ludeker", "birthdate" : "2003-07-09" }
+{ "name" : "Daniel", "surname" : "Williams", "birthdate" : "2001-02-09" }
+{ "name" : "Douglas", "surname" : "Vang", "birthdate" : "2009-11-27" }
+{ "name" : "Bobby", "surname" : "Watkins", "birthdate" : "2004-07-11" }
+{ "name" : "Carlos", "surname" : "Stafford", "birthdate" : "2008-10-27" }
+{ "name" : "Courtney", "surname" : "Devine", "birthdate" : "2009-07-05" }
+
+
+
+14.
+db.movie.find({ director: "Ken Loach" }, { title: 1, year: 1, _id: 0 }).sort({ title: 1 }).limit(4)
+{ "title" : "Black Jack", "year" : 1979 }
+{ "title" : "Bread and Roses", "year" : 2000 }
+{ "title" : "Family Life", "year" : 1971 }
+{ "title" : "Fatherland", "year" : 1986 }
+
+
+
+
+15.
+db.movie.find({ director: "Ken Loach" }, { title: 1, year: 1, _id: 0 }).sort({ year: 1 }).limit(4)
+{ "title" : "Poor Cow", "year" : 1967 }
+{ "title" : "Kes", "year" : 1969 }
+{ "title" : "Family Life", "year" : 1971 }
+{ "title" : "Black Jack", "year" : 1979 }
+
+
+
+16.
+db.movie.aggregate([{ $group: { _id: "$director", movieCount: { $sum: 1 } } }])
+{ "_id" : "Matt Sadowski", "movieCount" : 1 }
+{ "_id" : "Mostafa Kiayee", "movieCount" : 7 }
+{ "_id" : "Hal Walker", "movieCount" : 8 }
+{ "_id" : "Elaine Constantine", "movieCount" : 1 }
+{ "_id" : "Nyle Cavazos Garcia", "movieCount" : 1 }
+{ "_id" : "Tom Oesch", "movieCount" : 1 }
+{ "_id" : "Aanand L. Rai", "movieCount" : 5 }
+{ "_id" : "Mohana Krishna Indraganti", "movieCount" : 6 }
+{ "_id" : "Satoshi Kaneda", "movieCount" : 2 }
+{ "_id" : "Soumik Sen", "movieCount" : 2 }
+{ "_id" : "Naum Birman", "movieCount" : 2 }
+{ "_id" : "Gábor Forgács", "movieCount" : 1 }
+{ "_id" : "Amos Sefer", "movieCount" : 1 }
+{ "_id" : "Salvador Simó", "movieCount" : 1 }
+{ "_id" : "Ali Selim", "movieCount" : 1 }
+{ "_id" : "Justin Cartwright", "movieCount" : 1 }
+{ "_id" : "Hope Perello", "movieCount" : 1 }
+{ "_id" : "Hans Canosa", "movieCount" : 2 }
+{ "_id" : "Alessio Maria Federici", "movieCount" : 6 }
+{ "_id" : "José Celestino Campusano", "movieCount" : 2 }
+
+
+
+17.
+db.movie.aggregate([{ $group: { _id: "$director", eval_avg: { $avg: "$eval" } } }])
+{ "_id" : "Sebastián Silva", "eval_avg" : 5.95 }
+{ "_id" : "Jay Frasco", "eval_avg" : 4.5 }
+{ "_id" : "Tinnu Anand", "eval_avg" : 6.8 }
+{ "_id" : "Ignacio Ferreras", "eval_avg" : 7.6 }
+{ "_id" : "Tomasz Emil Rudzik", "eval_avg" : 5.8 }
+{ "_id" : "Joseph Barbera", "eval_avg" : 6.275 }
+{ "_id" : "Ribhu Dasgupta", "eval_avg" : 6.3 }
+{ "_id" : "Axel Petersén", "eval_avg" : 5.4 }
+{ "_id" : "Kareem Mortimer", "eval_avg" : 6.7 }
+{ "_id" : "Shunichi Nagasaki", "eval_avg" : 6.3999999999999995 }
+{ "_id" : "Anna Parmas", "eval_avg" : 5.3 }
+{ "_id" : "Talya Lavie", "eval_avg" : 7.3 }
+{ "_id" : "Pasquale Fanetti", "eval_avg" : 3.6 }
+{ "_id" : "Tavinho Teixeira", "eval_avg" : 5.6 }
+{ "_id" : "Joe Leonard", "eval_avg" : 5.4 }
+{ "_id" : "Anita Rosenberg", "eval_avg" : 4.7 }
+{ "_id" : "Sean Mathias", "eval_avg" : 7.2 }
+{ "_id" : "Steven Drew", "eval_avg" : 3.2 }
+{ "_id" : "Carlos Quintela", "eval_avg" : 6.3 }
+{ "_id" : "Bryan Spicer", "eval_avg" : 5.2 }
+
+
+
+18.
+db.client.find({"recommends.title": "Atlantis"}, {name: 1, surname: 1, _id: 0})
+{ "name" : "Chris", "surname" : "Newsom" }
+{ "name" : "Ronald", "surname" : "Ghaemmaghami" }
+{ "name" : "Julie", "surname" : "Mchaney" }
+{ "name" : "Duncan", "surname" : "Manzanares" }
+{ "name" : "Michael", "surname" : "Pressley" }
+{ "name" : "Donald", "surname" : "Walker" }
+{ "name" : "Justin", "surname" : "Lee" }
+{ "name" : "Nicolas", "surname" : "Pedroza" }
+{ "name" : "David", "surname" : "Evans" }
+{ "name" : "Carl", "surname" : "Lynum" }
+{ "name" : "Chris", "surname" : "Newsom" }
+{ "name" : "Ronald", "surname" : "Ghaemmaghami" }
+{ "name" : "Julie", "surname" : "Mchaney" }
+{ "name" : "Duncan", "surname" : "Manzanares" }
+{ "name" : "Michael", "surname" : "Pressley" }
+{ "name" : "Donald", "surname" : "Walker" }
+{ "name" : "Justin", "surname" : "Lee" }
+{ "name" : "Nicolas", "surname" : "Pedroza" }
+{ "name" : "David", "surname" : "Evans" }
+{ "name" : "Carl", "surname" : "Lynum" }
+
+
+
+
+15a
+db.client.find({ "recommends.title": "Atlantis", "recommends.director": "August Blom" }, { client_id: 1, _id: 0 })
+{ "client_id" : "334563004255436380653810878151504166914" }
+{ "client_id" : "126275549157170280333119417983629524994" }
+{ "client_id" : "209607835863129654585577944360488271874" }
+{ "client_id" : "252627583261426858779194082682853916674" }
+{ "client_id" : "256079347516669193738223673449283059714" }
+{ "client_id" : "334563004255436380653810878151504166914" }
+{ "client_id" : "126275549157170280333119417983629524994" }
+{ "client_id" : "209607835863129654585577944360488271874" }
+{ "client_id" : "252627583261426858779194082682853916674" }
+{ "client_id" : "256079347516669193738223673449283059714" }
+
+
+
+15b
+db.movie.aggregate([
+  { $match: { title: "Atlantis", director: "August Blom" } },
+  { $lookup: {
+    from: "client",
+    localField: "recommeded_by",
+    foreignField: "client_id",
+    as: "recommenders"
+  }},
+  { $project: { "recommenders.client_id": 1, _id: 0 } }
+])
+{ "recommenders" : [ { "client_id" : "334563004255436380653810878151504166914" }, { "client_id" : "126275549157170280333119417983629524994" }, { "client_id" : "209607835863129654585577944360488271874" }, { "client_id" : "252627583261426858779194082682853916674" }, { "client_id" : "256079347516669193738223673449283059714" }, { "client_id" : "334563004255436380653810878151504166914" }, { "client_id" : "126275549157170280333119417983629524994" }, { "client_id" : "209607835863129654585577944360488271874" }, { "client_id" : "252627583261426858779194082682853916674" }, { "client_id" : "256079347516669193738223673449283059714" } ] }
+
+
+
+16a
+db.client.find({ "recommends.title": "Atlantis", "recommends.director": "August Blom" })
+{ "_id" : ObjectId("61923652e740df95cac112dc"), "client_id" : "334563004255436380653810878151504166914", "name" : "Chris", "surname" : "Newsom", "birthdate" : "1983-07-22", "recommends" : [ { "title" : "L art de séduire", "director" : "Guy Mazarguil" }, { "title" : "A Moment in June", "director" : "O. Nathapon" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Douchebag", "director" : "Drake Doremus" }, { "title" : "September", "director" : "Max Färberböck" }, { "title" : "Görevimiz Tatil", "director" : "Murat Seker" }, { "title" : "Bastardo", "director" : "Seijun Suzuki" }, { "title" : "Americano", "director" : "Ricardo Arnaiz" }, { "title" : "La fidanzata di tutti", "director" : "H. Bruce Humberstone" } ] }
+{ "_id" : ObjectId("61923656e740df95cac190b3"), "client_id" : "126275549157170280333119417983629524994", "name" : "Michael", "surname" : "Pressley", "birthdate" : "1994-07-16", "recommends" : [ { "title" : "Ami-ami", "director" : "Victor Saint Macary" }, { "title" : "El shabah", "director" : "Amr Arafa" }, { "title" : "The Hi-Jackers", "director" : "Jim O Connolly" }, { "title" : "Yanco", "director" : "Servando González" }, { "title" : "Detyam do 16...", "director" : "Andrey Kavun" }, { "title" : "Diringas", "director" : "Ignas Miskinis" }, { "title" : "Primal", "director" : "Steffen Schlachtenhaufen" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Shad Ajza a", "director" : "Husain El-Minbawi" } ] }
+{ "_id" : ObjectId("61923659e740df95cac1de97"), "client_id" : "209607835863129654585577944360488271874", "name" : "Donald", "surname" : "Walker", "birthdate" : "1969-01-04", "recommends" : [ { "title" : "Ori no naka no yôsei", "director" : "Kôyû Ohara" }, { "title" : "Horloge biologique", "director" : "Ricardo Trogi" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Welad Rizk 2", "director" : "Tarek Alarian" }, { "title" : "Io non credo a nessuno", "director" : "Tom Gries" }, { "title" : "La maschera della morte rossa", "director" : "Roger Corman" }, { "title" : "L astronave", "director" : "Holger-Madsen" }, { "title" : "Ogami, il pericolo giallo", "director" : "Kenji Misumi" }, { "title" : "GazGolder", "director" : "Ivan Kurskiy" } ] }
+{ "_id" : ObjectId("6192365ae740df95cac207b0"), "client_id" : "252627583261426858779194082682853916674", "name" : "David", "surname" : "Evans", "birthdate" : "1984-12-01", "recommends" : [ { "title" : "Testimone scomoda", "director" : "Steve DiMarco" }, { "title" : "Men in Black II", "director" : "Barry Sonnenfeld" }, { "title" : "Maggie Black", "director" : "Stanley Brode" }, { "title" : "Shuang shi ji", "director" : "Tianyu Zhao" }, { "title" : "Sacrificio", "director" : "Andrei Tarkovsky" }, { "title" : "Borrowed Time", "director" : "Jules Bishop" }, { "title" : "Smetto quando voglio:Masterclass", "director" : "Sydney Sibilia" }, { "title" : "Selda", "director" : "Ellen Ramos" }, { "title" : "Faithful in My Fashion", "director" : "Sidney Salkow" }, { "title" : "Atlantis", "director" : "August Blom" } ] }
+{ "_id" : ObjectId("6192365ae740df95cac20ae1"), "client_id" : "256079347516669193738223673449283059714", "name" : "Carl", "surname" : "Lynum", "birthdate" : "2002-09-02", "recommends" : [ { "title" : "Ah Boys to Men 3:Frogmen", "director" : "Jack Neo" }, { "title" : "Aladino e la sua lampada meravigliosa", "director" : "Jean Image" }, { "title" : "International Falls", "director" : "Amber McGinnis" }, { "title" : "Il perdono - Forgiveness", "director" : "Ian Gabriel" }, { "title" : "L ultimo gioco", "director" : "Anthony Harvey" }, { "title" : "Tommy e la lince", "director" : "Raimo O. Niemi" }, { "title" : "Nea Marin miliardar", "director" : "Sergiu Nicolaescu" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Master Minds", "director" : "Jean Yarbrough" }, { "title" : "Flickan", "director" : "Fredrik Edfeldt" } ] }
+{ "_id" : ObjectId("6192370fdfd233274c94dc5e"), "client_id" : "334563004255436380653810878151504166914", "name" : "Chris", "surname" : "Newsom", "birthdate" : "1983-07-22", "recommends" : [ { "title" : "L art de séduire", "director" : "Guy Mazarguil" }, { "title" : "A Moment in June", "director" : "O. Nathapon" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Douchebag", "director" : "Drake Doremus" }, { "title" : "September", "director" : "Max Färberböck" }, { "title" : "Görevimiz Tatil", "director" : "Murat Seker" }, { "title" : "Bastardo", "director" : "Seijun Suzuki" }, { "title" : "Americano", "director" : "Ricardo Arnaiz" }, { "title" : "La fidanzata di tutti", "director" : "H. Bruce Humberstone" } ] }
+{ "_id" : ObjectId("61923713dfd233274c955a3a"), "client_id" : "126275549157170280333119417983629524994", "name" : "Michael", "surname" : "Pressley", "birthdate" : "1994-07-16", "recommends" : [ { "title" : "Ami-ami", "director" : "Victor Saint Macary" }, { "title" : "El shabah", "director" : "Amr Arafa" }, { "title" : "The Hi-Jackers", "director" : "Jim O Connolly" }, { "title" : "Yanco", "director" : "Servando González" }, { "title" : "Detyam do 16...", "director" : "Andrey Kavun" }, { "title" : "Diringas", "director" : "Ignas Miskinis" }, { "title" : "Primal", "director" : "Steffen Schlachtenhaufen" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Shad Ajza a", "director" : "Husain El-Minbawi" } ] }
+{ "_id" : ObjectId("61923715dfd233274c95a81b"), "client_id" : "209607835863129654585577944360488271874", "name" : "Donald", "surname" : "Walker", "birthdate" : "1969-01-04", "recommends" : [ { "title" : "Ori no naka no yôsei", "director" : "Kôyû Ohara" }, { "title" : "Horloge biologique", "director" : "Ricardo Trogi" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Welad Rizk 2", "director" : "Tarek Alarian" }, { "title" : "Io non credo a nessuno", "director" : "Tom Gries" }, { "title" : "La maschera della morte rossa", "director" : "Roger Corman" }, { "title" : "L astronave", "director" : "Holger-Madsen" }, { "title" : "Ogami, il pericolo giallo", "director" : "Kenji Misumi" }, { "title" : "GazGolder", "director" : "Ivan Kurskiy" } ] }
+{ "_id" : ObjectId("61923716dfd233274c95d148"), "client_id" : "252627583261426858779194082682853916674", "name" : "David", "surname" : "Evans", "birthdate" : "1984-12-01", "recommends" : [ { "title" : "Testimone scomoda", "director" : "Steve DiMarco" }, { "title" : "Men in Black II", "director" : "Barry Sonnenfeld" }, { "title" : "Maggie Black", "director" : "Stanley Brode" }, { "title" : "Shuang shi ji", "director" : "Tianyu Zhao" }, { "title" : "Sacrificio", "director" : "Andrei Tarkovsky" }, { "title" : "Borrowed Time", "director" : "Jules Bishop" }, { "title" : "Smetto quando voglio:Masterclass", "director" : "Sydney Sibilia" }, { "title" : "Selda", "director" : "Ellen Ramos" }, { "title" : "Faithful in My Fashion", "director" : "Sidney Salkow" }, { "title" : "Atlantis", "director" : "August Blom" } ] }
+{ "_id" : ObjectId("61923716dfd233274c95d466"), "client_id" : "256079347516669193738223673449283059714", "name" : "Carl", "surname" : "Lynum", "birthdate" : "2002-09-02", "recommends" : [ { "title" : "Ah Boys to Men 3:Frogmen", "director" : "Jack Neo" }, { "title" : "Aladino e la sua lampada meravigliosa", "director" : "Jean Image" }, { "title" : "International Falls", "director" : "Amber McGinnis" }, { "title" : "Il perdono - Forgiveness", "director" : "Ian Gabriel" }, { "title" : "L ultimo gioco", "director" : "Anthony Harvey" }, { "title" : "Tommy e la lince", "director" : "Raimo O. Niemi" }, { "title" : "Nea Marin miliardar", "director" : "Sergiu Nicolaescu" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Master Minds", "director" : "Jean Yarbrough" }, { "title" : "Flickan", "director" : "Fredrik Edfeldt" } ] }
+
+
+
+16b
+db.movie.aggregate([
+  { $match: { title: "Atlantis", director: "August Blom" } },
+  { $lookup: {
+    from: "client",
+    localField: "recommeded_by",
+    foreignField: "client_id",
+    as: "recommenders"
+  }}
+])
+{ "_id" : ObjectId("619237397ac90092e1b4b6d3"), "title" : "Atlantis", "director" : "August Blom", "year" : 1913, "genre" : [ "Drama" ], "actors" : [ "Olaf Fønss", "Ida Orloff", "Ebba Thomsen" ], "eval" : 6.6, "recommeded_by" : [ "209607835863129654585577944360488271874", "126275549157170280333119417983629524994", "252627583261426858779194082682853916674", "334563004255436380653810878151504166914", "256079347516669193738223673449283059714" ], "recommenders" : [ { "_id" : ObjectId("61923652e740df95cac112dc"), "client_id" : "334563004255436380653810878151504166914", "name" : "Chris", "surname" : "Newsom", "birthdate" : "1983-07-22", "recommends" : [ { "title" : "L art de séduire", "director" : "Guy Mazarguil" }, { "title" : "A Moment in June", "director" : "O. Nathapon" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Douchebag", "director" : "Drake Doremus" }, { "title" : "September", "director" : "Max Färberböck" }, { "title" : "Görevimiz Tatil", "director" : "Murat Seker" }, { "title" : "Bastardo", "director" : "Seijun Suzuki" }, { "title" : "Americano", "director" : "Ricardo Arnaiz" }, { "title" : "La fidanzata di tutti", "director" : "H. Bruce Humberstone" } ] }, { "_id" : ObjectId("61923656e740df95cac190b3"), "client_id" : "126275549157170280333119417983629524994", "name" : "Michael", "surname" : "Pressley", "birthdate" : "1994-07-16", "recommends" : [ { "title" : "Ami-ami", "director" : "Victor Saint Macary" }, { "title" : "El shabah", "director" : "Amr Arafa" }, { "title" : "The Hi-Jackers", "director" : "Jim O Connolly" }, { "title" : "Yanco", "director" : "Servando González" }, { "title" : "Detyam do 16...", "director" : "Andrey Kavun" }, { "title" : "Diringas", "director" : "Ignas Miskinis" }, { "title" : "Primal", "director" : "Steffen Schlachtenhaufen" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Shad Ajza a", "director" : "Husain El-Minbawi" } ] }, { "_id" : ObjectId("61923659e740df95cac1de97"), "client_id" : "209607835863129654585577944360488271874", "name" : "Donald", "surname" : "Walker", "birthdate" : "1969-01-04", "recommends" : [ { "title" : "Ori no naka no yôsei", "director" : "Kôyû Ohara" }, { "title" : "Horloge biologique", "director" : "Ricardo Trogi" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Welad Rizk 2", "director" : "Tarek Alarian" }, { "title" : "Io non credo a nessuno", "director" : "Tom Gries" }, { "title" : "La maschera della morte rossa", "director" : "Roger Corman" }, { "title" : "L astronave", "director" : "Holger-Madsen" }, { "title" : "Ogami, il pericolo giallo", "director" : "Kenji Misumi" }, { "title" : "GazGolder", "director" : "Ivan Kurskiy" } ] }, { "_id" : ObjectId("6192365ae740df95cac207b0"), "client_id" : "252627583261426858779194082682853916674", "name" : "David", "surname" : "Evans", "birthdate" : "1984-12-01", "recommends" : [ { "title" : "Testimone scomoda", "director" : "Steve DiMarco" }, { "title" : "Men in Black II", "director" : "Barry Sonnenfeld" }, { "title" : "Maggie Black", "director" : "Stanley Brode" }, { "title" : "Shuang shi ji", "director" : "Tianyu Zhao" }, { "title" : "Sacrificio", "director" : "Andrei Tarkovsky" }, { "title" : "Borrowed Time", "director" : "Jules Bishop" }, { "title" : "Smetto quando voglio:Masterclass", "director" : "Sydney Sibilia" }, { "title" : "Selda", "director" : "Ellen Ramos" }, { "title" : "Faithful in My Fashion", "director" : "Sidney Salkow" }, { "title" : "Atlantis", "director" : "August Blom" } ] }, { "_id" : ObjectId("6192365ae740df95cac20ae1"), "client_id" : "256079347516669193738223673449283059714", "name" : "Carl", "surname" : "Lynum", "birthdate" : "2002-09-02", "recommends" : [ { "title" : "Ah Boys to Men 3:Frogmen", "director" : "Jack Neo" }, { "title" : "Aladino e la sua lampada meravigliosa", "director" : "Jean Image" }, { "title" : "International Falls", "director" : "Amber McGinnis" }, { "title" : "Il perdono - Forgiveness", "director" : "Ian Gabriel" }, { "title" : "L ultimo gioco", "director" : "Anthony Harvey" }, { "title" : "Tommy e la lince", "director" : "Raimo O. Niemi" }, { "title" : "Nea Marin miliardar", "director" : "Sergiu Nicolaescu" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Master Minds", "director" : "Jean Yarbrough" }, { "title" : "Flickan", "director" : "Fredrik Edfeldt" } ] }, { "_id" : ObjectId("6192370fdfd233274c94dc5e"), "client_id" : "334563004255436380653810878151504166914", "name" : "Chris", "surname" : "Newsom", "birthdate" : "1983-07-22", "recommends" : [ { "title" : "L art de séduire", "director" : "Guy Mazarguil" }, { "title" : "A Moment in June", "director" : "O. Nathapon" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Douchebag", "director" : "Drake Doremus" }, { "title" : "September", "director" : "Max Färberböck" }, { "title" : "Görevimiz Tatil", "director" : "Murat Seker" }, { "title" : "Bastardo", "director" : "Seijun Suzuki" }, { "title" : "Americano", "director" : "Ricardo Arnaiz" }, { "title" : "La fidanzata di tutti", "director" : "H. Bruce Humberstone" } ] }, { "_id" : ObjectId("61923713dfd233274c955a3a"), "client_id" : "126275549157170280333119417983629524994", "name" : "Michael", "surname" : "Pressley", "birthdate" : "1994-07-16", "recommends" : [ { "title" : "Ami-ami", "director" : "Victor Saint Macary" }, { "title" : "El shabah", "director" : "Amr Arafa" }, { "title" : "The Hi-Jackers", "director" : "Jim O Connolly" }, { "title" : "Yanco", "director" : "Servando González" }, { "title" : "Detyam do 16...", "director" : "Andrey Kavun" }, { "title" : "Diringas", "director" : "Ignas Miskinis" }, { "title" : "Primal", "director" : "Steffen Schlachtenhaufen" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Shad Ajza a", "director" : "Husain El-Minbawi" } ] }, { "_id" : ObjectId("61923715dfd233274c95a81b"), "client_id" : "209607835863129654585577944360488271874", "name" : "Donald", "surname" : "Walker", "birthdate" : "1969-01-04", "recommends" : [ { "title" : "Ori no naka no yôsei", "director" : "Kôyû Ohara" }, { "title" : "Horloge biologique", "director" : "Ricardo Trogi" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Welad Rizk 2", "director" : "Tarek Alarian" }, { "title" : "Io non credo a nessuno", "director" : "Tom Gries" }, { "title" : "La maschera della morte rossa", "director" : "Roger Corman" }, { "title" : "L astronave", "director" : "Holger-Madsen" }, { "title" : "Ogami, il pericolo giallo", "director" : "Kenji Misumi" }, { "title" : "GazGolder", "director" : "Ivan Kurskiy" } ] }, { "_id" : ObjectId("61923716dfd233274c95d148"), "client_id" : "252627583261426858779194082682853916674", "name" : "David", "surname" : "Evans", "birthdate" : "1984-12-01", "recommends" : [ { "title" : "Testimone scomoda", "director" : "Steve DiMarco" }, { "title" : "Men in Black II", "director" : "Barry Sonnenfeld" }, { "title" : "Maggie Black", "director" : "Stanley Brode" }, { "title" : "Shuang shi ji", "director" : "Tianyu Zhao" }, { "title" : "Sacrificio", "director" : "Andrei Tarkovsky" }, { "title" : "Borrowed Time", "director" : "Jules Bishop" }, { "title" : "Smetto quando voglio:Masterclass", "director" : "Sydney Sibilia" }, { "title" : "Selda", "director" : "Ellen Ramos" }, { "title" : "Faithful in My Fashion", "director" : "Sidney Salkow" }, { "title" : "Atlantis", "director" : "August Blom" } ] }, { "_id" : ObjectId("61923716dfd233274c95d466"), "client_id" : "256079347516669193738223673449283059714", "name" : "Carl", "surname" : "Lynum", "birthdate" : "2002-09-02", "recommends" : [ { "title" : "Ah Boys to Men 3:Frogmen", "director" : "Jack Neo" }, { "title" : "Aladino e la sua lampada meravigliosa", "director" : "Jean Image" }, { "title" : "International Falls", "director" : "Amber McGinnis" }, { "title" : "Il perdono - Forgiveness", "director" : "Ian Gabriel" }, { "title" : "L ultimo gioco", "director" : "Anthony Harvey" }, { "title" : "Tommy e la lince", "director" : "Raimo O. Niemi" }, { "title" : "Nea Marin miliardar", "director" : "Sergiu Nicolaescu" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Master Minds", "director" : "Jean Yarbrough" }, { "title" : "Flickan", "director" : "Fredrik Edfeldt" } ] } ] }
+
+
+
+
+
+
+17 --doubts :(
+db.movie.aggregate([
+  { $match: { title: "Atlantis", director: "August Blom" } },
+  { $lookup: {
+    from: "client",
+    localField: "recommeded_by",
+    foreignField: "client_id",
+    as: "recommenders"
+  }},
+  { $project: {
+    title: 1,
+    director: 1,
+    "recommenders.0": 1
+  }}
+])
+
+
+
+
+
+18a
+db.client.find({ birthdate: { $gt: "2000-01-01" }, "recommends.title": "Atlantis", "recommends.director": "August Blom" })
+{ "_id" : ObjectId("6192365ae740df95cac20ae1"), "client_id" : "256079347516669193738223673449283059714", "name" : "Carl", "surname" : "Lynum", "birthdate" : "2002-09-02", "recommends" : [ { "title" : "Ah Boys to Men 3:Frogmen", "director" : "Jack Neo" }, { "title" : "Aladino e la sua lampada meravigliosa", "director" : "Jean Image" }, { "title" : "International Falls", "director" : "Amber McGinnis" }, { "title" : "Il perdono - Forgiveness", "director" : "Ian Gabriel" }, { "title" : "L ultimo gioco", "director" : "Anthony Harvey" }, { "title" : "Tommy e la lince", "director" : "Raimo O. Niemi" }, { "title" : "Nea Marin miliardar", "director" : "Sergiu Nicolaescu" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Master Minds", "director" : "Jean Yarbrough" }, { "title" : "Flickan", "director" : "Fredrik Edfeldt" } ] }
+{ "_id" : ObjectId("61923716dfd233274c95d466"), "client_id" : "256079347516669193738223673449283059714", "name" : "Carl", "surname" : "Lynum", "birthdate" : "2002-09-02", "recommends" : [ { "title" : "Ah Boys to Men 3:Frogmen", "director" : "Jack Neo" }, { "title" : "Aladino e la sua lampada meravigliosa", "director" : "Jean Image" }, { "title" : "International Falls", "director" : "Amber McGinnis" }, { "title" : "Il perdono - Forgiveness", "director" : "Ian Gabriel" }, { "title" : "L ultimo gioco", "director" : "Anthony Harvey" }, { "title" : "Tommy e la lince", "director" : "Raimo O. Niemi" }, { "title" : "Nea Marin miliardar", "director" : "Sergiu Nicolaescu" }, { "title" : "Atlantis", "director" : "August Blom" }, { "title" : "Master Minds", "director" : "Jean Yarbrough" }, { "title" : "Flickan", "director" : "Fredrik Edfeldt" } ] }
+
+
+18b
+db.movie.aggregate([
+  { $match: { title: "Atlantis", director: "August Blom" } },
+  { $lookup: {
+    from: "client",
+    localField: "recommeded_by",
+    foreignField: "client_id",
+    as: "recommenders"
+  }},
+  { $unwind: "$recommenders" },
+  { $match: { "recommenders.birthdate": { $gt: "2000-01-01" } } }
+])
+
+
+
+
+Exercise 4)
+1. One proposal could be adding shard keys also with title and director, instead of the originally auto-created _id shard key (that we actually don't often include in the results). Also, it could be useful to add an ranged index onto year in order to be able to execute gt/lt/... queries easier
+
+2. 
+We start by choosing a simple query with title as selection attribute: 
+db.movie.find({ title: "Atlantis" }, { actors: 1, _id: 0 })
+
+3.
+mongoimport --username=user30 --password=7kqnm4dp --collection=client --db=user30_db --file=clients.json --jsonArray
+mongoimport --username=user30 --password=7kqnm4dp --collection=movie --db=user30_db --file=movies.json --jsonArray
+mongo --port 27017 --authenticationDatabase "user30_db" -u user30 -p 7kqnm4dp
+use user30_db
+
+4.
+db.movie.find({ title: "Atlantis" }, { actors: 1, _id: 0 }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"title" : {
+							"$eq" : "Atlantis"
+						}
+					},
+					"winningPlan" : {
+						"stage" : "PROJECTION_SIMPLE",
+						"transformBy" : {
+							"actors" : 1,
+							"_id" : 0
+						},
+						"inputStage" : {
+							"stage" : "COLLSCAN",
+							"filter" : {
+								"title" : {
+									"$eq" : "Atlantis"
+								}
+							},
+							"direction" : "forward"
+						}
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 6,
+		"executionTimeMillis" : 191,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 257556,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 6,
+			"executionTimeMillis" : 191,
+			"totalKeysExamined" : 0,
+			"totalDocsExamined" : 257556,
+			"totalChildMillis" : NumberLong(190),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 6,
+					"executionTimeMillis" : 190,
+					"totalKeysExamined" : 0,
+					"totalDocsExamined" : 257556,
+					"executionStages" : {
+						"stage" : "PROJECTION_SIMPLE",
+						"nReturned" : 6,
+						"executionTimeMillisEstimate" : 20,
+						"works" : 257558,
+						"advanced" : 6,
+						"needTime" : 257551,
+						"needYield" : 0,
+						"saveState" : 257,
+						"restoreState" : 257,
+						"isEOF" : 1,
+						"transformBy" : {
+							"actors" : 1,
+							"_id" : 0
+						},
+						"inputStage" : {
+							"stage" : "COLLSCAN",
+							"filter" : {
+								"title" : {
+									"$eq" : "Atlantis"
+								}
+							},
+							"nReturned" : 6,
+							"executionTimeMillisEstimate" : 19,
+							"works" : 257558,
+							"advanced" : 6,
+							"needTime" : 257551,
+							"needYield" : 0,
+							"saveState" : 257,
+							"restoreState" : 257,
+							"isEOF" : 1,
+							"direction" : "forward",
+							"docsExamined" : 257556
+						}
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731423054, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731423057, 1),
+		"signature" : {
+			"hash" : BinData(0,"IzC3Vu0z6IFCNP41aeX+PPp6sxM="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.movie.createIndex({ title: 1 })
+{
+	"raw" : {
+		"rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017" : {
+			"createdCollectionAutomatically" : false,
+			"numIndexesBefore" : 1,
+			"numIndexesAfter" : 2,
+			"commitQuorum" : "votingMembers",
+			"ok" : 1
+		}
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731423547, 7),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731423547, 7),
+		"signature" : {
+			"hash" : BinData(0,"7aQVkucJEgAZG9MGDD5j8fzN4tI="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.movie.find({ title: "Atlantis" }, { actors: 1, _id: 0 }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"title" : {
+							"$eq" : "Atlantis"
+						}
+					},
+					"winningPlan" : {
+						"stage" : "PROJECTION_SIMPLE",
+						"transformBy" : {
+							"actors" : 1,
+							"_id" : 0
+						},
+						"inputStage" : {
+							"stage" : "FETCH",
+							"inputStage" : {
+								"stage" : "IXSCAN",
+								"keyPattern" : {
+									"title" : 1
+								},
+								"indexName" : "title_1",
+								"isMultiKey" : false,
+								"multiKeyPaths" : {
+									"title" : [ ]
+								},
+								"isUnique" : false,
+								"isSparse" : false,
+								"isPartial" : false,
+								"indexVersion" : 2,
+								"direction" : "forward",
+								"indexBounds" : {
+									"title" : [
+										"[\"Atlantis\", \"Atlantis\"]"
+									]
+								}
+							}
+						}
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 6,
+		"executionTimeMillis" : 12,
+		"totalKeysExamined" : 6,
+		"totalDocsExamined" : 6,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 6,
+			"executionTimeMillis" : 12,
+			"totalKeysExamined" : 6,
+			"totalDocsExamined" : 6,
+			"totalChildMillis" : NumberLong(10),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 6,
+					"executionTimeMillis" : 10,
+					"totalKeysExamined" : 6,
+					"totalDocsExamined" : 6,
+					"executionStages" : {
+						"stage" : "PROJECTION_SIMPLE",
+						"nReturned" : 6,
+						"executionTimeMillisEstimate" : 0,
+						"works" : 7,
+						"advanced" : 6,
+						"needTime" : 0,
+						"needYield" : 0,
+						"saveState" : 0,
+						"restoreState" : 0,
+						"isEOF" : 1,
+						"transformBy" : {
+							"actors" : 1,
+							"_id" : 0
+						},
+						"inputStage" : {
+							"stage" : "FETCH",
+							"nReturned" : 6,
+							"executionTimeMillisEstimate" : 0,
+							"works" : 7,
+							"advanced" : 6,
+							"needTime" : 0,
+							"needYield" : 0,
+							"saveState" : 0,
+							"restoreState" : 0,
+							"isEOF" : 1,
+							"docsExamined" : 6,
+							"alreadyHasObj" : 0,
+							"inputStage" : {
+								"stage" : "IXSCAN",
+								"nReturned" : 6,
+								"executionTimeMillisEstimate" : 0,
+								"works" : 7,
+								"advanced" : 6,
+								"needTime" : 0,
+								"needYield" : 0,
+								"saveState" : 0,
+								"restoreState" : 0,
+								"isEOF" : 1,
+								"keyPattern" : {
+									"title" : 1
+								},
+								"indexName" : "title_1",
+								"isMultiKey" : false,
+								"multiKeyPaths" : {
+									"title" : [ ]
+								},
+								"isUnique" : false,
+								"isSparse" : false,
+								"isPartial" : false,
+								"indexVersion" : 2,
+								"direction" : "forward",
+								"indexBounds" : {
+									"title" : [
+										"[\"Atlantis\", \"Atlantis\"]"
+									]
+								},
+								"keysExamined" : 6,
+								"seeks" : 1,
+								"dupsTested" : 0,
+								"dupsDropped" : 0
+							}
+						}
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731423547, 7),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731423561, 1),
+		"signature" : {
+			"hash" : BinData(0,"s9jI8dDyFwnDAzwHCz8eLhATuCU="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+MongoDB's regular B-tree indexes are optimized for range queries, so this will enhance performance for such operations.
+The creation of the index on the title field drastically improves the performance of the query by reducing the number of documents and keys examined, leading to a faster execution time! 
+
+
+5. 
+db.movie.find({ director: "Robert Altman", year: { $gt: 1990 } }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"$and" : [
+							{
+								"director" : {
+									"$eq" : "Robert Altman"
+								}
+							},
+							{
+								"year" : {
+									"$gt" : 1990
+								}
+							}
+						]
+					},
+					"winningPlan" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"director" : {
+										"$eq" : "Robert Altman"
+									}
+								},
+								{
+									"year" : {
+										"$gt" : 1990
+									}
+								}
+							]
+						},
+						"direction" : "forward"
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 30,
+		"executionTimeMillis" : 85,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 257556,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 30,
+			"executionTimeMillis" : 85,
+			"totalKeysExamined" : 0,
+			"totalDocsExamined" : 257556,
+			"totalChildMillis" : NumberLong(84),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 30,
+					"executionTimeMillis" : 84,
+					"totalKeysExamined" : 0,
+					"totalDocsExamined" : 257556,
+					"executionStages" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"director" : {
+										"$eq" : "Robert Altman"
+									}
+								},
+								{
+									"year" : {
+										"$gt" : 1990
+									}
+								}
+							]
+						},
+						"nReturned" : 30,
+						"executionTimeMillisEstimate" : 7,
+						"works" : 257558,
+						"advanced" : 30,
+						"needTime" : 257527,
+						"needYield" : 0,
+						"saveState" : 257,
+						"restoreState" : 257,
+						"isEOF" : 1,
+						"direction" : "forward",
+						"docsExamined" : 257556
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731423874, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731423879, 1),
+		"signature" : {
+			"hash" : BinData(0,"94DK7bpCvN/MbtWLCjKj6CJEsrI="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.collection.createIndex({year: 1})
+{
+	"raw" : {
+		"rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017" : {
+			"createdCollectionAutomatically" : true,
+			"numIndexesBefore" : 1,
+			"numIndexesAfter" : 2,
+			"commitQuorum" : "votingMembers",
+			"ok" : 1
+		}
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424025, 2),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424025, 2),
+		"signature" : {
+			"hash" : BinData(0,"B4tOwTOmvh4HgNqc9kAfIBvIAB8="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.movie.find({ director: "Robert Altman", year: { $gt: 1990 } }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"$and" : [
+							{
+								"director" : {
+									"$eq" : "Robert Altman"
+								}
+							},
+							{
+								"year" : {
+									"$gt" : 1990
+								}
+							}
+						]
+					},
+					"winningPlan" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"director" : {
+										"$eq" : "Robert Altman"
+									}
+								},
+								{
+									"year" : {
+										"$gt" : 1990
+									}
+								}
+							]
+						},
+						"direction" : "forward"
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 30,
+		"executionTimeMillis" : 87,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 257556,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 30,
+			"executionTimeMillis" : 87,
+			"totalKeysExamined" : 0,
+			"totalDocsExamined" : 257556,
+			"totalChildMillis" : NumberLong(86),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 30,
+					"executionTimeMillis" : 86,
+					"totalKeysExamined" : 0,
+					"totalDocsExamined" : 257556,
+					"executionStages" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"director" : {
+										"$eq" : "Robert Altman"
+									}
+								},
+								{
+									"year" : {
+										"$gt" : 1990
+									}
+								}
+							]
+						},
+						"nReturned" : 30,
+						"executionTimeMillisEstimate" : 6,
+						"works" : 257558,
+						"advanced" : 30,
+						"needTime" : 257527,
+						"needYield" : 0,
+						"saveState" : 257,
+						"restoreState" : 257,
+						"isEOF" : 1,
+						"direction" : "forward",
+						"docsExamined" : 257556
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424064, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424065, 1),
+		"signature" : {
+			"hash" : BinData(0,"XN5TsrfTdPC5TV1QqVHka6GxC00="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+The index on year didn't improve query performance because the query involves filtering on both director and year. A compound index on {director: 1, year: 1} would likely optimize the query. Without this compound index, MongoDB performs a collection scan as it cannot use the single year index effectively in this context.
+
+
+5. 
+db.movie.find({ year: { $gte: 1990 } }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"year" : {
+							"$gte" : 1990
+						}
+					},
+					"winningPlan" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"year" : {
+								"$gte" : 1990
+							}
+						},
+						"direction" : "forward"
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 170292,
+		"executionTimeMillis" : 81,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 257556,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 170292,
+			"executionTimeMillis" : 81,
+			"totalKeysExamined" : 0,
+			"totalDocsExamined" : 257556,
+			"totalChildMillis" : NumberLong(80),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 170292,
+					"executionTimeMillis" : 80,
+					"totalKeysExamined" : 0,
+					"totalDocsExamined" : 257556,
+					"executionStages" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"year" : {
+								"$gte" : 1990
+							}
+						},
+						"nReturned" : 170292,
+						"executionTimeMillisEstimate" : 5,
+						"works" : 257558,
+						"advanced" : 170292,
+						"needTime" : 87265,
+						"needYield" : 0,
+						"saveState" : 257,
+						"restoreState" : 257,
+						"isEOF" : 1,
+						"direction" : "forward",
+						"docsExamined" : 257556
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424254, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424254, 1),
+		"signature" : {
+			"hash" : BinData(0,"5xfKHlHE+TOqcBdN8iaVHDGOYkM="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.collection.createIndex({year: 1})
+{
+	"raw" : {
+		"rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017" : {
+			"numIndexesBefore" : 2,
+			"numIndexesAfter" : 2,
+			"note" : "all indexes already exist",
+			"ok" : 1
+		}
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424269, 2),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424276, 1),
+		"signature" : {
+			"hash" : BinData(0,"krY+XF3Zm0dzJJuBrxZfalsB/7U="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.movie.find({ year: { $gte: 1990 } }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"year" : {
+							"$gte" : 1990
+						}
+					},
+					"winningPlan" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"year" : {
+								"$gte" : 1990
+							}
+						},
+						"direction" : "forward"
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 170292,
+		"executionTimeMillis" : 82,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 257556,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 170292,
+			"executionTimeMillis" : 82,
+			"totalKeysExamined" : 0,
+			"totalDocsExamined" : 257556,
+			"totalChildMillis" : NumberLong(80),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 170292,
+					"executionTimeMillis" : 80,
+					"totalKeysExamined" : 0,
+					"totalDocsExamined" : 257556,
+					"executionStages" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"year" : {
+								"$gte" : 1990
+							}
+						},
+						"nReturned" : 170292,
+						"executionTimeMillisEstimate" : 6,
+						"works" : 257558,
+						"advanced" : 170292,
+						"needTime" : 87265,
+						"needYield" : 0,
+						"saveState" : 257,
+						"restoreState" : 257,
+						"isEOF" : 1,
+						"direction" : "forward",
+						"docsExamined" : 257556
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424284, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424293, 1),
+		"signature" : {
+			"hash" : BinData(0,"tWZzniSSskpDyLIdddLpaIgHdIA="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+-->Index Not Used: Despite creating the index on the year field, the query still performs a collection scan. This indicates that MongoDB's query planner decided that a full scan was more efficient than using the index, possibly due to factors such as the size of the collection or the nature of the query.
+
+
+
+5. db.movie.dropIndexes()
+{
+	"raw" : {
+		"rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017" : {
+			"nIndexesWas" : 2,
+			"msg" : "non-_id indexes dropped for collection",
+			"ok" : 1
+		}
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424579, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424579, 1),
+		"signature" : {
+			"hash" : BinData(0,"esNJIje02XN/CM6LPvOi+lqghPA="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+
+db.movie.find({ year: { $gte: 1990, $lte: 2020 } }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"$and" : [
+							{
+								"year" : {
+									"$lte" : 2020
+								}
+							},
+							{
+								"year" : {
+									"$gte" : 1990
+								}
+							}
+						]
+					},
+					"winningPlan" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"year" : {
+										"$lte" : 2020
+									}
+								},
+								{
+									"year" : {
+										"$gte" : 1990
+									}
+								}
+							]
+						},
+						"direction" : "forward"
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 170292,
+		"executionTimeMillis" : 110,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 257556,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 170292,
+			"executionTimeMillis" : 110,
+			"totalKeysExamined" : 0,
+			"totalDocsExamined" : 257556,
+			"totalChildMillis" : NumberLong(109),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 170292,
+					"executionTimeMillis" : 109,
+					"totalKeysExamined" : 0,
+					"totalDocsExamined" : 257556,
+					"executionStages" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"year" : {
+										"$lte" : 2020
+									}
+								},
+								{
+									"year" : {
+										"$gte" : 1990
+									}
+								}
+							]
+						},
+						"nReturned" : 170292,
+						"executionTimeMillisEstimate" : 10,
+						"works" : 257558,
+						"advanced" : 170292,
+						"needTime" : 87265,
+						"needYield" : 0,
+						"saveState" : 257,
+						"restoreState" : 257,
+						"isEOF" : 1,
+						"direction" : "forward",
+						"docsExamined" : 257556
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424603, 4),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424605, 1),
+		"signature" : {
+			"hash" : BinData(0,"1HmkGMZj/wK3xnZPxvUpaDRMjh0="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.collection.createIndex({year: 1})
+{
+	"raw" : {
+		"rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017" : {
+			"numIndexesBefore" : 2,
+			"numIndexesAfter" : 2,
+			"note" : "all indexes already exist",
+			"ok" : 1
+		}
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424624, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424630, 2),
+		"signature" : {
+			"hash" : BinData(0,"Xp/rM9BpraaJLMBFQOr7tNzkL/U="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+db.movie.find({ year: { $gte: 1990, $lte: 2020 } }).explain("executionStats")
+{
+	"queryPlanner" : {
+		"mongosPlannerVersion" : 1,
+		"winningPlan" : {
+			"stage" : "SINGLE_SHARD",
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"connectionString" : "rs0/it.unige.dibris.lsccluster.node3:27017,it.unige.dibris.lsccluster.node4:27017,it.unige.dibris.lsccluster.node5:27017",
+					"serverInfo" : {
+						"host" : "it.unige.dibris.lsccluster.node3",
+						"port" : 27017,
+						"version" : "4.4.1",
+						"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+					},
+					"plannerVersion" : 1,
+					"namespace" : "user30_db.movie",
+					"indexFilterSet" : false,
+					"parsedQuery" : {
+						"$and" : [
+							{
+								"year" : {
+									"$lte" : 2020
+								}
+							},
+							{
+								"year" : {
+									"$gte" : 1990
+								}
+							}
+						]
+					},
+					"winningPlan" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"year" : {
+										"$lte" : 2020
+									}
+								},
+								{
+									"year" : {
+										"$gte" : 1990
+									}
+								}
+							]
+						},
+						"direction" : "forward"
+					},
+					"rejectedPlans" : [ ]
+				}
+			]
+		}
+	},
+	"executionStats" : {
+		"nReturned" : 170292,
+		"executionTimeMillis" : 110,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 257556,
+		"executionStages" : {
+			"stage" : "SINGLE_SHARD",
+			"nReturned" : 170292,
+			"executionTimeMillis" : 110,
+			"totalKeysExamined" : 0,
+			"totalDocsExamined" : 257556,
+			"totalChildMillis" : NumberLong(109),
+			"shards" : [
+				{
+					"shardName" : "rs0",
+					"executionSuccess" : true,
+					"nReturned" : 170292,
+					"executionTimeMillis" : 109,
+					"totalKeysExamined" : 0,
+					"totalDocsExamined" : 257556,
+					"executionStages" : {
+						"stage" : "COLLSCAN",
+						"filter" : {
+							"$and" : [
+								{
+									"year" : {
+										"$lte" : 2020
+									}
+								},
+								{
+									"year" : {
+										"$gte" : 1990
+									}
+								}
+							]
+						},
+						"nReturned" : 170292,
+						"executionTimeMillisEstimate" : 10,
+						"works" : 257558,
+						"advanced" : 170292,
+						"needTime" : 87265,
+						"needYield" : 0,
+						"saveState" : 257,
+						"restoreState" : 257,
+						"isEOF" : 1,
+						"direction" : "forward",
+						"docsExamined" : 257556
+					}
+				}
+			]
+		}
+	},
+	"serverInfo" : {
+		"host" : "it.unige.dibris.lsccluster.front",
+		"port" : 27017,
+		"version" : "4.4.1",
+		"gitVersion" : "ad91a93a5a31e175f5cbf8c69561e788bbc55ce1"
+	},
+	"ok" : 1,
+	"operationTime" : Timestamp(1731424644, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1731424649, 1),
+		"signature" : {
+			"hash" : BinData(0,"WmSLMmnF8uOvo/GetKwOWMB3M9c="),
+			"keyId" : NumberLong("7436013579783897090")
+		}
+	}
+}
+
+Before creating the index, MongoDB used a collection scan (COLLSCAN) to examine all 257,556 documents, as no index was available. After creating the index on year, the query still performed a COLLSCAN, indicating the index was not used. This could be due to the query structure or the index not being optimal for range queries on a single field. In both cases, the query examined all documents, resulting in similar execution times and no improvement from the index
+
+

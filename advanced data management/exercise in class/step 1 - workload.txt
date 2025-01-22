@@ -1,0 +1,25 @@
+Workload
+*   Q1. Given a product identifier, determine all information about that product, including the supplier name
+Q1( Product, [Product(IdProd)_!], [Product_!, Supplier(SName)_S])
+
+*   Q2. Given a product name, determine all information about that product, including its categories
+Q2( Product, [Product(ProdName)_!], [Product_!, Category(IdCat)_O])
+
+*   Q3. Given a category name, determine the name and the price of products of that category
+Q3( Category, [Category(CName)_!], [Product(ProdName, Price)_O])
+ 
+* Q4. ...
+Q4( Order, [Customer(IdCust)_F, Order(ODate)_!], [Order(IdO)_!, Product(IdProd)_!, ShippingAddress(PostCode)_S])
+
+* Q5. Given a year, determine all the orders issued in that year, including all the information on the corresponding invoice
+Q5 ( Order, [Order(ODate)_!], [Order(IdO)_!, Invoice_P])
+
+*   Q6. Given a month in a year, determine the orders issued in that month, including the shipping year including information about i orger, eroducte the orders of that customer issues in that
+Q6 ( Order, [Order(ODate)_!], [Order(IdO)_!, ShippingAddress_F])
+
+* Q7. ...
+Q7 ( Order, [Customer(IdCust)_F, Order(ODate)_!], [Order(IdO)_!, Product_!])
+
+
+*   Q8. Given a category, determine the names of all the customers interested in that category
+Q8 ( Category, [Category(IdCat)_!], [Customer(CustName)_S])

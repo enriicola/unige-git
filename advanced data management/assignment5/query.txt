@@ -1,0 +1,123 @@
+PREFIX ex: <http://www.example.org/#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/1999/02/22-rdfs-syntax-ns#>
+PREFIX owl: <http://www.w3.org/1999/02/22-owl-syntax-ns#>
+
+SELECT ?name ?region WHERE { 
+   ?mountain a ex:Mountain ;
+             ex:hasName ?name ;
+             ex:locatedInRegion ?region .
+}
+--------------------------------------------------------------------------------
+| name                   | region                                              |
+================================================================================
+| "Mount Kilimanjaro"@en | <http://www.example.org/#KilimanjaroRegion>         |
+| "AnnapurnaI"@en        | <http://www.example.org/#AnnapurnaConservationArea> |
+| "Ama Dablam"@en        | <http://www.example.org/#Khumbu>                    |
+| "Lhotse"               | <http://www.example.org/#Xigaze>                    |
+| "Lhotse"               | <http://www.example.org/#Khumbu>                    |
+| "Mount Everest"@en     | <http://www.example.org/#Xigaze>                    |
+| "Mount Everest"@en     | <http://www.example.org/#Khumbu>                    |
+--------------------------------------------------------------------------------
+
+
+
+
+
+SELECT ?mountain ?height
+WHERE {
+  ?mountain rdf:type ex:Mountain ;
+            ex:locatedInRegion ?region ;
+            ex:hasHeightInMeter ?height .
+  ?region ex:locatedInCountry ?country .
+  FILTER ((?country = ex:Nepal || ?country = ex:China) && ?height > 8000)
+}
+---------------------------------------------------
+| mountain                               | height |
+===================================================
+| <http://www.example.org/#AnnapurnaI>   | 8091   |
+| <http://www.example.org/#Lhotse>       | 8516   |
+| <http://www.example.org/#MountEverest> | 8848   |
+| <http://www.example.org/#Lhotse>       | 8516   |
+| <http://www.example.org/#MountEverest> | 8848   |
+---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT ?mountain1 ?mountain2
+WHERE {
+  ?mountain1 rdf:type ex:Mountain ;
+            ex:locatedInRegion ?region .
+  ?mountain2 rdf:type ex:Mountain ;
+            ex:locatedInRegion ?region .
+   FILTER (?mountain1 != ?mountain2)
+}
+-----------------------------------------------------------------------------------
+| mountain1                              | mountain2                              |
+===================================================================================
+| <http://www.example.org/#AmaDablam>    | <http://www.example.org/#Lhotse>       |
+| <http://www.example.org/#AmaDablam>    | <http://www.example.org/#MountEverest> |
+| <http://www.example.org/#Lhotse>       | <http://www.example.org/#MountEverest> |
+| <http://www.example.org/#Lhotse>       | <http://www.example.org/#AmaDablam>    |
+| <http://www.example.org/#MountEverest> | <http://www.example.org/#Lhotse>       |
+| <http://www.example.org/#MountEverest> | <http://www.example.org/#AmaDablam>    |
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+SELECT ?person ?mountain ?year
+WHERE {
+  ?person ex:hasClimbed ?mountain .
+  OPTIONAL {
+    ?mountain ex:firstClimbed [
+      ex:firstClimbedBy ?person ;
+      ex:firstClimbedInYear ?year
+    ] .
+  }
+}
+# there is no need to specify mountain as a mountain because it is implicit when we declared the domain-range property
+---------------------------------------------------------------------------------------------
+| person                                    | mountain                               | year |
+=============================================================================================
+| <http://www.example.org/#ReinholdMessner> | <http://www.example.org/#Lhotse>       |      |
+| <http://www.example.org/#ReinholdMessner> | <http://www.example.org/#MountEverest> |      |
+| <http://www.example.org/#TenzingNorgay>   | <http://www.example.org/#MountEverest> | 1953 |
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+SELECT ?mountainName ?height
+WHERE {
+  ?mountain rdf:type ex:Mountain ;
+            ex:hasName ?mountainName ;
+            ex:hasHeightInMeter ?height .
+}
+ORDER BY DESC(?height)
+-----------------------------------
+| mountainName           | height |
+===================================
+| "Mount Everest"@en     | 8848   |
+| "Lhotse"               | 8516   |
+| "AnnapurnaI"@en        | 8091   |
+| "Ama Dablam"@en        | 6170   |
+| "Mount Kilimanjaro"@en | 5895   |
+-----------------------------------
