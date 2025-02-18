@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CallManager</string>
+    <string name="call">MAKE A CALL</string>
+    <string name="sms">SEND SMS</string>
+    <string name="compose">COMPOSE</string>
+    <string name="call2">CALL!</string>
+    <string name="hint">tel number</string>
+    <string name="message_hint">message content</string>
+    <string name="international">MAKE INT CALL</string>
+    <string name="it_prefix">+39</string>
+    <string name="de_prefix">+49</string>
+    <string name="fr_prefix">+33</string>
+    <string name="italy">Italy</string>
+    <string name="germany">Germany</string>
+    <string name="france">France</string>
+    <string name="add_prefix">ADD PREFIX</string>
+
+    <string name="choose">Choose another</string>
+    <string name="sos">SOS</string>
+    <string name="police">Police</string>
+    <string name="ff">Firefighters</string>
+    <string name="emergency">Emergency</string>
+    <string name="_3">333333333</string>
+    <string name="_2">222222222</string>
+    <string name="_1">11111111</string>
+    <string name="make_sos_call">MAKE SOS CALL</string>
+    <string name="info">FIND INFO</string>
+</resources>

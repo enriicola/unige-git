@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SOS">
+
+    <RadioGroup
+        android:id="@+id/rg_sos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/emergency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/_1" />
+
+        <RadioButton
+            android:id="@+id/ff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_2" />
+
+        <RadioButton
+            android:id="@+id/police"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_3" />
+    </RadioGroup>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="145dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rg_sos"
+        app:layout_constraintStart_toEndOf="@+id/rg_sos"
+        app:layout_constraintTop_toTopOf="@+id/rg_sos">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_emergency"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center|start"
+                android:text="@string/emergency" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_ff"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center|start"
+                android:text="@string/ff" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_police"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center|start"
+                android:text="@string/police" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/start_sos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickSOS"
+        android:text="@string/make_sos_call"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_sos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!-- TODO -->

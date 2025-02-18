@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SuperDuperDownloader</string>
+
+    <string name="coin_img">coin img</string>
+    <string name="serial">Serial Download Images</string>
+    <string name="parallel">Parallel Download Images</string>
+    <string name="reset">Reset Images</string>
+    <string name="url_test">https://docs.flutter.dev/assets/images/dash/Dash.png</string>
+    <string name="url1">https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2006_AESilver_Proof_Obv.png/1280px-2006_AESilver_Proof_Obv.png</string>
+    <string name="url2">https://upload.wikimedia.org/wikipedia/commons/f/f8/1804_dollar_obverse.PNG</string>
+    <string name="url3">https://upload.wikimedia.org/wikipedia/commons/b/b9/1974S_Eisenhower_Obverse.jpg</string>
+    <string name="url4">https://upload.wikimedia.org/wikipedia/commons/0/0a/George_Washington_Presidential_%241_Coin_obverse.png</string>
+    <string name="url5">https://upload.wikimedia.org/wikipedia/commons/c/c6/1879S_Morgan_Dollar_NGC_MS67plus_Obverse.png</string>
+    <string name="url6">https://www.panini.it/media/wysiwyg/04_-_1WTOPO3503G_-_TOPOLINO.jpg</string>
+    <string name="url7">https://upload.wikimedia.org/wikipedia/commons/d/d7/2009NativeAmericanRev.jpg</string>
+    <string name="url8">https://upload.wikimedia.org/wikipedia/commons/f/fa/Presidential_dollar_coin_reverse.png</string>
+    <string name="url9">https://upload.wikimedia.org/wikipedia/en/f/fe/Sacagawea_dollar_obverse.png</string>
+</resources>

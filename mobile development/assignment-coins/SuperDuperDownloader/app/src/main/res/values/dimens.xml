@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_of_coin">150dp</dimen>
+    <dimen name="width_of_coin">0dp</dimen>
+    <dimen name="margin_of_coin">2dp</dimen>
+    <dimen name="weight_of_coin">1</dimen>
+    <dimen name="weight_of_the_row">3</dimen>
+</resources>

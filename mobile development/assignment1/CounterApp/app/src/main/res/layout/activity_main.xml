@@ -1,0 +1,113 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/ApplicationName"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="49dp"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center"
+        android:inputType="none"
+        android:text="Counter"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/CounterValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CounterValue"
+        android:layout_width="135dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="136dp"
+        android:text="Value = 0"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/StepSizeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ApplicationName"/>
+
+    <Button
+        android:id="@+id/Plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="23dp"
+        android:background="#7C7272"
+        android:onClick="AddValue"
+        android:text="+"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/StepSizeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Minus"
+        app:layout_constraintTop_toBottomOf="@+id/CounterValue"/>
+
+    <Button
+        android:id="@+id/Minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="23dp"
+        android:background="#7C7272"
+        android:onClick="RemoveValue"
+        android:text="-"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/StepSizeLabel"
+        app:layout_constraintEnd_toStartOf="@+id/Plus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CounterValue"
+        app:layout_constraintVertical_bias="0.486"/>
+
+    <TextView
+        android:id="@+id/StepSizeLabel"
+        android:layout_width="206dp"
+        android:layout_height="50dp"
+        android:text="Counter step size"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.632"/>
+
+    <EditText
+        android:id="@+id/StepValue"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="203dp"
+        android:gravity="center"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="1"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StepSizeLabel"
+        app:layout_constraintVertical_bias="0.0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

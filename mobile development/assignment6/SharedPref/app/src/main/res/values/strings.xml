@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SharedPref</string>
+    <string name="hint">write your location :=)</string>
+    <string name="username">Username:</string>
+    <string name="location">Location:</string>
+    <string name="app_configuration">App configuration</string>
+    <string name="hint_username">write your username :=)</string>
+    <string name="save">SAVE!</string>
+    <string name="clear">CLEAR!</string>
+    <string name="close">CLOSE APP!</string>
+    <string name="insert_location">insert location here</string>
+    <string name="insert_username">insert username here</string>
+    <string name="gray_bg">Gray Background</string>
+</resources>

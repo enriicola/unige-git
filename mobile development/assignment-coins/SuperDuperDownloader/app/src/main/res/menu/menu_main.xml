@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.superduperdownloader.com.example.superduperdownloader.MainActivity">
+
+    <item
+        android:id="@+id/menu_serial"
+        android:title="@string/serial"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_parallel"
+        android:title="@string/parallel"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_reset"
+        android:title="@string/reset"
+        app:showAsAction="never" />
+</menu>

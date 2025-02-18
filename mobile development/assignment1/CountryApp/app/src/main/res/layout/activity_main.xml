@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/RG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/UK"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="clickFlag"
+            android:text="UK" />
+
+        <RadioButton
+            android:id="@+id/IT"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:onClick="clickFlag"
+            android:text="IT" />
+
+        <RadioButton
+            android:id="@+id/ES"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:onClick="clickFlag"
+            android:text="ES" />
+
+        <RadioButton
+            android:id="@+id/FR"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:onClick="clickFlag"
+            android:text="FR" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/IV"
+        android:layout_width="match_parent"
+        android:layout_height="415dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/flag_of_the_uk" />
+
+    <ScrollView
+        android:id="@+id/SV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fillViewport="false"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/TV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1.0" />
+    </ScrollView>
+
+
+</LinearLayout>

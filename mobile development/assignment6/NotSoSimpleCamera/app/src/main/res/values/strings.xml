@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SimpleCamera</string>
+    <string name="click">CLICK!</string>
+    <string name="camera_settings">CAMERA SETTINGS</string>
+    <string name="take_a_picture">TAKE A PICTURE</string>
+    <string name="back">RETURN</string>
+    <string name="go_to_settings_1">GO TO SETTINGS 1</string>
+    <string name="go_to_settings_2">GO TO SETTING 2</string>
+    <string name="go_to_settings_3">GO TO SETTINGS 3</string>
+    <string name="test">TEST</string>
+    <string name="settings_1_camera_application">Setting of the Camera Part 1</string>
+    <string name="settings_2_camera_application">Setting of the Camera Part 2</string>
+    <string name="settings_3_camera_application">Setting of the Camera Part 3</string>
+    <string name="event_not_detected">Event Not Detected</string>
+    <string name="insertText">Insert text to Save on a File</string>
+    <string name="save">SAVE TEXT</string>
+    <string name="read">READ TEXT</string>
+    <string name="savePhoto">SAVE LAST PHOTO</string>
+    <string name="lastPhoto">Your last photo:</string>
+    <string name="last_pic_sd">Your last picture saved into the SD</string>
+</resources>
