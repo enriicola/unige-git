@@ -1,0 +1,95 @@
+- sw dev not evolved as fast as hw and network
+- embarrassing parallel problem
+	- no dependency or communication between the parallel tasks
+- **SPEED-UP**: S(n,p) = Time(size n, 1 processor) / Time(size n, p processors)
+- **EFFICIENCY**: E(n,p) = S(n,p) / p
+- **AMDAHL'S LAW**: 
+	- max speed-up = 1 / (1-**p**), **p** parallel portion of the code 
+	- speed-up = 1/((p/n) + **s**), **s** serial portion of the code
+	- A. was an **optimist** -> overhead ...
+	- 0 < speed-up <= p
+	- 0 < efficiency <= 1
+	- Linear speed-up : speedup = p
+	- A. was an **pessimist** -> super-linear speedup is very rare -> speedup>p(effiency>1)
+- the free lunch is over ...
+- pipe-lining ...
+- **branch predictions** are the big problem for architectures ...
+- the diff. between parallel and cloud computing is not in the hw, but in the network
+- in hpc is important to have a slow latency ...
+- MIMD (or SPMD) = loops
+- fat trees ...
+- **critical paths** -> (possibly non-unique) chain of dependencies of max length
+	- since the tasks on a critical path need to be executed one after another, the length of the critical path is a lower bound on parallel execution time
+- hpc is **not only** about being **fast**, but **also** to compute **more data in the same time**
+- scaling efficiency ...
+- **the roof-line performance model** ...
+	- has actually multiple lines 
+- think if it's possible to design another algorithm ... 
+	- ... & only when all questions are answered and resolved, then start developing it
+- **PCAM methodology**:
+	- partitioning
+	- communication
+	- agglomeration 
+	- mapping
+- NUMA ... 
+- **Loop-carried dependence vs loop independent dependency**:
+	- LCD: when a statement in one iteration of a loop depends in some way on a statement in a **different iteration** of the same loop 
+	- LID: if a statement in one iteration of a loop depends only on a statement & **same iteration** of the loop
+- **Loop dependencies:**
+	- **RaW**
+	- **WaR**
+	- **WaW**
+	- freezing loops
+	- reduction
+- **Removing dependencies**: 
+	- loop aligning
+	- re-ordering
+- why poor scaling? ...
+	- has **false sharing**
+		- if independent data elements happen to sit on the same cache line, each update will cause the cache lines to "slosh back and forth" between threads
+	- eliminate it via **padding**
+		- PAD the array so each sum value is in a different cache line
+	- performance tips:
+		- test
+			- profile
+				- think 
+					- analyze
+- **OpenMp**
+	- **the truth**: bad openmp does not scale
+- if i'm writing new code, how do i choose between Intel Cilk Plus, TBB, OpenMP, and MPI?
+	- ...
+- the GPU multiprocessor creates, manages. schedules, and executes threads in **groups of 32 parallel threads** called **warps**
+- **AVX vs SIMD**:
+	- Gli AVX intrinsics sono funzioni di basso livello fornite da compilatori C/C++ (mediante header come <immintrin.h>) che permettono di utilizzare direttamente le istruzioni AVX (Advanced Vector Extensions) offerte dai processori moderni. In pratica, consentono al programmatore di scrivere codice che sfrutta il parallelismo a livello hardware senza dover ricorrere direttamente all'assembly.
+	- Cos'è SIMD
+		- SIMD sta per Single Instruction, Multiple Data ed è una tecnica di elaborazione parallela in cui una singola istruzione viene applicata simultaneamente a più dati. Questo significa che, anziché eseguire una determinata operazione su un singolo elemento per volta, il processore può eseguire la stessa operazione su un vettore di dati contemporaneamente. Ciò è particolarmente utile in applicazioni che devono elaborare grandi quantità di dati, come il rendering grafico, il calcolo scientifico e l'elaborazione di segnali.
+	- AVX Intrinsics e il loro Utilizzo
+		- AVX (Advanced Vector Extensions):
+			- È un set di istruzioni SIMD introdotto da Intel, che opera su registri a 256-bit (ed in alcune versioni anche a 512-bit con AVX-512). Queste istruzioni permettono di eseguire operazioni matematiche su più numeri in parallelo, migliorando così le prestazioni in compiti computazionalmente intensivi.
+		- Intrinsics:
+			- Gli intrinsics sono funzioni fornite dal compilatore che mappano direttamente sulle istruzioni AVX del processore. Utilizzandoli, gli sviluppatori possono scrivere codice in C/C++ che sfrutta il calcolo parallelo senza scrivere codice assembly, ottenendo così un notevole incremento delle prestazioni nei casi in cui si deve processare una grande quantità di dati in parallelo.
+
+	- Ad esempio, operazioni come la moltiplicazione di vettori o il calcolo di somme su insiemi di dati possono essere eseguite simultaneamente su 4 o 8 elementi (a seconda della precisione e della larghezza dei registri), anziché elaborare un elemento alla volta.
+
+	- Quindi, in sintesi:
+		- SIMD è il paradigma che consente di eseguire la stessa istruzione su più dati contemporaneamente.
+	    - AVX Intrinsics sono le interfacce di programmazione che permettono di sfruttare questo paradigma su processori dotati di istruzioni AVX, migliorando l'efficienza computazionale in applicazioni che richiedono elevato throughput di dati.
+
+- **CUDA**:
+	- Perché la Configurazione 32x8 è Migliore di 32x32?
+		- Organizzazione in **Warps** ->Su CUDA, un warp è composto da 32 thread. Con un blocco di dimensioni 32x8, abbiamo 256 thread (8 warps). Questa dimensione spesso risulta ideale per il scheduling e per la gestione delle risorse (come registri e memoria condivisa).
+		- Utilizzo delle Risorse e Occupancy:
+			- Un blocco 32x32 avrebbe 1024 thread, che è il massimo teorico per blocco, ma non sempre questo porta a performance migliori.
+        - Problemi di Risorse: 
+	        - Blocchi troppo grandi possono causare un maggiore consumo di registri e memoria condivisa, riducendo l’occupancy (il numero di blocchi che possono essere attivi contemporaneamente su un multiprocessore).
+        - Sovraccarico e Divergenza: 
+	        - Con blocchi molto grandi, potrebbe aumentare la probabilità di divergenza (cioè, thread all’interno dello stesso warp che eseguono percorsi differenti a causa di condizioni) e di inefficienze nell’accesso alla memoria.
+
+		- Coalescenza della Memoria:
+			- Blocchi con dimensioni 32x8 tendono a garantire accessi alla memoria più regolari e coalescenti. Questo significa che i thread all’interno dello stesso warp accedono a indirizzi contigui, migliorando l’efficienza nel caricamento dei dati dalla memoria globale.
+
+		- Balance del Carico di Lavoro:
+			- Utilizzando 256 thread per blocco, la suddivisione dell’immagine risulta ben bilanciata: ogni blocco elabora una porzione uniforme della matrice.
+		    - Con 1024 thread per blocco (32x32), il carico potrebbe risultare meno uniforme o portare a una saturazione delle risorse hardware, penalizzando le prestazioni.
+
+...
