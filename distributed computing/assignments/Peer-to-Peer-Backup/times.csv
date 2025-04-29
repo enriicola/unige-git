@@ -1,0 +1,23 @@
+cfg,Evil Nodes,Seconds
+client_server,0,6.38
+client_server,1,7.19
+client_server,2,8.43
+client_server,3,15.05
+client_server,4,17.03
+client_server,5,11.87
+client_server,6,18.98
+client_server,7,20.42
+client_server,8,22.48
+client_server,9,24.57
+client_server,10,25.62
+p2p,0,17.78
+p2p,1,24.28
+p2p,2,32.56
+p2p,3,42.19
+p2p,4,54.03
+p2p,5,64.15
+p2p,6,81.17
+p2p,7,95.95
+p2p,8,104.59
+p2p,9,133.78
+p2p,10,155.98

@@ -1,0 +1,9 @@
+Here we simulate a peer-to-peer backup application using erasure coding. The source code is provided in the storage.py file. Look for the "..." patterns: those will be the parts you will have to touch to complete first version of the simulator.
+
+The idea is simulating a peer-to-peer system of machines holding some data, encoding it with erasure coding and storing the encoded blocks on peers. Peers connect and disconnect regularly, and sometimes they fail losing all the data that they have. In that case, they start downloading encoded blocks on their peers, and when they can download k of them (k is a configurable parameter) they will be able to restore all their data. The simulator allows us to simulate very long periods of time (say, 100 years) to verify whether data remains online. In your report, find to what extent this is the case in the use cases you'll explore.
+
+Use "python3 storage_sim.py --help" to find out the command-line arguments. You will see that a configuration file is required: check the p2p.cfg and client_server.cfg files as examples. They define one or more classes of machines that we simulate, along with their characteristics. The p2p.cfg configuration specifies a system where all nodes have the same characteristics, whereas the client_server.cfg configuration is more similar to a client-server situation where there are some "server" machines that do not own any data to backup, but can store the clients' data (some client data might still be stored in a peer-to-peer fashion between clients).
+
+Once you have completed and tested the first simulation, think about extensions or modifications to it and, as with the first assignments, contact Davide Ponzini (davide.ponzini@edu.unige.it) to agree on your extension. Then, as with assignment 1, write your report for it
+
+Deadline -> 10 lug

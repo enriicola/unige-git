@@ -1,0 +1,618 @@
+<html><head>
+<title>Probabilistic Filters By Example: Cuckoo Filter and Bloom Filters</title>
+<style>
+#content {
+  width: 70%;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+body {
+  background-color: #d3ddb4;
+  color: black;
+  font-family: Palatino, Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+}
+table.superstructure {
+   /*border: 2px solid black;*/
+}
+table.superstructure td {
+   /*border: 2px solid black;*/
+   padding: 20px;
+   text-align: center;
+}
+table.superstructure th {
+   /*border: 2px solid black;*/
+   text-align: center;
+}
+.insetbox {
+  margin: auto;
+  background-color: #f1f1ce;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+table.bitvector {
+  border-width: 1px;
+  border-spacing: 0px;
+  border-style: none;
+  border-color: rgb(51, 51, 51);
+  border-collapse: collapse;
+  background-color: white;
+  margin: auto;
+  border-collapse: collapse;
+  font-family: monospace;
+  text-align: center;
+}
+table.bitvector th {
+  height: 2em;
+  width: 2em;
+  border-width: 1px;
+  padding: 1px;
+  border-style: solid;
+  border-color: rgb(221, 221, 221);
+  background-color: white;
+  -moz-border-radius: ;
+}
+table.bitvector td {
+  height: 2em;
+  width: 2em;
+  border-width: 1px;
+  padding: 0px;
+  border-style: solid;
+  border-color: rgb(221, 221, 221);
+  background-color: white;
+  -moz-border-radius: ;
+}
+table.bitvector .unused {
+  background-color: rgb(241, 241, 206);
+  color: rgb(241, 241, 206);
+  border-style: none;
+}
+table#cuckooFilter td {
+  width: 4em;
+}
+table.features {
+  width: 100%;
+  border-width: 1px;
+  border-spacing: 0px;
+  border-style: none;
+  border-color: rgb(51, 51, 51);
+  border-collapse: collapse;
+  background-color: white;
+  margin: auto;
+  text-align: center;
+}
+table.features th {
+  border-width: 1px;
+  padding: 1px;
+  border-style: solid;
+  border-color: rgb(221, 221, 221);
+  background-color: white;
+  padding: 10px;
+}
+table.features td {
+  font-weight: normal;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(221, 221, 221);
+  background-color: white;
+  padding: 10px;
+}
+table.features td.winner {
+  color: white;
+  background-color: rgb(0, 128, 0);
+}
+.live {
+  background-color: green !important;
+  color: white;
+}
+.hit {
+  background-color: orange !important;
+  color: white;
+}
+.kicked {
+  background-color: red !important;
+  color: white;
+}
+.unkicked {
+  background-color: darkred !important;
+  color: white;
+}
+.vertical-text {
+  transform: rotate(270deg);
+  transform-origin: right bottom 0;
+  float: left;
+}
+blockquote {
+  font-style: italic;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="jquery.tinypubsub.js"></script>
+<script src='murmurhash.js'></script>
+<script>
+var EMPTY = '\240';
+// var BULLET = '\u2219';
+// var BULLET = '\u2b24';
+var BULLET = '\u2b25';
+// var BULLET = '\u2776';
+var NUMBITS = 140; // must > 0 and a multiple of 32 for this demo
+var NUM_BITS_PER_ENTRY = 7;
+var NUM_VALS_PER_ENTRY = Math.pow(2, NUM_BITS_PER_ENTRY);
+var MAX_KICKS = 50;
+
+function pad(i) {
+  return ("0000" + i).slice(-2);
+}
+
+$(function() {
+  Array.prototype.remove = function(item) {
+    var index = this.indexOf(item);
+    return (index >= 0) ? this.splice( index, 1 ) : null;
+  };
+
+  Array.prototype.random = function() {
+    return this[Math.floor(Math.random()*this.length)];
+  };
+
+  var multiset = [];
+
+  $.subscribe('/multiset/insert', function(val){
+    multiset.push(val);
+    $.publish('/multiset/modified', ['insert', val, multiset]);
+  });
+
+  $.subscribe('/multiset/remove', function(val){
+    if (multiset.remove(val)) {
+      $.publish('/multiset/modified', ['remove', val, multiset]);
+    }
+  });
+
+  function hashes(val) {
+    var ret=[];
+    for (var i=0; i<NUM_BITS_PER_ENTRY; i++) {
+      ret.push(murmur(i + val));
+    }
+    return ret;
+  }
+
+  function fingerprint(val) {
+    // return a UTF-8 math symbol to represent a 4-bit fingerprint
+    // return '1234567890ABCDEF'.charAt(murmur('fingerprint' + val) % NUM_VALS_PER_ENTRY);
+    // return String.fromCharCode((murmur('fingerprint' + val) % NUM_VALS_PER_ENTRY) * 5 + 8704);
+    // return String.fromCharCode((murmur('XXfingerprintXX' + val) % NUM_VALS_PER_ENTRY) + 10744);
+    // return String.fromCharCode((murmur('XXfingerprintXX' + val) % NUM_VALS_PER_ENTRY) + 9812);
+    return "" + (murmur('XXfingerprintXX' + val) % NUM_VALS_PER_ENTRY + 1);
+  }
+
+  $.subscribe("/input/live/insert", function(event, val){
+    // handle enter key
+    if (event.keyCode == '13') {
+      event.preventDefault();
+      if ('' != val) $.publish(event.shiftKey ? '/input/remove' : '/input/insert', val);
+    }
+  });
+
+  $.subscribe("/input/live", function(val){
+    if ("" == val) return;
+    $.publish("/live/hashes", [hashes(val), fingerprint(val)]);
+  });
+
+  $.subscribe("/input/insert", function(val){
+    if (val == '') return;
+    $.publish("/multiset/insert", val);
+  });
+
+  $.subscribe("/input/remove", function(val){
+    if (val == '') return;
+    $.publish("/multiset/remove", val);
+  });
+
+  $.subscribe('/multiset/modified', function(action, val, multiset){
+    $.publish('/last/action', [action, val, hashes(val), fingerprint(val)]);
+    $.publish('/action/' + action, [val, hashes(val), fingerprint(val)]);
+  });
+
+  $(".filterBits").text("( " + NUMBITS + " bits )");
+  // $("#inputStr").focus(); // causes page to scroll
+});
+
+</script>
+</head><body>
+<div id='content'>
+    <h1>Probabilistic Filters By Example</h1>
+
+    <p>Probablistic filters are high-speed, space-efficient data structures that support set-membership 
+    tests with a one-sided error. These filters can claim that a given entry is <em>definitely not</em> 
+    represented in a set of entries, or <em>might</em> be represented in the set. That is, negative responses are
+    conclusive, whereas positive responses incur a small false positive probability (FPP).</p>
+
+    <p>The trade-off for this one-sided error is space-efficiency. Cuckoo Filters and Bloom Filters
+    require approximately 7 bits per entry at 3% FPP, regardless of the size of the entries. This makes
+    them useful for applictations where the volume of original data makes traditional storage impractical.</p>
+
+    <p><strong>Bloom filters</strong> have been in use since the 1970s and are well understood. Implementations are widely
+    available. Variants exist that support deletion and counting, though with expanded storage requirements.</p>
+
+    <p><strong>Cuckoo filters</strong> were described in 
+    <a href='https://www.cs.cmu.edu/~dga/papers/cuckoo-conext2014.pdf'>Cuckoo Filter: Practically Better Than Bloom</a>, 
+    a paper by researchers at CMU in 2014. Cuckoo filters improve on Bloom filters by supporting deletion,
+    limited counting, and bounded FPP with similar storage efficiency as a standard Bloom filter.</p> 
+
+    <p>Below is side-by-side simulation of the inner workings of Cuckoo and Bloom filters.</p>
+
+    <div class="insetbox" align="center">
+      <h2>Probablistic Filters Visualized</h2>
+      <table class="superstructure">
+        <tr><th>Cuckoo Filter <span class='filterBits'></span></th><th>Bloom Filter <span class='filterBits'></span></th></tr>
+        <tr>
+          <td valign="top">
+            <span class="vertical-text">Buckets</span>
+            <table id="cuckooFilter" class="bitVector" border=1 cellpadding=0 cellspacing=0>
+            </table>
+            <script>
+              var cuckooEntriesPerBucket = 2; // 2, 4, or 8
+              var cuckooBucketCount = NUMBITS / cuckooEntriesPerBucket / NUM_BITS_PER_ENTRY;
+
+              // add the table cells which represent our cuckoo filter bit array
+              for (var bucket=0; bucket<cuckooBucketCount; bucket++) {
+                $("#cuckooFilter").append('<tr id="cuckooBucket' + bucket + '"></tr>');
+                $("#cuckooBucket" + bucket).append('<th id="cuckooBucketIndex' + bucket + '">' + pad(bucket) + '</th>');
+                for (var entry=0; entry<cuckooEntriesPerBucket; entry++) {
+                  $("#cuckooBucket" + bucket).append('<td id="cuckooEntry' + pad(bucket) + pad(entry) + '">&nbsp</td>');
+                }
+              }
+
+              function mod(i, m) {
+                var ret = i % m;
+                return (ret >=0 ) ? ret : m + ret;
+              }
+
+              function parsign(i) {
+                return (Math.abs(i) % 2) * -2 + 1;
+              }
+
+              function odd(i) {
+                return i % 2 == 0 ? i+1 : i;
+              }
+
+              function cuckooIndex(hash) {
+                return hash % cuckooBucketCount;
+              }
+
+              function cuckooAltIndex(bucket, fingerprint) {
+                return mod(bucket + (parsign(bucket) * odd(murmur(fingerprint))), cuckooBucketCount);
+              }
+
+              function cuckooBuckets(hash, fingerprint) {
+                var index = cuckooIndex(hash);
+                var altIndex = cuckooAltIndex(index, fingerprint);
+                return [index, altIndex];
+              }
+
+              function _cuckooPutEntry(fingerprint, bucket, kick) {
+                if (kick > MAX_KICKS) return false;
+
+                // if empty @ bucket or alt bucket, insert fingerprint and return true
+                var altBucket = cuckooAltIndex(bucket, fingerprint);
+
+                var entry = 
+                  $("[id^=cuckooEntry" + pad(bucket) + "]:contains(" + EMPTY + ")").toArray().random()
+                  ||
+                  $("[id^=cuckooEntry" + pad(altBucket) + "]:contains(" + EMPTY + ")").toArray().random();
+                  ;
+
+                if (entry) {
+                  $(entry).addClass('kicked').text(fingerprint);
+                  return entry;
+                }
+
+                // pick an entry to kick an entry, store kicked fprint & entry, insert fingerprint, putEntry kicked, altIndex(kicked)
+                entry = $("[id^=cuckooEntry" + pad(bucket) + "]").toArray().random();
+                var kickedFingerprint = $(entry).text();
+                $(entry).addClass('kicked').text(fingerprint);
+
+                if (! _cuckooPutEntry(kickedFingerprint, cuckooAltIndex(bucket, kickedFingerprint), kick + 1) ) {
+                  // kicks failed to find an open entry, undo
+                  $(entry).addClass('unkicked').text(kickedFingerprint);
+                  return false;
+                }
+
+                return entry;
+              }
+
+              function cuckooPutEntry(fingerprint, bucket) {
+                return _cuckooPutEntry(fingerprint, bucket, 0);
+              }
+
+              function cuckooClearHilites(){
+                $('#cuckooFilter .live').removeClass('live');
+                $('#cuckooFilter .hit').removeClass('hit');
+                $('#cuckooFilter .kicked').removeClass('kicked');
+                $('#cuckooFilter .unkicked').removeClass('unkicked');
+              }
+
+              $.subscribe('/live/hashes', function(hashes, fingerprint){
+                cuckooClearHilites();
+                var buckets = cuckooBuckets(hashes[0], fingerprint);
+                buckets.forEach(function(bucket){
+                  $("#cuckooBucketIndex" + bucket).addClass('live');
+                  $("[id^=cuckooEntry" + pad(bucket) + "]:contains(" + EMPTY + ")").addClass('live');
+                  $("[id^=cuckooEntry" + pad(bucket) + "]:contains(" + fingerprint + ")").addClass('hit');
+                });
+              });
+
+              $.subscribe('/action/insert', function(val, hashes, fingerprint){
+                cuckooClearHilites();
+                var buckets = cuckooBuckets(hashes[0], fingerprint);
+                var entry = cuckooPutEntry(fingerprint, buckets[0]) || cuckooPutEntry(fingerprint, buckets[1]);
+                if (entry) {
+                  $(entry).removeClass('kicked').addClass('hit');
+                  $.publish('/cuckoo/modified');
+                }
+              });
+
+              $.subscribe('/action/remove', function(val, hashes, fingerprint){
+                cuckooClearHilites();
+                var buckets = cuckooBuckets(hashes[0], fingerprint);
+                var entry = 
+                  $("[id^=cuckooEntry" + pad(buckets[0]) + "]:contains(" + fingerprint + ")").toArray().random()
+                  ||
+                  $("[id^=cuckooEntry" + pad(buckets[1]) + "]:contains(" + fingerprint + ")").toArray().random();
+                  ;
+
+                if (entry) {
+                  $(entry).addClass('hit').text(EMPTY);
+                  $.publish('/cuckoo/modified');
+                }
+              });
+
+            </script>
+
+            <span class='stats'>
+              <p>FPP: <span id='cuckooFPP'>0</span>%</p>
+              <p>In filter: <span id='liveInCuckoo'></span></p>
+              <p>Fingerprint (<span class='cuckooBitsPerFpp'></span>-bit): <span id='liveFingerprint'></span></p>
+            </span>
+            <script>
+              $(function() {
+                $('.cuckooBitsPerFpp').text("" + NUM_BITS_PER_ENTRY);
+              });
+              $.subscribe('/cuckoo/modified', function(){
+                var totalEntries = $("[id^=cuckooEntry]").toArray().length;
+                var empties = $("[id^=cuckooEntry]:contains(" + EMPTY + ")").toArray().length;
+                var occupied = totalEntries - empties;
+                var load = occupied / totalEntries;
+
+                var fpp = 1.0 - Math.pow( (NUM_VALS_PER_ENTRY - 1) / NUM_VALS_PER_ENTRY, 2 * cuckooEntriesPerBucket * load );
+
+                1.0 - Math.pow( ( NUM_VALS_PER_ENTRY - 1 ) / NUM_VALS_PER_ENTRY, 2 * cuckooEntriesPerBucket * load )
+
+
+                $('#cuckooFPP').text((100 * fpp).toFixed(4));
+              });
+
+              $.subscribe('/live/hashes', function(hashes, fingerprint){
+                $("#liveFingerprint").text(fingerprint);
+                var buckets = cuckooBuckets(hashes[0], fingerprint);
+                var entry = 
+                  $("[id^=cuckooEntry" + pad(buckets[0]) + "]:contains(" + fingerprint + ")").toArray().shift()
+                  ||
+                  $("[id^=cuckooEntry" + pad(buckets[1]) + "]:contains(" + fingerprint + ")").toArray().shift();
+                  ;
+
+                if (entry) {
+                  $("#liveInCuckoo").addClass('hit').text("maybe");
+                } else {
+                  $("#liveInCuckoo").removeClass('hit').text("nope");
+                }
+              });
+            </script>
+          </td>
+          <td valign="top">
+            <table id="bloomFilter" class="bitVector" border=1 cellpadding=0 cellspacing=0>
+            </table>
+            <script>
+              // add the table cells which represent our bloom filter bit array
+              var bitsPerSegment = 16;
+              $("#bloomFilter").append('<tr id="bloomOnes"><th class="unused"></th></tr>');
+              for (var i=0; i<bitsPerSegment; i++) {
+                $("#bloomOnes").append('<th id="bloomOnes' + i + '">' + i.toString(bitsPerSegment).toUpperCase().substring(-1) + '</th>');
+              }
+
+              for (var segment=0; segment<NUMBITS/bitsPerSegment; segment++) {
+                var segStr = segment.toString(bitsPerSegment);
+                $("#bloomFilter").append('<tr id="bloomSeg' +  segStr + '"><th>' + segStr.toUpperCase() + '</th></tr>');
+
+                for (var i=0; i<bitsPerSegment; i++) {
+                  var bit = (bitsPerSegment * segment) + i;
+                  if (bit < NUMBITS) {
+                    $("#bloomSeg" + segStr).append('<td id="bloomBit' + bit + '">&nbsp;</td>');
+                  } else {
+                    $("#bloomSeg" + segStr).append('<td class="unused"></td>');
+                  }
+                }
+              }
+
+              function bloomIndex(hash) { return hash % NUMBITS }
+
+              $.subscribe('/live/hashes', function(hashes, fingerprint){
+                $('#bloomFilter .live').removeClass('live');
+                $('#bloomFilter .hit').removeClass('hit');
+                hashes.map(bloomIndex).forEach(function(i){
+                  $('#bloomBit' + i + ', #bloomIndex' + i).addClass('live');
+                  if ($('#bloomBit' + i).text() != EMPTY) {
+                    $('#bloomBit' + i).addClass('hit');
+                  }
+                });
+              });
+
+              $.subscribe('/action/insert', function(val, hashes, fingerprint){
+                hashes.map(bloomIndex).forEach(function(i){$('#bloomBit' + i).text(BULLET).addClass('hit')});
+                $.publish('/bloom/modified');
+              });
+            </script>
+
+            <span class='stats'>
+              <p>FPP: <span id='bloomFpp'>0</span>%</p>
+              <p>In filter: <span id='liveInBloom'></span></p>
+            </span>
+            <script>
+              $.subscribe('/bloom/modified', function(){
+                var occupied = $("[id^=bloomBit]:contains(" + BULLET + ")").toArray().length;
+                var fpp = Math.pow(occupied / NUMBITS, NUM_BITS_PER_ENTRY);
+                $('#bloomFpp').text((fpp * 100).toFixed(6));
+              });
+
+              $.subscribe('/live/hashes', function(hashes, fingerprint){
+                var inBloom = 
+                  hashes
+                    .map(bloomIndex)
+                    .every(function(i){return $('#bloomBit' + i).text() != EMPTY});
+                if (inBloom) {
+                  $("#liveInBloom").addClass('hit').text("maybe");
+                } else {
+                  $("#liveInBloom").removeClass('hit').text("nope");
+                }
+                
+              });
+            </script>
+          </td>
+        </tr>
+      </table>
+      <p>
+        Enter a string: <input id='inputStr' 
+        onkeydown='$.publish("/input/live/insert", [event, value])'
+        onkeyup='$.publish("/input/live", value)'
+        >
+        <button onclick='$.publish("/input/insert", $("#inputStr").val())'>insert</button>
+        <button onclick='$.publish("/input/remove", $("#inputStr").val())'>remove</button>
+      </p>
+      <script>
+        $.subscribe('/multiset/modified', function(){ $('#inputStr').val(''); $("#inputStr").focus();});
+      </script>
+
+      <p>MultiSet: <span id='setContents'></span></p>
+      <script>
+        $.subscribe('/multiset/modified', function(action, val, set){
+          $('#setContents').text(set.join(", "));
+        });
+      </script>
+    </div>
+    <br />
+    <!-- <div class='insetbox'> -->
+    <h2>How do they work?</h2>
+    <p><strong>Cuckoo Filters</strong> operate by hashing an entry with one hash function, and inserting a small f-bit fingerprint of 
+    the entry into an open position in either of two alternate buckets. When both buckets are full, the filter recursively 
+    <a href='https://en.wikipedia.org/wiki/Cuckoo_hashing'>kicks</a> existing entries to their alternate buckets until 
+    space is found or attempts are exhausted. Lookups repeat the hash function and check both buckets for the fingerprint. When a 
+    matching fingerprint is not found, the entry is <em>definitely not</em> in the filter. When a matching fingerprint is found in 
+    either bucket, the entry <em>might</em> be in the filter. False positives occur when another entry inserted a matching 
+    fingerprint into either of the two checked buckets. Deletion is supported by removing one instance of an entry's fingerprint from
+    either bucket. Counting is supported by inserting multiple fingerprints of the same value into the same pair of buckets.
+    </p>
+
+    <p><strong>Bloom Filters</strong> operate by hashing an entry with k hash functions, and setting k bits within a bit vector upon
+    insertion. Lookups repeat the k hash functions and check the corresponding bits. When any checked bit is not set,
+    the entry is <em>definitely not</em> in the filter. When all checked bits are set, the entry <em>might</em> be in the
+    filter. False positives occur when all checked bits happen to be set by any combination of previously inserted entries.</p>
+
+    <h2>What are they good for?</h2>
+      <p>Probabilistic filters are used in a variety of applications where slow or expensive operations can be
+      avoided prior to execution by a consulting comparitavely fast or cheap set membership test.</p>
+
+      <p><strong>DB query optimization:</strong> data stored in a database can be inserted into a probabilistic filter. 
+      Later, prior to querying for the data, the filter can be consulted to test whether the data exists. When the
+      filter response is negative, an unnecessary DB query can be avoided.</p>
+
+      <p><strong>Edge filtering: </strong>
+      filter data can be distributed to the edges of networks, similar to edge caching, where queries for 
+      potentially non-existent data received at the edge can be filtered out quickly. Unlike a cache, a copy of original
+      data is not stored in the filter.</p>
+
+    <h2>Which should I choose?</h2>
+      <p>Choose Cuckoo, if available, unless your application is timing sensitive on insertion. Cuckoo filters outperform
+      Bloom filters on insertion at first - both are O(1), though Cuckoo Filters compute just one or two hashes vs Bloom
+      Filters fixed <i>k</i> hashes. However Cuckoo Filter insertion performance drops off as load increases due to
+      recursively "kicking" entries.</p>
+
+      <blockquote>...for reasonably large sized sets, for the same false positive rate as a corresponding Bloom filter, cuckoo filters use less space than Bloom filters, are faster on lookups (but slower on insertions/to construct), and amazingly also allow deletions of keys (which Bloom filters cannot do). -<a href='http://mybiasedcoin.blogspot.com/2014/10/cuckoo-filters.html'>Michael Mitzenmacher (2014)</a></blockquote>
+
+      <div class='insetbox'>
+        <table class='features'>
+          <tr><th>&nbsp;</th><th>Cuckoo Filter</th><th>Standard Bloom Filter</th><th>Counting Bloom Filter</th></tr>
+          <tr>
+            <th>Insert</th>
+            <td>O(1), amortized<small><br />variable, longer as load factor approaches capacity</small></td>
+            <td class='winner'>O(1)<small><br />fixed, performs constant k hashes</small></td>
+            <td class='winner'>O(1)<small><br />fixed, performs constant k hashes</small></td>
+          </tr>
+          <tr>
+            <th>As load increases</th>
+            <td class='winner'><p>FPP trends toward desired max</p><p>insertions <em>may</em> be rejected<small><br />if counting or deletion support is enabled</small></p></td>
+            <td><p>FPP trends toward 100%</p><p>insertions cannot be rejected</p></td>
+            <td><p>FPP trends toward 100%</p><p>insertions <em>may</em> be rejected</p></td>
+          </tr>
+          <tr>
+            <th>Lookup</th>
+            <td class='winner'>O(1)<small><br />maximum of two buckets to check</small></td>
+            <td>O(1)<small><br />performs constant k hashes</small></td>
+            <td>O(1)<small><br />performs constant k hashes</small></td>
+          </tr>
+          <tr>
+            <th>Count</th>
+            <td class='winner'>O(1)<small><br/>minimal suport: max == entries per bucket X 2</small></td>
+            <td><em>unsupported</em></td>
+            <td>O(1)<small><br />performs constant k hashes</small></td>
+          </tr>
+          <tr>
+            <th>Delete</th>
+            <td class='winner'>O(1)<small><br />maximum of two buckets to inspect</small></td>
+            <td><em>unsupported</em></td>
+            <td>O(1)<small><br />performs constant k hashes</small></td>
+          </tr>
+          <tr>
+            <th>Bits per entry</th>
+            <td class='winner'>smaller when desired FPP &lt;= 3% </td>
+            <td>smaller when desired FPP &gt; 3% </td>
+            <td>larger than Cuckoo &amp; Standard Bloom<small><br />multiplied by number of bits per counter</small></td>
+          </tr>
+
+          <tr>
+            <th>Bits per entry</th>
+            <td class='winner'>1.05 [ log<sub>2</sub>(1/FPP) + log<sub>2</sub>(2b) ]<small><br />best when FPP &lt;= 0.5%<br />"semi-sort cuckoo" best when FPP &lt;= 3%<br /></small></td>
+            <td class='winner'>1.44 log<sub>2</sub>(1/FPP)<small><br />best when FPP &gt; 0.5%</small></td>
+            <td>c [ 1.44 log<sub>2</sub>(1/FPP) ]<small><br />where c is the number of bits per counter, e.g. 4</small></td>
+          </tr>
+
+          <tr>
+            <th>Availability</th>
+            <td>limited (as of early 2016)
+              <small><br />
+                <a href='https://github.com/efficient/cuckoofilter'>cpp</a>
+                <a href='https://github.com/bdupras/guava-probably'>java</a>
+                <a href='https://github.com/seiflotfy/cuckoofilter'>go</a>
+              </small>
+            </td>
+            <td class='winner'>widely available</a></td>
+            <td class='winner'>widely available</a></td>
+          </tr>
+        </table>
+      </div>
+
+    <h2>See also</h2>
+      <ul>
+        <li><a href='https://www.cs.cmu.edu/~dga/papers/cuckoo-conext2014.pdf'>Cuckoo Filter: Practically Better Than Bloom</a>, Bin Fan, et al.
+        <li><a href='http://mybiasedcoin.blogspot.com/2014/10/cuckoo-filters.html'>Cuckoo Filters</a>, Michael Mitzenmacher
+        <li><a href='http://billmill.org/bloomfilter-tutorial/'>Bloom Filters by Example</a>, Bill Mill
+        <li><a href='https://en.wikipedia.org/wiki/Bloom_filter'>Bloom filter on Wikipedia</a>
+      </ul>
+    </div>
+</div>
+</body></html>
