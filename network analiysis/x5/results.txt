@@ -1,0 +1,80 @@
+--- Analysis for Complete Graph (10 nodes) ---
+Number of nodes (N): 10
+Number of edges (M): 45
+Diameter: 1
+Number of triangles: 120
+Transitivity (global clustering): 1.0000
+Average clustering coefficient: 1.0000
+Clustering coefficient per node (showing first 10 nodes):
+  Node 0: 1.0000
+  Node 1: 1.0000
+  Node 2: 1.0000
+  Node 3: 1.0000
+  Node 4: 1.0000
+  Node 5: 1.0000
+  Node 6: 1.0000
+  Node 7: 1.0000
+  Node 8: 1.0000
+  Node 9: 1.0000
+
+
+--- Analysis for Triangular Lattice (5x5) ---
+Number of nodes (N): 21
+Number of edges (M): 45
+Diameter: 5
+Number of triangles: 25
+Transitivity (global clustering): 0.4464
+Average clustering coefficient: 0.5476
+Clustering coefficient per node (showing first 10 nodes):
+  Node (0, 0): 1.0000
+  Node (1, 0): 0.5000
+  Node (2, 0): 0.5000
+  Node (3, 0): 1.0000
+  Node (0, 1): 0.4000
+  Node (1, 1): 0.4000
+  Node (2, 1): 0.4000
+  Node (0, 2): 0.6667
+  Node (1, 2): 0.4000
+  Node (2, 2): 0.4000
+
+
+--- Analysis for Watts-Strogatz Graph (N=100, k=4, p=0.1) ---
+Number of nodes (N): 100
+Number of edges (M): 200
+Diameter: 9
+Number of triangles: 72
+Transitivity (global clustering): 0.3473
+Average clustering coefficient: 0.3673
+Clustering coefficient per node (showing first 10 nodes):
+  Node 0: 0.3333
+  Node 1: 0.6667
+  Node 2: 0.5000
+  Node 3: 0.3333
+  Node 4: 0.1667
+  Node 5: 0.0000
+  Node 6: 0.3333
+  Node 7: 0.3333
+  Node 8: 0.5000
+  Node 9: 0.2000
+
+
+--- Analysis for Erdős-Rényi Graph G(N=100, M=200) ---
+Number of nodes (N): 100
+Number of edges (M): 200
+Diameter: 7
+Number of triangles: 9
+Transitivity (global clustering): 0.0356
+Average clustering coefficient: 0.0324
+Clustering coefficient per node (showing first 10 nodes):
+  Node 0: 0.0000
+  Node 1: 0.0000
+  Node 2: 0.0000
+  Node 3: 0.0000
+  Node 4: 0.0000
+  Node 5: 0.0952
+  Node 6: 0.0000
+  Node 7: 0.0000
+  Node 8: 0.0000
+  Node 9: 0.0000
+
+

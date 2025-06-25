@@ -1,0 +1,7 @@
+Mean degree 〈k〉: 2.9990
+Expected number of links 〈L〉: 4498.5000
+Critical probability pcr: 0.0003
+Network regime: Supercritical
+Number of nodes Ncr for one component: 1000
+Average degree 〈kcr〉: 0.9990
+Average distance 〈d〉: 0.0000

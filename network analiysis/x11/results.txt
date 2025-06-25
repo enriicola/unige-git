@@ -1,0 +1,10 @@
+Searching for best Girvan–Newman partition on Karate Club:
+ Level 1 (2 communities): modularity = 0.3477
+ Level 2 (3 communities): modularity = 0.3423
+
+Best modularity = 0.3477 at partition with 2 communities.
+
+Performance on G(n=1000, p=0.01):
+ Girvan–Newman (first split) time: 2.4161 s
+ Louvain time: 0.1591 s    modularity: 0.2810
+Speedup: 15.18x

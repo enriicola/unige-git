@@ -1,0 +1,141 @@
+############
+***Part 1***
+############
+
+Number of nodes: 1224
+Number of edges: 33430
+Average degree: 54.62418300653595
+Max degree: 702
+Min degree: 2
+Finite-reachability diameter: 8
+Density: 0.0223
+Scaling exponent α ≈ log(m)/log(n) = 1.465
+⇒ Graph is SPARSE (m grows ~ O(n), so ρ→0).
+
+Graph is not weakly connected (2 components); largest WCC size = 1222
+	Largest WCC strongly connected?  True
+Graph is not strongly connected (2 components); largest SCC size = 1222
+
+Component size summary:
+	# WCCs: 2   sizes: [2, 1222]
+	# SCCs: 2   sizes: [2, 1222]
+Diameter of the largest strongly connected component: 8
+Diameter of the largest weakly connected component: 8
+
+Average clustering coefficient: 0.3197
+Random-baseline clustering: 0.2309
+	Clustering is higher than random-graph baseline
+
+Betweenness centrality (top 5 nodes):
+	1. Node 460: 0.0977
+	2. Node 9: 0.0881
+	3. Node 229: 0.0680
+	4. Node 163: 0.0494
+	5. Node 21: 0.0475
+
+Closeness centrality (top 5 nodes):
+	1. Node 163: 0.5185
+	2. Node 9: 0.5178
+	3. Node 21: 0.5023
+	4. Node 5: 0.4976
+	5. Node 312: 0.4937
+
+Degree centrality (top 5 nodes):
+	1. Node 9: 0.5740
+	2. Node 163: 0.5004
+	3. Node 460: 0.4922
+	4. Node 5: 0.4530
+	5. Node 21: 0.4481
+
+Assortativity coefficient: -0.2212
+Is the graph assortative? False
+Average shortest path length: 2.74
+Theoretical average shortest path length for random graph: 1.78
+
+
+############
+***Part 2***
+############
+
+Girvan-Newman algorithm:
+ Level 1 (3 communities): modularity = 0.0006
+ Level 2 (4 communities): modularity = 0.0007
+ Level 3 (5 communities): modularity = 0.0008
+ Level 4 (6 communities): modularity = 0.0010
+ Level 5 (7 communities): modularity = 0.0018
+ Level 6 (8 communities): modularity = 0.0019
+ Level 7 (9 communities): modularity = 0.0020
+ Level 8 (10 communities): modularity = 0.0021
+ Level 9 (11 communities): modularity = 0.0023
+ Level 10 (12 communities): modularity = 0.0024
+ Level 11 (13 communities): modularity = 0.0024
+
+Best modularity = 0.0024 at partition with 12 communities.
+Execution time: 1049.8041 seconds
+Dendrogram saved.
+
+Louvain algorithm:
+	Number of communities found: 12
+	Community 0: size 2
+	Community 1: size 39
+	Community 2: size 4
+	Community 3: size 531
+	Community 4: size 2
+	Community 5: size 2
+	Community 6: size 2
+	Community 7: size 3
+	Community 8: size 2
+	Community 9: size 629
+	Community 10: size 5
+	Community 11: size 3
+	Overall modularity: 0.4270
+	Execution time: 0.2124 seconds
+Best partition found in 1.6933 seconds
+
+Leiden algorithm:
+	Number of communities found: 12
+	Community 0: 626 nodes
+	Community 1: 514 nodes
+	Community 2: 59 nodes
+	Community 3: 5 nodes
+	Community 4: 4 nodes
+	Community 5: 3 nodes
+	Community 6: 3 nodes
+	Community 7: 2 nodes
+	Community 8: 2 nodes
+	Community 9: 2 nodes
+	Community 10: 2 nodes
+	Community 11: 2 nodes
+	Leiden total modularity: 0.4268
+	Execution time: 0.0458 seconds
+Best partition found in 0.4118 seconds
+
+Execution times:
+	Girvan-Newman: 1049.8 seconds
+	Louvain: 1.6933 seconds
+	Leiden: 0.4118 seconds
+	Speedup of Louvain over Girvan-Newman: 619.98x
+	Speedup of Leiden over Girvan-Newman: 2549.11x
+
+	Speedup of Leiden over Louvain: 4.11x
+
+
+############
+***Part 3***
+############
+
+
+Partition similarity (no ground truth):
+	  Girvan–Newman vs Louvain         → NMI = 0.2036, ARI = 0.0638
+	  Girvan–Newman vs Leiden          → NMI = 0.2008, ARI = 0.0632
+	        Louvain vs Leiden          → NMI = 0.9855, ARI = 0.9926
+
+
+############
+***Part 4***
+############
+
+Saved GN partition visualization.
+Saved Louvain partition visualization.
+Saved Leiden partition visualization.
+

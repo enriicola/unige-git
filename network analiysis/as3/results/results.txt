@@ -1,0 +1,50 @@
+Part 1 executed
+Part 2 executed
+
+Part 3 Summary Table:
+
+| Graph           | Size (N,L)      |   ⟨k⟩ |    ⟨k²⟩ |    f_c |
+|:----------------|:----------------|------:|--------:|-------:|
+| Original        | N=1222, L=16714 | 27.36 | 2222.98 | 0.9875 |
+| Randomized      | N=1222, L=16714 | 27.36 | 2222.98 | 0.9875 |
+| After 40 rings  | N=1222, L=20174 | 33.02 | 2755.23 | 0.9879 |
+| After 80 rings  | N=1222, L=21999 | 36    | 3104.51 | 0.9883 |
+| After 120 rings | N=1222, L=23879 | 39.08 | 3477.28 | 0.9886 |
+Plotted attacks for variant: Randomized
+Plotted attacks for variant: After 40 rings
+Plotted attacks for variant: After 80 rings
+Plotted attacks for variant: After 120 rings
+
+Part 4 :)
+
+Detected 10 communities
+	Community 0: N=634, L=8163, f_c=0.9858
+	Community 1: N=544, L=7226, f_c=0.9868
+	Community 2: N=23, L=22, f_c=0.8736
+	Community 3: N=5, L=5, f_c=0.2857
+	Community 4: N=4, L=3, f_c=0.0000
+	Community 5: N=3, L=2, f_c=-1.0000
+	Community 6: N=3, L=2, f_c=-1.0000
+	Community 7: N=2, L=1, f_c=nan
+	Community 8: N=2, L=1, f_c=nan
+	Community 9: N=2, L=1, f_c=nan
+
+Worst f_c subgraph Summary:
+
+| Graph         | Size (N,L)   |   ⟨k⟩ |   ⟨k²⟩ |    f_c |
+|:--------------|:-------------|------:|-------:|-------:|
+| (Community 2) | N=23, L=22   |  1.91 |  17.04 | 0.8736 |
+
+Worst f_c community Improvement Table:
+
+| Graph         | Size (N,L)   |   ⟨k⟩ |   ⟨k²⟩ |    f_c |
+|:--------------|:-------------|------:|-------:|-------:|
+| Original      | N=23, L=22   |  1.91 |  17.04 | 0.8736 |
+| Randomized    | N=23, L=22   |  1.91 |  17.04 | 0.8736 |
+| After 1 ring  | N=23, L=41   |  3.57 |  24.17 | 0.827  |
+| After 2 rings | N=23, L=44   |  3.83 |  27.39 | 0.8376 |
+| After 3 rings | N=23, L=49   |  4.26 |  32.35 | 0.8483 |
+Plotted worst community Improved: Randomized
+Plotted worst community Improved: After 1 ring
+Plotted worst community Improved: After 2 rings
+Plotted worst community Improved: After 3 rings

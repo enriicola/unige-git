@@ -1,0 +1,74 @@
+***Basic graph properties:***
+
+Number of nodes: 1224
+Number of edges: 16715
+Size of largest connected component: 1222
+Diameter of largest connected component: 8
+Average degree: 27.312091503267975
+Max degree: 351
+Betweenness centrality (top 5 nodes):
+Node 460: 0.0977
+Node 9: 0.0881
+Node 229: 0.0680
+Node 163: 0.0494
+Node 21: 0.0475
+Closeness centrality (top 5 nodes):
+Node 163: 0.5185
+Node 9: 0.5178
+Node 21: 0.5023
+Node 5: 0.4976
+Node 312: 0.4937
+Degree centrality (top 5 nodes):
+Node 9: 0.2870
+Node 163: 0.2502
+Node 460: 0.2461
+Node 5: 0.2265
+Node 21: 0.2240
+
+
+***Advanced graph properties:***
+
+Number of connected components: 2
+Network density: 0.0223
+Average clustering coefficient: 0.3197
+Expected clustering for random graph: 0.0223
+Assortativity coefficient: -0.2212
+Power law exponent (gamma): 1.0919
+
+Conclusion:
+1) The network shows characteristics more similar to a random network
+
+2) Most important nodes by different centrality measures:
+By betweenness centrality:
+- These nodes are important for information flow as they act as bridges between different parts of the network
+- Node 460 with centrality 0.0977
+- Node 9 with centrality 0.0881
+- Node 229 with centrality 0.0680
+- Node 163 with centrality 0.0494
+- Node 21 with centrality 0.0475
+
+By closeness centrality:
+- These nodes can efficiently spread information to all other nodes
+- Node 163 with centrality 0.5185
+- Node 9 with centrality 0.5178
+- Node 21 with centrality 0.5023
+- Node 5 with centrality 0.4976
+- Node 312 with centrality 0.4937
+
+By degree centrality:
+- These are the most connected nodes, having the most direct influences
+- Node 9 with centrality 0.2870
+- Node 163 with centrality 0.2502
+- Node 460 with centrality 0.2461
+- Node 5 with centrality 0.2265
+- Node 21 with centrality 0.2240
+
+3) Path length analysis:
+Average shortest path length: 2.7375
+Network size (n): 1224
+Theoretical random network path length (log n): 7.1099
+The network shows small-world properties with relatively short paths
+Network density: 0.0223
+4) The network is sparse.
+Assortativity coefficient: -0.2212
+5) The network is disassortative.

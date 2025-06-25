@@ -1,0 +1,425 @@
+
+
+
+Generated ER network with 100 nodes
+
+Running ER | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.1
+ER| seeds=1| mal=1| θ=0.1 -> reached 100/100, corrupted 3/100
+
+Running ER | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.3
+ER| seeds=1| mal=1| θ=0.3 -> reached 2/100, corrupted 0/2
+
+Running ER | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.5
+ER| seeds=1| mal=1| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running ER | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.1
+ER| seeds=1| mal=5| θ=0.1 -> reached 100/100, corrupted 44/100
+
+Running ER | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.3
+ER| seeds=1| mal=5| θ=0.3 -> reached 2/100, corrupted 0/2
+
+Running ER | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.5
+ER| seeds=1| mal=5| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running ER | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.1
+ER| seeds=1| mal=10| θ=0.1 -> reached 100/100, corrupted 69/100
+
+Running ER | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.3
+ER| seeds=1| mal=10| θ=0.3 -> reached 2/100, corrupted 0/2
+
+Running ER | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.5
+ER| seeds=1| mal=10| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running ER | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.1
+ER| seeds=5| mal=1| θ=0.1 -> reached 100/100, corrupted 4/100
+
+Running ER | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.3
+ER| seeds=5| mal=1| θ=0.3 -> reached 9/100, corrupted 0/9
+
+Running ER | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.5
+ER| seeds=5| mal=1| θ=0.5 -> reached 5/100, corrupted 0/5
+
+Running ER | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.1
+ER| seeds=5| mal=5| θ=0.1 -> reached 100/100, corrupted 27/100
+
+Running ER | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.3
+ER| seeds=5| mal=5| θ=0.3 -> reached 5/100, corrupted 0/5
+
+Running ER | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.5
+ER| seeds=5| mal=5| θ=0.5 -> reached 7/100, corrupted 0/7
+
+Running ER | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.1
+ER| seeds=5| mal=10| θ=0.1 -> reached 100/100, corrupted 69/100
+
+Running ER | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.3
+ER| seeds=5| mal=10| θ=0.3 -> reached 9/100, corrupted 0/9
+
+Running ER | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.5
+ER| seeds=5| mal=10| θ=0.5 -> reached 6/100, corrupted 1/6
+
+Running ER | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.1
+ER| seeds=10| mal=1| θ=0.1 -> reached 100/100, corrupted 2/100
+
+Running ER | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.3
+ER| seeds=10| mal=1| θ=0.3 -> reached 100/100, corrupted 24/100
+
+Running ER | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.5
+ER| seeds=10| mal=1| θ=0.5 -> reached 13/100, corrupted 0/13
+
+Running ER | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.1
+ER| seeds=10| mal=5| θ=0.1 -> reached 100/100, corrupted 36/100
+
+Running ER | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.3
+ER| seeds=10| mal=5| θ=0.3 -> reached 100/100, corrupted 22/100
+
+Running ER | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.5
+ER| seeds=10| mal=5| θ=0.5 -> reached 13/100, corrupted 0/13
+
+Running ER | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.1
+ER| seeds=10| mal=10| θ=0.1 -> reached 100/100, corrupted 36/100
+
+Running ER | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.3
+ER| seeds=10| mal=10| θ=0.3 -> reached 100/100, corrupted 55/100
+
+Running ER | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.5
+ER| seeds=10| mal=10| θ=0.5 -> reached 15/100, corrupted 0/15
+
+
+
+Generated WS network with 100 nodes
+
+Running WS | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.1
+WS| seeds=1| mal=1| θ=0.1 -> reached 100/100, corrupted 17/100
+
+Running WS | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.3
+WS| seeds=1| mal=1| θ=0.3 -> reached 1/100, corrupted 0/1
+
+Running WS | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.5
+WS| seeds=1| mal=1| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running WS | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.1
+WS| seeds=1| mal=5| θ=0.1 -> reached 100/100, corrupted 46/100
+
+Running WS | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.3
+WS| seeds=1| mal=5| θ=0.3 -> reached 1/100, corrupted 0/1
+
+Running WS | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.5
+WS| seeds=1| mal=5| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running WS | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.1
+WS| seeds=1| mal=10| θ=0.1 -> reached 100/100, corrupted 99/100
+
+Running WS | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.3
+WS| seeds=1| mal=10| θ=0.3 -> reached 12/100, corrupted 6/12
+
+Running WS | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.5
+WS| seeds=1| mal=10| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running WS | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.1
+WS| seeds=5| mal=1| θ=0.1 -> reached 100/100, corrupted 7/100
+
+Running WS | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.3
+WS| seeds=5| mal=1| θ=0.3 -> reached 100/100, corrupted 18/100
+
+Running WS | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.5
+WS| seeds=5| mal=1| θ=0.5 -> reached 27/100, corrupted 0/27
+
+Running WS | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.1
+WS| seeds=5| mal=5| θ=0.1 -> reached 100/100, corrupted 27/100
+
+Running WS | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.3
+WS| seeds=5| mal=5| θ=0.3 -> reached 97/100, corrupted 73/97
+
+Running WS | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.5
+WS| seeds=5| mal=5| θ=0.5 -> reached 14/100, corrupted 0/14
+
+Running WS | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.1
+WS| seeds=5| mal=10| θ=0.1 -> reached 100/100, corrupted 39/100
+
+Running WS | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.3
+WS| seeds=5| mal=10| θ=0.3 -> reached 100/100, corrupted 57/100
+
+Running WS | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.5
+WS| seeds=5| mal=10| θ=0.5 -> reached 34/100, corrupted 13/34
+
+Running WS | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.1
+WS| seeds=10| mal=1| θ=0.1 -> reached 100/100, corrupted 12/100
+
+Running WS | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.3
+WS| seeds=10| mal=1| θ=0.3 -> reached 100/100, corrupted 21/100
+
+Running WS | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.5
+WS| seeds=10| mal=1| θ=0.5 -> reached 82/100, corrupted 0/82
+
+Running WS | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.1
+WS| seeds=10| mal=5| θ=0.1 -> reached 100/100, corrupted 40/100
+
+Running WS | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.3
+WS| seeds=10| mal=5| θ=0.3 -> reached 100/100, corrupted 53/100
+
+Running WS | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.5
+WS| seeds=10| mal=5| θ=0.5 -> reached 50/100, corrupted 36/50
+
+Running WS | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.1
+WS| seeds=10| mal=10| θ=0.1 -> reached 100/100, corrupted 57/100
+
+Running WS | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.3
+WS| seeds=10| mal=10| θ=0.3 -> reached 100/100, corrupted 35/100
+
+Running WS | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.5
+WS| seeds=10| mal=10| θ=0.5 -> reached 76/100, corrupted 38/76
+
+
+
+Generated BA network with 100 nodes
+
+Running BA | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.1
+BA| seeds=1| mal=1| θ=0.1 -> reached 100/100, corrupted 1/100
+
+Running BA | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.3
+BA| seeds=1| mal=1| θ=0.3 -> reached 13/100, corrupted 0/13
+
+Running BA | seeds=1.0% of 100 | mal=1.0% of 100 | θ=0.5
+BA| seeds=1| mal=1| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running BA | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.1
+BA| seeds=1| mal=5| θ=0.1 -> reached 100/100, corrupted 57/100
+
+Running BA | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.3
+BA| seeds=1| mal=5| θ=0.3 -> reached 1/100, corrupted 0/1
+
+Running BA | seeds=1.0% of 100 | mal=5.0% of 100 | θ=0.5
+BA| seeds=1| mal=5| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running BA | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.1
+BA| seeds=1| mal=10| θ=0.1 -> reached 100/100, corrupted 68/100
+
+Running BA | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.3
+BA| seeds=1| mal=10| θ=0.3 -> reached 14/100, corrupted 10/14
+
+Running BA | seeds=1.0% of 100 | mal=10.0% of 100 | θ=0.5
+BA| seeds=1| mal=10| θ=0.5 -> reached 1/100, corrupted 0/1
+
+Running BA | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.1
+BA| seeds=5| mal=1| θ=0.1 -> reached 100/100, corrupted 1/100
+
+Running BA | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.3
+BA| seeds=5| mal=1| θ=0.3 -> reached 21/100, corrupted 1/21
+
+Running BA | seeds=5.0% of 100 | mal=1.0% of 100 | θ=0.5
+BA| seeds=5| mal=1| θ=0.5 -> reached 6/100, corrupted 0/6
+
+Running BA | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.1
+BA| seeds=5| mal=5| θ=0.1 -> reached 100/100, corrupted 74/100
+
+Running BA | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.3
+BA| seeds=5| mal=5| θ=0.3 -> reached 100/100, corrupted 54/100
+
+Running BA | seeds=5.0% of 100 | mal=5.0% of 100 | θ=0.5
+BA| seeds=5| mal=5| θ=0.5 -> reached 8/100, corrupted 0/8
+
+Running BA | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.1
+BA| seeds=5| mal=10| θ=0.1 -> reached 100/100, corrupted 75/100
+
+Running BA | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.3
+BA| seeds=5| mal=10| θ=0.3 -> reached 100/100, corrupted 66/100
+
+Running BA | seeds=5.0% of 100 | mal=10.0% of 100 | θ=0.5
+BA| seeds=5| mal=10| θ=0.5 -> reached 8/100, corrupted 0/8
+
+Running BA | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.1
+BA| seeds=10| mal=1| θ=0.1 -> reached 100/100, corrupted 7/100
+
+Running BA | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.3
+BA| seeds=10| mal=1| θ=0.3 -> reached 100/100, corrupted 5/100
+
+Running BA | seeds=10.0% of 100 | mal=1.0% of 100 | θ=0.5
+BA| seeds=10| mal=1| θ=0.5 -> reached 18/100, corrupted 0/18
+
+Running BA | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.1
+BA| seeds=10| mal=5| θ=0.1 -> reached 100/100, corrupted 6/100
+
+Running BA | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.3
+BA| seeds=10| mal=5| θ=0.3 -> reached 100/100, corrupted 55/100
+
+Running BA | seeds=10.0% of 100 | mal=5.0% of 100 | θ=0.5
+BA| seeds=10| mal=5| θ=0.5 -> reached 18/100, corrupted 1/18
+
+Running BA | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.1
+BA| seeds=10| mal=10| θ=0.1 -> reached 100/100, corrupted 25/100
+
+Running BA | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.3
+BA| seeds=10| mal=10| θ=0.3 -> reached 100/100, corrupted 39/100
+
+Running BA | seeds=10.0% of 100 | mal=10.0% of 100 | θ=0.5
+BA| seeds=10| mal=10| θ=0.5 -> reached 21/100, corrupted 2/21
+
+
+
+Generated polblogs network with 1222 nodes
+
+Running polblogs | seeds=1.0% of 1222 | mal=1.0% of 1222 | θ=0.1
+polblogs| seeds=12| mal=12| θ=0.1 -> reached 21/1222, corrupted 0/21
+
+Running polblogs | seeds=1.0% of 1222 | mal=1.0% of 1222 | θ=0.3
+polblogs| seeds=12| mal=12| θ=0.3 -> reached 16/1222, corrupted 0/16
+
+Running polblogs | seeds=1.0% of 1222 | mal=1.0% of 1222 | θ=0.5
+polblogs| seeds=12| mal=12| θ=0.5 -> reached 21/1222, corrupted 1/21
+
+Running polblogs | seeds=1.0% of 1222 | mal=5.0% of 1222 | θ=0.1
+polblogs| seeds=12| mal=61| θ=0.1 -> reached 1222/1222, corrupted 1201/1222
+
+Running polblogs | seeds=1.0% of 1222 | mal=5.0% of 1222 | θ=0.3
+polblogs| seeds=12| mal=61| θ=0.3 -> reached 16/1222, corrupted 0/16
+
+Running polblogs | seeds=1.0% of 1222 | mal=5.0% of 1222 | θ=0.5
+polblogs| seeds=12| mal=61| θ=0.5 -> reached 19/1222, corrupted 0/19
+
+Running polblogs | seeds=1.0% of 1222 | mal=10.0% of 1222 | θ=0.1
+polblogs| seeds=12| mal=122| θ=0.1 -> reached 1222/1222, corrupted 1137/1222
+
+Running polblogs | seeds=1.0% of 1222 | mal=10.0% of 1222 | θ=0.3
+polblogs| seeds=12| mal=122| θ=0.3 -> reached 17/1222, corrupted 2/17
+
+Running polblogs | seeds=1.0% of 1222 | mal=10.0% of 1222 | θ=0.5
+polblogs| seeds=12| mal=122| θ=0.5 -> reached 12/1222, corrupted 0/12
+
+Running polblogs | seeds=5.0% of 1222 | mal=1.0% of 1222 | θ=0.1
+polblogs| seeds=61| mal=12| θ=0.1 -> reached 1222/1222, corrupted 799/1222
+
+Running polblogs | seeds=5.0% of 1222 | mal=1.0% of 1222 | θ=0.3
+polblogs| seeds=61| mal=12| θ=0.3 -> reached 110/1222, corrupted 1/110
+
+Running polblogs | seeds=5.0% of 1222 | mal=1.0% of 1222 | θ=0.5
+polblogs| seeds=61| mal=12| θ=0.5 -> reached 73/1222, corrupted 0/73
+
+Running polblogs | seeds=5.0% of 1222 | mal=5.0% of 1222 | θ=0.1
+polblogs| seeds=61| mal=61| θ=0.1 -> reached 1222/1222, corrupted 1001/1222
+
+Running polblogs | seeds=5.0% of 1222 | mal=5.0% of 1222 | θ=0.3
+polblogs| seeds=61| mal=61| θ=0.3 -> reached 84/1222, corrupted 1/84
+
+Running polblogs | seeds=5.0% of 1222 | mal=5.0% of 1222 | θ=0.5
+polblogs| seeds=61| mal=61| θ=0.5 -> reached 69/1222, corrupted 1/69
+
+Running polblogs | seeds=5.0% of 1222 | mal=10.0% of 1222 | θ=0.1
+polblogs| seeds=61| mal=122| θ=0.1 -> reached 1222/1222, corrupted 962/1222
+
+Running polblogs | seeds=5.0% of 1222 | mal=10.0% of 1222 | θ=0.3
+polblogs| seeds=61| mal=122| θ=0.3 -> reached 102/1222, corrupted 3/102
+
+Running polblogs | seeds=5.0% of 1222 | mal=10.0% of 1222 | θ=0.5
+polblogs| seeds=61| mal=122| θ=0.5 -> reached 82/1222, corrupted 4/82
+
+Running polblogs | seeds=10.0% of 1222 | mal=1.0% of 1222 | θ=0.1
+polblogs| seeds=122| mal=12| θ=0.1 -> reached 1222/1222, corrupted 789/1222
+
+Running polblogs | seeds=10.0% of 1222 | mal=1.0% of 1222 | θ=0.3
+polblogs| seeds=122| mal=12| θ=0.3 -> reached 163/1222, corrupted 1/163
+
+Running polblogs | seeds=10.0% of 1222 | mal=1.0% of 1222 | θ=0.5
+polblogs| seeds=122| mal=12| θ=0.5 -> reached 139/1222, corrupted 1/139
+
+Running polblogs | seeds=10.0% of 1222 | mal=5.0% of 1222 | θ=0.1
+polblogs| seeds=122| mal=61| θ=0.1 -> reached 1222/1222, corrupted 1002/1222
+
+Running polblogs | seeds=10.0% of 1222 | mal=5.0% of 1222 | θ=0.3
+polblogs| seeds=122| mal=61| θ=0.3 -> reached 196/1222, corrupted 2/196
+
+Running polblogs | seeds=10.0% of 1222 | mal=5.0% of 1222 | θ=0.5
+polblogs| seeds=122| mal=61| θ=0.5 -> reached 154/1222, corrupted 2/154
+
+Running polblogs | seeds=10.0% of 1222 | mal=10.0% of 1222 | θ=0.1
+polblogs| seeds=122| mal=122| θ=0.1 -> reached 1222/1222, corrupted 1024/1222
+
+Running polblogs | seeds=10.0% of 1222 | mal=10.0% of 1222 | θ=0.3
+polblogs| seeds=122| mal=122| θ=0.3 -> reached 176/1222, corrupted 3/176
+
+Running polblogs | seeds=10.0% of 1222 | mal=10.0% of 1222 | θ=0.5
+polblogs| seeds=122| mal=122| θ=0.5 -> reached 181/1222, corrupted 5/181
+
+
+
+Generated polblogs-attack network with 1222 nodes
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=1.0% of 1222 | θ=0.1
+polblogs-attack| seeds=12| mal=12| θ=0.1 -> reached 39/1222, corrupted 0/39
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=1.0% of 1222 | θ=0.3
+polblogs-attack| seeds=12| mal=12| θ=0.3 -> reached 14/1222, corrupted 0/14
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=1.0% of 1222 | θ=0.5
+polblogs-attack| seeds=12| mal=12| θ=0.5 -> reached 15/1222, corrupted 0/15
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=5.0% of 1222 | θ=0.1
+polblogs-attack| seeds=12| mal=61| θ=0.1 -> reached 1222/1222, corrupted 1114/1222
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=5.0% of 1222 | θ=0.3
+polblogs-attack| seeds=12| mal=61| θ=0.3 -> reached 16/1222, corrupted 0/16
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=5.0% of 1222 | θ=0.5
+polblogs-attack| seeds=12| mal=61| θ=0.5 -> reached 25/1222, corrupted 0/25
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=10.0% of 1222 | θ=0.1
+polblogs-attack| seeds=12| mal=122| θ=0.1 -> reached 1222/1222, corrupted 1107/1222
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=10.0% of 1222 | θ=0.3
+polblogs-attack| seeds=12| mal=122| θ=0.3 -> reached 22/1222, corrupted 0/22
+
+Running polblogs-attack | seeds=1.0% of 1222 | mal=10.0% of 1222 | θ=0.5
+polblogs-attack| seeds=12| mal=122| θ=0.5 -> reached 17/1222, corrupted 0/17
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=1.0% of 1222 | θ=0.1
+polblogs-attack| seeds=61| mal=12| θ=0.1 -> reached 1222/1222, corrupted 891/1222
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=1.0% of 1222 | θ=0.3
+polblogs-attack| seeds=61| mal=12| θ=0.3 -> reached 96/1222, corrupted 0/96
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=1.0% of 1222 | θ=0.5
+polblogs-attack| seeds=61| mal=12| θ=0.5 -> reached 69/1222, corrupted 0/69
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=5.0% of 1222 | θ=0.1
+polblogs-attack| seeds=61| mal=61| θ=0.1 -> reached 1222/1222, corrupted 897/1222
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=5.0% of 1222 | θ=0.3
+polblogs-attack| seeds=61| mal=61| θ=0.3 -> reached 96/1222, corrupted 0/96
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=5.0% of 1222 | θ=0.5
+polblogs-attack| seeds=61| mal=61| θ=0.5 -> reached 86/1222, corrupted 0/86
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=10.0% of 1222 | θ=0.1
+polblogs-attack| seeds=61| mal=122| θ=0.1 -> reached 1222/1222, corrupted 1010/1222
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=10.0% of 1222 | θ=0.3
+polblogs-attack| seeds=61| mal=122| θ=0.3 -> reached 103/1222, corrupted 0/103
+
+Running polblogs-attack | seeds=5.0% of 1222 | mal=10.0% of 1222 | θ=0.5
+polblogs-attack| seeds=61| mal=122| θ=0.5 -> reached 68/1222, corrupted 0/68
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=1.0% of 1222 | θ=0.1
+polblogs-attack| seeds=122| mal=12| θ=0.1 -> reached 1222/1222, corrupted 813/1222
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=1.0% of 1222 | θ=0.3
+polblogs-attack| seeds=122| mal=12| θ=0.3 -> reached 176/1222, corrupted 0/176
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=1.0% of 1222 | θ=0.5
+polblogs-attack| seeds=122| mal=12| θ=0.5 -> reached 157/1222, corrupted 0/157
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=5.0% of 1222 | θ=0.1
+polblogs-attack| seeds=122| mal=61| θ=0.1 -> reached 1222/1222, corrupted 1054/1222
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=5.0% of 1222 | θ=0.3
+polblogs-attack| seeds=122| mal=61| θ=0.3 -> reached 201/1222, corrupted 0/201
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=5.0% of 1222 | θ=0.5
+polblogs-attack| seeds=122| mal=61| θ=0.5 -> reached 153/1222, corrupted 0/153
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=10.0% of 1222 | θ=0.1
+polblogs-attack| seeds=122| mal=122| θ=0.1 -> reached 1222/1222, corrupted 1071/1222
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=10.0% of 1222 | θ=0.3
+polblogs-attack| seeds=122| mal=122| θ=0.3 -> reached 165/1222, corrupted 0/165
+
+Running polblogs-attack | seeds=10.0% of 1222 | mal=10.0% of 1222 | θ=0.5
+polblogs-attack| seeds=122| mal=122| θ=0.5 -> reached 165/1222, corrupted 0/165

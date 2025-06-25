@@ -1,0 +1,53 @@
+=== Configuration Model: Seq1: [3,3,2,2,2,2,1,1,1,1] ===
+Number of nodes: 10
+Number of edges (including multi-edges): 9
+Number of self-loops: 1
+Contains multi-edges: False
+Edges after removing self-loops: 8
+Edges after removing multi-edges (simple graph): 8
+Is simple graph connected? False
+Number of connected components: 2
+Global transitivity: 0.0000
+Average clustering coefficient: 0.0000
+Graph is disconnected; computed diameter of largest component.
+Diameter: 4
+
+
+=== Configuration Model: Seq2: [4,4,4,4,2,2,2,2,2,2] ===
+Number of nodes: 10
+Number of edges (including multi-edges): 14
+Number of self-loops: 0
+Contains multi-edges: True
+Edges after removing self-loops: 14
+Edges after removing multi-edges (simple graph): 12
+Is simple graph connected? True
+Number of connected components: 1
+Global transitivity: 0.0000
+Average clustering coefficient: 0.0000
+Diameter: 5
+
+
+=== BA Graph (n=100, m=2) ===
+Top 5 hubs (node, degree):
+  Node 2: Degree 22
+  Node 3: Degree 21
+  Node 14: Degree 20
+  Node 0: Degree 15
+  Node 6: Degree 12
+Global transitivity: 0.0536
+Average clustering coefficient: 0.1263
+Diameter: 5
+
+
+=== BA Graph (n=100, m=5) ===
+Top 5 hubs (node, degree):
+  Node 0: Degree 35
+  Node 7: Degree 35
+  Node 8: Degree 33
+  Node 4: Degree 28
+  Node 3: Degree 23
+Global transitivity: 0.1545
+Average clustering coefficient: 0.1878
+Diameter: 4
+
+

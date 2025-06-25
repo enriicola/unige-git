@@ -1,0 +1,23 @@
+Top 10 nodes by Betweenness Centrality:
+Nod: 107, Betweenness Centrality: 0.4805
+Node: 1684, Betweenness Centrality: 0.3378
+Node: 3437, Betweenness Centrality: 0.2361
+Node: 1912, Betweenness Centrality: 0.2293
+Node: 1085, Betweenness Centrality: 0.1490
+Node: 0, Betweenness Centrality: 0.1463
+Node: 698, Betweenness Centrality: 0.1153
+Node: 567, Betweenness Centrality: 0.0963
+Node: 58, Betweenness Centrality: 0.0844
+Node: 428, Betweenness Centrality: 0.0643
+
+Top 10 nodes by Closeness Centrality:
+Node: 107, Closeness Centrality: 0.4597
+Node: 58, Closeness Centrality: 0.3974
+Node: 428, Closeness Centrality: 0.3948
+Node: 563, Closeness Centrality: 0.3939
+Node: 1684, Closeness Centrality: 0.3936
+Node: 171, Closeness Centrality: 0.3705
+Node: 348, Closeness Centrality: 0.3699
+Node: 483, Closeness Centrality: 0.3698
+Node: 414, Closeness Centrality: 0.3695
+Node: 376, Closeness Centrality: 0.3666e
