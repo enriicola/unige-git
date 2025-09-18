@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <style>
+      .node { fill: #f5fff7; stroke: #1e8e3e; stroke-width: 3; }
+      .issuer { fill: #eef7ff; stroke: #2b5f9e; stroke-width: 3; }
+      .label { font: 20px 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif; fill: #1f1f1f; }
+      .edge { stroke: #7aa889; stroke-width: 3; }
+      .edge-label { font: 18px 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif; fill: #385a45; }
+      .dashed { stroke-dasharray: 8 8; }
+      .cap { stroke-linecap: round; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#7aa889" />
+    </marker>
+  </defs>
+
+  <!-- Edges (attestations) -->
+  <g class="edges" fill="none">
+    <!-- Issuers → Soul: credentials -->
+    <line class="edge cap" x1="280" y1="170" x2="700" y2="340" marker-end="url(#arrow)"/>
+    <text class="edge-label" x="510" y="240">Education SBT</text>
+
+    <line class="edge cap" x1="1120" y1="170" x2="700" y2="340" marker-end="url(#arrow)"/>
+    <text class="edge-label" x="910" y="240">Contribution SBT</text>
+
+    <!-- Soul → App: derived reputation signal (read/query) -->
+    <line class="edge cap dashed" x1="700" y1="340" x2="700" y2="590" marker-end="url(#arrow)"/>
+    <text class="edge-label" x="720" y="480">Reputation</text>
+
+    <!-- App → Soul: role/permission granted based on SBTs -->
+    <line class="edge cap" x1="700" y1="620" x2="700" y2="370" marker-end="url(#arrow)"/>
+    <text class="edge-label" x="720" y="560">Role</text>
+  </g>
+
+  <!-- Issuers -->
+  <g class="issuers">
+    <rect class="issuer" x="200" y="120" rx="16" ry="16" width="160" height="80"/>
+    <text class="label" x="280" y="168" text-anchor="middle">University Soul</text>
+
+    <rect class="issuer" x="1040" y="120" rx="16" ry="16" width="160" height="80"/>
+    <text class="label" x="1120" y="168" text-anchor="middle">DAO Soul</text>
+  </g>
+
+  <!-- Soul and app -->
+  <g class="souls">
+    <circle class="node" cx="700" cy="340" r="56"/>
+    <text class="label" x="700" y="348" text-anchor="middle">Soul</text>
+
+    <circle class="node" cx="700" cy="620" r="56"/>
+    <text class="label" x="700" y="628" text-anchor="middle">App</text>
+  </g>
+
+  <!-- Caption -->
+  <text class="label" x="700" y="750" text-anchor="middle" style="fill:#444; font-size:22px;">
+    Issuers attest to Souls; apps read and write roles, composing a web of trust.
+  </text>
+</svg>
