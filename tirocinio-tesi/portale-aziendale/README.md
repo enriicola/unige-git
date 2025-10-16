@@ -8,7 +8,7 @@ If you need multiple version on the same development machine you can consider **
 
 Example for node 16 (last minor) With Administrator rights:  
 
-```
+```bash
 nvm install 16    
 nvm use 16.x.x 
 ```
@@ -27,7 +27,6 @@ docker build -t gs-templates/starter-front-end:latest .
 
 docker run -p 80:80 gs-templates/starter-front-end:latest
 
-
 ## BACK-END .NET 6
 
 dotnet build
@@ -43,7 +42,6 @@ dotnet publish -c Release -r linux-x64 -o ./publish
 docker build -t gs-templates/starter-back-end:latest .
 
 docker run -p 5007:5007 gs-templates/starter-back-end:latest
-
 
 ## IDENTITY PROVIDER KEYCLOAK (inside folder identity-provider/keycloak)
 
@@ -69,6 +67,7 @@ sudo docker stack deploy --compose-file docker-compose.yml kc-portale-aziendale
 
 import automatically from 'realm-export.json' file (select if a resource exists skip):
 
+```text
     clients:
     - 'starter-gui' (for front-end)
     - 'starter-swagger' (for back-end)
@@ -76,12 +75,16 @@ import automatically from 'realm-export.json' file (select if a resource exists 
     groups and roles:
     - group -> 'base-user'    roles -> 'base-user'
     - group -> 'admin-user'   roles -> 'admin-user' 'admin'
+```
 
 to be set manually:
 
+```text
     add 'admin-user' group to the default user 'admin'
+```
 
 ### modifiche 12/07 per iniziare a lavorare
+
 sostituito "database" in appsettings.json abbiamo messo sqlite
 in appsettings.json 0.0.0.0 --> localhost
 commentato tutto quello che riguarda l'Authorization flow (in Program.cs)

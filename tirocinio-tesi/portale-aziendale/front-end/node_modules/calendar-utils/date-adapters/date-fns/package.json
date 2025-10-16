@@ -1,5 +1,0 @@
-{
-  "main": "./index.js",
-  "module": "../esm/date-fns/index.js",
-  "typings": "./index.d.ts"
-}
