@@ -9,6 +9,72 @@
 5. [Code Examples from This Project](#code-examples-from-this-project)
 
 ---
+---
+
+## Struttura del Ripasso Angular (per colloquio tecnico)
+
+### 1. **Concetti di base**
+
+* Architettura Angular (moduli, componenti, servizi, dependency injection)
+* Il ciclo di vita dei componenti (`ngOnInit`, `ngOnDestroy`, ecc.)
+* Data binding (interpolation, property binding, event binding, two-way binding con `ngModel`)
+* Direttive (`*ngIf`, `*ngFor`, `ngClass`, `ngStyle`, direttive personalizzate)
+* Pipes (built-in e custom)
+
+### 2. **Routing e Navigation**
+
+* `RouterModule` e configurazione delle rotte
+* Rotte figlie (`children`)
+* `ActivatedRoute`, `RouterLink`, `router.navigate()`
+* Route guards (`CanActivate`, `CanDeactivate`)
+
+### 3. **Servizi e Dependency Injection**
+
+* `@Injectable()`
+* Scoping dei servizi (`providedIn: 'root'` vs moduli specifici)
+* HttpClient (`HttpClientModule`, `HttpClient.get/post/...`)
+* Interceptor per token e logging
+
+### 4. **Gestione dello Stato e Reactive Programming**
+
+* RxJS: `Observable`, `Subject`, `BehaviorSubject`
+* Operatori più usati (`map`, `filter`, `switchMap`, `mergeMap`, `takeUntil`, `catchError`)
+* Async pipe (`| async`)
+* Pattern reattivo nei form e nelle chiamate HTTP
+
+### 5. **Form Handling**
+
+* Template-driven forms vs Reactive forms
+* `FormGroup`, `FormControl`, `FormBuilder`
+* Validatori sincroni e asincroni
+* Gestione degli errori nei form
+
+### 6. **Ottimizzazione e Best Practice**
+
+* Change detection (`ChangeDetectionStrategy.OnPush`)
+* Lazy loading dei moduli
+* `trackBy` in `ngFor`
+* Tipizzazione forte con TypeScript
+* Pulizia delle subscription (`takeUntil`, `AsyncPipe`)
+
+### 7. **Testing e Strumenti**
+
+* Unit test con Jasmine e Karma (`TestBed`, `ComponentFixture`)
+* E2E test con Cypress o Playwright
+* Debug con Angular DevTools
+* Build e deploy con `ng build --prod`
+
+### 8. **Domande Classiche da Colloquio**
+
+* Differenza tra `Observable` e `Promise`
+* Come funziona la dependency injection
+* Cosa fa il `ngOnChanges`
+* Cosa significa "Reactive Programming"
+* Come ottimizzeresti le performance di un'app Angular?
+* Come gestiresti errori globali HTTP o form complessi?
+
+---
+---
 
 ## Angular Fundamentals
 
@@ -25,9 +91,9 @@ main.ts → platformBrowserDynamic().bootstrapModule(AppModule)
 
 **Key files in this project:**
 
-- `src/main.ts` - Bootstrap Angular app
-- `src/index.html` - HTML shell with `<app-root></app-root>`
-- `src/app/app.module.ts` - Root module
+* `src/main.ts` - Bootstrap Angular app
+* `src/index.html` - HTML shell with `<app-root></app-root>`
+* `src/app/app.module.ts` - Root module
 
 #### **Modules (`NgModule`)**
 
@@ -98,7 +164,7 @@ export class NoticeComponent implements OnInit {
 2. `ngOnChanges` - When input properties change
 3. `ngDoCheck` - Every change detection cycle
 4. `ngAfterViewInit` - After view children initialized
-5. `ngOnDestroy` - Before component destroyed (unsubscribe!)
+5. `ngOnDestroy` - Before component destroyed
 
 #### **Services & Dependency Injection**
 
@@ -120,9 +186,9 @@ constructor(private oauthService: CustomOAuthService) {}
 
 **Providers:**
 
-- `providedIn: 'root'` → Singleton in `AppModule` (recommended)
-- `providers: [Service]` in component → New instance per component
-- `providers: [Service]` in module → Shared across module
+* `providedIn: 'root'` → Singleton in `AppModule` (recommended)
+* `providers: [Service]` in component → New instance per component
+* `providers: [Service]` in module → Shared across module
 
 ---
 
@@ -130,9 +196,9 @@ constructor(private oauthService: CustomOAuthService) {}
 
 This project uses **hash routing** (URLs with `#`):
 
-- `http://localhost:4201/#/notice`
-- `http://localhost:4201/#/education`
-- `http://localhost:4201/#/officesManagement` (admin only)
+* `http://localhost:4201/#/notice`
+* `http://localhost:4201/#/education`
+* `http://localhost:4201/#/officesManagement` (admin only)
 
 **Routing file:** `src/app/app-routing.module.ts`
 
@@ -294,15 +360,15 @@ export class NoticeComponent {
 
 **Key operators used in this project:**
 
-- `map()` - Transform values
-- `filter()` - Keep only matching values
-- `switchMap()` - Switch to a new observable
-- `take(1)` - Emit only 1 value then complete
-- `debounceTime(300)` - Wait 300ms after last emit
-- `distinctUntilChanged()` - Skip duplicate consecutive values
-- `mergeMap()` - Emit all from mapped observables
-- `catchError()` - Handle errors
-- `finalize()` - Run after completion/error
+* `map()` - Transform values
+* `filter()` - Keep only matching values
+* `switchMap()` - Switch to a new observable
+* `take(1)` - Emit only 1 value then complete
+* `debounceTime(300)` - Wait 300ms after last emit
+* `distinctUntilChanged()` - Skip duplicate consecutive values
+* `mergeMap()` - Emit all from mapped observables
+* `catchError()` - Handle errors
+* `finalize()` - Run after completion/error
 
 **Subscription management:**
 
@@ -480,10 +546,10 @@ Component → Action → Reducer → State → Selector → Component
 
 **Why NgRx?**
 
-- Centralized state → easier to debug
-- Predictable data flow
-- Time-travel debugging (Redux DevTools)
-- Testable (pure functions)
+* Centralized state → easier to debug
+* Predictable data flow
+* Time-travel debugging (Redux DevTools)
+* Testable (pure functions)
 
 ---
 
@@ -491,16 +557,16 @@ Component → Action → Reducer → State → Selector → Component
 
 **Custom HTTP Client** (`custom-http-client.service.ts`)
 
-- Wraps Angular's `HttpClient`
-- Automatically adds OAuth Bearer token to requests
-- Retries failed requests (up to 3 times)
-- In design mode, bypasses token requirement
+* Wraps Angular's `HttpClient`
+* Automatically adds OAuth Bearer token to requests
+* Retries failed requests (up to 3 times)
+* In design mode, bypasses token requirement
 
 **Custom OAuth Service** (`custom-oauth.service.ts`)
 
-- Manages Keycloak authentication
-- In design mode (`onlyDesignMode: true`), fakes token/roles
-- Provides role checks: `isBaseUser()`, `isVipUser()`, `isAdminUser()`
+* Manages Keycloak authentication
+* In design mode (`onlyDesignMode: true`), fakes token/roles
+* Provides role checks: `isBaseUser()`, `isVipUser()`, `isAdminUser()`
 
 **Flow:**
 
@@ -583,9 +649,9 @@ data$ = this.store.select(selectData);
 
 **Why?**
 
-- Auto-unsubscribe (no memory leaks)
-- Change detection only when data changes
-- Works with OnPush change detection
+* Auto-unsubscribe (no memory leaks)
+* Change detection only when data changes
+* Works with OnPush change detection
 
 ### **3. Error Handling**
 
@@ -600,7 +666,7 @@ this.httpClient.get('/api/data').pipe(
 
 ### **4. Change Detection Strategy**
 
-- **Default (checking every event)**
+* **Default (checking every event)**
 
    ```typescript
    @Component({
@@ -609,7 +675,7 @@ this.httpClient.get('/api/data').pipe(
    })
    ```
 
-- **OnPush (check only on @Input change or event)**
+* **OnPush (check only on @Input change or event)**
 
    ```typescript
    @Component({
@@ -659,16 +725,16 @@ export class ChildComponent {
 
 Hooks let you run code at specific lifecycle phases:
 
-- `ngOnInit` - Initialization (common: fetch data)
-- `ngOnDestroy` - Cleanup (unsubscribe, clear timers)
-- `ngOnChanges` - When inputs change
-- `ngAfterViewInit` - After children rendered
+* `ngOnInit` - Initialization (common: fetch data)
+* `ngOnDestroy` - Cleanup (unsubscribe, clear timers)
+* `ngOnChanges` - When inputs change
+* `ngAfterViewInit` - After children rendered
 
 **Critical for:**
 
-- Memory management (unsubscribe in `ngOnDestroy`)
-- Data initialization
-- DOM access
+* Memory management (unsubscribe in `ngOnDestroy`)
+* Data initialization
+* DOM access
 
 ### **3. What's the difference between ViewChild and ContentChild?**
 
@@ -746,9 +812,9 @@ export class ServiceA {}
 
 Angular runs change detection:
 
-- After every event (click, input, timer, etc.)
-- By default: checks all components (OnEnable)
-- With `OnPush`: only checks if @Input changed or event from component
+* After every event (click, input, timer, etc.)
+* By default: checks all components (OnEnable)
+* With `OnPush`: only checks if @Input changed or event from component
 
 **Optimization tip:** Use `ChangeDetectionStrategy.OnPush` for dumb components.
 
@@ -756,10 +822,10 @@ Angular runs change detection:
 
 Redux-like state management:
 
-- **Single source of truth** - One store
-- **Predictable** - Actions → Reducer → State
-- **Debuggable** - Time travel with Redux DevTools
-- **Testable** - Pure functions (reducers, selectors)
+* **Single source of truth** - One store
+* **Predictable** - Actions → Reducer → State
+* **Debuggable** - Time travel with Redux DevTools
+* **Testable** - Pure functions (reducers, selectors)
 
 ### **8. How do you share data between components?**
 
@@ -968,39 +1034,39 @@ export class CustomHttpClient {
 
 ### **Must Know**
 
-- [ ] Angular module system (@NgModule)
-- [ ] Components, templates, directives, pipes
-- [ ] Dependency injection (DI)
-- [ ] RxJS Observables and operators (map, filter, switchMap, etc.)
-- [ ] Routing with guards and resolvers
-- [ ] Forms (template-driven and reactive)
-- [ ] Lifecycle hooks (ngOnInit, ngOnDestroy, etc.)
-- [ ] Change detection strategies
+* [ ] Angular module system (@NgModule)
+* [ ] Components, templates, directives, pipes
+* [ ] Dependency injection (DI)
+* [ ] RxJS Observables and operators (map, filter, switchMap, etc.)
+* [ ] Routing with guards and resolvers
+* [ ] Forms (template-driven and reactive)
+* [ ] Lifecycle hooks (ngOnInit, ngOnDestroy, etc.)
+* [ ] Change detection strategies
 
 ### **This Project Specific**
 
-- [ ] NgRx state management (actions, reducers, effects, selectors)
-- [ ] Custom HTTP client with OAuth token injection
-- [ ] Route guards for role-based access
-- [ ] Resolvers for pre-fetching data
-- [ ] Master-detail layout pattern (AppLayoutComponent)
-- [ ] How design mode works (environment.onlyDesignMode)
+* [ ] NgRx state management (actions, reducers, effects, selectors)
+* [ ] Custom HTTP client with OAuth token injection
+* [ ] Route guards for role-based access
+* [ ] Resolvers for pre-fetching data
+* [ ] Master-detail layout pattern (AppLayoutComponent)
+* [ ] How design mode works (environment.onlyDesignMode)
 
 ### **Performance & Best Practices**
 
-- [ ] Use async pipe instead of manual subscriptions
-- [ ] Always unsubscribe in ngOnDestroy
-- [ ] Use OnPush change detection for performance
-- [ ] Lazy load routes
-- [ ] Pure pipes and pure functions
+* [ ] Use async pipe instead of manual subscriptions
+* [ ] Always unsubscribe in ngOnDestroy
+* [ ] Use OnPush change detection for performance
+* [ ] Lazy load routes
+* [ ] Pure pipes and pure functions
 
 ### **Common Mistakes to Avoid**
 
-- [ ] Forgetting to unsubscribe (memory leaks)
-- [ ] Mutating state directly (use immutable patterns)
-- [ ] Not handling errors in effects/observables
-- [ ] Creating new instances of services in components
-- [ ] Mixing smart and dumb component responsibilities
+* [ ] Forgetting to unsubscribe (memory leaks)
+* [ ] Mutating state directly (use immutable patterns)
+* [ ] Not handling errors in effects/observables
+* [ ] Creating new instances of services in components
+* [ ] Mixing smart and dumb component responsibilities
 
 ---
 
@@ -1064,26 +1130,26 @@ src/
 
 1. **Read the code files in order:**
 
-   - `src/main.ts` → `src/app/app.module.ts` → `src/app/app.component.ts`
-   - `src/app/app-routing.module.ts` (understand routes)
-   - `src/app/redux/state.ts` and `reducers.ts` (state shape)
-   - One feature: `src/app/components/notice/` + `src/app/redux/notice/`
+   * `src/main.ts` → `src/app/app.module.ts` → `src/app/app.component.ts`
+   * `src/app/app-routing.module.ts` (understand routes)
+   * `src/app/redux/state.ts` and `reducers.ts` (state shape)
+   * One feature: `src/app/components/notice/` + `src/app/redux/notice/`
 
 2. **Run locally and explore:**
 
-   - Open <http://localhost:4201>
-   - Open DevTools (F12)
-   - Check Network tab: see API calls (none in design mode, but see structure)
-   - Check Redux DevTools extension if installed
+   * Open <http://localhost:4201>
+   * Open DevTools (F12)
+   * Check Network tab: see API calls (none in design mode, but see structure)
+   * Check Redux DevTools extension if installed
 
 3. **Try modifying:**
 
-   - Add a console.log in a component, refresh, check DevTools
-   - Change a pipe or filter logic, see the UI update live
-   - Create a new service and inject it
+   * Add a console.log in a component, refresh, check DevTools
+   * Change a pipe or filter logic, see the UI update live
+   * Create a new service and inject it
 
 4. **Practice questions:**
-   - "How would you add a new feature (e.g., new data table)?"
-   - "How would you add filtering to the Notice table?"
-   - "How would you handle API errors gracefully?"
-   - "Why do we use NgRx instead of just passing data?"
+   * "How would you add a new feature (e.g., new data table)?"
+   * "How would you add filtering to the Notice table?"
+   * "How would you handle API errors gracefully?"
+   * "Why do we use NgRx instead of just passing data?"
