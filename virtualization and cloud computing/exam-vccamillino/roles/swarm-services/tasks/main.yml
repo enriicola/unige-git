@@ -1,0 +1,95 @@
+---
+- name: Copy docker-compose files to remote host
+  ansible.builtin.template:
+    src: "{{ item }}"
+    dest: "/opt/{{ item }}"
+  loop: "{{ stack_file_names }}"
+
+- name: Undeploy stack
+  community.docker.docker_stack:
+    state: absent
+    name: vcc
+    #detach: false
+  when: stack_recreate
+
+- name: Install rsync
+  ansible.builtin.apt:
+    name:
+      - rsync
+
+- name: Delete directories in /data
+  ansible.builtin.file:
+    path: "/data/{{ item }}"
+    state: absent
+  loop: "{{ stack_data_directories }}"
+  when: stack_nuke_data_directories
+
+- name: Create directories in /data
+  ansible.builtin.file:
+    path: "/data/{{ item }}"
+    state: directory
+  loop: "{{ stack_data_directories }}"
+
+- name: Create /data/configs
+  ansible.builtin.file:
+    path: /data/configs
+    state: directory
+
+- name: Copy configs
+  ansible.posix.synchronize:
+    src: "{{ role_path }}/files/configs/"
+    dest: "/data/configs/"
+    archive: true
+    delete: true
+
+- name: Create /data/configs/postgres directory
+  ansible.builtin.file:
+    path: /data/configs/postgres
+    state: directory
+
+- name: Copy postgres init script
+  ansible.builtin.template:
+    src: j2_dir/init_db.sql.j2
+    dest: /data/configs/postgres/init_db.sql
+
+- name: Create /data/configs/dex directory
+  ansible.builtin.file:
+    path: /data/configs/dex
+    state: directory
+
+- name: Generate dex.yaml configuration
+  ansible.builtin.template:
+    src: j2_dir/dex.yaml.j2
+    dest: /data/configs/dex/dex.yaml
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Create /data/configs/forgejo directory
+  ansible.builtin.file:
+    path: /data/configs/forgejo
+    state: directory
+
+- name: Generate forgejo.ini configuration
+  ansible.builtin.template:
+    src: j2_dir/forgejo.ini.j2
+    dest: /data/configs/forgejo/forgejo.ini
+    owner: root
+    group: root
+    mode: '0666'  # Allow forgejo container to write to config file
+- name: Deploy stack from a compose file
+  community.docker.docker_stack:
+    state: present
+    name: vcc
+    prune: true
+    # Leave detach at its default (true) so Docker doesn’t wait indefinitely.
+    #detach: true
+    with_registry_auth: true
+    compose: "{{ ['/opt/'] | product(stack_file_names) | map('join') | list }}"
+  # Abort after 300 seconds so Ansible can retry if something goes wrong.
+  timeout: 300
+  retries: 3
+  delay: 1
+  register: result
+  until: result is not failed
+

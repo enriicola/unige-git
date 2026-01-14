@@ -1,0 +1,17 @@
+credentials/
+.venv
+.vagrant
+*swp
+vault_password.txt
+*.zip
+*.tar
+*.tar.gz
+*e.txt
+.vscode
+*.DS_Store
+*.tmp
+tmp/
+*.log
+exam_vccamillino.egg-info/
+.github/*.md
+.gitattributes

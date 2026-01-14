@@ -1,0 +1,47 @@
+# roles/swarm-services/templates/sso_demo.yml
+
+#1 -> where can traefik find this container?
+---
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: "{{ DEX_USR }}"
+      POSTGRES_PASSWORD: "{{ DEX_PWD }}"
+      POSTGRES_DB: "{{ DEX_DB }}"
+    volumes:
+      - /data/dex:/var/lib
+    networks:
+      - traefik_net
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  traefik:
+    networks:
+      traefik_net:
+        aliases:
+          # if we had put this alias on the service it would mean
+          #   inside of the cluster we should go to auth.vcc.internal:5556
+          #   outside of the cluster we should go to auth.vcc.internal:80
+          #   instead, here everything is consistent both east-west
+          #   and north-south!
+          - auth.vcc.internal
+
+  dex:
+    image: ghcr.io/dexidp/dex:v2.41.1-alpine
+    user: root
+    networks:
+      - traefik_net
+    deploy:
+      labels:
+        - "traefik.enable=true"  # hi traefik, I am your guy
+        - "traefik.docker.network=vcc_traefik_net"  # 1
+        - "traefik.http.routers.dex.rule=Host(`auth.vcc.internal`)"
+        - "traefik.http.routers.dex.service=dex"
+        - "traefik.http.services.dex.loadbalancer.server.port=5556"
+    volumes:
+      - /data/dex:/data
+      - /data/configs/dex/dex.yaml:/etc/dex/config.docker.yaml:ro

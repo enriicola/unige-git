@@ -1,0 +1,85 @@
+# TO BE DEPLOYED WITH
+# - ingress_demo.yml
+# 1 -> to have r/w access to the data directory without chown.
+# And yes, it is a security vulnerability
+# 2 -> not using it, see inside of prometheus.yml
+# 3 -> where can traefik find this container?
+# 4 -> yes, it's dirty but still, it allows us to get the hostname of the node
+# from within the container
+# 5 -> it does not make ANY sense to have a service where we care about
+# individual instances behind a VIP
+---
+networks:
+  prometheus_net:
+  traefik_net:
+    external: true
+    name: vcc_traefik_net
+
+version: '3.8'
+
+services:
+
+  prometheus:
+    image: quay.io/prometheus/prometheus:v3.0.1
+    user: root      # 1
+    command:
+      - --web.listen-address=0.0.0.0:9090
+      - --web.external-url=http://prometheus.vcc.internal
+      - --storage.tsdb.retention.time=7d
+    networks:
+      prometheus_net:
+      traefik_net:
+        aliases:      # remember to put these and not just in your /etc/hosts!
+          - prometheus.vcc.internal
+
+    volumes:
+      - /data/configs/prometheus/prometheus.yml:/prometheus/prometheus.yml:ro
+      - /data/prometheus:/prometheus/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    deploy:
+      # remember our talks on how only the Swarm manager can read the state
+      # if you want to do SD via the API, this is the result
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        # API-based service discovery for prometheus
+        # 2
+        # - prometheus.io/scrape-me=yes-please
+        # - prometheus.io/metrics-path=/metrics
+        # - prometheus.io/metrics-port=9090
+        # Traefik
+        - "traefik.enable=true"      # hi traefik, I'm your guy
+        - "traefik.swarm.network=vcc_traefik_net"      # 3
+        - "traefik.http.routers.prometheus.rule=Host(`prometheus.vcc.internal`)"
+        - "traefik.http.routers.prometheus.service=prometheus"
+        - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+
+  prometheus_node_exporter:
+    image: quay.io/prometheus/node-exporter:v1.8.2
+    # https://docs.docker.com/reference/cli/docker/service/create/#create-services-using-templates
+    # the `raw` thing is for ansible, as this file gets passed through
+    # `ansible.builtin.template` and otherwise ansible would be confused by som
+    # ething looking exactly like one of its variables
+    hostname: "{% raw %}{{.Node.Hostname}}{% endraw %}"     # 4
+    command:
+      - --path.rootfs=/host
+      - --path.procfs=/host/proc
+      - --path.sysfs=/host/sys
+    networks:
+      prometheus_net:
+
+    volumes:
+      - /:/host:ro,rslave      # lol
+      - /proc:/host/proc:ro,rslave      # lol
+      - /sys:/host/sys:ro,rslave      # lol
+
+    deploy:
+      endpoint_mode: dnsrr      # 5
+      mode: global      # we want one per node and only one
+      labels:
+        # API-based service discovery for prometheus
+        - prometheus.io/scrape-me=yes-please
+        - prometheus.io/metrics-path=/metrics
+        - prometheus.io/metrics-port=9100

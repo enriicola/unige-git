@@ -1,0 +1,12 @@
+---
+- name: Login to docker registry
+  community.docker.docker_login:
+    registry_url: registry.vcc.internal:5000
+    username: user
+    password: "{{ lookup('ansible.builtin.password', 'credentials/container-registry-password', length=32) }}"
+    reauthorize: true
+  # retry the task that may fail
+  retries: 60
+  delay: 1
+  register: result
+  until: result is not failed

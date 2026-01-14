@@ -1,0 +1,15 @@
+---
+# configure docker to accept insecure registries
+- name: Copy docker daemon.json
+  ansible.builtin.template:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+  notify: Restart docker
+- meta: flush_handlers
+
+# add registry.vcc.internal as an alias to the first host in /etc/hosts
+- name: Add registry.vcc.internal to /etc/hosts
+  ansible.builtin.lineinfile:
+    dest: /etc/hosts
+    regexp: '.+registry.vcc.internal$'
+    line: "{{ (hostvars[ansible_play_hosts_all[0]].get('ansible_enp0s8') | default(hostvars[ansible_play_hosts_all[0]].get('ansible_eth1'), true))['ipv4']['address'] }} registry.vcc.internal"

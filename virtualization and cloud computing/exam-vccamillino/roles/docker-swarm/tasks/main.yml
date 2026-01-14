@@ -1,0 +1,21 @@
+---
+- name: Init docker swarm cluster on first node
+  community.docker.docker_swarm:
+    state: present
+    advertise_addr: "{{ (ansible_enp0s8 | default(ansible_eth1, true)).ipv4.address }}"
+  register: swarm_init
+  when: inventory_hostname == ansible_play_hosts_all[0]
+
+- name: Get worker join token on manager
+  command: docker swarm join-token -q worker
+  register: worker_join_token
+  changed_when: false
+  when: inventory_hostname == ansible_play_hosts_all[0]
+
+- name: Join docker swarm cluster on the other nodes
+  community.docker.docker_swarm:
+    state: join
+    join_token: "{{ hostvars[ansible_play_hosts_all[0]]['worker_join_token'].stdout }}"
+    remote_addrs:
+      - "{{ (hostvars[ansible_play_hosts_all[0]].get('ansible_enp0s8') | default(hostvars[ansible_play_hosts_all[0]].get('ansible_eth1'), true))['ipv4']['address'] }}"
+  when: inventory_hostname != ansible_play_hosts_all[0]

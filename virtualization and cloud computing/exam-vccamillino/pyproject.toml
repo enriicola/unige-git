@@ -1,0 +1,18 @@
+[project]
+name = "exam-vccamillino"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "ansible~=11.1",
+    "requests",
+    "jsondiff",
+    "docker",
+    "passlib",
+]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tmp*", "roles*", "secret*", "credentials*", "scripts*"]

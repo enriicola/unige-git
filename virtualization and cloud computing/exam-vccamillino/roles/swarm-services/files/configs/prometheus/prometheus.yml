@@ -1,0 +1,85 @@
+global:
+  scrape_interval: "10s" # how frequently to pull
+
+scrape_configs:
+  # we start easy: there exists a /metrics endpoint locally
+  - job_name: myself
+    static_configs:
+      - targets:
+        - 127.0.0.1:9090
+
+  # Docker registry metrics (todo 58)
+  # Scrape the registry on the nodes using dockerswarm_sd with role nodes
+  - job_name: "docker_registry"
+    metrics_path: "/metrics"
+    scheme: "http"
+    dockerswarm_sd_configs:
+      - host: unix:///var/run/docker.sock
+        role: nodes
+    relabel_configs:
+      # Add node hostname label for attribution
+      - source_labels: ['__meta_dockerswarm_node_hostname']
+        target_label: node
+      - source_labels: ['__meta_dockerswarm_node_address']
+        target_label: instance
+      - source_labels: ['__meta_dockerswarm_node_address']
+        replacement: '${1}:5001'
+        target_label: __address__
+
+  # DNS-RR is fun, but with API-based we have a wealth of information, so we use it instead
+  # - job_name: node_exporter
+  #   dns_sd_configs:
+  #     - names:
+  #         - prometheus_node_exporter
+  #       type: A # DNS-RR in docker returns one IP for each entry
+  #       refresh_interval: "30s"
+  #       port: 9100
+  
+  # API-based service discovery (todos 53-57)
+  # This scrapes: traefik, node-exporter, grafana, forgejo, dex, loki, promtail
+  - job_name: docker_swarm_discovery
+    dockerswarm_sd_configs:
+      - host: unix:///var/run/docker.sock
+        role: tasks
+    relabel_configs:
+      # only keep containers that should be running
+      - source_labels: [ '__meta_dockerswarm_task_desired_state' ]
+        regex: running
+        action: keep
+      # only keep containers that have a `prometheus.io/scrape-me` label set to `yes-please`
+      - source_labels: [ '__meta_dockerswarm_service_label_prometheus_io_scrape_me' ]
+        regex: yes-please
+        action: keep
+      # only keep containers on the prometheus network
+      - source_labels: [ '__meta_dockerswarm_network_name' ]
+        regex: 'prometheus|vcc_prometheus'
+        action: keep
+      # replace the port for `prometheus.io/metrics-port` label
+      # __address__ 192.168.1.1:80
+      - source_labels: [ '__address__', '__meta_dockerswarm_service_label_prometheus_io_metrics_port' ]
+        separator: ';'
+        regex: '(.+)[:][0-9]+;(.+)$' # the concatenated labels look like `IP:Port;Label` we want to get `IP` and `Label`
+        replacement: '$1:$2'         # our new address is `IP:Label`
+        target_label: '__address__'
+        action: replace
+      # grab the service name (ensures metrics can be attributed to specific services)
+      - source_labels: [ '__meta_dockerswarm_service_name' ]
+        target_label: swarm_service_name
+        action: replace
+      # grab the node hostname (ensures metrics can be attributed to specific nodes - todo 63)
+      - source_labels: [ '__meta_dockerswarm_node_hostname' ]
+        target_label: swarm_node_name
+        action: replace
+      # Add instance label for better identification
+      - source_labels: [ '__meta_dockerswarm_node_hostname' ]
+        target_label: instance
+        action: replace
+      # copy container labels straight from docker
+      - regex: __meta_dockerswarm_container_label_(.+)
+        replacement: swarm_container_label_$1
+        action: labelmap
+      # copy service labels straight from docker
+      - regex: __meta_dockerswarm_service_label_(.+)
+        replacement: swarm_service_label_$1
+        action: labelmap
+        

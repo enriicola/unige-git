@@ -1,0 +1,41 @@
+---
+- name: Create /opt/container-images
+  ansible.builtin.file:
+    path: /opt/container-images
+    state: directory
+
+- name: Copy container images
+  ansible.posix.synchronize:
+    src: "{{ role_path }}/files/images/"
+    dest: "/opt/container-images/"
+    archive: true
+    delete: true
+
+- name: Build container images
+  community.docker.docker_image:
+    name: "registry.vcc.internal:5000/{{ item }}"
+    tag: latest
+    source: build
+    build:
+      path: "/opt/container-images/{{ item }}"
+    state: present
+  loop: "{{ swarm_build_images }}"
+  retries: 3
+  delay: 3
+
+- name: Wait for Docker to sync layers
+  ansible.builtin.pause:
+    seconds: 3
+
+- name: Push container images to registry
+  community.docker.docker_image:
+    name: "registry.vcc.internal:5000/{{ item }}"
+    tag: latest
+    source: local
+    push: true
+    state: present
+  loop: "{{ swarm_build_images }}"
+  retries: 5
+  delay: 3
+  register: result
+  until: result is not failed

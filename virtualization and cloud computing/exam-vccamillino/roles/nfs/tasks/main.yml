@@ -1,0 +1,40 @@
+---
+
+- name: "Create NFS share directory"
+  ansible.builtin.file:
+    path: "{{ nfs_dir }}"
+    state: directory
+
+# server
+- block:
+    - name: Install NFS server
+      ansible.builtin.apt:
+        name: nfs-kernel-server
+    - name: Configure exports
+      ansible.builtin.template:
+        src: exports
+        dest: /etc/exports
+      notify: Restart NFS server
+    - name: Start NFS server
+      ansible.builtin.systemd:
+        name: nfs-kernel-server.service
+        state: started
+        enabled: true
+    - meta: flush_handlers
+  when: inventory_hostname == ansible_play_hosts_all[0]
+
+# client
+- block:
+    - name: Install NFS client
+      ansible.builtin.apt:
+        name: nfs-common
+
+    - name: Mount NFS share
+      ansible.posix.mount:
+        src: "{{ (hostvars[ansible_play_hosts_all[0]].get('ansible_enp0s8') | default(hostvars[ansible_play_hosts_all[0]].get('ansible_eth1'), true))['ipv4']['address'] }}:{{ nfs_dir }}"
+        path: "{{ nfs_dir }}"
+        opts: rw
+        state: mounted
+        fstype: nfs
+
+  when: inventory_hostname != ansible_play_hosts_all[0]

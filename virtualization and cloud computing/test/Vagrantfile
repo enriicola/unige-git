@@ -1,0 +1,35 @@
+# configuration parameters
+KEY_FILE = "/Users/enrico/.ssh/id_rsa.pub"
+
+Vagrant.configure("2") do |config|
+    #https://app.vagrantup.com/boxes/search
+    config.vm.box = "tknerr/ubuntu2004-desktop"
+    # config.vm.box_version = "1.0.0"
+    config.vm.hostname = "VCC1"
+
+    # config.vm.base_address = "130.251.212.31"
+    config.vm.base_mac = "1c:91:80:c6:4d:70"
+
+    # use different host ports when multiple VMs run
+    config.vm.network :forwarded_port, guest: 22, host: 2200, id: 'ssh'
+
+    config.vm.provider :vmware_fusion do |v|
+        v.gui = true
+        v.vmx['displayname'] = 'VCC1'
+        v.vmx["memsize"] = "8000"
+        v.vmx["numvcpus"] = "2"
+    end
+
+    var1="This is var1"
+    var2="This is var2"
+
+    config.vm.provision "shell", inline: "echo hello"
+    # config.vm.provision "example", :shell, :path => "setup.sh", :args => [var1,var2], :privileged => false # by default, script is privileged (root)
+    config.vm.provision "example", type: "shell", path: "setup.sh", args: [var1,var2], privileged: false
+
+    config.vm.provision "key", type: "file", source: KEY_FILE, destination: "/tmp/id.pub"
+
+    # config.vm.provision "setkey", :shell, :path => "setup_pubkey.sh", :privileged => false
+    config.vm.provision "setkey", type: "shell", path: "setup_pubkey.sh", privileged: false
+
+end

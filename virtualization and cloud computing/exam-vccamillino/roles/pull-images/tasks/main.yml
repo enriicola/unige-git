@@ -1,0 +1,6 @@
+---
+- name: Repull images
+  ansible.builtin.script:
+    cmd: repull_images.py
+    executable: python3
+  when: stack_repull_images

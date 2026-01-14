@@ -1,0 +1,50 @@
+[DEFAULT]
+APP_NAME = VCC Git
+RUN_MODE = prod
+
+[server]
+ROOT_URL = https://git.vcc.internal
+DOMAIN = git.vcc.internal
+HTTP_PORT = 3000
+PROTOCOL = http
+SSH_PORT = 2222
+LFS_START_SERVER = true
+LFS_JWT_SECRET = {{ FOR_JWT_SCR }}
+
+OFFLINE_MODE = true
+
+[indexer]
+REPO_INDEXER_ENABLED = true
+
+[security]
+INSTALL_LOCK = true
+SECRET_KEY = {{ FOR_SCR_KEY }}
+COOKIE_USERNAME = {{ FOR_CK_USR }}
+COOKIE_REMEMBER_NAME = {{ FOR_RMB_NM }}
+INTERNAL_TOKEN = {{ FOR_INT_TOK }}
+
+[database]
+# Todo 31a: Use the database created
+DB_TYPE = postgres
+HOST = postgres:5432
+NAME = {{ FOR_DB }}
+USER = {{ FOR_USR }}
+PASSWD = {{ FOR_PWD }}
+SSL_MODE = disable
+
+[openid]
+ENABLE_OPENID_SIGNIN = true
+ENABLE_OPENID_SIGNUP = true
+
+[session]
+# Todo 32: Sessions persisted in database
+PROVIDER = db
+SESSION_EXPIRE = 86400
+
+[queue]
+TYPE = channel
+
+[metrics]
+# Todo 31b: Enable metrics
+ENABLED = true
+INTERVAL = 10

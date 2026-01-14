@@ -1,0 +1,81 @@
+KEY_FILE_PATH = "~/.ssh/id_rsa.pub"
+MYNET="192.168.56"
+NUM_TARGET=2
+VM_BOX_VERSION="24.04.3"
+GUI = false
+
+Vagrant.configure("2") do |config|
+  (1..NUM_TARGET).each do |i|
+    config.vm.define "target#{i}" do |node|
+      config.vm.box = "enricorusso/VCCubuntu"
+      config.vm.box_version = VM_BOX_VERSION
+      
+      node.vm.hostname = "target#{i}"
+      node.vm.base_mac = "000C298B0A7#{i}"
+      # node.vm.base_address = "#{MYNET}.1#{i}"
+      node.vm.network "private_network", ip: "#{MYNET}.1#{i}"
+
+      # Ensure network interface is configured (auto-detect interface name)
+      node.vm.provision :shell, :inline => <<-SHELL
+        IFACE=$(ip -o link show | awk -F': ' '$2 ~ /^(enp0s8|eth1)$/ {print $2; exit}')
+        if [ -n "$IFACE" ] && ! ip a show $IFACE | grep -q '#{MYNET}.1#{i}/24'; then
+          ip addr add #{MYNET}.1#{i}/24 dev $IFACE || true
+        fi
+      SHELL
+
+      node.vm.provider :virtualbox do |vb|
+        vb.name = "target#{i}"
+        vb.gui = GUI
+        vb.customize ["modifyvm", :id, "--ioapic", "off"]
+        vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      end
+      if File.exist?(KEY_FILE_PATH)
+        node.vm.provision :file, :source => "#{KEY_FILE_PATH}", :destination => "/tmp/id.pub"
+        node.vm.provision :shell, :inline => "cat /tmp/id.pub >> ~vagrant/.ssh/authorized_keys", :privileged => false
+      end  
+      
+    end
+  end
+
+  config.vm.define "controlnode" do |controlnode|
+    config.vm.box = "enricorusso/VCCubuntu"
+    config.vm.box_version = VM_BOX_VERSION
+  
+    controlnode.vm.hostname = "controlnode"
+    controlnode.vm.base_mac = "000C298B0A70"
+    # controlnode.vm.base_address = "#{MYNET}.10"
+    controlnode.vm.network "private_network", ip: "#{MYNET}.10"
+
+    # Ensure network interface is configured (auto-detect interface name)
+    controlnode.vm.provision :shell, :inline => <<-SHELL
+      IFACE=$(ip -o link show | awk -F': ' '$2 ~ /^(enp0s8|eth1)$/ {print $2; exit}')
+      if [ -n "$IFACE" ] && ! ip a show $IFACE | grep -q '#{MYNET}.10/24'; then
+      ip addr add #{MYNET}.10/24 dev $IFACE || true
+      fi
+    SHELL
+
+    controlnode.vm.provider :virtualbox do |vb|
+      vb.name = "controlnode"
+      vb.gui = GUI
+      vb.customize ["modifyvm", :id, "--ioapic", "off"]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    end
+    if File.exist?(KEY_FILE_PATH)
+      controlnode.vm.provision :file, :source => "#{KEY_FILE_PATH}", :destination => "/tmp/id.pub"
+      controlnode.vm.provision :shell, :inline => "cat /tmp/id.pub >> ~vagrant/.ssh/authorized_keys", :privileged => false
+    end
+
+    controlnode.vm.provision :shell, :inline => "apt-get update; apt-get -y install ansible sshpass make python3-venv python3-pip"
+    controlnode.vm.provision :shell, :inline => "test -f /home/vagrant/.ssh/id_rsa || ssh-keygen -f /home/vagrant/.ssh/id_rsa -q -P \"\"", :privileged => false
+    controlnode.vm.provision :shell, :inline => "grep #{MYNET}.10 /etc/hosts || echo '#{MYNET}.10 controlnode.vcc.local' >> /etc/hosts"    
+    controlnode.vm.provision :shell, :inline => "echo -e '[defaults]\nhost_key_checking = False' >> ~/.ansible.cfg", :privileged => false      
+
+		(1..NUM_TARGET).each do |i|
+      controlnode.vm.provision :shell, :inline => "sshpass -p vagrant ssh-copy-id -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -f vagrant@#{MYNET}.1#{i}", :privileged => false
+      controlnode.vm.provision :shell, :inline => "grep #{MYNET}.1#{i} /etc/hosts || echo '#{MYNET}.1#{i} target#{i}.vcc.local' >> /etc/hosts"      
+    end
+
+    controlnode.vm.provision :shell, :inline => "cd /vagrant && make python-setup && make debug", :privileged => false  # executed only once at vagrant up
+    controlnode.ssh.extra_args = ["-t", "cd /vagrant && export ANSIBLE_FORCE_COLOR=True; bash --login"]  # executed after every ssh connection
+  end
+end

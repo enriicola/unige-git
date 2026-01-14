@@ -1,0 +1,87 @@
+---
+# Ingress demo with traefik
+# 1 -> tell traefik that it has to use API-based SD for Docker
+# 2 -> remove the absurd default exposing EVERYTHING automatically
+# 3 -> where can traefik find this container?
+# TODO: check prof notes
+
+networks:
+  traefik_net:
+
+version: '3.8'
+
+services:
+
+  traefik:
+    image: public.ecr.aws/docker/library/traefik:v3.2.2
+    networks: ['traefik_net']
+    command:
+      - --accesslog=true     # logs of who goes where
+      - --accesslog.format=json     # the only sane choice
+
+      - --log.level=DEBUG     # enable logs for traefik itself
+      - --log.format=json     # see above
+
+      - --api.insecure=true     # Enable the dashboard
+
+      - --entryPoints.web.address=:80     # listen on port 80
+      - --entryPoints.websecure.address=:443     # listen on port 443
+      - --providers.swarm.endpoint=unix:///var/run/docker.sock     # 1
+      - --providers.swarm.exposedByDefault=false     # 2
+
+      # enable metrics
+      - --metrics.prometheus=true
+
+      # isolate the metrics to NOT being exposed where the other traffic is
+      - --entryPoints.metrics.address=:8082
+      - --metrics.prometheus.entryPoint=metrics
+
+    ports:
+      # we want traffic going to our nodes to go to traefik
+      - 80:80
+      - 443:443
+      - 8080:8080     # !!! REMOVE THESE DEBUG ENDPOINTS IN PRODUCTION !!!
+
+    deploy:
+      # remember our talks on how only the Swarm manager can read the state
+      # if you want to do SD via the API, this is the result
+      placement:
+        constraints:
+          - node.role == manager
+
+    volumes:
+      # API-based SD!
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  web:
+    image: public.ecr.aws/docker/library/nginx:1.27-alpine
+    networks:
+      traefik_net:
+        aliases:     # remember to put these and not just in your /etc/hosts!
+          - web.vcc.internal
+    volumes: ['/etc/hostname:/usr/share/nginx/html/hostname.txt:ro']
+    deploy:
+      replicas: 3
+      labels:
+        - "traefik.enable=true"     # hi traefik, I'm your guy
+        - "traefik.docker.network=vcc_traefik_net"     # 3
+        - "traefik.http.routers.web.rule=Host(`web.vcc.internal`)"
+        - "traefik.http.routers.web.service=web"
+        - "traefik.http.services.web.loadbalancer.server.port=80"
+
+  webrr:
+    image: public.ecr.aws/docker/library/nginx:1.27-alpine
+    networks:
+      traefik_net:
+        aliases:     # remember to put these and not just in your /etc/hosts!
+          - webrr.vcc.internal
+    volumes: ['/etc/hostname:/usr/share/nginx/html/hostname.txt:ro']
+    deploy:
+      endpoint_mode: dnsrr
+      replicas: 3
+      labels:
+        - "traefik.enable=true"     # hi traefik, I'm your guy
+        - "traefik.docker.network=vcc_traefik_net"     # 3
+        - "traefik.http.routers.webrr.rule=Host(`webrr.vcc.internal`)"
+        - "traefik.http.routers.webrr.service=webrr"
+        - "traefik.http.services.webrr.loadbalancer.server.port=80"

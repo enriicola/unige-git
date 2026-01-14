@@ -1,0 +1,53 @@
+---
+- name: Delete /data/registry
+  ansible.builtin.file:
+    path: /data/registry
+    state: absent
+  retries: 3
+  delay: 5
+  when: registry_nuke_data_directory
+
+- name: Create /data/registry/config
+  ansible.builtin.file:
+    path: /data/registry/config
+    state: directory
+
+- name: Create /data/registry/data
+  ansible.builtin.file:
+    path: /data/registry/data
+    state: directory
+
+- name: Copy docker registry compose file
+  ansible.builtin.template:
+    src: docker-registry.yml
+    dest: /opt/docker-registry.yml
+
+- name: Install python-passlib
+  ansible.builtin.apt:
+    name: python3-passlib
+
+- name: Create htpasswd for registry
+  community.general.htpasswd:
+    path: /data/registry/config/auth
+    hash_scheme: bcrypt
+    name: user
+    password: "{{ lookup('ansible.builtin.password', 'credentials/container-registry-password', length=32) }}"
+  register: htpasswd
+
+- name: Undeploy the registry
+  community.docker.docker_stack:
+    name: registry
+    state: absent
+  when: htpasswd is changed # we want to restart the deployment if the htpasswd file has changed
+
+- name: Deploy a docker registry
+  community.docker.docker_stack:
+    name: registry
+    #detach: false
+    prune: true
+    compose:
+      - /opt/docker-registry.yml
+    state: present
+  timeout: 300
+  retries: 3
+  delay: 5

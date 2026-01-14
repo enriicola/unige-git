@@ -1,0 +1,34 @@
+---
+- name: Create /etc/apt/keyrings
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+
+- name: Add Docker APT key
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /etc/apt/keyrings/docker.asc
+  retries: 15
+  delay: 5
+
+- name: Add Docker APT package
+  ansible.builtin.apt_repository:
+    repo: "deb [signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    filename: docker
+  retries: 15
+  delay: 5
+
+- name: Install Docker
+  ansible.builtin.apt:
+    name:
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose-plugin
+      - python3-docker
+      - python3-jsondiff
+    # state: present
+    # update_cache: yes
+  retries: 15
+  delay: 5

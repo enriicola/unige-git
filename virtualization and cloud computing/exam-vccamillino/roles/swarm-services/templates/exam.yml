@@ -1,0 +1,432 @@
+---
+version: '3.8'
+
+services:
+  # ========================================
+  # Traefik (todos 18-23)
+  # ========================================
+  traefik:
+    image: traefik:v3.6.1
+    
+    environment:
+      # Set Docker API version to avoid version mismatch errors
+      - DOCKER_API_VERSION=1.45
+    
+    command:
+      # Access logging (todo 23)
+      - --accesslog=true
+      - --accesslog.format=json
+      
+      # General logging
+      - --log.level=INFO
+      - --log.format=json
+      
+      # Define entrypoints (todo 19)
+      - --entryPoints.web.address=:80
+      - --entryPoints.websecure.address=:443
+      - --entryPoints.metrics.address=:8082
+      
+      # HTTP to HTTPS redirect (todo 22)
+      - --entrypoints.web.http.redirections.entryPoint.to=websecure
+      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      
+      # TLS configuration (todo 21)
+      - --providers.file.directory=/etc/traefik/dynamic
+      - --providers.file.watch=true
+      
+      # Docker Swarm provider (todo 20)
+      - --providers.swarm=true
+      - --providers.swarm.endpoint=unix:///var/run/docker.sock
+      - --providers.swarm.exposedByDefault=false
+      - --providers.swarm.httpClientTimeout=300s
+      
+      # Prometheus metrics (todo 23)
+      - --metrics.prometheus=true
+      - --metrics.prometheus.entryPoint=metrics
+    
+    ports:
+      # Expose HTTP and HTTPS (todo 19)
+      - 80:80
+      - 443:443
+    
+    volumes:
+      # Docker socket for Swarm service discovery (todo 20)
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # TLS certificates (todo 21)
+      - /data/cert/cert.pem:/certs/cert.pem:ro
+      - /data/cert/cert.key:/certs/cert.key:ro
+      # Dynamic configuration for TLS
+      - /data/configs/traefik/tls.yml:/etc/traefik/dynamic/tls.yml:ro
+    
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        # Prometheus metrics
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-port=8082"
+        - "prometheus.io/metrics-path=/metrics"
+    
+    networks:
+      traefik_net:
+        aliases:
+          # Allow internal services to reach *.vcc.internal domains
+          - auth.vcc.internal
+          - git.vcc.internal
+          - mon.vcc.internal
+          - prom.vcc.internal
+      prometheus:
+
+  # ========================================
+  # PostgreSQL Database (todos 13-15)
+  # ========================================
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: "{{ DB_USR }}"
+      POSTGRES_PASSWORD: "{{ DB_PWD }}"
+    volumes:
+      # Volume for postgres data persistence (todo 15)
+      - /data/postgres:/var/lib/postgresql/data
+      # Init script to create databases and users for dex, forgejo, grafana (todo 14)
+      - /data/configs/postgres/init_db.sql:/docker-entrypoint-initdb.d/init-multiple-dbs.sql:ro
+    
+    # Run only on manager node with 1 replica (todo 15)
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+
+    # Connected to backend network
+    networks:
+      - backend
+
+  # ========================================
+  # Dex SSO (todos 24-28)
+  # ========================================
+  dex:
+    image: registry.vcc.internal:5000/dex:latest
+    user: root
+    
+    volumes:
+      # Docker socket access
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Dex data persistence
+      - /data/dex:/data
+      # Dex configuration (todo 25)
+      - /data/configs/dex/dex.yaml:/etc/dex/config.yaml:ro
+      # TLS certificate for HTTPS
+      - /data/cert/cert.pem:/usr/local/share/ca-certificates/traefik.crt:ro
+    
+    # Update CA certificates and start dex server
+    command: /bin/sh -c "update-ca-certificates && exec dex serve /etc/dex/config.yaml"
+    
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        # Traefik routing
+        - "traefik.enable=true"
+        - "traefik.swarm.network=vcc_traefik_net"
+        - "traefik.http.routers.dex.rule=Host(`auth.vcc.internal`)"
+        - "traefik.http.routers.dex.entrypoints=websecure"
+        - "traefik.http.routers.dex.tls=true"
+        - "traefik.http.services.dex.loadbalancer.server.port=5556"
+        # Prometheus metrics (todo 27)
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-port=5558"
+        - "prometheus.io/metrics-path=/metrics"
+    
+    networks:
+      - backend      # Database access
+      - traefik_net  # Traefik routing
+      - prometheus   # Prometheus metrics
+    
+    depends_on:
+      - postgres
+
+  # ========================================
+  # Forgejo (todos 29-33)
+  # ========================================
+  forgejo:
+    image: registry.vcc.internal:5000/forgejo:latest
+    
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      # Variables for psql connection in entrypoint
+      DB_USERNAME: "{{ FOR_USR }}"
+      DB_PASSWORD: "{{ FOR_PWD }}"
+      DB_NAME: "{{ FOR_DB }}"
+      # Variables for Forgejo configuration
+      FOR_TYPE: postgres
+      FOR_HOST: git.vcc.internal
+      FOR_USR: "{{ FOR_USR }}"
+      FOR_PWD: "{{ FOR_PWD }}"
+      FOR_NAME: "{{ FOR_DB }}"
+      FOR_SECRET: "{{ FOR_SCR }}"
+      FOR_EMAIL: "{{ FOR_EMAIL }}"
+      # Variables for entrypoint admin setup
+      FORGEJO_ADMIN: forgejoadmin
+      FORGEJO_ADMIN_PASSWORD: "{{ FOR_PWD }}"
+      FORGEJO_EMAIL: "{{ FOR_EMAIL }}"
+      # Variables for Dex OAuth setup
+      DEX_FORGEJO_CLIENT_ID: forgejo
+      DEX_FORGEJO_CLIENT_SECRET: "{{ FOR_SCR }}"
+    
+    volumes:
+      # Docker socket access
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Data persistence (todo 32)
+      - /data/forgejo:/data
+      # Forgejo configuration (todo 31)
+      - /data/configs/forgejo/forgejo.ini:/data/gitea/conf/app.ini:rw
+      # TLS certificate
+      - /data/cert/cert.pem:/usr/local/share/ca-certificates/traefik.crt:ro
+    
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        # Traefik routing (todo 33)
+        - "traefik.enable=true"
+        - "traefik.swarm.network=vcc_traefik_net"
+        - "traefik.http.routers.forgejo.rule=Host(`git.vcc.internal`)"
+        - "traefik.http.routers.forgejo.entrypoints=websecure"
+        - "traefik.http.routers.forgejo.tls=true"
+        - "traefik.http.services.forgejo.loadbalancer.server.port=3000"
+        # Prometheus metrics (todo 31b)
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-port=3000"
+        - "prometheus.io/metrics-path=/metrics"
+    
+    networks:
+      - backend      # Database access
+      - traefik_net  # Traefik routing
+      - prometheus   # Prometheus metrics
+    
+    depends_on:
+      - postgres
+
+  # ========================================
+  # Grafana (todos 34-42)
+  # ========================================
+  grafana:
+    image: registry.vcc.internal:5000/grafana:latest
+    
+    environment:
+      # Database configuration (todo 37)
+      DB_NAME: "{{ GR_DB }}"
+      DB_USR: "{{ GR_USR }}"
+      DB_PWD: "{{ GR_PWD }}"
+      GR_SCR: "{{ GR_SCR }}"
+      
+      # Admin credentials (todo 38)
+      GF_SECURITY_ADMIN_USER: "{{ GR_AD_USR }}"
+      GF_SECURITY_ADMIN_PASSWORD: "{{ GR_AD_PWD }}"
+      
+      # Grafana URL configuration (todo 36) - handled in entrypoint.sh
+      # Database configuration (todo 37) - handled in entrypoint.sh
+      GF_DATABASE_SSL_MODE: disable
+      
+      # Enable metrics (todo 39)
+      GF_METRICS_ENABLED: "true"
+      
+      # Debug logging
+      GF_LOG_LEVEL: debug
+    
+    volumes:
+      # Docker socket access
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Data persistence (todo 41)
+      - /data/grafana:/var/lib/grafana
+      # TLS certificate
+      - /data/cert/cert.pem:/usr/local/share/ca-certificates/traefik.crt:ro
+      # Provisioning configuration (todo 40)
+      - /data/configs/grafana/provisioning:/etc/grafana/provisioning
+    
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        # Traefik routing (todo 42)
+        - "traefik.enable=true"
+        - "traefik.swarm.network=vcc_traefik_net"
+        - "traefik.http.routers.grafana.rule=Host(`mon.vcc.internal`)"
+        - "traefik.http.routers.grafana.entrypoints=websecure"
+        - "traefik.http.routers.grafana.tls=true"
+        - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+        # Prometheus metrics (todo 39)
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-port=3000"
+        - "prometheus.io/metrics-path=/metrics"
+    
+    networks:
+      - backend      # Database access
+      - traefik_net  # Traefik routing
+      - prometheus   # Prometheus metrics
+    
+    depends_on:
+      - postgres
+      - dex
+
+  # ========================================
+  # Prometheus (todos 43-46)
+  # ========================================
+  prometheus:
+    image: quay.io/prometheus/prometheus:v3.0.1
+    user: root
+    
+    volumes:
+      # Docker socket for service discovery
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Data persistence (todo 44)
+      - /data/prometheus:/prometheus
+      # Prometheus configuration
+      - /data/configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      # TLS certificate
+      - /data/cert/cert.pem:/usr/local/share/ca-certificates/traefik.crt:ro
+    
+    command:
+      # Set 14 days retention period (todo 45)
+      - "--storage.tsdb.retention.time=14d"
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        # Traefik routing (todo 46)
+        - "traefik.enable=true"
+        - "traefik.swarm.network=vcc_traefik_net"
+        - "traefik.http.routers.prometheus.rule=Host(`prom.vcc.internal`)"
+        - "traefik.http.routers.prometheus.entrypoints=websecure"
+        - "traefik.http.routers.prometheus.tls=true"
+        - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+        # Prometheus self-scraping
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-port=9090"
+        - "prometheus.io/metrics-path=/metrics"
+    
+    networks:
+      - traefik_net  # Traefik routing
+      - backend      # Database access
+      - prometheus   # Prometheus metrics network
+
+  # ========================================
+  # Node Exporter (todo 47)
+  # ========================================
+  node-exporter:
+    image: quay.io/prometheus/node-exporter:v1.8.2
+    hostname: "{% raw %}{{.Node.Hostname}}{% endraw %}"
+    
+    command:
+      - --path.rootfs=/host
+      - --path.procfs=/host/proc
+      - --path.sysfs=/host/sys
+    
+    volumes:
+      # Docker socket access
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Host filesystem for metrics
+      - /:/host:ro,rslave
+      - /proc:/host/proc:ro,rslave
+      - /sys:/host/sys:ro,rslave
+    
+    deploy:
+      mode: global  # Run on every node
+      endpoint_mode: dnsrr
+      labels:
+        # Prometheus scraping labels
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-path=/metrics"
+        - "prometheus.io/metrics-port=9100"
+    
+    networks:
+      - traefik_net
+      - prometheus
+
+# ========================================
+# Loki Service - Log Aggregation
+# ========================================
+  loki:
+    image: docker.io/grafana/loki:3.3.1
+    
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /data/loki:/loki
+      - /data/configs/loki/loki.yml:/etc/loki/config.yml:ro
+    
+    command: -config.file=/etc/loki/config.yml
+    
+    deploy:
+      labels:
+        # Prometheus scraping labels
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-port=3100"
+        - "prometheus.io/metrics-path=/metrics"
+    
+    networks:
+      - traefik_net
+      - prometheus
+
+# ========================================
+# Promtail Service - Log Collection (todos 51-52)
+# ========================================
+  promtail:
+    image: docker.io/grafana/promtail:3.2.2
+    hostname: "{% raw %}{{.Node.Hostname}}{% endraw %}"
+    
+    volumes:
+      # Docker socket for container log discovery (todo 52)
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Promtail configuration
+      - /data/configs/promtail/promtail.yml:/etc/promtail/config.yml:ro
+    
+    command: -config.file=/etc/promtail/config.yml
+    
+    deploy:
+      mode: global  # Run on every node to collect logs from all services (todo 52)
+      endpoint_mode: dnsrr
+      labels:
+        # Prometheus scraping labels
+        - "prometheus.io/scrape-me=yes-please"
+        - "prometheus.io/metrics-port=9080"
+        - "prometheus.io/metrics-path=/metrics"
+    
+    networks:
+      - traefik_net
+      - prometheus
+
+# ========================================
+# Networks
+# ========================================
+networks:
+  # Traefik network for ingress routing
+  traefik_net:
+    driver: overlay
+  # Backend network for database connections
+  backend:
+    driver: overlay
+  # Prometheus metrics network
+  prometheus:
+    driver: overlay
+
+# ========================================
+# Volumes
+# ========================================
+volumes: {}

@@ -1,0 +1,6 @@
+
+[targets] 
+target[1:2].vcc.local
+
+[targets:vars]
+ansible_user=vagrant

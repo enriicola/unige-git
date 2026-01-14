@@ -1,0 +1,19 @@
+---
+stack_data_directories:
+  - postgres
+  - dex
+  - forgejo
+  - grafana
+  - loki
+  - prometheus
+stack_nuke_data_directories: true # you WILL lose your data
+
+stack_file_names:
+  - exam.yml
+  # - ingress_demo.yml
+  # - metrics_demo.yml
+  # - logging_demo.yml
+  # - sso_demo.yml
+stack_recreate: true
+
+stack_repull_images: true

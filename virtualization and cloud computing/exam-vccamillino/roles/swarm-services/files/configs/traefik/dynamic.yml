@@ -1,0 +1,9 @@
+# Traefik dynamic configuration for TLS certificates (todo 21)
+# This configures the default certificate for HTTPS connections
+
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: "/certs/cert.pem"
+        keyFile: "/certs/cert.key"

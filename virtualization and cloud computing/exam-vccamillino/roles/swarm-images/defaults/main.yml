@@ -1,0 +1,6 @@
+---
+swarm_build_images:
+  - dex
+  - forgejo
+  - grafana
+  - sample

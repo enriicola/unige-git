@@ -1,0 +1,52 @@
+# Dex issuer URL (todo 24)
+issuer: https://auth.vcc.internal
+
+# Database configuration (todo 25)
+storage:
+  type: postgres
+  config:
+    host: postgres
+    port: 5432
+    database: {{ DEX_DB }}
+    user: {{ DEX_USR }}
+    password: '{{ DEX_PWD }}'
+    ssl:
+      mode: disable
+
+# Web server configuration
+web:
+  http: 0.0.0.0:5556
+
+# Metrics configuration (todo 27)
+telemetry:
+  http: 0.0.0.0:5558
+
+# Logging
+logger:
+  level: debug
+
+# Enable local password database (todo 26)
+enablePasswordDB: true
+
+# OAuth clients configuration (todo 28)
+staticClients:
+  # Forgejo OAuth client (todo 28a)
+  - id: forgejo
+    redirectURIs:
+      - https://git.vcc.internal/user/oauth2/dex/callback
+    name: "Forgejo"
+    secret: '{{ FOR_SCR }}'
+  
+  # Grafana OAuth client (todo 28b)
+  - id: grafana
+    redirectURIs:
+      - https://mon.vcc.internal/login/generic_oauth
+    name: "Grafana"
+    secret: '{{ GR_SCR }}'
+
+# Static admin user (todo 26)
+staticPasswords:
+  - email: "{{ DEX_ADMIN_EMAIL }}"
+    hash: "{{ DEX_ADMIN_PWD | password_hash('blowfish', rounds=10) }}"
+    username: "{{ DEX_ADMIN_USER }}"
+    userID: "{{ DEX_ADMIN_ID }}"

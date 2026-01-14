@@ -1,0 +1,11 @@
+---
+# TLS configuration for Traefik
+tls:
+   certificates:
+      - certFile: /certs/cert.pem
+        keyFile: /certs/cert.key
+   stores:
+      default:
+         defaultCertificate:
+            certFile: /certs/cert.pem
+            keyFile: /certs/cert.key

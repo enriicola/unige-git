@@ -1,0 +1,23 @@
+networks:
+  host:
+    external: true  # Use the existing host network; do not create a new one
+
+services:
+  docker_registry:
+    image: ghcr.io/distribution/distribution:3.0.0-rc.1
+    networks:
+      host:  # Attach the container directly to the host's network stack
+    deploy:
+      mode: global  # Run one instance of this service on every node in the swarm
+    environment:
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry  # Directory inside container for storing registry data
+      REGISTRY_AUTH_HTPASSWD_REALM: Container registry  # Realm name used for basic authentication
+      REGISTRY_AUTH_HTPASSWD_PATH: /etc/registry/htpasswd  # Path to htpasswd file inside container for authentication
+      REGISTRY_HTTP_ADDR: ':5000'  # Registry HTTP server listens on port 5000
+      REGISTRY_HTTP_SECRET: '{{ lookup('ansible.builtin.password', 'credentials/container-registry-http-secret', length=32) }}'  # Secret key used by the registry HTTP server for internal purposes, fetched securely via Ansible lookup
+      REGISTRY_HTTP_DEBUG_ADDR: ':5001'  # Debug endpoint for metrics (todo 11)
+      REGISTRY_HTTP_DEBUG_PROMETHEUS_ENABLED: 'true'  # Enable Prometheus metrics (todo 11)
+      REGISTRY_HTTP_DEBUG_PROMETHEUS_PATH: '/metrics'  # Metrics path (todo 11)
+    volumes:
+      - /data/registry/config/auth:/etc/registry/htpasswd:ro  # Mount host htpasswd file as read-only into container
+      - /data/registry/data:/var/lib/registry  # Mount persistent registry storage directory

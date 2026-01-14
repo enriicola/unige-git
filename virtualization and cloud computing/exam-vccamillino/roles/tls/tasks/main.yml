@@ -1,0 +1,33 @@
+--- 
+#https://docs.ansible.com/ansible/latest/collections/community/crypto/openssl_privatekey_module.html
+#https://docs.ansible.com/ansible/latest/collections/community/crypto/docsite/guide_selfsigned.html
+
+#NB once all the cert.key and cert.pem were certificate.key and certificate.pem 
+
+- name: "Create folder for Traefik certificates"
+  ansible.builtin.file:
+    path: /data/cert
+    state: directory
+    mode: '0755'
+
+- name: Generate a private key
+  community.crypto.openssl_privatekey:
+    path: /data/cert/cert.key
+    size: 4096
+    type: RSA
+
+- name: Create certificate signing request (CSR) for self-signed certificate
+  community.crypto.openssl_csr_pipe:
+    privatekey_path: /data/cert/cert.key
+    common_name: ansible.com
+    organization_name: Ansible, Inc.
+    subject_alt_name:
+      - "DNS:*.vcc.internal"
+  register: csr
+
+- name: Create self-signed certificate from CSR
+  community.crypto.x509_certificate:
+    path: /data/cert/cert.pem
+    csr_content: "{{ csr.csr }}"
+    privatekey_path: /data/cert/cert.key
+    provider: selfsigned

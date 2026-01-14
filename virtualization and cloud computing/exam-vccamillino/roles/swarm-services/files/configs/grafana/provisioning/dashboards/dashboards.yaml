@@ -1,0 +1,42 @@
+apiVersion: 1
+
+providers:
+  - name: 'Traefik'
+    orgId: 1
+    folder: 'Traefik'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/traefik
+
+  - name: 'Swarm Nodes'
+    orgId: 1
+    folder: 'Swarm'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/swarm_node
+
+  - name: 'Monitoring Stack'
+    orgId: 1
+    folder: 'Monitoring'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/monitoring
+
+  - name: 'Logging Stack'
+    orgId: 1
+    folder: 'Logging'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/logging

@@ -1,0 +1,21 @@
+# Service discovery via DNS-VIP
+networks:
+  net:
+
+version: '3.8'
+
+services:
+  terminal:
+    image: public.ecr.aws/docker/library/alpine:3.21
+    entrypoint: [ '/bin/sh', '-c' ]
+    command: [ 'while true; do sleep 1; done' ]
+    networks: [ 'net' ]
+    deploy:
+      mode: global
+  web:
+    image: public.ecr.aws/docker/library/nginx:1.27-alpine
+    networks: [ 'net' ]
+    volumes: [ '/etc/hostname:/usr/share/nginx/html/hostname:ro' ]
+    deploy:
+      endpoint_mode: vip
+      replicas: 5

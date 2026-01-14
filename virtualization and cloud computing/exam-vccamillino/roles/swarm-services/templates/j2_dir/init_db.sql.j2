@@ -1,0 +1,11 @@
+-- Create dex user & DB
+CREATE USER {{ DEX_USR }} WITH PASSWORD '{{ DEX_PWD }}';
+CREATE DATABASE {{ DEX_DB }} OWNER {{ DEX_USR }};
+
+-- Create forgejo user & DB
+CREATE USER {{ FOR_USR }} WITH PASSWORD '{{ FOR_PWD }}';
+CREATE DATABASE {{ FOR_DB }} OWNER {{ FOR_USR }};
+
+-- Create grafana user & DB
+CREATE USER {{ GR_USR }} WITH PASSWORD '{{ GR_PWD }}';
+CREATE DATABASE {{ GR_DB }} OWNER {{ GR_USR }};

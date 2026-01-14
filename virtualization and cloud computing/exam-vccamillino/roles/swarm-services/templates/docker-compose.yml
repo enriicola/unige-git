@@ -1,0 +1,69 @@
+# https://docs.docker.com/reference/compose-file/
+# https://docs.docker.com/reference/compose-file/deploy/
+services:
+  #
+  # services in network `net1`
+  #
+  terminal_net1:
+    image: public.ecr.aws/docker/library/alpine:3.21
+    entrypoint:
+      - /bin/sh
+      - -c
+    command:
+      - while true; do sleep 3600; done
+    networks:
+      - net1
+    deploy:
+      mode: global
+  www_global:
+    image: public.ecr.aws/docker/library/nginx:1.27-alpine
+    deploy:
+      endpoint_mode: vip
+      mode: global
+    networks:
+      net1:
+        aliases:
+          - www_global.vcc.internal
+    volumes:
+      - /etc/hostname:/usr/share/nginx/html/hostname:ro
+      - /data:/usr/share/nginx/html/shared:ro
+  www_replicated:
+    image: public.ecr.aws/docker/library/nginx:1.27-alpine
+    deploy:
+      endpoint_mode: vip
+      mode: replicated
+      replicas: 4
+    networks:
+      - net1
+    volumes:
+      - /etc/hostname:/usr/share/nginx/html/hostname:ro
+      - /data:/usr/share/nginx/html/shared:ro
+  #
+  # services in network `net2`
+  #
+  terminal_net2:
+    image: public.ecr.aws/docker/library/alpine:3.21
+    entrypoint:
+      - /bin/sh
+      - -c
+    command:
+      - while true; do sleep 3600; done
+    networks:
+      - net2
+    deploy:
+      mode: global
+  www_dnsrr:
+    image: public.ecr.aws/docker/library/nginx:1.27-alpine
+    deploy:
+      endpoint_mode: dnsrr
+      mode: replicated
+      replicas: 3
+    networks:
+      - net2
+    volumes:
+      - /etc/hostname:/usr/share/nginx/html/hostname:ro
+      - /data:/usr/share/nginx/html/shared:ro
+
+networks:
+  net1:
+  net2:

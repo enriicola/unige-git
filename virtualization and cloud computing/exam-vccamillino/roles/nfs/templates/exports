@@ -1,0 +1,5 @@
+# {{ ansible_managed }}
+{{ nfs_dir }} {% for node in ansible_play_hosts_all[0:] %}
+{% set node_iface = (hostvars[node].get('ansible_enp0s8') | default(hostvars[node].get('ansible_eth1'), true)) %}
+{{ node_iface['ipv4']['address'] }}(rw,no_root_squash){% if not loop.last %} {% endif %}
+{% endfor %}

@@ -1,0 +1,32 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - docker
+    - docker-registry-node-config
+    - docker-swarm
+    - nfs
+- hosts: all[0]
+  become: true
+  roles:
+    - docker-registry
+- hosts: all
+  become: true
+  roles:
+    - docker-registry-node-login
+- hosts: all[0]
+  become: true
+  roles:
+    - swarm-images
+- hosts: all
+  become: true
+  roles:
+    - pull-images
+- hosts: all[0]
+  become: true
+  vars_files:
+    - secrets.yml
+  roles:
+    # TODO role for the certificate
+    - tls
+    - swarm-services
