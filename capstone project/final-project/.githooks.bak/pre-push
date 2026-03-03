@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+SCRIPT_PATH="$REPO_ROOT/docker/codymatch.sh"
+
+echo "[pre-push] Using script: $SCRIPT_PATH"
+
+if [ ! -f "$SCRIPT_PATH" ]; then
+  echo "[pre-push] ERROR: $SCRIPT_PATH not found"
+  echo "[pre-push] Aborting push."
+  exit 1
+fi
+
+cd "$(dirname "$SCRIPT_PATH")"
+
+# Run tests via docker helper
+echo "[pre-push] Running tests..."
+bash ./codymatch.sh test --stop
+
+if [ $? -ne 0 ]; then
+  echo "Tests failed. Push aborted."
+  exit 1
+fi
+
+echo "[pre-push] All tests passed. Proceeding with push."
+exit 0

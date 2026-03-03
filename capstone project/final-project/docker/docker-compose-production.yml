@@ -1,0 +1,13 @@
+services:
+  backend:
+    image: ${REGISTRY_URL}/${REGISTRY_IMAGE}:${REGISTRY_TAG}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${PROJECT_NAME}.tls=true"
+      - "traefik.http.routers.${PROJECT_NAME}.rule=Host(`${URL}`)"
+      - "traefik.http.services.${PROJECT_NAME}.loadbalancer.server.port=3000"
+  frontend:
+    image: ${REGISTRY_URL}/${REGISTRY_FRONTEND_IMAGE}:${REGISTRY_FRONTEND_TAG}
+  db:
+    volumes:
+      - db_data:/var/lib/postgresql/data

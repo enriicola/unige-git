@@ -1,0 +1,1 @@
+- [ ] copiare ed incollare la repo 'redteam' qui e rinominare .git in .git.bak :)

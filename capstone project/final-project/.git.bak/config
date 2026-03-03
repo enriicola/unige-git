@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	hooksPath = .githooks
+[remote "origin"]
+	url = https://github.com/DelaramDoroud/Red-team.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	vscode-merge-base = origin/main
+[branch "big-refactor"]
+	remote = origin
+	merge = refs/heads/big-refactor
+	vscode-merge-base = origin/big-refactor

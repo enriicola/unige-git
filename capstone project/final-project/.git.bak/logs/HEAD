@@ -1,0 +1,36 @@
+0000000000000000000000000000000000000000 4474524d69323c9312cc697fb158264f788f014a Enrico Pezzano <s4825087@studenti.unige.it> 1770236081 +0100	clone: from https://github.com/DelaramDoroud/Red-team.git
+4474524d69323c9312cc697fb158264f788f014a 4474524d69323c9312cc697fb158264f788f014a Enrico Pezzano <s4825087@studenti.unige.it> 1770241966 +0100	reset: moving to HEAD
+4474524d69323c9312cc697fb158264f788f014a 4474524d69323c9312cc697fb158264f788f014a Enrico Pezzano <s4825087@studenti.unige.it> 1770242548 +0100	checkout: moving from main to test/rt-264-skill-rules
+4474524d69323c9312cc697fb158264f788f014a 4474524d69323c9312cc697fb158264f788f014a Enrico Pezzano <s4825087@studenti.unige.it> 1770242620 +0100	reset: moving to HEAD
+4474524d69323c9312cc697fb158264f788f014a 4474524d69323c9312cc697fb158264f788f014a Enrico Pezzano <s4825087@studenti.unige.it> 1770242620 +0100	reset: moving to HEAD
+4474524d69323c9312cc697fb158264f788f014a c6f3c4cc3c1f4263bf9a21a28c81477fcace68dc Enrico Pezzano <s4825087@studenti.unige.it> 1770242657 +0100	commit: feat: add comprehensive tests for skill rules API and rewards page
+c6f3c4cc3c1f4263bf9a21a28c81477fcace68dc 54d2f1b305218dc050237543cb6fb8300528b1fe Enrico Pezzano <s4825087@studenti.unige.it> 1770244320 +0100	commit: fix: reward controller typo and enhance tests for skill rules and rewards page
+54d2f1b305218dc050237543cb6fb8300528b1fe 4474524d69323c9312cc697fb158264f788f014a Enrico Pezzano <s4825087@studenti.unige.it> 1770245110 +0100	checkout: moving from test/rt-264-skill-rules to main
+4474524d69323c9312cc697fb158264f788f014a e8534e06edacdc4b153e5858accbea00d5860081 Enrico Pezzano <s4825087@studenti.unige.it> 1770245784 +0100	checkout: moving from main to see-leaderboard
+e8534e06edacdc4b153e5858accbea00d5860081 e8534e06edacdc4b153e5858accbea00d5860081 Enrico Pezzano <s4825087@studenti.unige.it> 1770246038 +0100	checkout: moving from see-leaderboard to feat/rt-242-leaderboard-tests
+e8534e06edacdc4b153e5858accbea00d5860081 955c85703f60707be1bb7a7d0ef10c64b0d32790 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (start): checkout 955c85703f60707be1bb7a7d0ef10c64b0d32790
+955c85703f60707be1bb7a7d0ef10c64b0d32790 107156307640d03c28277cd456d2eb4184b95d17 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): feat: initial UI
+107156307640d03c28277cd456d2eb4184b95d17 6b6c542ac8c91b554c7c945fe2dcf57c45cb5d71 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): test: fix author email for GitHub contributions
+6b6c542ac8c91b554c7c945fe2dcf57c45cb5d71 b6c657fc0b8a4611cc4e77c034f9bbb3f689c01a Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): feat: implement backend API
+b6c657fc0b8a4611cc4e77c034f9bbb3f689c01a 9ba6844205b78e3ec3b209aa793c824dacebfe61 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): fix: change referenceSolotion to referenceSo which is the correct one
+9ba6844205b78e3ec3b209aa793c824dacebfe61 6206516eb69342bb8f1919a19ac59cc6612432b9 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): feat: connect frontend to backend
+6206516eb69342bb8f1919a19ac59cc6612432b9 b71289b7878250ad71ab10701b86a878cf803ff1 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): update: add leaderboard in header
+b71289b7878250ad71ab10701b86a878cf803ff1 b415efd2e4213a1c15fc2c8e3f8801c5869ca2d9 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): fix UI
+b415efd2e4213a1c15fc2c8e3f8801c5869ca2d9 f23c05e9c2ca7c46c4d9dbfc459fbb1222ca1da2 Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): fix: retrieve title from db
+f23c05e9c2ca7c46c4d9dbfc459fbb1222ca1da2 6616f36101b4b5b0fbf802f1bfb302d45048f16a Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): fix: move the logic of finalize-challenge endpoint to finalizePeerReviewChallenge service
+6616f36101b4b5b0fbf802f1bfb302d45048f16a b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (pick): fix: comment the codes related to vote evaluation storing in scoring service file (this logic is already existed in finalization endpoint, then this was a duplication)
+b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a Enrico Pezzano <s4825087@studenti.unige.it> 1770246878 +0100	pull origin main (finish): returning to refs/heads/feat/rt-242-leaderboard-tests
+b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a Enrico Pezzano <s4825087@studenti.unige.it> 1770248694 +0100	reset: moving to HEAD
+b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a Enrico Pezzano <s4825087@studenti.unige.it> 1770248694 +0100	reset: moving to HEAD
+b1d634ff2b75e0d4cc22c945ea0e6bb26102fe5a ee8381d77c01cc38c02efd1508de3be7a66ed92d Enrico Pezzano <s4825087@studenti.unige.it> 1770248851 +0100	commit: test: add leaderboard tests and fix finalization property access
+ee8381d77c01cc38c02efd1508de3be7a66ed92d 4474524d69323c9312cc697fb158264f788f014a Enrico Pezzano <s4825087@studenti.unige.it> 1770387246 +0100	checkout: moving from feat/rt-242-leaderboard-tests to main
+4474524d69323c9312cc697fb158264f788f014a dfa8ad3ec0f13fdf5f2109dd28d74b0922f7ed14 Enrico Pezzano <s4825087@studenti.unige.it> 1770387248 +0100	pull: Fast-forward
+dfa8ad3ec0f13fdf5f2109dd28d74b0922f7ed14 dfa8ad3ec0f13fdf5f2109dd28d74b0922f7ed14 Enrico Pezzano <s4825087@studenti.unige.it> 1770482646 +0100	reset: moving to HEAD
+dfa8ad3ec0f13fdf5f2109dd28d74b0922f7ed14 7f6774f44016c75fb38616ddc7ab0029f5fc6152 Enrico Pezzano <s4825087@studenti.unige.it> 1770482663 +0100	pull: Fast-forward
+7f6774f44016c75fb38616ddc7ab0029f5fc6152 c063a6f38261835b3dc06948f3ec593d87b8e89b Enrico Pezzano <s4825087@studenti.unige.it> 1770490130 +0100	pull: Fast-forward
+c063a6f38261835b3dc06948f3ec593d87b8e89b 83f532c09ccce725d38ad5eef7f145d6b02a7e31 Enrico Pezzano <s4825087@studenti.unige.it> 1770582655 +0100	pull: Fast-forward
+83f532c09ccce725d38ad5eef7f145d6b02a7e31 738a5f10cca2483e527618f523b05ea1f2cf6618 Enrico Pezzano <s4825087@studenti.unige.it> 1770649831 +0100	pull: Fast-forward
+738a5f10cca2483e527618f523b05ea1f2cf6618 0b9b738ebf1c7be7d08a58fa208f5aeb88a7e9e1 Enrico Pezzano <s4825087@studenti.unige.it> 1771976755 +0100	checkout: moving from main to big-refactor
+0b9b738ebf1c7be7d08a58fa208f5aeb88a7e9e1 738a5f10cca2483e527618f523b05ea1f2cf6618 Enrico Pezzano <s4825087@studenti.unige.it> 1772060636 +0100	checkout: moving from big-refactor to main
+738a5f10cca2483e527618f523b05ea1f2cf6618 0b9b738ebf1c7be7d08a58fa208f5aeb88a7e9e1 Enrico Pezzano <s4825087@studenti.unige.it> 1772563151 +0100	checkout: moving from main to big-refactor
+0b9b738ebf1c7be7d08a58fa208f5aeb88a7e9e1 738a5f10cca2483e527618f523b05ea1f2cf6618 Enrico Pezzano <s4825087@studenti.unige.it> 1772563166 +0100	checkout: moving from big-refactor to main

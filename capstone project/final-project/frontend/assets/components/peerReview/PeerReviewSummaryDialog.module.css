@@ -1,0 +1,40 @@
+.summary {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+
+  font-size: 14px;
+}
+
+.label {
+  opacity: 0.85;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* semantic colors */
+.correct {
+  color: #22c55e; /* green */
+}
+
+.incorrect {
+  color: #ef4444; /* red */
+}
+
+.abstain {
+  color: #9ca3af; /* gray */
+}

@@ -1,0 +1,55 @@
+{
+  "$id": "challenge-private",
+  "type": "object",
+  "properties": {
+    "status": {
+      "enum": ["public", "private"],
+      "default": "private"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "title": {
+      "$ref": "shared-definitions#/definitions/notEmptyString"
+    },
+    "duration": {
+      "type": "integer",
+      "minimum": 2,
+      "description": "Duration in minutes"
+    },
+    "startDatetime": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^20\\d{2}-"
+    },
+    "endDatetime": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^20\\d{2}-"
+    },
+    "durationPeerReview": {
+      "type": "integer",
+      "minimum": 2,
+      "description": "Duration peer review in minutes"
+    },
+    "allowedNumberOfReview": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "matchSettingIds": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "title",
+    "duration",
+    "startDatetime",
+    "endDatetime",
+    "durationPeerReview"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,48 @@
+services:
+  frontend:
+    restart: always
+    hostname: frontend
+    env_file:
+      - .env
+  code-runner-image:
+    image: docker:cli
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: sh -c "echo 'Pulling Judge0 compilers image...' && docker pull ${CODE_RUNNER_IMAGE:-judge0/compilers:latest} && echo '✓ Code runner image ready'"
+    networks:
+      - default
+  backend:
+    restart: always
+    env_file:
+      - .env
+    environment:
+      WORKDIR: /usr/app
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: codymatch
+      DB_USER: codymatch
+      CODE_RUNNER_IMAGE: ${CODE_RUNNER_IMAGE:-judge0/compilers:latest}
+      CODE_RUNNER_TEMP_DIR: /tmp/code-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - code_runner_temp:/tmp/code-runner
+    networks:
+      - default
+    depends_on:
+      - db
+      - frontend
+      - code-runner-image
+  db:
+    image: postgres:16-alpine
+    shm_size: "2gb"
+    restart: always
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_DB: codymatch
+      POSTGRES_USER: codymatch
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+volumes:
+  db_data:
+  code_runner_temp:

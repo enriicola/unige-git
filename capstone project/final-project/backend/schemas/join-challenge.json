@@ -1,0 +1,17 @@
+{
+  "$id": "join-challenge",
+  "type": "object",
+  "properties": {
+    "studentId": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": ["studentId"],
+  "additionalProperties": false,
+  "errorMessage": {
+    "required": {
+      "studentId": "StudentId is required."
+    }
+  }
+}

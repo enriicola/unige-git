@@ -1,0 +1,266 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.header p {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+/* Modern form styles */
+.main {
+  padding: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  box-shadow:
+    0 1px 0 hsl(var(--foreground) / 0.06) inset,
+    0 8px 20px hsl(var(--foreground) / 0.08);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.input,
+.select,
+.datetime,
+.number {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--input));
+  color: hsl(var(--foreground));
+
+  outline: none;
+  transition:
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background 0.2s ease;
+}
+
+.expectedReviewInput {
+  border-color: hsl(var(--primary) / 0.6);
+  background-color: hsl(var(--input));
+  color: hsl(var(--foreground));
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.12) inset;
+}
+
+.expectedReviewInput:focus {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 4px hsl(var(--primary) / 0.2);
+}
+
+:global(.dark) .expectedReviewInput {
+  border-color: hsl(var(--secondary) / 0.6);
+  background-color: hsl(var(--input));
+  color: hsl(var(--foreground));
+  box-shadow: 0 0 0 1px hsl(var(--secondary) / 0.2) inset;
+}
+
+:global(.dark) .expectedReviewInput:focus {
+  border-color: hsl(var(--secondary));
+  box-shadow: 0 0 0 4px hsl(var(--secondary) / 0.25);
+}
+
+.datetime {
+  padding-right: 2.75rem;
+}
+
+.input:focus,
+.select:focus,
+.datetime:focus,
+.number:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 4px hsl(var(--ring) / 0.2);
+  background-color: hsl(var(--background));
+}
+
+.hint {
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+}
+
+.table thead th {
+  border-bottom: 1px solid hsl(var(--border));
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.table tbody tr {
+  border-bottom: 1px dashed hsl(var(--border));
+}
+
+.table tbody tr:hover {
+  background-color: hsl(var(--muted));
+}
+
+.submitWrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.feedback {
+  flex: 1;
+  min-height: 1.3rem;
+  font-size: 0.9rem;
+}
+
+.feedbackError {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-weight: 500;
+}
+
+.feedbackSuccess {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #bbf7d0;
+  font-weight: 500;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.datetimeGroup {
+  position: relative;
+}
+
+.datetimeButton {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 0.65rem;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 0.3rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background 0.2s ease;
+}
+
+.datetimeButton:hover {
+  border-color: hsl(var(--ring));
+}
+
+.datetimeButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.datetimeIcon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.datetimePicker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 400px) {
+  .main {
+    padding: 1.25rem 0.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .submitWrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+    border-radius: 0.75rem;
+  }
+
+  .table th,
+  .table td {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,390 @@
+.container {
+  --primary-purple: #5b21b6;
+  --light-purple: #7c3aed;
+  --bg-gradient-start: #7c3aed;
+  --bg-gradient-end: #5b21b6;
+
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+
+  --green-bg: #d1fae5;
+  --green-text: #065f46;
+  --red-bg: #fee2e2;
+  --red-text: #991b1b;
+  --calc-bg: #f8fafc;
+  --calc-bg-purple: #f3f0ff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+:global(.dark) .container {
+  --card-bg: #1e293b;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: #334155;
+  --calc-bg: #0f172a;
+  --calc-bg-purple: #2e1065;
+  --green-bg: #064e3b;
+  --green-text: #6ee7b7;
+  --red-bg: #7f1d1d;
+  --red-text: #fca5a5;
+}
+
+/* --- HERO CARD (Top) --- */
+.heroCard {
+  background: var(--card-bg);
+  border-top: 6px solid var(--light-purple);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.totalScoreValue {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #6d28d9; /* Deep purple */
+  line-height: 1;
+  margin: 0;
+}
+
+.heroDivider {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.totalLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.heroSubScores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.subScoreItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verticalSeparator {
+  width: 1px;
+  height: 40px;
+  background-color: var(--border-color);
+}
+
+.subValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--light-purple);
+}
+
+.subLabel {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.timestamp {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* --- BREAKDOWN GRID --- */
+.breakdownGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .breakdownGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailCard {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header inside detail cards */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconBox {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.iconReview {
+  background-color: #6366f1;
+}
+.iconImpl {
+  background-color: #8b5cf6;
+}
+
+.headerInfo h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.headerInfo span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.headerScore {
+  margin-left: auto;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-purple);
+}
+.headerMax {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* --- CODE REVIEW SPECIFIC --- */
+.reviewCountBadge {
+  background-color: var(--calc-bg);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-main);
+}
+
+.checkIcon,
+.crossIcon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  font-size: 0.7rem;
+}
+
+.checkIcon {
+  border: 1px solid #10b981;
+  color: #10b981;
+}
+.crossIcon {
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+.checkLabel {
+  flex: 1;
+}
+.checkCount {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-right: 1rem;
+}
+:global(.dark) .checkCount {
+  background: #334155;
+}
+
+.checkResultSuccess {
+  color: #10b981;
+  font-weight: 600;
+  font-family: monospace;
+}
+.checkResultFail {
+  color: #ef4444;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+/* --- IMPLEMENTATION SPECIFIC --- */
+.statsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.statBox {
+  border-radius: 12px;
+  padding: 1.25rem 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.statGreen {
+  background-color: var(--green-bg);
+  color: var(--green-text);
+}
+.statRed {
+  background-color: var(--red-bg);
+  color: var(--red-text);
+}
+
+.statBig {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.infoBox {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+:global(.dark) .infoBox {
+  background-color: #1e3a8a30;
+  border-color: #1e3a8a;
+  color: #bfdbfe;
+}
+
+.subCalcRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  padding: 0.5rem 0.75rem;
+  background: var(--calc-bg);
+  border-radius: 6px;
+  margin-bottom: 0.25rem;
+}
+
+.subCalcValueGreen {
+  color: #10b981;
+  font-family: monospace;
+}
+.subCalcValueRed {
+  color: #ef4444;
+  font-family: monospace;
+}
+
+.subCalcNote {
+  font-size: 0.7rem;
+  color: var(--red-text);
+  text-align: right;
+  margin-bottom: 1rem;
+  font-style: italic;
+  padding-right: 0.75rem;
+}
+
+/* --- COMMON CALC BOX --- */
+.calcBox {
+  margin-top: auto;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+:global(.dark) .calcBox {
+  background-color: #0f172a;
+  border-color: #334155;
+}
+
+.calcBoxPurple {
+  background-color: #f3f0ff;
+  border-color: #ddd6fe;
+}
+:global(.dark) .calcBoxPurple {
+  background-color: #2e1065;
+  border-color: #4c1d95;
+}
+
+.calcBox h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.75rem;
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.calcRow {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+.calcRow strong {
+  font-weight: 700;
+}

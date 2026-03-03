@@ -1,0 +1,90 @@
+.joinButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+
+  background-color: rgb(var(--color-primary-700));
+  border: 1px solid rgb(var(--color-primary-600));
+  color: #fff;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  /* shadow-lg + transizione */
+  box-shadow:
+    0 10px 15px -3px rgba(15, 23, 42, 0.35),
+    0 4px 6px -4px rgba(15, 23, 42, 0.4);
+
+  transition:
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.12s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.joinButton:hover {
+  transform: translateY(-1px);
+  background-color: rgb(var(--color-primary-600));
+  border-color: rgb(var(--color-primary-500));
+
+  /* shadow-xl */
+  box-shadow:
+    0 20px 25px -5px rgba(15, 23, 42, 0.45),
+    0 8px 10px -6px rgba(15, 23, 42, 0.6);
+}
+
+.joinButton:focus-visible {
+  outline: 2px solid rgb(var(--color-primary-500));
+  outline-offset: 2px;
+}
+
+.challengeCard {
+  margin-bottom: 1rem; /* mb-4 */
+  border-radius: 0.75rem; /* rounded-xl (se preferisci, tieni 1rem) */
+  border: 1px solid rgb(148 163 184 / 30%);
+
+  background:
+    linear-gradient(180deg, rgb(2 6 23 / 90%), rgb(2 6 23 / 92%)) padding-box,
+    radial-gradient(120% 120% at 0% 0%, rgb(56 189 248 / 18%), transparent 60%)
+      border-box;
+
+  /* shadow-lg di Tailwind (leggermente adattata al tuo tema scuro) */
+  box-shadow:
+    0 10px 15px -3px rgba(15, 23, 42, 0.35),
+    0 4px 6px -4px rgba(15, 23, 42, 0.4);
+
+  transition:
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.challengeCard:hover {
+  transform: translateY(-2px);
+  border-color: rgb(56 189 248 / 45%);
+
+  /* shadow-xl di Tailwind, un po’ più intensa */
+  box-shadow:
+    0 20px 25px -5px rgba(15, 23, 42, 0.45),
+    0 8px 10px -6px rgba(15, 23, 42, 0.6);
+}
+
+@media (max-width: 400px) {
+  .joinButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .challengeCard {
+    margin-bottom: 0.75rem;
+  }
+}

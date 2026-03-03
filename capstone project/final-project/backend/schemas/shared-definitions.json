@@ -1,0 +1,15 @@
+{
+  "$id": "shared-definitions",
+  "definitions": {
+    "notEmptyString": {
+      "type": "string",
+      "pattern": "([^\\s])",
+      "errorMessage": "This field is required."
+    },
+    "positiveInteger": {
+      "type": "integer",
+      "minimum": 1,
+      "errorMessage": "Value must be a positive integer."
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero {
+  max-width: 48rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.25rem;
+}
+
+.hero p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.hero code {
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.25rem;
+  background-color: rgb(var(--color-secondary-300) / 0.8);
+  font-size: 0.9em;
+}
+
+.showcaseRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.showcaseLabel {
+  min-width: 7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(var(--color-secondary-600));
+}
+
+.showcaseGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.formCard {
+  margin-top: 0.5rem;
+  max-width: 40rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(148 163 184 / 30%);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 6%) inset,
+    0 10px 25px rgb(2 6 23 / 50%);
+}
+
+@media (min-width: 768px) {
+  .formCard {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (max-width: 400px) {
+  .container {
+    gap: 1.75rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .showcaseRow {
+    align-items: flex-start;
+  }
+
+  .showcaseLabel {
+    min-width: auto;
+  }
+
+  .formCard {
+    padding: 1.1rem 1.2rem;
+  }
+}

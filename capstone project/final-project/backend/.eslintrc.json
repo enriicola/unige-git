@@ -1,0 +1,33 @@
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "plugins": ["import", "prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": "off", // Allow console statements in Node.js
+    "import/prefer-default-export": "off", // Optional, as default exports are less common in Node.js
+    "class-methods-use-this": "off", // Useful for class methods in backend without `this`
+    "consistent-return": "off", // Allow flexibility in return statements
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }], // Ignore unused variables starting with "_"
+    "no-param-reassign": ["error", { "props": false }], // Allow modifying function parameters
+    "no-use-before-define": ["error", { "functions": false }]
+  },
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".mjs"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.mjs", "**/*.test.js", "vitest.config.js"],
+      "env": {
+        "vitest": true
+      }
+    }
+  ]
+}
